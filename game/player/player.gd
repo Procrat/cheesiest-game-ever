@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 enum PlayerName {MYRJAM, STIJN}
 
@@ -24,8 +24,8 @@ func _fixed_process(delta):
 		pos.x -= walk_speed * delta
 	elif Input.is_action_pressed(right_action):
 		pos.x += walk_speed * delta
-	elif Input.is_action_pressed(up_action):
+	if Input.is_action_pressed(up_action):
 		pos.y -= walk_speed * delta
 	elif Input.is_action_pressed(down_action):
 		pos.y += walk_speed * delta
-	set_pos(pos)
+	move_to(pos)
