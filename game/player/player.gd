@@ -19,13 +19,19 @@ func _ready():
 	down_action = player_name_str + "_down"
 
 func _fixed_process(delta):
-	var pos = get_pos()
+	var direction = Vector2()
 	if Input.is_action_pressed(left_action):
-		pos.x -= walk_speed * delta
-	elif Input.is_action_pressed(right_action):
-		pos.x += walk_speed * delta
+		direction.x -= 1
+	if Input.is_action_pressed(right_action):
+		direction.x += 1
 	if Input.is_action_pressed(up_action):
-		pos.y -= walk_speed * delta
-	elif Input.is_action_pressed(down_action):
-		pos.y += walk_speed * delta
-	move_to(pos)
+		direction.y -= 1
+	if Input.is_action_pressed(down_action):
+		direction.y += 1
+	
+	var motion = move(direction * walk_speed * delta)
+	
+	if (is_colliding()):
+		var normal = get_collision_normal()
+		motion = normal.slide(motion)
+		move(motion)
