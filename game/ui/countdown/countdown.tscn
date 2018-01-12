@@ -14,6 +14,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 20.0
+custom_colors/font_color = Color( 0.941406, 0.110321, 0.374313, 1 )
 text = "2:00"
 percent_visible = 1.0
 lines_skipped = 0
