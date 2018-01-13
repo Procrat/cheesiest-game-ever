@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://game/an-amazing-first-date/object.gd" type="Script" id=1]
+[ext_resource path="res://game/scenes/an-amazing-first-date/object.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/Props/bloon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]

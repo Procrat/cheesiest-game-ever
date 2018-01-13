@@ -1,11 +1,11 @@
 [gd_scene load_steps=52 format=1]
 
-[ext_resource path="res://game/an-amazing-first-date/level.gd" type="Script" id=1]
+[ext_resource path="res://game/scenes/an-amazing-first-date/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/maze.png" type="Texture" id=2]
 [ext_resource path="res://game/player/Myrjam.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/player/Stijn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/an-amazing-first-date/random-object.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/an-amazing-first-date/random-object.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -412,6 +412,5 @@ transform/pos = Vector2( 910.443, 14.3538 )
 
 transform/pos = Vector2( 51.8668, 135.112 )
 transform/scale = Vector2( 0.660413, 0.777749 )
-item_type = 0
 
 
