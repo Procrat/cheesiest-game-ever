@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://game/an-amazing-first-date/object.gd" type="Script" id=1]
+[ext_resource path="res://Level 1/Props/bloon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="object" type="Area2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 2.67397, 0, 0, 4.04553, 32.5688, 23.9215 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+item_type = null
+
+[node name="bloon" type="Sprite" parent="."]
+
+transform/pos = Vector2( 25, 25 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 32.5688, 23.9215 )
+transform/scale = Vector2( 2.67397, 4.04553 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+

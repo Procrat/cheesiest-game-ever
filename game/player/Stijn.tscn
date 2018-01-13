@@ -9,7 +9,9 @@
 custom_solver_bias = 0.0
 points = Vector2Array( -12.031, 27.0812, -11.7245, 15.3692, 13.0002, 15.3692, 12.9052, 27.3132 )
 
-[node name="Stijn" type="KinematicBody2D"]
+[node name="Stijn" type="KinematicBody2D" groups=[
+"players",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -23,17 +25,17 @@ collision/margin = 0.08
 
 [node name="right" parent="walking" instance=ExtResource( 1 )]
 
-frame = 11
+frame = 2
 
 [node name="front" parent="walking" instance=ExtResource( 2 )]
 
 visibility/visible = false
-frame = 4
+frame = 9
 
 [node name="back" parent="walking" instance=ExtResource( 3 )]
 
 visibility/visible = false
-frame = 8
+frame = 13
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
