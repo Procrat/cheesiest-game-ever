@@ -1,12 +1,11 @@
-[gd_scene load_steps=53 format=1]
+[gd_scene load_steps=52 format=1]
 
 [ext_resource path="res://game/an-amazing-first-date/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/maze.png" type="Texture" id=2]
 [ext_resource path="res://game/player/Myrjam.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/player/Stijn.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/player/player.gd" type="Script" id=5]
-[ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/an-amazing-first-date/random-object.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/an-amazing-first-date/random-object.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -404,15 +403,12 @@ player_name = 0
 [node name="Stijn" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1822.17, 55.116 )
-script/script = ExtResource( 5 )
-player_name = 1
-walk_speed = 70.0
 
-[node name="countdown" parent="." instance=ExtResource( 6 )]
+[node name="countdown" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 910.443, 14.3538 )
 
-[node name="object" parent="." instance=ExtResource( 7 )]
+[node name="object" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 51.8668, 135.112 )
 transform/scale = Vector2( 0.660413, 0.777749 )
