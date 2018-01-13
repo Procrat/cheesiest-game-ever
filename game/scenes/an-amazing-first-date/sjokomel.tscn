@@ -22,7 +22,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4.0213, 5.26102 )
+extents = Vector2( 4.0213, 5.69386 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -50,7 +50,7 @@ item_type = null
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 14
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
