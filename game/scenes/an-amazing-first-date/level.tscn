@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=1]
+[gd_scene load_steps=54 format=1]
 
 [ext_resource path="res://game/scenes/an-amazing-first-date/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/maze.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://game/player/Stijn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/scenes/an-amazing-first-date/random-object.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/an-amazing-first-date/cinema.gd" type="Script" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -232,9 +233,15 @@ points = Vector2Array( -84.2711, 539.351, -527.803, 472.403, -474.802, 472.403 )
 custom_solver_bias = 0.0
 points = Vector2Array( -84.2711, 539.351, -474.802, 472.403, -232.115, 472.403 )
 
+[sub_resource type="RectangleShape2D" id=46]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [node name="level" type="Node2D"]
 
 script/script = ExtResource( 1 )
+next_scene = "res://game/scenes/an-amazing-first-date/hooray-oh-noes.tscn"
 
 [node name="maze" type="Sprite" parent="."]
 
@@ -412,5 +419,26 @@ transform/pos = Vector2( 910.443, 14.3538 )
 
 transform/pos = Vector2( 51.8668, 135.112 )
 transform/scale = Vector2( 0.660413, 0.777749 )
+
+[node name="cinema" type="Area2D" parent="."]
+
+transform/pos = Vector2( 135.336, 67.668 )
+input/pickable = true
+shapes/0/shape = SubResource( 46 )
+shapes/0/transform = Matrix32( 2.72178, 0, 0, 1.64158, -0.392029, 3.66873 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cinema"]
+
+transform/pos = Vector2( -0.392029, 3.66873 )
+transform/scale = Vector2( 2.72178, 1.64158 )
+shape = SubResource( 46 )
+trigger = false
+_update_shape_index = 0
 
 
