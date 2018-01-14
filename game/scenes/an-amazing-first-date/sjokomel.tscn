@@ -46,15 +46,16 @@ angular_damp = 1.0
 script/script = ExtResource( 1 )
 item_type = 3
 
-[node name="bloon" type="AnimatedSprite" parent="."]
+[node name="Sjokomel" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 11
+frame = 14
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( -0.535805, 2.248 )
 transform/scale = Vector2( 2.67397, 4.04553 )
 shape = SubResource( 1 )

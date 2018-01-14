@@ -1,28 +1,28 @@
 [gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://game/scenes/an-amazing-first-date/object.gd" type="Script" id=1]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_000.png" type="Texture" id=2]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_001.png" type="Texture" id=3]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_002.png" type="Texture" id=4]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_003.png" type="Texture" id=5]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_004.png" type="Texture" id=6]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_005.png" type="Texture" id=7]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_006.png" type="Texture" id=8]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_007.png" type="Texture" id=9]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_008.png" type="Texture" id=10]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_009.png" type="Texture" id=11]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_010.png" type="Texture" id=12]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_011.png" type="Texture" id=13]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_012.png" type="Texture" id=14]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_013.png" type="Texture" id=15]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_014.png" type="Texture" id=16]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_015.png" type="Texture" id=17]
-[ext_resource path="res://Level 1/Props/Sjokomel animatie/Sjokomel_016.png" type="Texture" id=18]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_000.png" type="Texture" id=2]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_001.png" type="Texture" id=3]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_002.png" type="Texture" id=4]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_003.png" type="Texture" id=5]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_004.png" type="Texture" id=6]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_005.png" type="Texture" id=7]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_006.png" type="Texture" id=8]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_007.png" type="Texture" id=9]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_008.png" type="Texture" id=10]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_009.png" type="Texture" id=11]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_010.png" type="Texture" id=12]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_011.png" type="Texture" id=13]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_012.png" type="Texture" id=14]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_013.png" type="Texture" id=15]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_014.png" type="Texture" id=16]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_015.png" type="Texture" id=17]
+[ext_resource path="res://Level 1/Props/Natsos animatie/Natsos_016.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4.0213, 5.26102 )
+extents = Vector2( 5.0588, 5.42099 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -37,25 +37,25 @@ animations = [ {
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 2.67397, 0, 0, 4.04553, -0.535805, 2.248 )
+shapes/0/transform = Matrix32( 2.67397, 0, 0, 4.04553, -0.510109, 2.29189 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-item_type = null
+item_type = 1
 
-[node name="bloon" type="AnimatedSprite" parent="."]
+[node name="tickets" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.535805, 2.248 )
+transform/pos = Vector2( -0.510109, 2.29189 )
 transform/scale = Vector2( 2.67397, 4.04553 )
 shape = SubResource( 1 )
 trigger = false
