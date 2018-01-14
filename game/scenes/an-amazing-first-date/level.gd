@@ -31,4 +31,5 @@ func restart():
 
 func go_to_next_level():
 	get_tree().change_scene(next_scene)
+	GLOBAL_STATE.ensure_level_unlocked(1)
 	get_tree().set_pause(false)
