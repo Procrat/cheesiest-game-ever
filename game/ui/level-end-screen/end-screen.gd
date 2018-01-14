@@ -22,8 +22,8 @@ func show(in_time):
 		text.set_text("You didn't make it in time...\nLuckily, love conquers all!")
 	inventory.refresh()
 	popup()
-	# This needs to happen because popup() puts it immediately on the screen
-	set_pos(Vector2(460, -800))
+	# HACK: This needs to happen because popup() puts it immediately on the screen
+	set_pos(Vector2(425, -800))
 	animation_player.play("drop-down")
 
 func missing_item_message():
