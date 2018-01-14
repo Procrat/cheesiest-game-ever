@@ -10,5 +10,5 @@ func collide(body):
 		be_picked_up()
 
 func be_picked_up():
-	inventory.add(item_type)
+	INVENTORY.add(item_type)
 	set_hidden(true)
