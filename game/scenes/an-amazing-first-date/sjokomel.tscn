@@ -44,13 +44,13 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-item_type = null
+item_type = 3
 
 [node name="bloon" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 14
+frame = 11
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
