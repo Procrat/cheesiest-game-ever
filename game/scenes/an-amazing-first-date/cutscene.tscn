@@ -30,7 +30,7 @@ root/root = NodePath("..")
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "Zoom on cutscene"
 
 [node name="Cutscene lvl1" type="Sprite" parent="."]
 
