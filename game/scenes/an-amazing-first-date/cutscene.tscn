@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/Cutscene zoom.tres" type="Animation" id=2]
 [ext_resource path="res://Level 1/Cutscene lvl1.png" type="Texture" id=3]
+[ext_resource path="res://Level 1/Cutscene heart.png" type="Texture" id=4]
 
 [node name="cutscene" type="Label"]
 
@@ -34,8 +35,13 @@ autoplay = "Zoom on cutscene"
 
 [node name="Cutscene lvl1" type="Sprite" parent="."]
 
-transform/pos = Vector2( 930.326, 569.674 )
-transform/scale = Vector2( 1.18695, 1.18695 )
+transform/pos = Vector2( 900, 600 )
+transform/scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
+
+[node name="Cutscene heart" type="Sprite" parent="."]
+
+transform/pos = Vector2( 900, -100 )
+texture = ExtResource( 4 )
 
 
