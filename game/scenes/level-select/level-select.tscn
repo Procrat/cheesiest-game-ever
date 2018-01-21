@@ -6,7 +6,7 @@
 
 script/script = ExtResource( 1 )
 controls_lvl1 = "res://game/scenes/an-amazing-first-date/controls.tscn"
-controls_lvl2 = "res://game/scenes/start/start.tscn"
+controls_lvl2 = "res://game/scenes/mango-goes-bananas/level.tscn"
 controls_lvl3 = "res://game/scenes/start/start.tscn"
 controls_lvl4 = "res://game/scenes/start/start.tscn"
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=1]
+[ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=2]
+[ext_resource path="res://game/player/Stijn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/player/Myrjam.tscn" type="PackedScene" id=4]
+
+[node name="level" type="Node2D"]
+
+[node name="apartment" type="StaticBody2D" parent="."]
+
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="background" type="Sprite" parent="apartment"]
+
+texture = ExtResource( 1 )
+offset = Vector2( 960, 540 )
+
+[node name="foreground" type="Sprite" parent="apartment"]
+
+texture = ExtResource( 2 )
+offset = Vector2( 960, 540 )
+
+[node name="Stijn" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1388.36, 418.455 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="Myrjam" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 833.762, 220.649 )
+transform/scale = Vector2( 2, 2 )
+
+
