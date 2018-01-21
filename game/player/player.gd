@@ -15,7 +15,7 @@ onready var walking_animations = get_node("walking")
 
 var last_animation_name = "front"
 var last_animation_flipped = false
-var last_animation
+onready var last_animation = idle_animations.get_node(last_animation_name)
 
 func _ready():
 	set_fixed_process(true)
