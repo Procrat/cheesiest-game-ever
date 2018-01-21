@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://game/player/player.gd" type="Script" id=1]
+[ext_resource path="res://game/player/Myrjam idle front normal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/player/Myrjam idle back normal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/player/Myrjam idle profile normal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/player/Myrjam walk front normal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/player/Myrjam walk back normal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/player/Myrjam walk profile normal.tscn" type="PackedScene" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 14.2103, 28.2493, -16.6977, 28.2493, -16.6977, 10.2196, 14.6395, 9.79036 )
+
+[node name="Myrjam" type="KinematicBody2D" groups=[
+"players",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 50 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+player_name = null
+walk_speed = 100.0
+
+[node name="idle" type="Node2D" parent="."]
+
+[node name="front" parent="idle" instance=ExtResource( 2 )]
+
+frame = 56
+
+[node name="back" parent="idle" instance=ExtResource( 3 )]
+
+visibility/visible = false
+frame = 4
+
+[node name="right" parent="idle" instance=ExtResource( 4 )]
+
+visibility/visible = false
+frame = 66
+
+[node name="walking" type="Node2D" parent="."]
+
+[node name="front" parent="walking" instance=ExtResource( 5 )]
+
+visibility/visible = false
+frame = 5
+
+[node name="back" parent="walking" instance=ExtResource( 6 )]
+
+visibility/visible = false
+frame = 12
+
+[node name="right" parent="walking" instance=ExtResource( 7 )]
+
+visibility/visible = false
+frame = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+transform/pos = Vector2( 0, 50 )
+build_mode = 0
+polygon = Vector2Array( 14.2103, 28.2493, -16.6977, 28.2493, -16.6977, 10.2196, 14.6395, 9.79036 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+

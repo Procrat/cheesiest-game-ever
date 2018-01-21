@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://game/player/player.gd" type="Script" id=1]
+[ext_resource path="res://game/player/Stijn idle front normal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/player/Stijn idle back normal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/player/Stijn idle profile normal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/player/Stijn walk front normal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/player/Stijn walk back normal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/player/Stijn walk profile normal.tscn" type="PackedScene" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -12.031, 27.0812, -11.7245, 15.3692, 13.0002, 15.3692, 12.9052, 27.3132 )
+
+[node name="Stijn" type="KinematicBody2D" groups=[
+"players",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+player_name = 1
+walk_speed = 70.0
+
+[node name="idle" type="Node2D" parent="."]
+
+[node name="front" parent="idle" instance=ExtResource( 2 )]
+
+visibility/visible = false
+frame = 28
+
+[node name="back" parent="idle" instance=ExtResource( 3 )]
+
+visibility/visible = false
+frame = 7
+
+[node name="right" parent="idle" instance=ExtResource( 4 )]
+
+visibility/visible = false
+frame = 34
+
+[node name="walking" type="Node2D" parent="."]
+
+[node name="front" parent="walking" instance=ExtResource( 5 )]
+
+visibility/visible = false
+frame = 13
+
+[node name="back" parent="walking" instance=ExtResource( 6 )]
+
+visibility/visible = false
+frame = 3
+
+[node name="right" parent="walking" instance=ExtResource( 7 )]
+
+visibility/visible = false
+frame = 6
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( 12.9052, 27.3132, 13.0002, 15.3692, -11.7245, 15.3692, -12.031, 27.0812 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+

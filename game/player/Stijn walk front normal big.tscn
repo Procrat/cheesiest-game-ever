@@ -1,0 +1,36 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_000.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_001.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_002.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_003.png" type="Texture" id=4]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_004.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_005.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_006.png" type="Texture" id=7]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_007.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_008.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_009.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_010.png" type="Texture" id=11]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_011.png" type="Texture" id=12]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_012.png" type="Texture" id=13]
+[ext_resource path="res://Characters/Walks/Stijn - normal/Front/Stijn walk front normal_013.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[node name="front" type="AnimatedSprite"]
+
+transform/pos = Vector2( 0.114262, 27.0085 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 2
+playing = true
+offset = Vector2( -0.114262, -27.0085 )
+
+
