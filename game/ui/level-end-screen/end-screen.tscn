@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://game/ui/level-end-screen/end-screen.gd" type="Script" id=1]
 [ext_resource path="res://game/ui/level-end-screen/inventory/inventory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -10,7 +11,7 @@ shader/shading_mode = 0
 [sub_resource type="Theme" id=2]
 
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
 length = 1.4
 loop = false
@@ -37,9 +38,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = SubResource( 2 )
-margin/left = 425.0
+margin/left = 354.0
 margin/top = 100.0
-margin/right = 1425.0
+margin/right = 1354.0
 margin/bottom = 900.0
 popup/exclusive = false
 script/script = ExtResource( 1 )
@@ -79,46 +80,30 @@ max_lines_visible = -1
 
 [node name="inventory" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 250, 650 )
+transform/pos = Vector2( 250, 500 )
 
-[node name="retry-button" type="Button" parent="."]
+[node name="retry-button" parent="." instance=ExtResource( 3 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 600.0
-margin/right = 500.0
-margin/bottom = 620.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
+margin/left = 60.0
+margin/top = 650.0
+margin/right = 463.0
+margin/bottom = 722.0
 text = "Try better this time"
-flat = false
 
-[node name="next-button" type="Button" parent="."]
+[node name="next-button" parent="." instance=ExtResource( 3 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 500.0
-margin/top = 600.0
-margin/right = 1000.0
-margin/bottom = 620.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Can your relationship survive the next challenge?"
-flat = false
+margin/left = 532.0
+margin/top = 650.0
+margin/right = 935.0
+margin/bottom = 722.0
+text = "Take it to the next level"
 
 [node name="animation-player" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/drop-down = SubResource( 3 )
+anims/drop-down = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

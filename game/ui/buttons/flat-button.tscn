@@ -43,7 +43,6 @@ custom_fonts/font = SubResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Hoi"
 flat = false
 
 
