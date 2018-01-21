@@ -25,7 +25,7 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-player_name = null
+player_name = 0
 walk_speed = 100.0
 
 [node name="idle" type="Node2D" parent="."]
