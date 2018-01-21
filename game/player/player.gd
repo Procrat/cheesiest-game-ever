@@ -10,9 +10,12 @@ var right_action
 var up_action
 var down_action
 
+onready var idle_animations = get_node("idle")
 onready var walking_animations = get_node("walking")
 
-onready var animation
+var last_animation_name = "front"
+var last_animation_flipped = false
+var last_animation
 
 func _ready():
 	set_fixed_process(true)
@@ -24,27 +27,29 @@ func _ready():
 
 func _fixed_process(delta):
 	var direction = Vector2()
-	var animation = null
-	var flipped = false
+	var animation_name = null
+	var animation_flipped = false
 	if Input.is_action_pressed(up_action):
 		direction.y -= 1
-		animation = walking_animations.get_node("back")
+		animation_name = "back"
 	if Input.is_action_pressed(down_action):
 		direction.y += 1
-		animation = walking_animations.get_node("front")
+		animation_name = "front"
 	if Input.is_action_pressed(left_action):
 		direction.x -= 1
-		animation = walking_animations.get_node("right")
-		flipped = true
+		animation_name = "right"
+		animation_flipped = true
 	if Input.is_action_pressed(right_action):
 		direction.x += 1
-		animation = walking_animations.get_node("right")
+		animation_name = "right"
 	
-	if animation == null:
-		return
-	
-	move_in_direction(direction, delta)
-	set_animation(animation, flipped)
+	if animation_name == null:
+		# No input: idle
+		set_animation(idle_animations, last_animation_name, last_animation_flipped)
+	else:
+		# Input: Move & animate
+		set_animation(walking_animations, animation_name, animation_flipped)
+		move_in_direction(direction, delta)
 
 func move_in_direction(direction, delta):
 	var motion = move(direction * walk_speed * delta)
@@ -54,9 +59,14 @@ func move_in_direction(direction, delta):
 		motion = normal.slide(motion)
 		move(motion)
 
-func set_animation(animation, flipped):
-	if self.animation != null:
-		self.animation.set_hidden(true)
+func set_animation(group, name, flipped):
+	if self.last_animation != null:
+		self.last_animation.set_hidden(true)
+	
+	var animation = group.get_node(name)
 	animation.set_hidden(false)
 	animation.flip_h = flipped
-	self.animation = animation
+	
+	self.last_animation_name = name
+	self.last_animation_flipped = flipped
+	self.last_animation = animation
