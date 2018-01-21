@@ -11,7 +11,7 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 14.2103, 28.2493, -16.6977, 28.2493, -16.6977, 10.2196, 14.6395, 9.79036 )
+points = Vector2Array( 13.5476, 28.2216, -13.2573, 28.1522, -11.5212, 10.6526, 11.881, 10.6526 )
 
 [node name="Myrjam" type="KinematicBody2D" groups=[
 "players",
@@ -25,8 +25,8 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-player_name = null
-walk_speed = 100.0
+player_name = 0
+walk_speed = 200.0
 
 [node name="idle" type="Node2D" parent="."]
 
@@ -65,7 +65,7 @@ frame = 11
 
 transform/pos = Vector2( 0, 50 )
 build_mode = 0
-polygon = Vector2Array( 14.2103, 28.2493, -16.6977, 28.2493, -16.6977, 10.2196, 14.6395, 9.79036 )
+polygon = Vector2Array( 13.5476, 28.2216, -13.2573, 28.1522, -11.5212, 10.6526, 11.881, 10.6526 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 

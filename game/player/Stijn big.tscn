@@ -11,7 +11,7 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -12.031, 27.0812, -11.7245, 15.3692, 13.0002, 15.3692, 12.9052, 27.3132 )
+points = Vector2Array( -14, 79, -13, 63, 8, 63, 10, 79 )
 
 [node name="Stijn" type="KinematicBody2D" groups=[
 "players",
@@ -26,14 +26,13 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 player_name = 1
-walk_speed = 70.0
+walk_speed = 140.0
 
 [node name="idle" type="Node2D" parent="."]
 
 [node name="front" parent="idle" instance=ExtResource( 2 )]
 
-visibility/visible = false
-frame = 28
+frame = 18
 
 [node name="back" parent="idle" instance=ExtResource( 3 )]
 
@@ -65,7 +64,7 @@ frame = 6
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
 build_mode = 0
-polygon = Vector2Array( 12.9052, 27.3132, 13.0002, 15.3692, -11.7245, 15.3692, -12.031, 27.0812 )
+polygon = Vector2Array( 10, 79, 8, 63, -13, 63, -14, 79 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
