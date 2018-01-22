@@ -1292,7 +1292,7 @@ trigger = false
 [node name="Myrjam" parent="." instance=ExtResource( 3 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 28.7408, 56.1974 )
+transform/pos = Vector2( 778.655, 924.695 )
 
 [node name="Stijn" parent="." instance=ExtResource( 4 )]
 
@@ -1353,5 +1353,6 @@ transform/pos = Vector2( 1573.48, 185.167 )
 [node name="dress" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 572.592, 446.939 )
+item_type = 5
 
 

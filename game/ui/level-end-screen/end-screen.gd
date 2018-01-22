@@ -9,6 +9,7 @@ var MISSING_MESSAGES = {
 var NEEDED_ITEMS = MISSING_MESSAGES.keys()
 
 onready var title = get_node("title")
+onready var subtitle = get_node("subtitle")
 onready var text = get_node("text")
 onready var inventory = get_node("inventory")
 onready var animation_player = get_node("animation-player")
@@ -16,10 +17,11 @@ onready var animation_player = get_node("animation-player")
 func show(in_time):
 	if in_time:
 		title.set_text("Sweet!")
-		text.set_text("You made it in time!\n" + missing_item_message())
+		subtitle.set_text("You made it in time!")
+		text.set_text(missing_item_message())
 	else:
 		title.set_text("Oh, noes!")
-		text.set_text("You didn't make it in time...\nLuckily, love conquers all!")
+		subtitle.set_text("You didn't make it in time...\nLuckily, love conquers all!")
 	inventory.refresh()
 	popup()
 	# HACK: This needs to happen because popup() puts it immediately on the screen
