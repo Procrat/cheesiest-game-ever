@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://game/scenes/level-select/level-select.gd" type="Script" id=1]
+[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=2]
+[ext_resource path="res://game/ui/level-select/level-select-button.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "level-select"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("start bg:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.9 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.3, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("buttons/level-1:rect/scale")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0.5, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("buttons/level-1:rect/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0.5, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 397, 60 ), Vector2( 0, 0 ) ]
+}
 
 [node name="level-select" type="Node2D"]
 
@@ -10,70 +49,46 @@ controls_lvl2 = "res://game/scenes/mango-goes-bananas/level.tscn"
 controls_lvl3 = "res://game/scenes/start/start.tscn"
 controls_lvl4 = "res://game/scenes/start/start.tscn"
 
+[node name="start bg" type="Sprite" parent="."]
+
+transform/pos = Vector2( 964.448, 535.932 )
+texture = ExtResource( 2 )
+
 [node name="buttons" type="Node2D" parent="."]
 
-[node name="level-1" type="Button" parent="buttons"]
+transform/pos = Vector2( 100, 250 )
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 12.0
-margin/bottom = 20.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Level 1"
-flat = false
+[node name="level-1" parent="buttons" instance=ExtResource( 3 )]
 
-[node name="level-2" type="Button" parent="buttons"]
+text = "An aMAZEing first date"
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 20.0
-margin/right = 58.0
-margin/bottom = 40.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Level 2"
-flat = false
+[node name="level-2" parent="buttons" instance=ExtResource( 3 )]
 
-[node name="level-3" type="Button" parent="buttons"]
+margin/top = 150.0
+margin/bottom = 269.0
+text = "Mango goes bananas"
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 40.0
-margin/right = 58.0
-margin/bottom = 60.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Level 3"
-flat = false
+[node name="level-3" parent="buttons" instance=ExtResource( 3 )]
 
-[node name="level-4" type="Button" parent="buttons"]
+margin/top = 300.0
+margin/bottom = 419.0
+text = "We're going to New Zealand!"
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 60.0
-margin/right = 58.0
-margin/bottom = 80.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Level 4"
-flat = false
+[node name="level-4" parent="buttons" instance=ExtResource( 3 )]
+
+margin/top = 450.0
+margin/bottom = 569.0
+text = "Let's get in tents"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/level-select = SubResource( 1 )
+playback/active = false
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
 
 

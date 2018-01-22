@@ -14,6 +14,7 @@ func _ready():
 	
 	for level_idx in range(GLOBAL_STATE.highest_level_unlocked + 1, buttons.size()):
 		buttons[level_idx].set_disabled(true)
+		buttons[level_idx].set_text("")
 
 func start_level(level):
 	get_tree().change_scene(levels[level])
