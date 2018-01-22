@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/mango.gd" type="Script" id=1]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango idle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango walk.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango vomit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango lick start.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango lick middle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango lick end.tscn" type="PackedScene" id=7]
+
+[node name="Mango" type="KinematicBody2D"]
+
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+walk_speed = 40.0
+lick_duration = 1.0
+
+[node name="idle" parent="." instance=ExtResource( 2 )]
+
+visibility/visible = false
+
+[node name="walk" parent="." instance=ExtResource( 3 )]
+
+visibility/visible = false
+
+[node name="vomit" parent="." instance=ExtResource( 4 )]
+
+visibility/visible = false
+
+[node name="lick start" parent="." instance=ExtResource( 5 )]
+
+visibility/visible = false
+
+[node name="lick middle" parent="." instance=ExtResource( 6 )]
+
+visibility/visible = false
+
+[node name="lick end" parent="." instance=ExtResource( 7 )]
+
+visibility/visible = false
+
+

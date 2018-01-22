@@ -65,7 +65,7 @@ func set_animation(group, name, flipped):
 	
 	var animation = group.get_node(name)
 	animation.set_hidden(false)
-	animation.flip_h = flipped
+	animation.set_flip_h(flipped)
 	
 	self.last_animation_name = name
 	self.last_animation_flipped = flipped

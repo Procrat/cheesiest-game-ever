@@ -51,7 +51,6 @@ animations = [ {
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 36
 playing = true
 
 
