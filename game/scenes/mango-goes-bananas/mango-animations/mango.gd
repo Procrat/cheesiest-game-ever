@@ -3,36 +3,35 @@ extends KinematicBody2D
 export(float) var walk_speed
 export(float) var lick_duration
 
+
 class Action:
-	var level
-	var animation_name
-	var animation
+	var animations
 	
-	func _init(level, animation_name):
-		self.level = level
-		self.animation_name = animation_name
+	var mango
+	var first_animation_name
+	var flipped = false
+	
+	func _init(mango, first_animation_name):
+		self.mango = mango
+		self.first_animation_name = first_animation_name
 	
 	func start():
-		switch_animation(animation_name)
+		animations = mango.get_node("animations")
+		play_animation(first_animation_name)
 	
 	func fixed_process(delta):
 		pass
 	
 	func stop():
-		animation.hide()
+		pass
 	
-	func switch_animation(animation_name):
-		if animation != null:
-			animation.hide()
-		
-		animation = level.get_node(animation_name)
-		animation.set_flip_h(level.looking_left)
-		animation.show()
-		animation.set_frame(0)
+	func play_animation(animation_name):
+		animations.play(animation_name)
+		animations.set_flip_h(mango.looking_left)
 
 
 class IdleAction extends Action:
-	func _init(level).(level, "idle"):
+	func _init(mango).(mango, "idle"):
 		pass
 
 
@@ -41,20 +40,19 @@ class LickAction extends Action:
 	var state = UNSTARTED
 	var countdown = 0
 	
-	func _init(level).(level, "lick start"):
+	func _init(mango).(mango, "lick start"):
 		pass
 	
 	func start():
 		.start()
 		state = STARTED
-		countdown = animation_duration(animation)
+		countdown = animation_duration(first_animation_name)
 	
-	func animation_duration(animation):
-		var sprite_frames = animation.get_sprite_frames()
-		return sprite_frames.get_frame_count("default") / sprite_frames.get_animation_speed("default")
+	func animation_duration(animation_name):
+		var sprite_frames = animations.get_sprite_frames()
+		return sprite_frames.get_frame_count(animation_name) / sprite_frames.get_animation_speed(animation_name)
 	
 	func fixed_process(delta):
-		print("lick process")
 		if state == STARTED or state == LICKING:
 			countdown -= delta
 			if countdown <= 0:
@@ -65,12 +63,12 @@ class LickAction extends Action:
 	
 	func lick():
 		state = LICKING
-		switch_animation("lick middle")
-		countdown = level.lick_duration
+		play_animation("lick middle")
+		countdown = mango.lick_duration
 	
 	func stop_licking():
 		state = DONE
-		switch_animation("lick end")
+		play_animation("lick end")
 
 
 class VomitAction extends Action:
@@ -80,7 +78,7 @@ class VomitAction extends Action:
 	var Vomit = preload("res://game/scenes/mango-goes-bananas/mango-animations/vomit.tscn")
 	var countdown = 1
 	
-	func _init(level).(level, "vomit"):
+	func _init(mango).(mango, "vomit"):
 		pass
 	
 	func start():
@@ -97,8 +95,8 @@ class VomitAction extends Action:
 	func spawn_vomit():
 		var vomit = Vomit.instance()
 		vomit.translate(Vector2(31, 35))
-		level.add_child(vomit)
-		level.move_child(vomit, 0)
+		mango.add_child(vomit)
+		mango.move_child(vomit, 0)
 
 
 var action = IdleAction.new(self)
@@ -132,7 +130,6 @@ func interrupt():
 
 
 func switch_action(action):
-	print("setting action", action)
 	self.action.stop()
 	action.start()
 	self.action = action

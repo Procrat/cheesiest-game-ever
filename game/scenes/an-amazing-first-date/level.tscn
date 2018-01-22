@@ -803,6 +803,7 @@ next_scene = "res://game/scenes/an-amazing-first-date/cutscene.tscn"
 
 [node name="maze" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 925, 525 )
 texture = ExtResource( 2 )
 
@@ -1307,6 +1308,7 @@ margin/bottom = 29.0
 
 [node name="cinema" type="Area2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 925, 1022.5 )
 input/pickable = true
 shapes/0/shape = SubResource( 156 )

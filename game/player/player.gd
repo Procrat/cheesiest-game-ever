@@ -10,12 +10,12 @@ var right_action
 var up_action
 var down_action
 
-onready var idle_animations = get_node("idle")
-onready var walking_animations = get_node("walking")
+onready var animations = get_node("animations")
 
-var last_animation_name = "front"
-var last_animation_flipped = false
-onready var last_animation = idle_animations.get_node(last_animation_name)
+var last_action = "idle"
+var last_direction = "front"
+var last_clothing = "normal"
+var last_flipped = false
 
 func _ready():
 	set_fixed_process(true)
@@ -27,28 +27,28 @@ func _ready():
 
 func _fixed_process(delta):
 	var direction = Vector2()
-	var animation_name = null
-	var animation_flipped = false
+	var direction_name = null
+	var flipped = false
 	if Input.is_action_pressed(up_action):
 		direction.y -= 1
-		animation_name = "back"
+		direction_name = "back"
 	if Input.is_action_pressed(down_action):
 		direction.y += 1
-		animation_name = "front"
+		direction_name = "front"
 	if Input.is_action_pressed(left_action):
 		direction.x -= 1
-		animation_name = "right"
-		animation_flipped = true
+		direction_name = "profile"
+		flipped = true
 	if Input.is_action_pressed(right_action):
 		direction.x += 1
-		animation_name = "right"
+		direction_name = "profile"
 	
-	if animation_name == null:
+	if direction_name == null:
 		# No input: idle
-		set_animation(idle_animations, last_animation_name, last_animation_flipped)
+		set_animation("idle", last_direction, last_clothing, last_flipped)
 	else:
 		# Input: Move & animate
-		set_animation(walking_animations, animation_name, animation_flipped)
+		set_animation("walk", direction_name, last_clothing, flipped)
 		move_in_direction(direction, delta)
 
 func move_in_direction(direction, delta):
@@ -59,14 +59,11 @@ func move_in_direction(direction, delta):
 		motion = normal.slide(motion)
 		move(motion)
 
-func set_animation(group, name, flipped):
-	if self.last_animation != null:
-		self.last_animation.set_hidden(true)
+func set_animation(action, direction, clothing, flipped):
+	animations.play(action + " " + direction + " " + clothing)
+	animations.set_flip_h(flipped)
 	
-	var animation = group.get_node(name)
-	animation.set_hidden(false)
-	animation.set_flip_h(flipped)
-	
-	self.last_animation_name = name
-	self.last_animation_flipped = flipped
-	self.last_animation = animation
+	last_action = action
+	last_direction = direction
+	last_clothing = clothing
+	last_flipped = flipped
