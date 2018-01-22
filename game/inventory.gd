@@ -21,12 +21,8 @@ func clear():
 func age_items():
 	var old_items = [] + items
 	for item_type in range(ItemType.size()):
-		print("old", old_items)
-		print("new", items)
 		if items[item_type] == JUST_TAKEN:
 			items[item_type] = TAKEN_EARLIER
-	print("old", old_items)
-	print("new", items)
 	return old_items
 
 func random_missing_item(needed):

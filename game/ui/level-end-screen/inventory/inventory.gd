@@ -17,7 +17,6 @@ onready var items = [
 
 func refresh():
 	var item_states = INVENTORY.age_items()
-	print(item_states)
 	for item in range(item_states.size()):
 		for state_node in items[item].get_children():
 			state_node.hide()
