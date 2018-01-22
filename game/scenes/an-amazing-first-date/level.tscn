@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=1]
+[gd_scene load_steps=170 format=1]
 
 [ext_resource path="res://game/scenes/an-amazing-first-date/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/maze.png" type="Texture" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://game/scenes/an-amazing-first-date/cinema.gd" type="Script" id=6]
 [ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/scenes/an-amazing-first-date/sjokomel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/scenes/an-amazing-first-date/tickets.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/scenes/an-amazing-first-date/Scheermes.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/scenes/an-amazing-first-date/Natsos.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/scenes/an-amazing-first-date/bloon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/scenes/an-amazing-first-date/dress.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -1328,5 +1333,25 @@ visibility/visible = false
 [node name="sjokomel" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 72.4095, 155.333 )
+
+[node name="tickets" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 663.338, 969.024 )
+
+[node name="scheermes" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1267.9, 661.905 )
+
+[node name="natsos" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 1770.16, 755.024 )
+
+[node name="bloon" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 1573.48, 185.167 )
+
+[node name="dress" parent="." instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 572.592, 446.939 )
 
 
