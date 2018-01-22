@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
 [ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=2]
 [ext_resource path="res://ui sprites/start/Start heart.png" type="Texture" id=3]
 [ext_resource path="res://ui sprites/start/start title.png" type="Texture" id=4]
+[ext_resource path="res://ui sprites/start/play-alone-button-hover.png" type="Texture" id=5]
+[ext_resource path="res://ui sprites/start/play-alone-button-pressed.png" type="Texture" id=6]
+[ext_resource path="res://ui sprites/start/play-alone-button.png" type="Texture" id=7]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://ui sprites/start/start best exp.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -51,6 +56,107 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("play alone:rect/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 3.9, 6 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -600, 732 ), Vector2( -600, 732 ), Vector2( 390, 732 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("play together:rect/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 4.7, 6.2 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2000, 732 ), Vector2( 2000, 732 ), Vector2( 1050, 732 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite:transform/scale")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 6.2, 6.6 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7, 7 ), Vector2( 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite:visibility/visible")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 6.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 495, 135 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 495, 135 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 495, 135 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="DynamicFont" id=5]
+
+font/size = 72
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 8 )
 
 [node name="Start screen" type="Label"]
 
@@ -94,5 +200,50 @@ playback/active = true
 playback/speed = 2.0
 blend_times = [  ]
 autoplay = "intro animation"
+
+[node name="play alone" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 390.0
+margin/top = 732.0
+margin/right = 885.0
+margin/bottom = 867.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "Play alone"
+flat = false
+
+[node name="play together" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1050.0
+margin/top = 732.0
+margin/right = 1545.0
+margin/bottom = 867.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "Play together"
+flat = false
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1440.08, 874.08 )
+texture = ExtResource( 9 )
 
 
