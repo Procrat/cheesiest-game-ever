@@ -271,7 +271,7 @@ transform/pos = Vector2( 847.354, 183.359 )
 
 [node name="Mango" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1206.7, 793.737 )
+transform/pos = Vector2( 1194.82, 792.857 )
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -299,6 +299,9 @@ transform/pos = Vector2( 1203.28, 490.011 )
 
 [node name="lick-location" type="Node2D" parent="."]
 
-transform/pos = Vector2( 1217.04, 818.686 )
+transform/pos = Vector2( 1189.31, 791.398 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 

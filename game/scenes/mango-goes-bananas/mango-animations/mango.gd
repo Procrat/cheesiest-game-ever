@@ -4,8 +4,6 @@ export(float) var walk_speed
 export(float) var idle_duration
 export(float) var lick_duration
 export(float) var vomit_delay
-export(Vector2) var jump_speed
-export(float) var airborn_delay
 
 onready var vomit_location = get_parent().get_node("vomit-location").get_pos()
 onready var lick_location = get_parent().get_node("lick-location").get_pos()
@@ -93,14 +91,11 @@ class JumpAction extends Action:
 	var state = UNSTARTED
 	
 	var countdown
-	var jump_speed
-	var airborn_delay
-	var touchdown_delay
+	var airborn_delay = 16.0 / 24.0
+	var touchdown_delay = 3.0 / 24.0
 	
-	func _init(mango, jump_speed, airborn_delay).(mango, "jump up"):
-		self.jump_speed = jump_speed
-		self.airborn_delay = airborn_delay
-		self.touchdown_delay = 4.0 / 24.0
+	func _init(mango).(mango, "jump up"):
+		pass
 	
 	func start():
 		.start()
@@ -108,7 +103,7 @@ class JumpAction extends Action:
 		state = STARTED
 	
 	func fixed_process(delta):
-		if state == STARTED or state == AIRBORN:
+		if state == STARTED or state == AIRBORN or state == TOUCHDOWN:
 			if countdown <= 0:
 				if state == STARTED:
 					fly_my_pretty()
@@ -117,8 +112,11 @@ class JumpAction extends Action:
 				elif state == TOUCHDOWN:
 					state = DONE
 					emit_signal("done")
-			elif state == AIRBORN:
-				mango.translate(jump_speed * delta)
+			else:
+				if state == AIRBORN:
+					mango.translate(Vector2(500 * delta, -100 * delta))
+				if state == TOUCHDOWN:
+					mango.translate(Vector2(100 * delta, 0))
 			countdown -= delta
 	
 	func fly_my_pretty():
@@ -262,7 +260,7 @@ func go_and_lick():
 
 
 func jump_and_lick():
-	do_and(JumpAction.new(self, jump_speed, airborn_delay), "lick")
+	do_and(JumpAction.new(self), "lick")
 
 
 func lick():
