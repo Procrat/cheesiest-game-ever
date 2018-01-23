@@ -1,10 +1,19 @@
 extends KinematicBody2D
 
 export(float) var walk_speed
+export(float) var idle_duration
 export(float) var lick_duration
+export(float) var vomit_delay
+export(Vector2) var jump_speed
+export(float) var airborn_delay
+
+onready var vomit_location = get_parent().get_node("vomit-location").get_pos()
+onready var lick_location = get_parent().get_node("lick-location").get_pos()
 
 
 class Action:
+	signal done
+	
 	var animations
 	
 	var mango
@@ -28,15 +37,101 @@ class Action:
 	func play_animation(animation_name):
 		animations.play(animation_name)
 		animations.set_flip_h(mango.looking_left)
+	
+	func animation_duration(animation_name):
+		var sprite_frames = animations.get_sprite_frames()
+		return sprite_frames.get_frame_count(animation_name) / sprite_frames.get_animation_speed(animation_name)
 
 
 class IdleAction extends Action:
-	func _init(mango).(mango, "idle"):
-		pass
+	var countdown
+	
+	func _init(mango, time).(mango, "idle"):
+		countdown = time
+	
+	func fixed_process(delta):
+		if countdown <= 0:
+			emit_signal("done")
+		countdown -= delta
+
+
+class WalkAction extends Action:
+	var speed
+	var navigation
+	var goal
+	var path
+	
+	func _init(mango, speed, goal).(mango, "walk"):
+		self.speed = speed
+		self.goal = goal
+	
+	func start():
+		.start()
+		navigation = mango.get_parent().get_node("navigation")
+		path = navigation.get_simple_path(mango.get_pos(), goal)
+		# The first point in the path is Mango's position, but where already there
+		path.remove(0)
+	
+	func fixed_process(delta):
+		if path.size() <= 0:
+			return
+		
+		var current_pos = mango.get_pos()
+		var direction = path[0] - current_pos
+		var advancement = direction.clamped(speed * delta)
+		var new_pos = current_pos + advancement
+		if new_pos != current_pos:
+			mango.set_pos(new_pos)
+		else:
+			path.remove(0)
+			if path.size() <= 0:
+				emit_signal("done")
+
+
+class JumpAction extends Action:
+	enum State {UNSTARTED, STARTED, AIRBORN, TOUCHDOWN, DONE}
+	var state = UNSTARTED
+	
+	var countdown
+	var jump_speed
+	var airborn_delay
+	var touchdown_delay
+	
+	func _init(mango, jump_speed, airborn_delay).(mango, "jump up"):
+		self.jump_speed = jump_speed
+		self.airborn_delay = airborn_delay
+		self.touchdown_delay = 4.0 / 24.0
+	
+	func start():
+		.start()
+		countdown = airborn_delay
+		state = STARTED
+	
+	func fixed_process(delta):
+		if state == STARTED or state == AIRBORN:
+			if countdown <= 0:
+				if state == STARTED:
+					fly_my_pretty()
+				elif state == AIRBORN:
+					touchdown()
+				elif state == TOUCHDOWN:
+					state = DONE
+					emit_signal("done")
+			elif state == AIRBORN:
+				mango.translate(jump_speed * delta)
+			countdown -= delta
+	
+	func fly_my_pretty():
+		state = AIRBORN
+		countdown = touchdown_delay
+	
+	func touchdown():
+		state = TOUCHDOWN
+		countdown = animation_duration("jump up") - airborn_delay - touchdown_delay
 
 
 class LickAction extends Action:
-	enum State {UNSTARTED, STARTED, LICKING, DONE}
+	enum State {UNSTARTED, STARTED, LICKING, FINISHING, DONE}
 	var state = UNSTARTED
 	var countdown = 0
 	
@@ -48,18 +143,17 @@ class LickAction extends Action:
 		state = STARTED
 		countdown = animation_duration(first_animation_name)
 	
-	func animation_duration(animation_name):
-		var sprite_frames = animations.get_sprite_frames()
-		return sprite_frames.get_frame_count(animation_name) / sprite_frames.get_animation_speed(animation_name)
-	
 	func fixed_process(delta):
-		if state == STARTED or state == LICKING:
-			countdown -= delta
+		if state == STARTED or state == LICKING or state == FINISHING:
 			if countdown <= 0:
 				if state == STARTED:
 					lick()
 				elif state == LICKING:
 					stop_licking()
+				elif state == FINISHING:
+					state = DONE
+					emit_signal("done")
+			countdown -= delta
 	
 	func lick():
 		state = LICKING
@@ -67,60 +161,121 @@ class LickAction extends Action:
 		countdown = mango.lick_duration
 	
 	func stop_licking():
-		state = DONE
+		state = FINISHING
 		play_animation("lick end")
+		countdown = animation_duration("lick end")
 
 
 class VomitAction extends Action:
-	enum State {UNSTARTED, STARTED, DONE}
+	enum State {UNSTARTED, STARTED, VOMITING, DONE}
 	var state = UNSTARTED
 	
 	var Vomit = preload("res://game/scenes/mango-goes-bananas/mango-animations/vomit.tscn")
-	var countdown = 1
+	var countdown
+	var vomit
 	
-	func _init(mango).(mango, "vomit"):
-		pass
+	func _init(mango, vomit_delay).(mango, "vomit"):
+		countdown = vomit_delay
 	
 	func start():
 		.start()
 		state = STARTED
 	
 	func fixed_process(delta):
-		if state == STARTED:
-			countdown -= delta
+		if state == STARTED or state == VOMITING:
 			if countdown <= 0:
-				spawn_vomit()
-				state = DONE
+				if state == STARTED:
+					spawn_vomit()
+					state = VOMITING
+					countdown = vomit_duration_left()
+				elif state == VOMITING:
+					state = DONE
+					emit_signal("done")
+			countdown -= delta
+	
+	func stop():
+		vomit.queue_free()
+	
+	func vomit_duration_left():
+		var sprite_frames = animations.get_sprite_frames()
+		return (sprite_frames.get_frame_count("vomit") - animations.get_frame()) / sprite_frames.get_animation_speed("vomit")
 	
 	func spawn_vomit():
-		var vomit = Vomit.instance()
+		vomit = Vomit.instance()
 		vomit.translate(Vector2(31, 35))
 		mango.add_child(vomit)
 		mango.move_child(vomit, 0)
 
 
-var action = IdleAction.new(self)
+onready var navigation = get_parent().get_node("navigation")
+onready var action = IdleAction.new(self, 1)
 var looking_left = false
 
 
 func _ready():
 	set_fixed_process(true)
 	action.start()
+	action.connect("done", self, "go_crazy")
+	randomize()
+
+
+func go_crazy():
+	# Choose something random to do
+	var possible_actions = ["go_and_idle", "go_and_vomit", "go_and_lick"]
+	var corresponding_action_classes = [null, VomitAction, LickAction]
+	for class_idx in range(corresponding_action_classes.size()):
+		var clazz = corresponding_action_classes[class_idx]
+		if clazz != null and action extends clazz:
+			possible_actions.remove(class_idx)
+			break
+	var new_action = possible_actions[randi() % possible_actions.size()]
+	print("Mango decides to ", new_action)
+	call(new_action)
+
+
+func go_and_idle():
+	var idle_location = random_accessible_location()
+	while navigation.get_simple_path(get_pos(), idle_location).size() < 2 and get_pos().distance_to(idle_location) < 150:
+		idle_location = random_accessible_location()
+	go_and_do(idle_location, "idle")
+
+
+func random_accessible_location():
+	var random_close_point = get_pos() + Vector2((randi() % 1000) + 50, (randi() % 1000) + 50)
+	return navigation.get_closest_point(random_close_point)
 
 
 func idle():
-	if not action extends IdleAction:
-		switch_action(IdleAction.new(self))
+	do_and(IdleAction.new(self, idle_duration), "go_crazy")
+
+
+func go_and_vomit():
+	go_and_do(vomit_location, "vomit")
 
 
 func vomit():
-	if not action extends VomitAction:
-		switch_action(VomitAction.new(self))
+	do_and(VomitAction.new(self, vomit_delay), "go_crazy")
+
+
+func go_and_lick():
+	go_and_do(lick_location, "jump_and_lick")
+
+
+func jump_and_lick():
+	do_and(JumpAction.new(self, jump_speed, airborn_delay), "lick")
 
 
 func lick():
-	if not action extends LickAction:
-		switch_action(LickAction.new(self))
+	do_and(LickAction.new(self), "go_crazy")
+
+
+func go_and_do(location, action_name):
+	do_and(WalkAction.new(self, walk_speed, location), action_name)
+
+
+func do_and(action, next_action_name):
+	action.connect("done", self, next_action_name)
+	switch_action(action)
 
 
 func interrupt():

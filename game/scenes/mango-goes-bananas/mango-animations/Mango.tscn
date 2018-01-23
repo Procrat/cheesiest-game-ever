@@ -480,13 +480,16 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 walk_speed = 40.0
+idle_duration = 2.0
 lick_duration = 7.0
+vomit_delay = 1.0
+jump_speed = Vector2( 500, -200 )
+airborn_delay = 0.666
 
 [node name="animations" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 31
 playing = true
 
 
