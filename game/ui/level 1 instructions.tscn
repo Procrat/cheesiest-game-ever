@@ -108,12 +108,12 @@ texture = ExtResource( 1 )
 
 [node name="level select instructies Stijn" type="Sprite" parent="."]
 
-transform/pos = Vector2( -204.341, 83.9671 )
+transform/pos = Vector2( 201.29, 66.6683 )
 texture = ExtResource( 2 )
 
 [node name="level select instructies Myr" type="Sprite" parent="."]
 
-transform/pos = Vector2( 200, 92.5302 )
+transform/pos = Vector2( -186.781, 85.1277 )
 texture = ExtResource( 3 )
 
 [node name="cinema" type="Sprite" parent="."]

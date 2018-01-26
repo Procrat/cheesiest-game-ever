@@ -122,13 +122,13 @@ __meta__ = {
 
 [node name="level select instructies Stijn" type="Sprite" parent="."]
 
-transform/pos = Vector2( -204.341, 95.9671 )
+transform/pos = Vector2( 238.503, 92.5255 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="level select instructies Myr" type="Sprite" parent="."]
 
-transform/pos = Vector2( 200, 104.53 )
+transform/pos = Vector2( -198.591, 96.3678 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
@@ -281,7 +281,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="to study" type="Label" parent="to stop Mango"]
+[node name="to draw" type="Label" parent="to stop Mango"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -293,7 +293,7 @@ margin/right = 324.0
 margin/bottom = 70.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
-text = "& to study"
+text = "& to draw"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -322,7 +322,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="to draw" type="Label" parent="to stop Mango myrjam"]
+[node name="to study" type="Label" parent="to stop Mango myrjam"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -334,7 +334,7 @@ margin/right = 324.0
 margin/bottom = 70.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
-text = "& to draw"
+text = "& to study"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -366,6 +366,8 @@ autoplay = ""
 
 transform/pos = Vector2( 217.001, -403.002 )
 transform/scale = Vector2( -1, 1 )
+idle_duration = null
+vomit_delay = null
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 13 )]
 
