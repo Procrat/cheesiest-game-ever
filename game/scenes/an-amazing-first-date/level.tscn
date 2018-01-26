@@ -1313,9 +1313,9 @@ transform/pos = Vector2( 1822.17, 55.116 )
 
 [node name="countdown" parent="." instance=ExtResource( 5 )]
 
-margin/left = 874.815
-margin/top = 13.394
-margin/right = 1017.0
+margin/left = 846.0
+margin/top = 13.0
+margin/right = 988.0
 margin/bottom = 96.0
 custom_fonts/font = SubResource( 156 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -1373,7 +1373,7 @@ transform/pos = Vector2( 1770.16, 755.024 )
 
 [node name="bloon" parent="." instance=ExtResource( 14 )]
 
-transform/pos = Vector2( 1674.48, 446.168 )
+transform/pos = Vector2( 973.736, 847.253 )
 
 [node name="dress" parent="." instance=ExtResource( 15 )]
 
