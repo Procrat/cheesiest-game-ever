@@ -1,47 +1,30 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=1]
-[ext_resource path="res://ui sprites/level instructions/level select instructies Stijn.png" type="Texture" id=2]
-[ext_resource path="res://ui sprites/level instructions/level select instructies Myr.png" type="Texture" id=3]
-[ext_resource path="res://ui sprites/level instructions/cinema.png" type="Texture" id=4]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=6]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=7]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=8]
+[ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=2]
+[ext_resource path="res://ui sprites/level instructions/level select instructies Stijn.png" type="Texture" id=3]
+[ext_resource path="res://ui sprites/level instructions/level select instructies Myr.png" type="Texture" id=4]
+[ext_resource path="res://ui sprites/level instructions/cinema.png" type="Texture" id=5]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=7]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=8]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 40
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 5 )
+font/font = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 
 font/size = 26
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 5 )
+font/font = ExtResource( 6 )
 
 [sub_resource type="StyleBoxTexture" id=3]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 236, 128 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -59,7 +42,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -77,12 +60,30 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
+[sub_resource type="StyleBoxTexture" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 236, 128 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
 [sub_resource type="DynamicFont" id=6]
 
 font/size = 72
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 5 )
+font/font = ExtResource( 6 )
 
 [sub_resource type="Animation" id=7]
 
@@ -105,21 +106,23 @@ tracks/0/keys = {
 
 transform/pos = Vector2( 1400, 540 )
 texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+next_scene = null
 
 [node name="level select instructies Stijn" type="Sprite" parent="."]
 
 transform/pos = Vector2( 201.29, 66.6683 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="level select instructies Myr" type="Sprite" parent="."]
 
 transform/pos = Vector2( -186.781, 85.1277 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="cinema" type="Sprite" parent="."]
 
 transform/pos = Vector2( 10.0527, -390.793 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( -7.05273, -9.62167 )
 
 [node name="make it in time" type="Label" parent="."]

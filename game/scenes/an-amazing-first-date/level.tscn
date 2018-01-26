@@ -1305,11 +1305,11 @@ trigger = false
 [node name="Myrjam" parent="." instance=ExtResource( 3 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 778.655, 924.695 )
+transform/pos = Vector2( 18.2032, 22.7638 )
 
 [node name="Stijn" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1822.17, 55.116 )
+transform/pos = Vector2( 1821.51, 4.69586 )
 
 [node name="countdown" parent="." instance=ExtResource( 5 )]
 
