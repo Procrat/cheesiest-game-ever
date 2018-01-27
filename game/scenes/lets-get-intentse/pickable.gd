@@ -3,7 +3,7 @@ extends Area2D
 export(Vector2) var drop_displacement
 
 var original_owner
-var pos_on_player = Vector2(0, 70)
+var pos_on_player = Vector2(0, -30)
 var picked_up = false
 
 
