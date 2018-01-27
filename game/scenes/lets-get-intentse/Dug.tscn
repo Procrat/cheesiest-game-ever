@@ -88,7 +88,7 @@ animations = [ {
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 0.126299, 9.53489, -4.94881, 0.0655517, 20.0398, 14.9254 )
+shapes/0/transform = Matrix32( 0.0335869, 2.53559, -1.82901, 0.0242274, 4.96955, 11.585 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -98,13 +98,14 @@ collision/margin = 0.08
 
 frames = SubResource( 2 )
 animation = "idle"
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 20.0398, 14.9254 )
+transform/pos = Vector2( 4.96955, 11.585 )
 transform/rot = -89.2411
-transform/scale = Vector2( 9.53573, 4.94924 )
+transform/scale = Vector2( 2.53581, 1.82917 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

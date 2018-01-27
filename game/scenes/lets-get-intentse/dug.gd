@@ -29,6 +29,8 @@ func stick_encountered_something(something, stick):
 
 func _fixed_process(delta):
 	var is_following = followee != null and followee.picked_up
+	if not is_following:
+		followee = null
 	var goal = followee.get_global_pos() if is_following else home_base
 	var path = navigation.get_simple_path(pos_relative_to(self.get_global_pos(), level), pos_relative_to(goal, level))
 	path.remove(0)
