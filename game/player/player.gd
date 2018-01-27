@@ -18,6 +18,7 @@ var last_direction = "front"
 var last_clothing = "normal"
 var last_flipped = false
 
+
 func _ready():
 	set_fixed_process(true)
 	player_name_str = "myrjam" if player_name == MYRJAM else "stijn"
@@ -26,7 +27,12 @@ func _ready():
 	up_action = player_name_str + "_up"
 	down_action = player_name_str + "_down"
 
+
 func _fixed_process(delta):
+	fixed_process(delta)
+
+
+func fixed_process(delta):
 	var direction = Vector2()
 	var direction_name = null
 	var flipped = false
@@ -52,6 +58,7 @@ func _fixed_process(delta):
 		set_animation("walk", direction_name, last_clothing, flipped)
 		move_in_direction(direction, delta)
 
+
 func move_in_direction(direction, delta):
 	var motion = move(direction * walk_speed * delta)
 	
@@ -59,6 +66,7 @@ func move_in_direction(direction, delta):
 		var normal = get_collision_normal()
 		motion = normal.slide(motion)
 		move(motion)
+
 
 func set_animation(action, direction, clothing, flipped):
 	animations.play(action + " " + direction + " " + clothing)

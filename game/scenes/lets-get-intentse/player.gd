@@ -1,21 +1,29 @@
 extends "res://game/player/player.gd"
 
-
 var Pickable = preload("res://game/scenes/lets-get-intentse/pickable.gd")
 
+export(float) var min_distance_to_significant_other_in_dangerous_areas
+
+var intialised = false
 var original_location
 var pick_up_action
-onready var grabbing_area = find_node("grabbing-area")
-
+var significant_other
+var in_dangerous_area = false
+onready var grabbing_area = get_node("grabbing-area")
 var held_item = null
 
 
 func _ready():
 	._ready()
 	set_process_input(true)
-	if original_location == null:
+	
+	if not intialised:
 		original_location = get_pos()
-	pick_up_action = player_name_str + "_pick_up"
+		pick_up_action = player_name_str + "_pick_up"
+		significant_other = get_parent().find_node("Stijn" if player_name == MYRJAM else "Myrjam")
+		get_tree().call_group(0, "dangerous-area", "connect", "body_enter", self, "someone_entered_dangerous_area")
+		get_tree().call_group(0, "dangerous-area", "connect", "body_exit", self, "someone_exited_dangerous_area")
+		intialised = true
 
 
 func _input(event):
@@ -24,6 +32,33 @@ func _input(event):
 			drop()
 		else:
 			try_to_pick_up()
+
+
+func fixed_process(delta):
+	if in_dangerous_area and not close_to(significant_other):
+		scream()
+	else:
+		.fixed_process(delta)
+
+
+func someone_entered_dangerous_area(someone):
+	if someone == self:
+		print(player_name_str, " entered")
+		in_dangerous_area = true
+
+
+func someone_exited_dangerous_area(someone):
+	if someone == self:
+		print(player_name_str, " exited")
+		in_dangerous_area = false
+
+
+func close_to(player):
+	return get_pos().distance_to(player.get_pos()) < min_distance_to_significant_other_in_dangerous_areas
+
+
+func scream():
+	print("AARGH, HELP")
 
 
 func carrying_something():

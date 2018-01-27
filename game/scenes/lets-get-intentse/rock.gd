@@ -26,7 +26,6 @@ func _ready():
 func be_picked_up_by(player):
 	if .be_picked_up_by(player):
 		fade_away_timer.stop()
-		print("stopped timer")
 		return true
 
 

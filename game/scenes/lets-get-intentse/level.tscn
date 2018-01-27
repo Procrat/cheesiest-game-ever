@@ -453,7 +453,9 @@ polygon = Vector2Array( 516.481, 646.249, 528.16, 703.479, 594.734, 700.559, 553
 shape_range = Vector2( 0, 0 )
 trigger = false
 
-[node name="swing-bridge" type="Area2D" parent="."]
+[node name="swing-bridge" type="Area2D" parent="." groups=[
+"dangerous-area",
+]]
 
 editor/display_folded = true
 transform/pos = Vector2( 798.83, 121.008 )
@@ -610,6 +612,7 @@ transform/rot = 1.11342
 script/script = ExtResource( 9 )
 player_name = 0
 walk_speed = 400.0
+min_distance_to_significant_other_in_dangerous_areas = 100.0
 
 [node name="grabbing-area" type="Area2D" parent="Myrjam"]
 
@@ -635,10 +638,11 @@ _update_shape_index = 0
 [node name="Stijn" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 596.298, 351.65 )
+transform/pos = Vector2( 205.475, 206.343 )
 script/script = ExtResource( 9 )
 player_name = 1
 walk_speed = 300.0
+min_distance_to_significant_other_in_dangerous_areas = 500.0
 
 [node name="grabbing-area" type="Area2D" parent="Stijn"]
 
