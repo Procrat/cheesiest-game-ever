@@ -5,6 +5,7 @@ enum PlayerName {MYRJAM, STIJN}
 export(int, "Myrjam", "Stijn") var player_name
 export(float) var walk_speed
 
+var player_name_str
 var left_action
 var right_action
 var up_action
@@ -19,7 +20,7 @@ var last_flipped = false
 
 func _ready():
 	set_fixed_process(true)
-	var player_name_str = "myrjam" if player_name == MYRJAM else "stijn"
+	player_name_str = "myrjam" if player_name == MYRJAM else "stijn"
 	left_action = player_name_str + "_left"
 	right_action = player_name_str + "_right"
 	up_action = player_name_str + "_up"
