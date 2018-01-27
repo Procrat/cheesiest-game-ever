@@ -1,6 +1,9 @@
 extends "res://game/player/player.gd"
 
 
+var Pickable = preload("res://game/scenes/lets-get-intentse/pickable.gd")
+
+var original_location
 var pick_up_action
 onready var grabbing_area = find_node("grabbing-area")
 
@@ -10,6 +13,8 @@ var held_item = null
 func _ready():
 	._ready()
 	set_process_input(true)
+	if original_location == null:
+		original_location = get_pos()
 	pick_up_action = player_name_str + "_pick_up"
 
 
@@ -32,7 +37,7 @@ func try_to_pick_up():
 	var closest_pickable_item = null
 	var shortest_distance_sq = null
 	for item in grabbables:
-		if item.is_in_group("pickable"):
+		if item extends Pickable:
 			var distance_sq = get_pos().distance_squared_to(item.get_pos())
 			if shortest_distance_sq == null or distance_sq < shortest_distance_sq:
 				closest_pickable_item = item
@@ -47,3 +52,7 @@ func drop():
 	
 	if held_item.be_dropped():
 		held_item = null
+
+
+func respawn():
+	set_pos(original_location)
