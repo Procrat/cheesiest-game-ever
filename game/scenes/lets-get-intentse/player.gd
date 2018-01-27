@@ -43,13 +43,11 @@ func fixed_process(delta):
 
 func someone_entered_dangerous_area(someone):
 	if someone == self:
-		print(player_name_str, " entered")
 		in_dangerous_area = true
 
 
 func someone_exited_dangerous_area(someone):
 	if someone == self:
-		print(player_name_str, " exited")
 		in_dangerous_area = false
 
 
