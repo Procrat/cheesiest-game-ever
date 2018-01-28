@@ -360,7 +360,7 @@ root/root = NodePath("..")
 playback/active = true
 playback/speed = 2.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "instructions level 1"
 
 [node name="Mango" parent="." instance=ExtResource( 12 )]
 

@@ -15,6 +15,9 @@ onready var instructions_names = [instructions_lvl1, instructions_lvl2, instruct
 onready var instructions_scenes = []
 onready var level_names = [lvl1, lvl2, lvl3, lvl4]
 
+var instructions_scene
+var instructions_idx
+
 
 func _ready():
 	for instructions_name in instructions_names:
@@ -31,9 +34,15 @@ func _ready():
 
 
 func show_instructions(level_idx):
+	if instructions_scene != null:
+		if instructions_idx == level_idx:
+			return
+		remove_child(instructions_scene)
 	var instructions = instructions_scenes[level_idx].instance()
 	add_child(instructions)
 	instructions.get_node("play-button").connect("pressed", self, "start_level", [level_idx])
+	instructions_scene = instructions
+	instructions_idx = level_idx
 
 
 func start_level(level_idx):
