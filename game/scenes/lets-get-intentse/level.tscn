@@ -2,25 +2,25 @@
 
 [ext_resource path="res://Level 4/background.png" type="Texture" id=1]
 [ext_resource path="res://game/scenes/lets-get-intentse/rock.gd" type="Script" id=2]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_000.png" type="Texture" id=3]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_001.png" type="Texture" id=4]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_002.png" type="Texture" id=5]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_003.png" type="Texture" id=6]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_004.png" type="Texture" id=7]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_005.png" type="Texture" id=8]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_006.png" type="Texture" id=9]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_007.png" type="Texture" id=10]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_008.png" type="Texture" id=11]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_009.png" type="Texture" id=12]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_010.png" type="Texture" id=13]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_011.png" type="Texture" id=14]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_012.png" type="Texture" id=15]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_013.png" type="Texture" id=16]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_014.png" type="Texture" id=17]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_015.png" type="Texture" id=18]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_016.png" type="Texture" id=19]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_017.png" type="Texture" id=20]
-[ext_resource path="res://Level 4/rock0.png" type="Texture" id=21]
+[ext_resource path="res://Level 4/rock0.png" type="Texture" id=3]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_000.png" type="Texture" id=4]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_001.png" type="Texture" id=5]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_002.png" type="Texture" id=6]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_003.png" type="Texture" id=7]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_004.png" type="Texture" id=8]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_005.png" type="Texture" id=9]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_006.png" type="Texture" id=10]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_007.png" type="Texture" id=11]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_008.png" type="Texture" id=12]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_009.png" type="Texture" id=13]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_010.png" type="Texture" id=14]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_011.png" type="Texture" id=15]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_012.png" type="Texture" id=16]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_013.png" type="Texture" id=17]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_014.png" type="Texture" id=18]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_015.png" type="Texture" id=19]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_016.png" type="Texture" id=20]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_017.png" type="Texture" id=21]
 [ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_000.png" type="Texture" id=22]
 [ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_001.png" type="Texture" id=23]
 [ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_002.png" type="Texture" id=24]
@@ -198,7 +198,7 @@ points = Vector2Array( 1920, 0, 1900.47, 635.888, 1853, 637, 1788, 614, 1759, 57
 [sub_resource type="ConvexPolygonShape2D" id=30]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 1336, 435, 1298, 535, 1245, 572, 1185, 565, 1170, 534, 1182, 432, 1346, 361 )
+points = Vector2Array( 1336, 435, 1304, 538, 1245, 581, 1180, 563, 1170, 534, 1182, 432, 1346, 361 )
 
 [sub_resource type="ConvexPolygonShape2D" id=31]
 
@@ -287,9 +287,9 @@ points = Vector2Array( 809, 278, 809, 400, 793, 452, 640, 410, 640, 321, 672, 24
 
 [sub_resource type="NavigationPolygon" id=48]
 
-vertices = Vector2Array( 1044, 413, 1117, 258, 1146, 226, 1151, 316, 1119, 522, 1017, 573, 1149, 600, 1244, 628, 1312, 711, 1299, 846, 1077, 739, 1416, 281, 1480, 145, 1553, 124, 1549, 224, 1504, 288, 1399, 439, 1390, 396, 1338, 557, 1344, 590 )
-polygons = [ IntArray( 0, 1, 2, 3, 4, 5 ), IntArray( 6, 7, 8, 9, 10, 5 ), IntArray( 11, 12, 13, 14, 15 ), IntArray( 11, 15, 16, 17 ), IntArray( 18, 17, 16, 19 ), IntArray( 7, 18, 19, 8 ), IntArray( 5, 4, 6 ) ]
-outlines = [ Vector2Array( 1117, 258, 1044, 413, 1017, 573, 1077, 739, 1299, 846, 1312, 711, 1344, 590, 1399, 439, 1504, 288, 1549, 224, 1553, 124, 1480, 145, 1416, 281, 1390, 396, 1338, 557, 1244, 628, 1149, 600, 1119, 522, 1151, 316, 1146, 226 ) ]
+vertices = Vector2Array( 1261, 651, 1331, 717, 1306, 870, 1082, 755, 1177, 638, 1416, 281, 1478, 169, 1539, 145, 1549, 224, 1501, 285, 1406, 442, 1395, 399, 1348, 573, 1353, 598, 1011, 574, 1144, 619, 1110, 523, 1044, 413, 1139, 323, 1117, 258, 1133, 256 )
+polygons = [ IntArray( 0, 1, 2, 3, 4 ), IntArray( 5, 6, 7, 8, 9 ), IntArray( 5, 9, 10, 11 ), IntArray( 12, 11, 10, 13 ), IntArray( 0, 12, 13, 1 ), IntArray( 4, 3, 14, 15 ), IntArray( 16, 15, 14, 17 ), IntArray( 18, 16, 17, 19, 20 ) ]
+outlines = [ Vector2Array( 1117, 258, 1044, 413, 1011, 574, 1082, 755, 1306, 870, 1331, 717, 1353, 598, 1406, 442, 1501, 285, 1549, 224, 1539, 145, 1478, 169, 1416, 281, 1395, 399, 1348, 573, 1261, 651, 1177, 638, 1144, 619, 1110, 523, 1139, 323, 1133, 256 ) ]
 
 [sub_resource type="ConvexPolygonShape2D" id=49]
 
@@ -470,15 +470,15 @@ height = 20.0
 [sub_resource type="SpriteFrames" id=84]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "sinking",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "rock",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "sinking",
+"speed": 24.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=85]
@@ -490,15 +490,15 @@ height = 20.0
 [sub_resource type="SpriteFrames" id=86]
 
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": false,
-"name": "sinking",
-"speed": 24.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "rock",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": false,
+"name": "sinking",
+"speed": 24.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=87]
@@ -696,7 +696,7 @@ trigger = false
 [node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="background"]
 
 build_mode = 0
-polygon = Vector2Array( 361, 0, 379.17, 68.0777, 376, 107, 388, 234, 410, 343, 444, 409, 445, 498, 462, 558, 530, 558, 542, 430, 527, 360, 535, 284, 584, 188, 610, 89, 659, 80, 675, 101, 713, 106, 731, 142, 885, 158, 1013, 156, 1126, 136, 1129, 92, 1168, 137, 1202, 220, 1185, 276, 1200, 301, 1190, 373, 1180, 415, 1182, 432, 1170, 534, 1185, 565, 1245, 572, 1298, 535, 1336, 435, 1346, 361, 1359, 282, 1397, 171, 1439, 120, 1502, 70, 1587, 59, 1592, 116, 1606, 163, 1636, 155, 1639, 58, 1721, 59, 1769, 141, 1797, 171, 1802, 208, 1823, 259, 1821, 278, 1803, 355, 1787, 396, 1760, 500, 1759, 571, 1788, 614, 1853, 637, 1900.47, 635.888, 1905, 777, 1805, 783, 1807, 810, 1915, 809, 1918, 884, 1836, 887, 1752, 916, 1714, 813, 1763, 813, 1760, 781, 1705, 779, 1672, 687, 1611, 676, 1609, 604, 1703, 473, 1738, 312, 1719, 216, 1674, 206, 1609, 235, 1604, 271, 1556, 288, 1490, 387, 1472, 436, 1429, 459, 1410, 553, 1373, 619, 1368, 713, 1346, 797, 1344, 896, 1360, 919, 1390, 931, 1490, 932, 1584, 997, 1753, 917, 1837, 889, 1920, 886, 1920, 0 )
+polygon = Vector2Array( 361, 0, 379.17, 68.0777, 376, 107, 388, 234, 410, 343, 444, 409, 445, 498, 462, 558, 530, 558, 542, 430, 527, 360, 535, 284, 584, 188, 610, 89, 659, 80, 675, 101, 713, 106, 731, 142, 885, 158, 1013, 156, 1126, 136, 1129, 92, 1168, 137, 1202, 220, 1185, 276, 1200, 301, 1190, 373, 1180, 415, 1182, 432, 1170, 534, 1180, 563, 1245, 581, 1304, 538, 1336, 435, 1346, 361, 1359, 282, 1397, 171, 1439, 120, 1502, 70, 1587, 59, 1592, 116, 1606, 163, 1636, 155, 1639, 58, 1721, 59, 1769, 141, 1797, 171, 1802, 208, 1823, 259, 1821, 278, 1803, 355, 1787, 396, 1760, 500, 1759, 571, 1788, 614, 1853, 637, 1900.47, 635.888, 1905, 777, 1805, 783, 1807, 810, 1915, 809, 1918, 884, 1836, 887, 1752, 916, 1714, 813, 1763, 813, 1760, 781, 1705, 779, 1672, 687, 1611, 676, 1609, 604, 1703, 473, 1738, 312, 1719, 216, 1674, 206, 1609, 235, 1604, 271, 1556, 288, 1490, 387, 1472, 436, 1429, 459, 1410, 553, 1373, 619, 1368, 713, 1346, 797, 1344, 896, 1360, 919, 1390, 931, 1490, 932, 1584, 997, 1753, 917, 1837, 889, 1920, 886, 1920, 0 )
 shape_range = Vector2( 8, 43 )
 trigger = false
 
@@ -969,6 +969,7 @@ _update_shape_index = 0
 
 [node name="rock0" type="Area2D" parent="objects"]
 
+editor/display_folded = true
 transform/pos = Vector2( 136, 190 )
 input/pickable = true
 shapes/0/shape = SubResource( 83 )
@@ -1000,6 +1001,7 @@ _update_shape_index = 0
 
 [node name="rock1" type="Area2D" parent="objects"]
 
+editor/display_folded = true
 transform/pos = Vector2( 146, 242 )
 input/pickable = true
 shapes/0/shape = SubResource( 85 )
@@ -1095,19 +1097,19 @@ _update_shape_index = 0
 
 [node name="Dug" parent="." instance=ExtResource( 43 )]
 
-transform/pos = Vector2( 1350, 519 )
+transform/pos = Vector2( 1347, 599 )
 script/script = ExtResource( 44 )
-min_distance_to_stick = 100.0
-speed = 199.0
+min_distance_to_stick = 150.0
+speed = 200.0
 
 [node name="Myrjam" parent="." instance=ExtResource( 45 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 205.616, 734 )
+transform/pos = Vector2( 208, 398 )
 transform/rot = 1.11342
 script/script = ExtResource( 46 )
 player_name = 0
-walk_speed = 250.0
+walk_speed = 200.0
 clothing = "hiking"
 min_distance_to_significant_other_in_dangerous_areas = 100.0
 

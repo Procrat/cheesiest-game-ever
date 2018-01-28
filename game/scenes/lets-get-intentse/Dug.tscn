@@ -88,10 +88,9 @@ animations = [ {
 "moving",
 ]]
 
-transform/pos = Vector2( -3.68929, -50.596 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 0.0399457, 3.01563, -1.70476, 0.0225816, 2.1569, 18.0172 )
+shapes/0/transform = Matrix32( 0.000862724, 3.0159, -1.70491, 0.000487704, -2.84311, -33.9828 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -99,14 +98,15 @@ collision/margin = 0.08
 
 [node name="animations" type="AnimatedSprite" parent="."]
 
+transform/pos = Vector2( -5, -52 )
 frames = SubResource( 2 )
 animation = "idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 2.1569, 18.0172 )
-transform/rot = -89.2411
+transform/pos = Vector2( -2.84311, -33.9828 )
+transform/rot = -89.9836
 transform/scale = Vector2( 3.0159, 1.70491 )
 shape = SubResource( 1 )
 trigger = false
