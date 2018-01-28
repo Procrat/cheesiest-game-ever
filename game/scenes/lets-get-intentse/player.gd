@@ -11,6 +11,7 @@ var significant_other
 var in_dangerous_area = false
 onready var grabbing_area = get_node("grabbing-area")
 var held_item = null
+var beckoning = false
 
 
 func _ready():
@@ -37,7 +38,7 @@ func _input(event):
 func fixed_process(delta):
 	if in_dangerous_area and not significant_other.in_dangerous_area and not close_to(significant_other):
 		panic()
-	else:
+	elif not beckoning:
 		.fixed_process(delta)
 
 
@@ -89,3 +90,9 @@ func drop():
 
 func respawn():
 	set_pos(original_location)
+
+
+func beckon():
+	beckoning = true
+	animations.play("beckoning")
+	animations.flip_h = true
