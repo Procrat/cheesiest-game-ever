@@ -1,56 +1,57 @@
-[gd_scene load_steps=143 format=1]
+[gd_scene load_steps=148 format=1]
 
 [ext_resource path="res://Level 4/background.png" type="Texture" id=1]
-[ext_resource path="res://game/scenes/lets-get-intentse/tent.gd" type="Script" id=2]
-[ext_resource path="res://game/scenes/lets-get-intentse/rock.gd" type="Script" id=3]
-[ext_resource path="res://Level 4/rock0.png" type="Texture" id=4]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_000.png" type="Texture" id=5]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_001.png" type="Texture" id=6]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_002.png" type="Texture" id=7]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_003.png" type="Texture" id=8]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_004.png" type="Texture" id=9]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_005.png" type="Texture" id=10]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_006.png" type="Texture" id=11]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_007.png" type="Texture" id=12]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_008.png" type="Texture" id=13]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_009.png" type="Texture" id=14]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_010.png" type="Texture" id=15]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_011.png" type="Texture" id=16]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_012.png" type="Texture" id=17]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_013.png" type="Texture" id=18]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_014.png" type="Texture" id=19]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_015.png" type="Texture" id=20]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_016.png" type="Texture" id=21]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_017.png" type="Texture" id=22]
-[ext_resource path="res://Level 4/rock1.png" type="Texture" id=23]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_000.png" type="Texture" id=24]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_001.png" type="Texture" id=25]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_002.png" type="Texture" id=26]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_003.png" type="Texture" id=27]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_004.png" type="Texture" id=28]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_005.png" type="Texture" id=29]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_006.png" type="Texture" id=30]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_007.png" type="Texture" id=31]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_008.png" type="Texture" id=32]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_009.png" type="Texture" id=33]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_010.png" type="Texture" id=34]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_011.png" type="Texture" id=35]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_012.png" type="Texture" id=36]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_013.png" type="Texture" id=37]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_014.png" type="Texture" id=38]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_015.png" type="Texture" id=39]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_016.png" type="Texture" id=40]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_017.png" type="Texture" id=41]
-[ext_resource path="res://game/scenes/lets-get-intentse/pickable.gd" type="Script" id=42]
-[ext_resource path="res://Level 4/stick0.png" type="Texture" id=43]
-[ext_resource path="res://Level 4/stick1.png" type="Texture" id=44]
-[ext_resource path="res://game/scenes/lets-get-intentse/Dug.tscn" type="PackedScene" id=45]
-[ext_resource path="res://game/scenes/lets-get-intentse/dug.gd" type="Script" id=46]
-[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=47]
-[ext_resource path="res://game/scenes/lets-get-intentse/player.gd" type="Script" id=48]
-[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=49]
-[ext_resource path="res://Level 4/swingbridge front.png" type="Texture" id=50]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=51]
+[ext_resource path="res://game/scenes/lets-get-intentse/estuary.gd" type="Script" id=2]
+[ext_resource path="res://game/scenes/lets-get-intentse/tent.gd" type="Script" id=3]
+[ext_resource path="res://game/scenes/lets-get-intentse/rock.gd" type="Script" id=4]
+[ext_resource path="res://Level 4/rock0.png" type="Texture" id=5]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_000.png" type="Texture" id=6]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_001.png" type="Texture" id=7]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_002.png" type="Texture" id=8]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_003.png" type="Texture" id=9]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_004.png" type="Texture" id=10]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_005.png" type="Texture" id=11]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_006.png" type="Texture" id=12]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_007.png" type="Texture" id=13]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_008.png" type="Texture" id=14]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_009.png" type="Texture" id=15]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_010.png" type="Texture" id=16]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_011.png" type="Texture" id=17]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_012.png" type="Texture" id=18]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_013.png" type="Texture" id=19]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_014.png" type="Texture" id=20]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_015.png" type="Texture" id=21]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_016.png" type="Texture" id=22]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_017.png" type="Texture" id=23]
+[ext_resource path="res://Level 4/rock1.png" type="Texture" id=24]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_000.png" type="Texture" id=25]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_001.png" type="Texture" id=26]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_002.png" type="Texture" id=27]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_003.png" type="Texture" id=28]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_004.png" type="Texture" id=29]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_005.png" type="Texture" id=30]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_006.png" type="Texture" id=31]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_007.png" type="Texture" id=32]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_008.png" type="Texture" id=33]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_009.png" type="Texture" id=34]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_010.png" type="Texture" id=35]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_011.png" type="Texture" id=36]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_012.png" type="Texture" id=37]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_013.png" type="Texture" id=38]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_014.png" type="Texture" id=39]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_015.png" type="Texture" id=40]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_016.png" type="Texture" id=41]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_017.png" type="Texture" id=42]
+[ext_resource path="res://game/scenes/lets-get-intentse/pickable.gd" type="Script" id=43]
+[ext_resource path="res://Level 4/stick0.png" type="Texture" id=44]
+[ext_resource path="res://Level 4/stick1.png" type="Texture" id=45]
+[ext_resource path="res://game/scenes/lets-get-intentse/Dug.tscn" type="PackedScene" id=46]
+[ext_resource path="res://game/scenes/lets-get-intentse/dug.gd" type="Script" id=47]
+[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=48]
+[ext_resource path="res://game/scenes/lets-get-intentse/player.gd" type="Script" id=49]
+[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Level 4/swingbridge front.png" type="Texture" id=51]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=52]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -421,102 +422,92 @@ points = Vector2Array( 1583, 998, 672, 789, 791, 805, 1389, 932 )
 [sub_resource type="ConvexPolygonShape2D" id=74]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 429, 723, 388, 723, 399, 679, 429, 629 )
+points = Vector2Array( 427, 721, 391, 722, 399, 679, 425, 632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=75]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 405, 629, 429, 629, 399, 679 )
+points = Vector2Array( 405, 632, 425, 632, 399, 679 )
 
 [sub_resource type="ConvexPolygonShape2D" id=76]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 445, 629, 463, 723, 432, 723, 431, 629 )
+points = Vector2Array( 427, 721, 391, 722, 399, 679, 425, 632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=77]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 462, 629, 502, 723, 465, 723, 446, 629 )
+points = Vector2Array( 405, 632, 425, 632, 399, 679 )
 
 [sub_resource type="ConvexPolygonShape2D" id=78]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 507, 678, 544, 723, 504, 723, 463, 629 )
+points = Vector2Array( 443, 632, 459, 720, 435, 721, 432, 632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=79]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 463, 629, 479, 629, 507, 678 )
+points = Vector2Array( 443, 632, 459, 720, 435, 721, 432, 632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=80]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 429, 723, 388, 723, 399, 679, 429, 629 )
+points = Vector2Array( 461, 632, 496, 721, 467, 721, 450, 632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=81]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 405, 629, 429, 629, 399, 679 )
+points = Vector2Array( 461, 632, 496, 721, 467, 721, 450, 632 )
 
-[sub_resource type="RectangleShape2D" id=82]
+[sub_resource type="ConvexPolygonShape2D" id=82]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 507, 678, 540, 722, 505, 721, 467, 632 )
+
+[sub_resource type="ConvexPolygonShape2D" id=83]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 467, 632, 480, 631, 507, 678 )
+
+[sub_resource type="ConvexPolygonShape2D" id=84]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 507, 678, 540, 722, 505, 721, 467, 632 )
+
+[sub_resource type="ConvexPolygonShape2D" id=85]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 467, 632, 480, 631, 507, 678 )
+
+[sub_resource type="RectangleShape2D" id=86]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.6198, 10 )
 
-[sub_resource type="RectangleShape2D" id=83]
+[sub_resource type="RectangleShape2D" id=87]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="CapsuleShape2D" id=84]
+[sub_resource type="CapsuleShape2D" id=88]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="SpriteFrames" id=85]
+[sub_resource type="SpriteFrames" id=89]
 
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "rock",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "sinking",
 "speed": 24.0
 } ]
-
-[sub_resource type="CapsuleShape2D" id=86]
-
-custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
-
-[sub_resource type="SpriteFrames" id=87]
-
-animations = [ {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "rock",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
-"loop": false,
-"name": "sinking",
-"speed": 24.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=88]
-
-custom_solver_bias = 0.0
-extents = Vector2( 5.64319, 5.7877 )
-
-[sub_resource type="RectangleShape2D" id=89]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
 
 [sub_resource type="CapsuleShape2D" id=90]
 
@@ -524,7 +515,37 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="CapsuleShape2D" id=91]
+[sub_resource type="SpriteFrames" id=91]
+
+animations = [ {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "rock",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
+"loop": false,
+"name": "sinking",
+"speed": 24.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=92]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.64319, 5.7877 )
+
+[sub_resource type="RectangleShape2D" id=93]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="CapsuleShape2D" id=94]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id=95]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -854,97 +875,167 @@ trigger = false
 [node name="estuary" type="Node2D" parent="water"]
 
 editor/display_folded = true
+script/script = ExtResource( 2 )
 
-[node name="part0" type="KinematicBody2D" parent="water/estuary" groups=[
-"estuary",
-]]
+[node name="part0" type="Area2D" parent="water/estuary"]
 
-editor/display_folded = true
-transform/pos = Vector2( 1, 0 )
-input/pickable = false
+input/pickable = true
 shapes/0/shape = SubResource( 74 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1, 0 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 75 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 1, 0 )
 shapes/1/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
-[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="water/estuary/part0"]
-
-build_mode = 0
-polygon = Vector2Array( 405, 629, 399, 679, 388, 723, 429, 723, 429, 629 )
-shape_range = Vector2( 0, 1 )
-trigger = false
-
-[node name="part1" type="KinematicBody2D" parent="water/estuary" groups=[
+[node name="collider" type="KinematicBody2D" parent="water/estuary/part0" groups=[
 "estuary",
 ]]
 
-editor/display_folded = true
+transform/pos = Vector2( 1, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 76 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 77 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
 collision/layers = 1
 collision/mask = 1
-collision/margin = 0.08
+collision/margin = 0.05
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water/estuary/part1"]
+[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="water/estuary/part0/collider"]
 
 build_mode = 0
-polygon = Vector2Array( 431, 629, 432, 723, 463, 723, 445, 629 )
-shape_range = Vector2( 0, 0 )
+polygon = Vector2Array( 405, 632, 399, 679, 391, 722, 427, 721, 425, 632 )
+shape_range = Vector2( 0, 1 )
 trigger = false
 
-[node name="part2" type="KinematicBody2D" parent="water/estuary" groups=[
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="water/estuary/part0"]
+
+transform/pos = Vector2( 1, 0 )
+build_mode = 0
+polygon = Vector2Array( 405, 632, 399, 679, 391, 722, 427, 721, 425, 632 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="part1" type="Area2D" parent="water/estuary"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 78 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="collider" type="KinematicBody2D" parent="water/estuary/part1" groups=[
 "estuary",
 ]]
 
-editor/display_folded = true
 input/pickable = false
-shapes/0/shape = SubResource( 77 )
+shapes/0/shape = SubResource( 79 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-collision/margin = 0.08
+collision/margin = 0.05
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water/estuary/part1/collider"]
+
+build_mode = 0
+polygon = Vector2Array( 432, 632, 435, 721, 459, 720, 443, 632 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="CollisionPolygon2D1" type="CollisionPolygon2D" parent="water/estuary/part1"]
+
+build_mode = 0
+polygon = Vector2Array( 432, 632, 435, 721, 459, 720, 443, 632 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="part2" type="Area2D" parent="water/estuary"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 80 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="collider" type="KinematicBody2D" parent="water/estuary/part2" groups=[
+"estuary",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 81 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.05
+
+[node name="CollisionPolygon2D1" type="CollisionPolygon2D" parent="water/estuary/part2/collider"]
+
+build_mode = 0
+polygon = Vector2Array( 450, 632, 467, 721, 496, 721, 461, 632 )
+shape_range = Vector2( 0, 0 )
+trigger = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water/estuary/part2"]
 
 build_mode = 0
-polygon = Vector2Array( 446, 629, 465, 723, 502, 723, 462, 629 )
+polygon = Vector2Array( 450, 632, 467, 721, 496, 721, 461, 632 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
-[node name="part3" type="KinematicBody2D" parent="water/estuary" groups=[
+[node name="part3" type="Area2D" parent="water/estuary"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 82 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 83 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="collider" type="KinematicBody2D" parent="water/estuary/part3" groups=[
 "estuary",
 ]]
 
-editor/display_folded = true
 input/pickable = false
-shapes/0/shape = SubResource( 78 )
+shapes/0/shape = SubResource( 84 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 79 )
+shapes/1/shape = SubResource( 85 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 80 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 1, 0 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 81 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 1, 0 )
-shapes/3/trigger = false
 collision/layers = 1
 collision/mask = 1
-collision/margin = 0.08
+collision/margin = 0.05
+
+[node name="CollisionPolygon2D1" type="CollisionPolygon2D" parent="water/estuary/part3/collider"]
+
+build_mode = 0
+polygon = Vector2Array( 467, 632, 505, 721, 540, 722, 507, 678, 480, 631 )
+shape_range = Vector2( 0, 1 )
+trigger = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water/estuary/part3"]
 
 build_mode = 0
-polygon = Vector2Array( 463, 629, 504, 723, 544, 723, 507, 678, 479, 629 )
+polygon = Vector2Array( 467, 632, 505, 721, 540, 722, 507, 678, 480, 631 )
 shape_range = Vector2( 0, 1 )
 trigger = false
 
@@ -956,7 +1047,7 @@ editor/display_folded = true
 transform/pos = Vector2( 798.83, 121.008 )
 transform/scale = Vector2( 5.76347, 2.85064 )
 input/pickable = true
-shapes/0/shape = SubResource( 82 )
+shapes/0/shape = SubResource( 86 )
 shapes/0/transform = Matrix32( 2.93642, 0, 0, 1.10636, 20.937, 14.7307 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -972,7 +1063,7 @@ __meta__ = {
 
 transform/pos = Vector2( 20.937, 14.7307 )
 transform/scale = Vector2( 2.93642, 1.10636 )
-shape = SubResource( 82 )
+shape = SubResource( 86 )
 trigger = false
 _update_shape_index = 0
 
@@ -981,14 +1072,14 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 1814, 719 )
 input/pickable = true
-shapes/0/shape = SubResource( 83 )
+shapes/0/shape = SubResource( 87 )
 shapes/0/transform = Matrix32( 5.1923, 0, 0, 6.38462, 44.5001, -2.99997 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 2 )
+script/script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -999,7 +1090,7 @@ next_scene = "res://game/scenes/start/start.tscn"
 
 transform/pos = Vector2( 44.5001, -2.99997 )
 transform/scale = Vector2( 5.1923, 6.38462 )
-shape = SubResource( 83 )
+shape = SubResource( 87 )
 trigger = false
 _update_shape_index = 0
 
@@ -1010,14 +1101,14 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 136, 190 )
 input/pickable = true
-shapes/0/shape = SubResource( 84 )
+shapes/0/shape = SubResource( 88 )
 shapes/0/transform = Matrix32( 0.000602888, 0.885609, -0.825746, 0.000562136, 0.99999, 1.49999 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1025,7 +1116,7 @@ drop_displacement = Vector2( 0, 0 )
 
 [node name="animations" type="AnimatedSprite" parent="objects/rock0"]
 
-frames = SubResource( 85 )
+frames = SubResource( 89 )
 animation = "rock"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/rock0"]
@@ -1033,7 +1124,7 @@ animation = "rock"
 transform/pos = Vector2( 0.99999, 1.49999 )
 transform/rot = -89.961
 transform/scale = Vector2( 0.88561, 0.825746 )
-shape = SubResource( 84 )
+shape = SubResource( 88 )
 trigger = false
 _update_shape_index = 0
 
@@ -1042,14 +1133,14 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 146, 242 )
 input/pickable = true
-shapes/0/shape = SubResource( 86 )
+shapes/0/shape = SubResource( 90 )
 shapes/0/transform = Matrix32( -0.000640028, 0.883723, -0.696014, -0.000504081, -6.79493e-06, 0.499995 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1057,7 +1148,7 @@ drop_displacement = Vector2( 0, 0 )
 
 [node name="animations" type="AnimatedSprite" parent="objects/rock1"]
 
-frames = SubResource( 87 )
+frames = SubResource( 91 )
 animation = "rock"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/rock1"]
@@ -1065,7 +1156,7 @@ animation = "rock"
 transform/pos = Vector2( -6.79493e-06, 0.499995 )
 transform/rot = -90.0415
 transform/scale = Vector2( 0.883723, 0.696014 )
-shape = SubResource( 86 )
+shape = SubResource( 90 )
 trigger = false
 _update_shape_index = 0
 
@@ -1076,14 +1167,14 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 1113, 524 )
 input/pickable = true
-shapes/0/shape = SubResource( 88 )
+shapes/0/shape = SubResource( 92 )
 shapes/0/transform = Matrix32( 3.58664, 0, 0, 5.63287, 9.89437e-06, 1.5 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 42 )
+script/script = ExtResource( 43 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1091,13 +1182,13 @@ drop_displacement = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="objects/stick0"]
 
-texture = ExtResource( 43 )
+texture = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/stick0"]
 
 transform/pos = Vector2( 9.89437e-06, 1.5 )
 transform/scale = Vector2( 3.58664, 5.63287 )
-shape = SubResource( 88 )
+shape = SubResource( 92 )
 trigger = false
 _update_shape_index = 0
 
@@ -1108,14 +1199,14 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 1793, 253 )
 input/pickable = true
-shapes/0/shape = SubResource( 89 )
+shapes/0/shape = SubResource( 93 )
 shapes/0/transform = Matrix32( 1.96155, 0, 0, 3.11538, 1.4999, 1.5 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 42 )
+script/script = ExtResource( 43 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1123,29 +1214,29 @@ drop_displacement = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="objects/stick1"]
 
-texture = ExtResource( 44 )
+texture = ExtResource( 45 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/stick1"]
 
 transform/pos = Vector2( 1.4999, 1.5 )
 transform/scale = Vector2( 1.96155, 3.11538 )
-shape = SubResource( 89 )
+shape = SubResource( 93 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Dug" parent="." instance=ExtResource( 45 )]
+[node name="Dug" parent="." instance=ExtResource( 46 )]
 
 transform/pos = Vector2( 1347, 599 )
-script/script = ExtResource( 46 )
+script/script = ExtResource( 47 )
 min_distance_to_stick = 150.0
 speed = 200.0
 
-[node name="Myrjam" parent="." instance=ExtResource( 47 )]
+[node name="Myrjam" parent="." instance=ExtResource( 48 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 224, 539 )
 transform/rot = 1.11342
-script/script = ExtResource( 48 )
+script/script = ExtResource( 49 )
 player_name = 0
 walk_speed = 200.0
 clothing = "hiking"
@@ -1156,7 +1247,7 @@ min_distance_to_significant_other_in_dangerous_areas = 100.0
 transform/pos = Vector2( 9.94344, 31.1802 )
 transform/scale = Vector2( 3.10165, 3.8363 )
 input/pickable = true
-shapes/0/shape = SubResource( 90 )
+shapes/0/shape = SubResource( 94 )
 shapes/0/transform = Matrix32( 1.85312, 0, 0, 1.16922, -2.42343, -26.7264 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1168,15 +1259,15 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -2.42343, -26.7264 )
 transform/scale = Vector2( 1.85312, 1.16922 )
-shape = SubResource( 90 )
+shape = SubResource( 94 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Stijn" parent="." instance=ExtResource( 49 )]
+[node name="Stijn" parent="." instance=ExtResource( 50 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 200, 421 )
-script/script = ExtResource( 48 )
+script/script = ExtResource( 49 )
 player_name = 1
 walk_speed = 200.0
 clothing = "hiking"
@@ -1186,7 +1277,7 @@ min_distance_to_significant_other_in_dangerous_areas = 100.0
 
 transform/pos = Vector2( 0, -96 )
 input/pickable = true
-shapes/0/shape = SubResource( 91 )
+shapes/0/shape = SubResource( 95 )
 shapes/0/transform = Matrix32( 5.78013, 0, 0, 4.56864, -1.7743, 21.5876 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1198,7 +1289,7 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -1.7743, 21.5876 )
 transform/scale = Vector2( 5.78013, 4.56864 )
-shape = SubResource( 91 )
+shape = SubResource( 95 )
 trigger = false
 _update_shape_index = 0
 
@@ -1207,7 +1298,7 @@ _update_shape_index = 0
 ]]
 
 transform/pos = Vector2( 722, 180 )
-texture = ExtResource( 50 )
+texture = ExtResource( 51 )
 offset = Vector2( 238, 360 )
 __meta__ = {
 "_edit_lock_": true
@@ -1215,6 +1306,6 @@ __meta__ = {
 
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 51 )
+script/script = ExtResource( 52 )
 
 

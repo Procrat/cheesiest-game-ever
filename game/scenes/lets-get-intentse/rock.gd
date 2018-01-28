@@ -1,5 +1,7 @@
 extends "res://game/scenes/lets-get-intentse/pickable.gd"
 
+signal sunk
+
 var SINKING_TIME = 4
 
 var initialised = false
@@ -8,7 +10,6 @@ var fade_away_timer
 
 onready var animations = get_node("animations")
 
-var estuary_parts_disabled = []
 var stuck = false
 
 
@@ -25,7 +26,7 @@ func _init():
 
 
 func _ready():
-	setup(Vector2(30, 0))
+	setup(Vector2(30, 20))
 
 
 func be_picked_up_by(player):
@@ -49,32 +50,11 @@ func body_enter(body):
 			sprite_frames.set_animation_speed("sinking", sprite_frames.get_frame_count("sinking") / SINKING_TIME)
 			animations.play("sinking")
 		stuck = true
-		disable_estuary(body)
-
-
-func disable_estuary(estuary):
-	estuary.set_layer_mask(0)
-	estuary.set_collision_mask(0)
-	estuary_parts_disabled.append(estuary)
-
-
-func reenable_estuary():
-	var respawned = false
-	for estuary in estuary_parts_disabled:
-		estuary.set_layer_mask(1)
-		estuary.set_collision_mask(1)
-		# Update kinematic physics
-		estuary.move(Vector2(0, 0))
-		if not respawned and estuary.is_colliding():
-			var possibly_the_player = estuary.get_collider()
-			if possibly_the_player.is_in_group("players"):
-				possibly_the_player.respawn()
-				respawned = true
-	estuary_parts_disabled.clear()
+		body.get_parent().get_parent().disable_part_because_of(body, self)
 
 
 func fade_away():
 	set_pos(original_location)
-	reenable_estuary()
 	animations.play("rock")
 	stuck = false
+	emit_signal("sunk")
