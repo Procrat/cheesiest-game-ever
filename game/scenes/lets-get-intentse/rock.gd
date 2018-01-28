@@ -6,6 +6,8 @@ var original_location
 var estuary_parts_disabled = []
 var fade_away_timer
 
+var stuck = false
+
 
 func _init():
 	if not initialised:
@@ -24,19 +26,22 @@ func _ready():
 
 
 func be_picked_up_by(player):
-	if .be_picked_up_by(player):
+	if not stuck and .be_picked_up_by(player):
 		fade_away_timer.stop()
 		return true
+	return false
 
 
 func be_dropped():
 	if .be_dropped():
 		fade_away_timer.start()
 		return true
+	return false
 
 
 func body_enter(body):
 	if not picked_up and body.is_in_group("estuary"):
+		stuck = true
 		disable_estuary(body)
 
 
@@ -64,3 +69,4 @@ func reenable_estuary():
 func fade_away():
 	set_pos(original_location)
 	reenable_estuary()
+	stuck = false

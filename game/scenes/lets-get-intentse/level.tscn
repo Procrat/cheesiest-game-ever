@@ -1040,7 +1040,7 @@ speed = 199.0
 [node name="Myrjam" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 1099, 338 )
+transform/pos = Vector2( 205.616, 734 )
 transform/rot = 1.11342
 script/script = ExtResource( 11 )
 player_name = 0
@@ -1050,7 +1050,6 @@ min_distance_to_significant_other_in_dangerous_areas = 100.0
 
 [node name="grabbing-area" type="Area2D" parent="Myrjam"]
 
-editor/display_folded = true
 transform/pos = Vector2( 9.94344, 31.1802 )
 transform/scale = Vector2( 3.10165, 3.8363 )
 input/pickable = true
@@ -1073,7 +1072,7 @@ _update_shape_index = 0
 [node name="Stijn" parent="." instance=ExtResource( 12 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 1137, 196 )
+transform/pos = Vector2( 243.616, 592 )
 script/script = ExtResource( 11 )
 player_name = 1
 walk_speed = 200.0
