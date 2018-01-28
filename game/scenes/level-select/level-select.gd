@@ -23,7 +23,9 @@ func _ready():
 	for level_idx in range(buttons.size()):
 		buttons[level_idx].connect("pressed", self, "show_instructions", [level_idx])
 	
-	for level_idx in range(GLOBAL_STATE.highest_level_unlocked + 1, buttons.size()):
+	# for level_idx in range(GLOBAL_STATE.highest_level_unlocked + 1, buttons.size()):
+	# TEMPORARY for global game jam
+	for level_idx in range(3):
 		buttons[level_idx].set_disabled(true)
 		buttons[level_idx].set_text("")
 
