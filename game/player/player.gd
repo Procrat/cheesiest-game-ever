@@ -4,6 +4,7 @@ enum PlayerName {MYRJAM, STIJN}
 
 export(int, "Myrjam", "Stijn") var player_name
 export(float) var walk_speed
+export(String, "normal", "hiking") var clothing = "normal"
 
 var player_name_str
 var left_action
@@ -15,7 +16,6 @@ onready var animations = get_node("animations")
 
 var last_action = "idle"
 var last_direction = "front"
-var last_clothing = "normal"
 var last_flipped = false
 
 
@@ -52,10 +52,10 @@ func fixed_process(delta):
 	
 	if direction_name == null:
 		# No input: idle
-		set_animation("idle", last_direction, last_clothing, last_flipped)
+		set_animation("idle", last_direction, last_flipped)
 	else:
 		# Input: Move & animate
-		set_animation("walk", direction_name, last_clothing, flipped)
+		set_animation("walk", direction_name, flipped)
 		move_in_direction(direction, delta)
 
 
@@ -68,11 +68,10 @@ func move_in_direction(direction, delta):
 		move(motion)
 
 
-func set_animation(action, direction, clothing, flipped):
+func set_animation(action, direction, flipped):
 	animations.play(action + " " + direction + " " + clothing)
 	animations.set_flip_h(flipped)
 	
 	last_action = action
 	last_direction = direction
-	last_clothing = clothing
 	last_flipped = flipped

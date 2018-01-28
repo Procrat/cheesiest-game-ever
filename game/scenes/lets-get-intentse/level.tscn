@@ -1045,6 +1045,7 @@ transform/rot = 1.11342
 script/script = ExtResource( 11 )
 player_name = 0
 walk_speed = 250.0
+clothing = "hiking"
 min_distance_to_significant_other_in_dangerous_areas = 100.0
 
 [node name="grabbing-area" type="Area2D" parent="Myrjam"]
@@ -1076,6 +1077,7 @@ transform/pos = Vector2( 1137, 196 )
 script/script = ExtResource( 11 )
 player_name = 1
 walk_speed = 200.0
+clothing = "hiking"
 min_distance_to_significant_other_in_dangerous_areas = 100.0
 
 [node name="grabbing-area" type="Area2D" parent="Stijn"]
