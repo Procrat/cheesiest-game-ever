@@ -1,0 +1,250 @@
+[gd_scene load_steps=19 format=1]
+
+[ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=1]
+[ext_resource path="res://ui sprites/level instructions/level select instructies Stijn.png" type="Texture" id=2]
+[ext_resource path="res://ui sprites/level instructions/level select instructies Myr.png" type="Texture" id=3]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=5]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=6]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=7]
+[ext_resource path="res://ui sprites/level instructions/shift-button.png" type="Texture" id=8]
+[ext_resource path="res://ui sprites/level instructions/space-button.png" type="Texture" id=9]
+[ext_resource path="res://ui sprites/level instructions/camping.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 40
+font/use_mipmaps = false
+font/use_filter = true
+font/font = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 236, 128 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 236, 128 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 236, 128 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="DynamicFont" id=5]
+
+font/size = 72
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+
+font/size = 30
+font/use_mipmaps = false
+font/use_filter = true
+font/font = ExtResource( 4 )
+
+[sub_resource type="Animation" id=7]
+
+length = 5.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 3, 3.5, 4, 4.5, 5 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1400, -540 ), Vector2( 1400, 540 ), Vector2( 1400, 450 ), Vector2( 1400, 540 ), Vector2( 1400, 500 ), Vector2( 1400, 540 ) ]
+}
+
+[sub_resource type="DynamicFont" id=8]
+
+font/size = 30
+font/use_mipmaps = false
+font/use_filter = true
+font/font = ExtResource( 4 )
+
+[node name="level 1 instructions" type="Sprite"]
+
+transform/pos = Vector2( 1400, 540 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="level select instructies Stijn" type="Sprite" parent="."]
+
+transform/pos = Vector2( 223.503, 59.5255 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="level select instructies Myr" type="Sprite" parent="."]
+
+transform/pos = Vector2( -213.591, 63.3678 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="get work done" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -400.0
+margin/top = -189.0
+margin/right = 400.0
+margin/bottom = 11.0
+custom_fonts/font = SubResource( 1 )
+text = "Can you help each other reach the camp site?"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -121.0
+margin/top = 273.0
+margin/right = 115.0
+margin/bottom = 401.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "Play"
+flat = false
+
+[node name="to stop Mango" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -335.0
+margin/top = 158.0
+margin/right = 11.0
+margin/bottom = 197.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
+text = "to do stuff"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="shift-button" type="Sprite" parent="to stop Mango"]
+
+transform/pos = Vector2( 42.1086, 19.8546 )
+texture = ExtResource( 8 )
+
+[node name="to stop Mango myrjam" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 101.0
+margin/top = 150.0
+margin/right = 447.0
+margin/bottom = 189.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
+text = "to do stuff"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="space-button" type="Sprite" parent="to stop Mango myrjam"]
+
+transform/pos = Vector2( 42.1086, 19.8546 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+"anims/instructions level 1" = SubResource( 7 )
+playback/active = true
+playback/speed = 2.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="hiking is tough" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -77.0
+margin/top = -222.0
+margin/right = 112.0
+margin/bottom = -183.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
+text = "Hiking is tough!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -141.857, -295.667 )
+transform/scale = Vector2( 2.70054, 2.70054 )
+texture = ExtResource( 10 )
+
+
