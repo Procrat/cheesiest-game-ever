@@ -1,11 +1,14 @@
 extends "res://game/scenes/lets-get-intentse/pickable.gd"
 
+var SINKING_TIME = 4
 
 var initialised = false
 var original_location
-var estuary_parts_disabled = []
 var fade_away_timer
 
+onready var animations = get_node("animations")
+
+var estuary_parts_disabled = []
 var stuck = false
 
 
@@ -13,7 +16,7 @@ func _init():
 	if not initialised:
 		original_location = get_pos()
 		fade_away_timer = Timer.new()
-		fade_away_timer.set_wait_time(1)
+		fade_away_timer.set_wait_time(SINKING_TIME)
 		fade_away_timer.set_one_shot(true)
 		fade_away_timer.connect("timeout", self, "fade_away")
 		add_child(fade_away_timer)
@@ -22,7 +25,7 @@ func _init():
 
 
 func _ready():
-	setup(Vector2(70, 0))
+	setup(Vector2(30, 0))
 
 
 func be_picked_up_by(player):
@@ -41,6 +44,10 @@ func be_dropped():
 
 func body_enter(body):
 	if not picked_up and body.is_in_group("estuary"):
+		if not stuck:
+			var sprite_frames = animations.get_sprite_frames()
+			sprite_frames.set_animation_speed("sinking", sprite_frames.get_frame_count("sinking") / SINKING_TIME)
+			animations.play("sinking")
 		stuck = true
 		disable_estuary(body)
 
@@ -69,4 +76,5 @@ func reenable_estuary():
 func fade_away():
 	set_pos(original_location)
 	reenable_estuary()
+	animations.play("rock")
 	stuck = false

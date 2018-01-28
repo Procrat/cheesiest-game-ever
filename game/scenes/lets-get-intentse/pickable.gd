@@ -1,6 +1,6 @@
 extends Area2D
 
-export(Vector2) var drop_displacement
+export(Vector2) var drop_displacement = Vector2(0, 0)
 
 var original_owner
 var pos_on_player = Vector2(0, -30)
