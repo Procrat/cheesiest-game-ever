@@ -109,7 +109,7 @@ font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 4 )
 
-[node name="level 1 instructions" type="Sprite"]
+[node name="instructions" type="Sprite"]
 
 transform/pos = Vector2( 1400, 540 )
 texture = ExtResource( 1 )
@@ -147,7 +147,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button" type="Button" parent="."]
+[node name="play-button" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true

@@ -44,10 +44,14 @@ tracks/2/keys = {
 [node name="level-select" type="Node2D"]
 
 script/script = ExtResource( 1 )
-controls_lvl1 = "res://game/scenes/an-amazing-first-date/controls.tscn"
-controls_lvl2 = "res://game/scenes/mango-goes-bananas/level.tscn"
-controls_lvl3 = "res://game/scenes/start/start.tscn"
-controls_lvl4 = "res://game/scenes/start/start.tscn"
+lvl1 = "res://game/scenes/an-amazing-first-date/level.tscn"
+instructions_lvl1 = "res://game/scenes/an-amazing-first-date/level 1 instructions.tscn"
+lvl2 = "res://game/scenes/mango-goes-bananas/level.tscn"
+instructions_lvl2 = "res://game/scenes/mango-goes-bananas/level 2 instructions.tscn"
+lvl3 = "res://game/scenes/lets-get-intentse/level.tscn"
+instructions_lvl3 = "res://game/scenes/lets-get-intentse/level 4 instructions.tscn"
+lvl4 = "res://game/scenes/lets-get-intentse/level.tscn"
+instructions_lvl4 = "res://game/scenes/lets-get-intentse/level 4 instructions.tscn"
 
 [node name="start bg" type="Sprite" parent="."]
 

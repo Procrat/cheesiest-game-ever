@@ -112,7 +112,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1400, -540 ), Vector2( 1400, 540 ), Vector2( 1400, 450 ), Vector2( 1400, 540 ), Vector2( 1400, 500 ), Vector2( 1400, 540 ) ]
 }
 
-[node name="level 1 instructions" type="Sprite"]
+[node name="instructions" type="Sprite"]
 
 transform/pos = Vector2( 1400, 540 )
 texture = ExtResource( 1 )
@@ -143,7 +143,7 @@ margin/top = -140.0
 margin/right = 400.0
 margin/bottom = 60.0
 custom_fonts/font = SubResource( 1 )
-text = "Can you get your work done while stopping 
+text = "Can you get your work done while stopping
 Mango from destroying your apartment?"
 align = 1
 autowrap = true
@@ -169,7 +169,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button" type="Button" parent="."]
+[node name="play-button" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
