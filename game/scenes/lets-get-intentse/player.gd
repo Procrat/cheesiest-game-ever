@@ -35,8 +35,8 @@ func _input(event):
 
 
 func fixed_process(delta):
-	if in_dangerous_area and not close_to(significant_other):
-		scream()
+	if in_dangerous_area and not significant_other.in_dangerous_area and not close_to(significant_other):
+		panic()
 	else:
 		.fixed_process(delta)
 
@@ -55,8 +55,8 @@ func close_to(player):
 	return get_pos().distance_to(player.get_pos()) < min_distance_to_significant_other_in_dangerous_areas
 
 
-func scream():
-	print("AARGH, HELP")
+func panic():
+	animations.play("panic")
 
 
 func carrying_something():

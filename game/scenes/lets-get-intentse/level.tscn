@@ -299,7 +299,7 @@ points = Vector2Array( 810, 277, 936, 194, 1068, 186, 996, 388, 810, 401 )
 [sub_resource type="ConvexPolygonShape2D" id=57]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 762, 236, 748, 184, 936, 194, 792, 248 )
+points = Vector2Array( 751, 233, 733, 184, 936, 194, 792, 248 )
 
 [sub_resource type="ConvexPolygonShape2D" id=58]
 
@@ -424,7 +424,7 @@ points = Vector2Array( 405, 629, 429, 629, 399, 679 )
 [sub_resource type="RectangleShape2D" id=82]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10.6198, 10 )
 
 [sub_resource type="CapsuleShape2D" id=83]
 
@@ -703,6 +703,7 @@ trigger = false
 
 [node name="sea" type="StaticBody2D" parent="water"]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 55 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1, 0 )
@@ -772,7 +773,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 1, 0 )
 build_mode = 0
-polygon = Vector2Array( 389, 725, 365, 747, 250, 780, 204, 815, 148, 873, 139, 901, 0, 975, 0, 1080, 1920, 1080, 1920, 887, 1836, 890, 1754, 918, 1583, 998, 1488, 933, 1389, 932, 1097, 816, 1053, 783, 1016.74, 741.321, 983, 673, 964, 589, 966, 489, 996, 388, 1105, 181, 1068, 186, 936, 194, 748, 184, 762, 236, 792, 248, 810, 277, 810, 401, 794, 454, 810, 545, 848, 632, 853, 793, 791, 805, 672, 789, 602, 766, 545, 725 )
+polygon = Vector2Array( 389, 725, 365, 747, 250, 780, 204, 815, 148, 873, 139, 901, 0, 975, 0, 1080, 1920, 1080, 1920, 887, 1836, 890, 1754, 918, 1583, 998, 1488, 933, 1389, 932, 1097, 816, 1053, 783, 1016.74, 741.321, 983, 673, 964, 589, 966, 489, 996, 388, 1105, 181, 1068, 186, 936, 194, 733, 184, 751, 233, 792, 248, 810, 277, 810, 401, 794, 454, 810, 545, 848, 632, 853, 793, 791, 805, 672, 789, 602, 766, 545, 725 )
 shape_range = Vector2( 0, 18 )
 trigger = false
 
@@ -882,20 +883,21 @@ transform/pos = Vector2( 798.83, 121.008 )
 transform/scale = Vector2( 5.76347, 2.85064 )
 input/pickable = true
 shapes/0/shape = SubResource( 82 )
-shapes/0/transform = Matrix32( 2.61903, 0, 0, 2.38098, -0.369921, 1.04727 )
+shapes/0/transform = Matrix32( 2.93642, 0, 0, 1.10636, 20.937, 14.7307 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swing-bridge"]
 
-transform/pos = Vector2( -0.369921, 1.04727 )
-transform/scale = Vector2( 2.61903, 2.38098 )
+transform/pos = Vector2( 20.937, 14.7307 )
+transform/scale = Vector2( 2.93642, 1.10636 )
 shape = SubResource( 82 )
 trigger = false
 _update_shape_index = 0
@@ -1038,7 +1040,7 @@ speed = 199.0
 [node name="Myrjam" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 1482.96, 233.384 )
+transform/pos = Vector2( 1099, 338 )
 transform/rot = 1.11342
 script/script = ExtResource( 11 )
 player_name = 0
@@ -1047,11 +1049,12 @@ min_distance_to_significant_other_in_dangerous_areas = 100.0
 
 [node name="grabbing-area" type="Area2D" parent="Myrjam"]
 
+editor/display_folded = true
 transform/pos = Vector2( 9.94344, 31.1802 )
 transform/scale = Vector2( 3.10165, 3.8363 )
 input/pickable = true
 shapes/0/shape = SubResource( 87 )
-shapes/0/transform = Matrix32( 1.85312, 0, 0, 1.16922, -4.3059, -2.0512 )
+shapes/0/transform = Matrix32( 1.85312, 0, 0, 1.16922, -2.42343, -26.7264 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1060,7 +1063,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Myrjam/grabbing-area"]
 
-transform/pos = Vector2( -4.3059, -2.0512 )
+transform/pos = Vector2( -2.42343, -26.7264 )
 transform/scale = Vector2( 1.85312, 1.16922 )
 shape = SubResource( 87 )
 trigger = false
@@ -1073,10 +1076,11 @@ transform/pos = Vector2( 1137, 196 )
 script/script = ExtResource( 11 )
 player_name = 1
 walk_speed = 200.0
-min_distance_to_significant_other_in_dangerous_areas = 500.0
+min_distance_to_significant_other_in_dangerous_areas = 100.0
 
 [node name="grabbing-area" type="Area2D" parent="Stijn"]
 
+transform/pos = Vector2( 0, -96 )
 input/pickable = true
 shapes/0/shape = SubResource( 88 )
 shapes/0/transform = Matrix32( 5.78013, 0, 0, 4.56864, -1.7743, 21.5876 )
@@ -1101,6 +1105,9 @@ _update_shape_index = 0
 transform/pos = Vector2( 722, 180 )
 texture = ExtResource( 13 )
 offset = Vector2( 238, 360 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="sprite-orderer" type="Node" parent="."]
 
