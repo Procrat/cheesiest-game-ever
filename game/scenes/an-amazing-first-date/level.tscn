@@ -1440,7 +1440,7 @@ params/spin_velocity = 0.0
 params/orbit_velocity = 0.0
 params/gravity_direction = 180.0
 params/gravity_strength = 9.0
-params/radial_accel = 10.0
+params/radial_accel = 0.0
 params/tangential_accel = 0.0
 params/damping = 15.0
 params/initial_angle = 0.0
@@ -1457,7 +1457,7 @@ transform/pos = Vector2( 1770.16, 755.024 )
 
 [node name="Particles2D6" type="Particles2D" parent="natsos"]
 
-transform/pos = Vector2( 1.16553, 16.1329 )
+transform/pos = Vector2( -0.154907, 3.36914 )
 config/amount = 5
 config/lifetime = 1.74835
 config/time_scale = 1.23294
