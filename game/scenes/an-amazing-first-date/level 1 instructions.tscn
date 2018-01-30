@@ -185,7 +185,7 @@ playback/default_blend_time = 0.0
 root/root = NodePath("..")
 "anims/instructions level 1" = SubResource( 7 )
 playback/active = true
-playback/speed = 2.0
+playback/speed = 6.0
 blend_times = [  ]
 autoplay = "instructions level 1"
 
