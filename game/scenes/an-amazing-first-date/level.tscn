@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=1]
+[gd_scene load_steps=174 format=1]
 
 [ext_resource path="res://game/scenes/an-amazing-first-date/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/maze.png" type="Texture" id=2]
@@ -10,11 +10,12 @@
 [ext_resource path="res://game/scenes/an-amazing-first-date/cinema.gd" type="Script" id=8]
 [ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/scenes/an-amazing-first-date/sjokomel.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/scenes/an-amazing-first-date/tickets.tscn" type="PackedScene" id=11]
-[ext_resource path="res://game/scenes/an-amazing-first-date/Scheermes.tscn" type="PackedScene" id=12]
-[ext_resource path="res://game/scenes/an-amazing-first-date/Natsos.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/scenes/an-amazing-first-date/bloon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://game/scenes/an-amazing-first-date/dress.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Level 4/bling.png" type="Texture" id=11]
+[ext_resource path="res://game/scenes/an-amazing-first-date/tickets.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/scenes/an-amazing-first-date/Scheermes.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/scenes/an-amazing-first-date/Natsos.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/scenes/an-amazing-first-date/bloon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://game/scenes/an-amazing-first-date/dress.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -1306,10 +1307,12 @@ trigger = false
 
 editor/display_folded = true
 transform/pos = Vector2( 18.2032, 22.7638 )
+clothing = "normal"
 
 [node name="Stijn" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1821.51, 4.69586 )
+clothing = "normal"
 
 [node name="countdown" parent="." instance=ExtResource( 5 )]
 
@@ -1359,25 +1362,187 @@ visibility/visible = false
 
 transform/pos = Vector2( 72.4095, 155.333 )
 
-[node name="tickets" parent="." instance=ExtResource( 11 )]
+[node name="Particles2D1" type="Particles2D" parent="sjokomel"]
+
+transform/pos = Vector2( -0.0826416, 11.6077 )
+config/amount = 5
+config/lifetime = 1.74835
+config/time_scale = 1.23294
+config/process_mode = 1
+config/half_extents = Vector2( 10, 20 )
+config/texture = ExtResource( 11 )
+params/direction = 180.0
+params/spread = 180.0
+params/linear_velocity = 5.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 180.0
+params/gravity_strength = 9.0
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 15.0
+params/initial_angle = 0.0
+params/initial_size = 0.1
+params/final_size = 0.3
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+
+[node name="tickets" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 663.338, 969.024 )
 
-[node name="scheermes" parent="." instance=ExtResource( 12 )]
+[node name="Particles2D2" type="Particles2D" parent="tickets"]
+
+transform/pos = Vector2( -0.451538, -0.316528 )
+config/amount = 5
+config/lifetime = 1.74835
+config/time_scale = 1.23294
+config/process_mode = 1
+config/half_extents = Vector2( 10, 20 )
+config/texture = ExtResource( 11 )
+params/direction = 180.0
+params/spread = 180.0
+params/linear_velocity = 5.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 180.0
+params/gravity_strength = 9.0
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 15.0
+params/initial_angle = 0.0
+params/initial_size = 0.1
+params/final_size = 0.3
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+
+[node name="scheermes" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1267.9, 661.905 )
 
-[node name="natsos" parent="." instance=ExtResource( 13 )]
+[node name="Particles2D5" type="Particles2D" parent="scheermes"]
+
+transform/pos = Vector2( -2.38489, -0.706909 )
+config/amount = 5
+config/lifetime = 1.74835
+config/time_scale = 1.23294
+config/process_mode = 1
+config/half_extents = Vector2( 10, 20 )
+config/texture = ExtResource( 11 )
+params/direction = 180.0
+params/spread = 180.0
+params/linear_velocity = 5.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 180.0
+params/gravity_strength = 9.0
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 15.0
+params/initial_angle = 0.0
+params/initial_size = 0.1
+params/final_size = 0.3
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+
+[node name="natsos" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1770.16, 755.024 )
 
-[node name="bloon" parent="." instance=ExtResource( 14 )]
+[node name="Particles2D6" type="Particles2D" parent="natsos"]
+
+transform/pos = Vector2( 1.16553, 16.1329 )
+config/amount = 5
+config/lifetime = 1.74835
+config/time_scale = 1.23294
+config/process_mode = 1
+config/half_extents = Vector2( 10, 20 )
+config/texture = ExtResource( 11 )
+params/direction = 180.0
+params/spread = 180.0
+params/linear_velocity = 5.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 180.0
+params/gravity_strength = 9.0
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 15.0
+params/initial_angle = 0.0
+params/initial_size = 0.1
+params/final_size = 0.3
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+
+[node name="bloon" parent="." instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 973.736, 847.253 )
 
-[node name="dress" parent="." instance=ExtResource( 15 )]
+[node name="Particles2D4" type="Particles2D" parent="bloon"]
+
+transform/pos = Vector2( 2.15179, -1.54602 )
+config/amount = 5
+config/lifetime = 1.74835
+config/time_scale = 1.23294
+config/process_mode = 1
+config/half_extents = Vector2( 10, 20 )
+config/texture = ExtResource( 11 )
+params/direction = 180.0
+params/spread = 180.0
+params/linear_velocity = 5.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 180.0
+params/gravity_strength = 9.0
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 15.0
+params/initial_angle = 0.0
+params/initial_size = 0.1
+params/final_size = 0.3
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+
+[node name="dress" parent="." instance=ExtResource( 16 )]
 
 transform/pos = Vector2( 572.592, 446.939 )
 item_type = 5
+
+[node name="Particles2D" type="Particles2D" parent="dress"]
+
+transform/pos = Vector2( -0.88385, 2.36673 )
+config/amount = 5
+config/lifetime = 1.74835
+config/time_scale = 1.23294
+config/process_mode = 1
+config/half_extents = Vector2( 10, 20 )
+config/texture = ExtResource( 11 )
+params/direction = 180.0
+params/spread = 180.0
+params/linear_velocity = 5.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 180.0
+params/gravity_strength = 9.0
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 15.0
+params/initial_angle = 0.0
+params/initial_size = 0.1
+params/final_size = 0.3
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
 
 
