@@ -1,11 +1,12 @@
-[gd_scene load_steps=35 format=1]
+[gd_scene load_steps=36 format=1]
 
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=1]
-[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/player/player.gd" type="Script" id=3]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/fridge door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=6]
+[ext_resource path="res://game/scenes/mango-goes-bananas/player.gd" type="Script" id=5]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -144,9 +145,9 @@ points = Vector2Array( 1152.23, 839.105, 1025.02, 646.529, 1137.18, 725.286, 116
 
 [sub_resource type="NavigationPolygon" id=28]
 
-vertices = Vector2Array( 1003.17, 441.088, 1028.2, 419.242, 1103.27, 414.078, 1048.88, 501.1, 989.831, 514.508, 786.881, 373.643, 571.194, 487.644, 569.605, 417.337, 662.532, 340.997, 698.121, 340.349, 848.888, 191.847, 862.152, 199.289, 771.886, 270.79, 702.327, 307.996, 754.273, 307.788, 1259.18, 423.452, 1305.77, 456.776, 1231.36, 528.601, 1139.15, 532.16, 1221.2, 577.464, 1194.19, 607.255, 1066.64, 594.864, 1083.42, 943.923, 1059.22, 924.117, 1187.68, 777.165, 1248.39, 749.646, 1199.33, 714.075, 1254.23, 739.96, 1181.81, 670.518, 1168.74, 661.849, 1097.74, 530.542, 1035.33, 533.668, 964.642, 441.088, 940.136, 436.073 )
-polygons = [ IntArray( 0, 1, 2, 3, 4 ), IntArray( 5, 6, 7, 8, 9 ), IntArray( 10, 11, 12, 13 ), IntArray( 13, 12, 14, 9 ), IntArray( 15, 16, 17, 18 ), IntArray( 18, 17, 19, 20, 21 ), IntArray( 22, 23, 24, 25 ), IntArray( 25, 24, 26, 27 ), IntArray( 28, 27, 26, 29 ), IntArray( 20, 28, 29 ), IntArray( 20, 29, 21 ), IntArray( 30, 18, 21, 31 ), IntArray( 3, 30, 31, 4 ), IntArray( 32, 0, 4 ), IntArray( 32, 4, 33 ), IntArray( 14, 32, 33, 5 ), IntArray( 14, 5, 9 ) ]
-outlines = [ Vector2Array( 1035.33, 533.668, 1066.64, 594.864, 1168.74, 661.849, 1199.33, 714.075, 1187.68, 777.165, 1059.22, 924.117, 1083.42, 943.923, 1248.39, 749.646, 1254.23, 739.96, 1181.81, 670.518, 1194.19, 607.255, 1221.2, 577.464, 1231.36, 528.601, 1305.77, 456.776, 1259.18, 423.452, 1139.15, 532.16, 1097.74, 530.542, 1048.88, 501.1, 1103.27, 414.078, 1028.2, 419.242, 1003.17, 441.088, 964.642, 441.088, 754.273, 307.788, 771.886, 270.79, 862.152, 199.289, 848.888, 191.847, 702.327, 307.996, 698.121, 340.349, 662.532, 340.997, 569.605, 417.337, 571.194, 487.644, 786.881, 373.643, 940.136, 436.073, 989.831, 514.508 ) ]
+vertices = Vector2Array( 1003.17, 441.088, 1028.2, 419.242, 1103.27, 414.078, 1048.88, 501.1, 989.831, 514.508, 786.881, 373.643, 571.194, 487.644, 569.605, 417.337, 662.532, 340.997, 698.121, 340.349, 848.888, 191.847, 862.152, 199.289, 771.886, 270.79, 702.327, 307.996, 754.273, 307.788, 1259.18, 423.452, 1305.77, 456.776, 1231.36, 528.601, 1139.15, 532.16, 1221.2, 577.464, 1194.19, 607.255, 1066.64, 594.864, 1203.74, 841.62, 1184.38, 865.639, 1083.42, 943.923, 1059.22, 924.117, 1187.68, 777.165, 1248.39, 749.646, 1199.33, 714.075, 1254.23, 739.96, 1181.81, 670.518, 1168.74, 661.849, 1097.74, 530.542, 1035.33, 533.668, 964.642, 441.088, 940.136, 436.073 )
+polygons = [ IntArray( 0, 1, 2, 3, 4 ), IntArray( 5, 6, 7, 8, 9 ), IntArray( 10, 11, 12, 13 ), IntArray( 13, 12, 14, 9 ), IntArray( 15, 16, 17, 18 ), IntArray( 18, 17, 19, 20, 21 ), IntArray( 22, 23, 24, 25, 26, 27 ), IntArray( 27, 26, 28, 29 ), IntArray( 30, 29, 28, 31 ), IntArray( 20, 30, 31 ), IntArray( 20, 31, 21 ), IntArray( 32, 18, 21, 33 ), IntArray( 3, 32, 33, 4 ), IntArray( 34, 0, 4 ), IntArray( 34, 4, 35 ), IntArray( 14, 34, 35, 5 ), IntArray( 14, 5, 9 ) ]
+outlines = [ Vector2Array( 1035.33, 533.668, 1066.64, 594.864, 1168.74, 661.849, 1199.33, 714.075, 1187.68, 777.165, 1059.22, 924.117, 1083.42, 943.923, 1184.38, 865.639, 1203.74, 841.62, 1248.39, 749.646, 1254.23, 739.96, 1181.81, 670.518, 1194.19, 607.255, 1221.2, 577.464, 1231.36, 528.601, 1305.77, 456.776, 1259.18, 423.452, 1139.15, 532.16, 1097.74, 530.542, 1048.88, 501.1, 1103.27, 414.078, 1028.2, 419.242, 1003.17, 441.088, 964.642, 441.088, 754.273, 307.788, 771.886, 270.79, 862.152, 199.289, 848.888, 191.847, 702.327, 307.996, 698.121, 340.349, 662.532, 340.997, 569.605, 417.337, 571.194, 487.644, 786.881, 373.643, 940.136, 436.073, 989.831, 514.508 ) ]
 
 [node name="level" type="Node2D"]
 
@@ -156,7 +157,6 @@ __meta__ = {
 
 [node name="apartment" type="StaticBody2D" parent="."]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 0.999997, -0.00229392, 0.00229392, 0.999997, 0, 0 )
@@ -262,29 +262,29 @@ polygon = Vector2Array( 535.845, 473.161, 648.532, 380.071, 667.568, 391.989, 67
 shape_range = Vector2( 0, 26 )
 trigger = false
 
-[node name="Stijn" parent="." instance=ExtResource( 2 )]
+[node name="fridge door" parent="apartment" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1132.41, 827.619 )
+
+[node name="Stijn" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1267.68, 510.087 )
-script/script = ExtResource( 3 )
-player_name = 1
-walk_speed = 140.0
-clothing = "normal"
 
 [node name="Myrjam" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 848.354, 262.359 )
-script/script = ExtResource( 3 )
+transform/pos = Vector2( 1209.23, 552.907 )
+script/script = ExtResource( 5 )
 player_name = 0
-walk_speed = 200.0
+walk_speed = 400.0
 clothing = "normal"
 
-[node name="Mango" parent="." instance=ExtResource( 5 )]
+[node name="Mango" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 1211.73, 806.089 )
+transform/pos = Vector2( 1163.63, 903.359 )
 
 [node name="foreground" type="Sprite" parent="."]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 960, 540 )
 __meta__ = {
 "_edit_lock_": true
@@ -292,7 +292,6 @@ __meta__ = {
 
 [node name="navigation" type="Navigation2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -5, 61 )
 __meta__ = {
 "_edit_lock_": true
@@ -305,13 +304,21 @@ enabled = true
 
 [node name="vomit-location" type="Node2D" parent="."]
 
-transform/pos = Vector2( 1203.28, 490.011 )
+transform/pos = Vector2( 1208, 551 )
 
 [node name="lick-location" type="Node2D" parent="."]
 
-transform/pos = Vector2( 1189.31, 791.398 )
+transform/pos = Vector2( 1204, 852 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="fridge-location" type="Node2D" parent="."]
+
+transform/pos = Vector2( 1163.38, 902.311 )
+
+[node name="sofa-location" type="Node2D" parent="."]
+
+transform/pos = Vector2( 1428.46, 581.313 )
 
 

@@ -5,12 +5,18 @@ export(float) var idle_duration
 export(float) var lick_duration
 export(float) var vomit_delay
 
+var utils = preload("res://game/utils.gd")
+
 onready var vomit_location = get_parent().get_node("vomit-location").get_pos()
 onready var lick_location = get_parent().get_node("lick-location").get_pos()
+onready var fridge_location = get_parent().get_node("fridge-location").get_pos()
+onready var fridge = get_parent().get_node("apartment/fridge door")
 
 
-class Action:
+class Action extends Node:
 	signal done
+	
+	var utils = preload("res://game/utils.gd")
 	
 	var animations
 	
@@ -200,9 +206,34 @@ class VomitAction extends Action:
 	
 	func spawn_vomit():
 		vomit = Vomit.instance()
-		vomit.translate(Vector2(31, 35))
+		vomit.translate(Vector2(36, -26))
 		mango.add_child(vomit)
 		mango.move_child(vomit, 0)
+
+
+class FridgeAction extends Action:
+	enum State {UNSTARTED, ATTEMPTING, OPENING, DONE}
+	var state = UNSTARTED
+	
+	var fridge
+	
+	func _init(mango, fridge).(mango, "opens fridge"):
+		self.fridge = fridge
+	
+	func start():
+		.start()
+		animations.set_flip_h(true)
+		state = ATTEMPTING
+		utils.do_once_after(34.0 / 24.0, mango, self, "open_fridge")
+	
+	func open_fridge():
+		state = OPENING
+		fridge.play("open")
+		utils.do_once_after_animation(animations, self, "done")
+	
+	func done():
+		state = DONE
+		emit_signal("done")
 
 
 onready var navigation = get_parent().get_node("navigation")
@@ -219,8 +250,8 @@ func _ready():
 
 func go_crazy():
 	# Choose something random to do
-	var possible_actions = ["go_and_idle", "go_and_vomit", "go_and_lick"]
-	var corresponding_action_classes = [null, VomitAction, LickAction]
+	var possible_actions = ["go_and_idle", "go_and_vomit", "go_and_lick", "go_and_open_fridge"]
+	var corresponding_action_classes = [null, VomitAction, LickAction, FridgeAction]
 	for class_idx in range(corresponding_action_classes.size()):
 		var clazz = corresponding_action_classes[class_idx]
 		if clazz != null and action extends clazz:
@@ -265,6 +296,14 @@ func jump_and_lick():
 
 func lick():
 	do_and(LickAction.new(self), "go_crazy")
+
+
+func go_and_open_fridge():
+	go_and_do(fridge_location, "open_fridge")
+
+
+func open_fridge():
+	do_and(FridgeAction.new(self, fridge), "go_crazy")
 
 
 func go_and_do(location, action_name):

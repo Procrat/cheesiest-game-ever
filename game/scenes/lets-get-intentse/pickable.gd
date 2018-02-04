@@ -43,13 +43,13 @@ func be_picked_up_by(player):
 	original_owner.remove_child(self)
 	player.add_child(self)
 	set_pos(pos_on_player_before_picking_up)
-	utils.do_once_after(bend_down_duration, self, "start_being_lifted")
+	utils.do_once_after(bend_down_duration, self, self, "start_being_lifted")
 	return true
 
 
 func start_being_lifted():
 	being_lifted = true
-	utils.do_once_after(lift_duration, self, "done_being_lifted")
+	utils.do_once_after(lift_duration, self, self, "done_being_lifted")
 
 
 func done_being_lifted():

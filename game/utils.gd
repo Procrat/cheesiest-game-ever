@@ -4,12 +4,12 @@ extends Node
 class TimerAction extends Node:
 	var timer
 	
-	func _init(wait_time, target, method, binds=[]):
+	func _init(wait_time, attachee, target, method, binds=[]):
 		timer = Timer.new()
 		timer.set_wait_time(wait_time)
 		timer.set_one_shot(true)
 		timer.connect("timeout", target, method, binds)
-		target.add_child(timer)
+		attachee.add_child(timer)
 		timer.start()
 	
 	func cancel():
@@ -41,8 +41,8 @@ class SignalAction extends Node:
 		emitter.disconnect(the_signal, self, "run")
 
 
-static func do_once_after(wait_time, target, method, binds=[]):
-	return TimerAction.new(wait_time, target, method, binds)
+static func do_once_after(wait_time, attachee, target, method, binds=[]):
+	return TimerAction.new(wait_time, attachee, target, method, binds)
 
 
 static func do_once_after_animation(animated_sprite, target, method, binds=[]):

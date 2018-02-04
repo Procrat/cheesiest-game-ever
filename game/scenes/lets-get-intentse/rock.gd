@@ -36,7 +36,7 @@ func be_picked_up_by(player):
 
 func be_dropped():
 	if .be_dropped():
-		fade_away_timer = utils.do_once_after(SINKING_TIME, self, "fade_away")
+		fade_away_timer = utils.do_once_after(SINKING_TIME, self, self, "fade_away")
 		return true
 	return false
 

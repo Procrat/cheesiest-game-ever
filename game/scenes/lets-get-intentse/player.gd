@@ -36,7 +36,7 @@ func _ready():
 	if not intialised:
 		original_location = get_pos()
 		
-		pick_up_action = player_name_str + "_pick_up"
+		pick_up_action = player_name_str + "_do"
 		
 		significant_other = get_parent().find_node("Stijn" if player_name == MYRJAM else "Myrjam")
 		
