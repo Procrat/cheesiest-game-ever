@@ -4,7 +4,8 @@
 [ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://game/ui/level-end-screen/inventory/inventory.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ui sprites/end screen/end screen bg.png" type="Texture" id=5]
+[ext_resource path="res://ui sprites/level instructions/end screen bg.png" type="Texture" id=5]
+
 
 [sub_resource type="CanvasItemMaterial" id=1]
 

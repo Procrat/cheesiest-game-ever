@@ -1,15 +1,17 @@
-[gd_scene load_steps=39 format=1]
+[gd_scene load_steps=41 format=1]
 
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=1]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/fridge door.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/scenes/mango-goes-bananas/player.gd" type="Script" id=4]
-[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=7]
-[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/scenes/mango-goes-bananas/progress.gd" type="Script" id=9]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=10]
+[ext_resource path="res://Level 2/Stijn pc.png" type="Texture" id=2]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/fridge door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/scenes/mango-goes-bananas/player.gd" type="Script" id=5]
+[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=8]
+[ext_resource path="res://Level 2/Myr pc.png" type="Texture" id=9]
+[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/scenes/mango-goes-bananas/progress.gd" type="Script" id=11]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -265,39 +267,49 @@ polygon = Vector2Array( 535.845, 473.161, 648.532, 380.071, 667.568, 391.989, 67
 shape_range = Vector2( 0, 26 )
 trigger = false
 
-[node name="fridge door" parent="apartment" instance=ExtResource( 2 )]
+[node name="Stijn pc" type="Sprite" parent="apartment"]
+
+transform/pos = Vector2( 1278.12, 465.844 )
+texture = ExtResource( 2 )
+
+[node name="fridge door" parent="apartment" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1132.41, 827.619 )
 
-[node name="Stijn" parent="." instance=ExtResource( 3 )]
+[node name="Stijn" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1267.68, 510.087 )
-script/script = ExtResource( 4 )
+script/script = ExtResource( 5 )
 player_name = 1
 walk_speed = 400.0
 clothing = "normal"
 
-[node name="Myrjam" parent="." instance=ExtResource( 5 )]
+[node name="Myrjam" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 1209.23, 552.907 )
-script/script = ExtResource( 4 )
+script/script = ExtResource( 5 )
 player_name = 0
 walk_speed = 400.0
 clothing = "normal"
 
 [node name="Mango" parent="." groups=[
 "moving",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 1163.63, 903.359 )
 
 [node name="foreground" type="Sprite" parent="."]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 960, 540 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Myr pc" type="Sprite" parent="foreground"]
+
+transform/pos = Vector2( 1503.05, 537.867 )
+texture = ExtResource( 9 )
 
 [node name="navigation" type="Navigation2D" parent="."]
 
@@ -373,10 +385,10 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 8 )]
+[node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 10 )]
 
 offset = Vector2( 285, 100 )
-script/script = ExtResource( 9 )
+script/script = ExtResource( 11 )
 listening_to = 0
 
 [node name="Control 2" type="Control" parent="ui/VBoxContainer"]
@@ -394,14 +406,14 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="study-progress" parent="ui/VBoxContainer/Control 2" instance=ExtResource( 8 )]
+[node name="study-progress" parent="ui/VBoxContainer/Control 2" instance=ExtResource( 10 )]
 
 offset = Vector2( 285, 100 )
-script/script = ExtResource( 9 )
+script/script = ExtResource( 11 )
 listening_to = 1
 
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 10 )
+script/script = ExtResource( 12 )
 
 
