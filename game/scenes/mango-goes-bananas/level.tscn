@@ -264,21 +264,23 @@ trigger = false
 
 [node name="Stijn" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 1280.68, 432.087 )
+transform/pos = Vector2( 1267.68, 510.087 )
 script/script = ExtResource( 3 )
 player_name = 1
 walk_speed = 140.0
+clothing = "normal"
 
 [node name="Myrjam" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 847.354, 183.359 )
+transform/pos = Vector2( 848.354, 262.359 )
 script/script = ExtResource( 3 )
 player_name = 0
 walk_speed = 200.0
+clothing = "normal"
 
 [node name="Mango" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1194.82, 792.857 )
+transform/pos = Vector2( 1211.73, 806.089 )
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -291,6 +293,7 @@ __meta__ = {
 [node name="navigation" type="Navigation2D" parent="."]
 
 editor/display_folded = true
+transform/pos = Vector2( -5, 61 )
 __meta__ = {
 "_edit_lock_": true
 }
