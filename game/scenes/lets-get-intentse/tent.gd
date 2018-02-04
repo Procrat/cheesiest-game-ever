@@ -7,6 +7,7 @@ var players_arrived = 0
 
 func _ready():
 	connect("body_enter", self, "body_enter")
+	connect("body_exit", self, "body_exit")
 
 
 func body_enter(body):
@@ -16,3 +17,9 @@ func body_enter(body):
 			get_tree().change_scene(next_scene)
 		else:
 			body.beckon()
+
+
+func body_exit(body):
+	if body.is_in_group("players"):
+		players_arrived -= 1
+		body.stop_beckoning()

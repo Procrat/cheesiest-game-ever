@@ -6,6 +6,18 @@ export(int, "Myrjam", "Stijn") var player_name
 export(float) var walk_speed
 export(String, "normal", "hiking") var clothing = "normal"
 
+
+class Direction extends Node:
+	var translation
+	var name
+	var animation_flipped
+	
+	func _init(translation, name, animation_flipped):
+		self.translation = translation
+		self.name = name
+		self.animation_flipped = animation_flipped
+
+
 var player_name_str
 var left_action
 var right_action
@@ -33,30 +45,37 @@ func _fixed_process(delta):
 
 
 func fixed_process(delta):
-	var direction = Vector2()
-	var direction_name = null
-	var flipped = false
-	if Input.is_action_pressed(up_action):
-		direction.y -= 1
-		direction_name = "back"
-	if Input.is_action_pressed(down_action):
-		direction.y += 1
-		direction_name = "front"
-	if Input.is_action_pressed(left_action):
-		direction.x -= 1
-		direction_name = "profile"
-		flipped = true
-	if Input.is_action_pressed(right_action):
-		direction.x += 1
-		direction_name = "profile"
+	var direction = handle_input()
 	
-	if direction_name == null:
+	if direction.name == null:
 		# No input: idle
 		set_animation("idle", last_direction, last_flipped)
 	else:
 		# Input: Move & animate
-		set_animation("walk", direction_name, flipped)
-		move_in_direction(direction, delta)
+		set_animation("walk", direction.name, direction.animation_flipped)
+		move_in_direction(direction.translation, delta)
+
+
+func handle_input():
+	var translation = Vector2()
+	var direction_name = null
+	var flipped = false
+	
+	if Input.is_action_pressed(up_action):
+		translation.y -= 1
+		direction_name = "back"
+	if Input.is_action_pressed(down_action):
+		translation.y += 1
+		direction_name = "front"
+	if Input.is_action_pressed(left_action):
+		translation.x -= 1
+		direction_name = "profile"
+		flipped = true
+	if Input.is_action_pressed(right_action):
+		translation.x += 1
+		direction_name = "profile"
+	
+	return Direction.new(translation, direction_name, flipped)
 
 
 func move_in_direction(direction, delta):

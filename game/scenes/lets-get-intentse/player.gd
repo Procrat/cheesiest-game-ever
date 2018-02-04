@@ -62,7 +62,10 @@ func fixed_process(delta):
 		panic()
 	elif jumping:
 		continue_jumping(delta)
-	elif not picking_up and not beckoning and not (player_name == STIJN and on_tree):
+	elif beckoning and handle_input().translation.length() <= 0:
+		if animations.get_animation() != "beckoning":
+			animations.play("beckoning")
+	elif not picking_up and not (player_name == STIJN and on_tree):
 		.fixed_process(delta)
 
 
@@ -208,3 +211,7 @@ func beckon():
 	beckoning = true
 	animations.play("beckoning")
 	animations.flip_h = true
+
+
+func stop_beckoning():
+	beckoning = false
