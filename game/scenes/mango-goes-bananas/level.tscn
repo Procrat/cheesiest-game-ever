@@ -3,8 +3,8 @@
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=1]
 [ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/fridge door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/scenes/mango-goes-bananas/player.gd" type="Script" id=5]
+[ext_resource path="res://game/scenes/mango-goes-bananas/player.gd" type="Script" id=4]
+[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=7]
 
@@ -269,11 +269,15 @@ transform/pos = Vector2( 1132.41, 827.619 )
 [node name="Stijn" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1267.68, 510.087 )
+script/script = ExtResource( 4 )
+player_name = 1
+walk_speed = 400.0
+clothing = "normal"
 
-[node name="Myrjam" parent="." instance=ExtResource( 4 )]
+[node name="Myrjam" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1209.23, 552.907 )
-script/script = ExtResource( 5 )
+script/script = ExtResource( 4 )
 player_name = 0
 walk_speed = 400.0
 clothing = "normal"
@@ -292,6 +296,7 @@ __meta__ = {
 
 [node name="navigation" type="Navigation2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -5, 61 )
 __meta__ = {
 "_edit_lock_": true
@@ -308,17 +313,18 @@ transform/pos = Vector2( 1208, 551 )
 
 [node name="lick-location" type="Node2D" parent="."]
 
-transform/pos = Vector2( 1204, 852 )
-__meta__ = {
-"_edit_lock_": true
-}
+transform/pos = Vector2( 1191.29, 851.603 )
 
 [node name="fridge-location" type="Node2D" parent="."]
 
 transform/pos = Vector2( 1163.38, 902.311 )
 
-[node name="sofa-location" type="Node2D" parent="."]
+[node name="sofa-myrjam-location" type="Node2D" parent="."]
 
 transform/pos = Vector2( 1428.46, 581.313 )
+
+[node name="sofa-stijn-location" type="Node2D" parent="."]
+
+transform/pos = Vector2( 1351.67, 538.112 )
 
 
