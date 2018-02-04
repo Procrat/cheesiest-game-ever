@@ -32,16 +32,13 @@ class Action extends Node:
 	
 	func start():
 		animations = mango.get_node("animations")
-		play_animation(first_animation_name)
+		animations.play(first_animation_name)
 	
 	func fixed_process(delta):
 		pass
 	
 	func stop():
 		emit_signal("done")
-	
-	func play_animation(animation_name):
-		animations.play(animation_name)
 	
 	func animation_duration(animation_name):
 		var sprite_frames = animations.get_sprite_frames()
@@ -59,6 +56,9 @@ class MischiefAction extends Action:
 		mischief_progress = MischiefProgress.instance()
 		mango.add_child(mischief_progress)
 		utils.do_once_after_animation(mischief_progress, mischief_progress, "play", ["flicker"])
+	
+	func interrupt():
+		stop()
 	
 	func stop():
 		mischief_progress.queue_free()
@@ -112,10 +112,9 @@ class WalkAction extends Action:
 
 
 class JumpAction extends Action:
-	enum State {UNSTARTED, STARTED, AIRBORN, TOUCHDOWN, DONE}
-	var state = UNSTARTED
+	enum State {STATIC, AIRBORN, TOUCHDOWN}
+	var state = STATIC
 	
-	var countdown
 	var airborn_delay = 16.0 / 24.0
 	var touchdown_delay = 3.0 / 24.0
 	
@@ -124,126 +123,70 @@ class JumpAction extends Action:
 	
 	func start():
 		.start()
-		countdown = airborn_delay
-		state = STARTED
 		mango.look_right()
+		utils.do_once_after(airborn_delay, mango, self, "fly_my_pretty")
 	
 	func fixed_process(delta):
-		if state == STARTED or state == AIRBORN or state == TOUCHDOWN:
-			if countdown <= 0:
-				if state == STARTED:
-					fly_my_pretty()
-				elif state == AIRBORN:
-					touchdown()
-				elif state == TOUCHDOWN:
-					stop()
-			else:
-				if state == AIRBORN:
-					mango.translate(Vector2(500 * delta, -100 * delta))
-				if state == TOUCHDOWN:
-					mango.translate(Vector2(100 * delta, 0))
-			countdown -= delta
+		if state == AIRBORN:
+			mango.translate(Vector2(500 * delta, -100 * delta))
+		elif state == TOUCHDOWN:
+			mango.translate(Vector2(100 * delta, 0))
 	
 	func fly_my_pretty():
 		state = AIRBORN
-		countdown = touchdown_delay
+		utils.do_once_after(touchdown_delay, mango, self, "touchdown")
 	
 	func touchdown():
 		state = TOUCHDOWN
-		countdown = animation_duration("jump up") - airborn_delay - touchdown_delay
-	
-	func stop():
-		state = DONE
-		.stop()
+		utils.do_once_after_animation(animations, self, "stop")
 
 
 class LickAction extends MischiefAction:
-	enum State {UNSTARTED, STARTED, LICKING, FINISHING, DONE}
-	var state = UNSTARTED
-	var countdown = 0
-	
 	func _init(mango).(mango, "lick start"):
 		pass
 	
 	func start():
 		.start()
-		state = STARTED
 		mango.look_right()
-		countdown = animation_duration(first_animation_name)
-	
-	func fixed_process(delta):
-		if state == STARTED or state == LICKING or state == FINISHING:
-			if countdown <= 0:
-				if state == STARTED:
-					lick()
-				elif state == LICKING:
-					stop_licking()
-				elif state == FINISHING:
-					stop()
-			countdown -= delta
+		utils.do_once_after_animation(animations, self, "lick")
 	
 	func lick():
-		state = LICKING
-		play_animation("lick middle")
-		countdown = mango.lick_duration
+		animations.play("lick middle")
+		utils.do_once_after(mango.lick_duration, mango, self, "stop_licking")
 	
 	func stop_licking():
-		state = FINISHING
-		play_animation("lick end")
-		countdown = animation_duration("lick end")
+		animations.play("lick end")
+		utils.do_once_after_animation(animations, self, "stop")
 	
-	func stop():
-		state = DONE
-		.stop()
+	func interrupt():
+		stop_licking()
 
 
 class VomitAction extends MischiefAction:
-	enum State {UNSTARTED, STARTED, VOMITING, DONE}
-	var state = UNSTARTED
-	
 	var Vomit = preload("res://game/scenes/mango-goes-bananas/mango-animations/vomit.tscn")
-	var countdown
 	var vomit
 	
-	func _init(mango, vomit_delay).(mango, "vomit"):
-		countdown = vomit_delay
+	func _init(mango).(mango, "vomit"):
+		pass
 	
 	func start():
 		.start()
-		state = STARTED
 		mango.look_right()
-	
-	func fixed_process(delta):
-		if state == STARTED or state == VOMITING:
-			if countdown <= 0:
-				if state == STARTED:
-					spawn_vomit()
-					state = VOMITING
-					countdown = vomit_duration_left()
-				elif state == VOMITING:
-					stop()
-			countdown -= delta
-	
-	func vomit_duration_left():
-		var sprite_frames = animations.get_sprite_frames()
-		return (sprite_frames.get_frame_count("vomit") - animations.get_frame()) / sprite_frames.get_animation_speed("vomit")
+		utils.do_once_after(mango.vomit_delay, mango, self, "spawn_vomit")
 	
 	func spawn_vomit():
 		vomit = Vomit.instance()
 		vomit.translate(Vector2(36, -26))
 		mango.add_child(vomit)
 		mango.move_child(vomit, 0)
+		utils.do_once_after_animation(animations, self, "stop")
 	
 	func stop():
-		state = DONE
 		vomit.queue_free()
 		.stop()
 
 
 class FridgeAction extends MischiefAction:
-	enum State {UNSTARTED, ATTEMPTING, OPENING, LICKING, DONE}
-	var state = UNSTARTED
-	
 	var fridge
 	
 	func _init(mango, fridge).(mango, "opens fridge"):
@@ -251,17 +194,14 @@ class FridgeAction extends MischiefAction:
 	
 	func start():
 		.start()
-		state = ATTEMPTING
 		mango.look_left()
 		utils.do_once_after(34.0 / 24.0, mango, self, "open_fridge")
 	
 	func open_fridge():
-		state = OPENING
 		fridge.play("open")
 		utils.do_once_after_animation(animations, self, "start_licking")
 	
 	func start_licking():
-		state = LICKING
 		animations.play("lick start")
 		utils.do_once_after_animation(animations, animations, "play", ["lick middle"])
 		utils.do_once_after(4, mango, self, "stopping")
@@ -269,10 +209,6 @@ class FridgeAction extends MischiefAction:
 	func stopping():
 		animations.play("lick end")
 		utils.do_once_after_animation(animations, self, "stop")
-	
-	func stop():
-		state = DONE
-		.stop()
 
 
 onready var animations = get_node("animations")
@@ -321,7 +257,7 @@ func go_and_vomit():
 
 
 func vomit():
-	do_and(VomitAction.new(self, vomit_delay), "go_crazy")
+	do_and(VomitAction.new(self), "go_crazy")
 
 
 func go_and_lick():
@@ -369,9 +305,8 @@ func look_in(direction):
 
 
 func interrupt():
-	if action extends LickAction or action extends VomitAction:
-		switch_action(IdleAction.new(self))
-		# TODO should be jump action
+	if action extends MischiefAction:
+		action.interrupt()
 
 
 func switch_action(action):
