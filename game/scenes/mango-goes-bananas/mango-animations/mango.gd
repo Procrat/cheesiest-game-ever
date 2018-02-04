@@ -176,14 +176,20 @@ class VomitAction extends MischiefAction:
 	
 	func spawn_vomit():
 		vomit = Vomit.instance()
+		
+		# This weirdness is here for no reason
 		vomit.translate(Vector2(36, -26))
 		mango.add_child(vomit)
-		mango.move_child(vomit, 0)
+		var pos = vomit.get_global_pos()
+		mango.remove_child(vomit)
+		mango.get_parent().add_child(vomit)
+		vomit.set_global_pos(pos)
+		
 		utils.do_once_after_animation(animations, self, "stop")
 	
-	func stop():
+	func interrupt():
 		vomit.queue_free()
-		.stop()
+		stop()
 
 
 class FridgeAction extends MischiefAction:
