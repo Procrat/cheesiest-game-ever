@@ -215,3 +215,14 @@ func beckon():
 
 func stop_beckoning():
 	beckoning = false
+
+
+func teleport(pos):
+	animations.get_node("fade/player").play("fade out")
+	utils.do_once_after_animation(animations, self, "fade_in", [pos + Vector2((randi() % 20), -20 + (randi() % 40))])
+
+
+func fade_in(pos):
+	set_global_pos(pos)
+	move(Vector2(0, 0))
+	animations.get_node("fade/player").play("fade in")
