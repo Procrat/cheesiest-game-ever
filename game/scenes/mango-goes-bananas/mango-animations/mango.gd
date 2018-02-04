@@ -7,6 +7,7 @@ export(float) var vomit_delay
 
 var utils = preload("res://game/utils.gd")
 
+onready var navigation = get_parent().get_node("navigation")
 onready var vomit_location = get_parent().get_node("vomit-location").get_pos()
 onready var lick_location = get_parent().get_node("lick-location").get_pos()
 onready var fridge_location = get_parent().get_node("fridge-location").get_pos()
@@ -40,7 +41,6 @@ class Action extends Node:
 	
 	func play_animation(animation_name):
 		animations.play(animation_name)
-		animations.set_flip_h(mango.looking_left)
 	
 	func animation_duration(animation_name):
 		var sprite_frames = animations.get_sprite_frames()
@@ -86,6 +86,7 @@ class WalkAction extends Action:
 		var new_pos = current_pos + advancement
 		if new_pos != current_pos:
 			mango.set_pos(new_pos)
+			mango.look_in(direction)
 		else:
 			path.remove(0)
 			if path.size() <= 0:
@@ -107,6 +108,7 @@ class JumpAction extends Action:
 		.start()
 		countdown = airborn_delay
 		state = STARTED
+		mango.look_right()
 	
 	func fixed_process(delta):
 		if state == STARTED or state == AIRBORN or state == TOUCHDOWN:
@@ -145,6 +147,7 @@ class LickAction extends Action:
 	func start():
 		.start()
 		state = STARTED
+		mango.look_right()
 		countdown = animation_duration(first_animation_name)
 	
 	func fixed_process(delta):
@@ -184,6 +187,7 @@ class VomitAction extends Action:
 	func start():
 		.start()
 		state = STARTED
+		mango.look_right()
 	
 	func fixed_process(delta):
 		if state == STARTED or state == VOMITING:
@@ -222,8 +226,8 @@ class FridgeAction extends Action:
 	
 	func start():
 		.start()
-		animations.set_flip_h(true)
 		state = ATTEMPTING
+		mango.look_left()
 		utils.do_once_after(34.0 / 24.0, mango, self, "open_fridge")
 	
 	func open_fridge():
@@ -236,9 +240,8 @@ class FridgeAction extends Action:
 		emit_signal("done")
 
 
-onready var navigation = get_parent().get_node("navigation")
+onready var animations = get_node("animations")
 onready var action = IdleAction.new(self, 1)
-var looking_left = false
 
 
 func _ready():
@@ -313,6 +316,21 @@ func go_and_do(location, action_name):
 func do_and(action, next_action_name):
 	action.connect("done", self, next_action_name)
 	switch_action(action)
+
+
+func look_left():
+	animations.set_flip_h(true)
+
+
+func look_right():
+	animations.set_flip_h(false)
+
+
+func look_in(direction):
+	if direction.x < 0:
+		look_left()
+	else:
+		look_right()
 
 
 func interrupt():
