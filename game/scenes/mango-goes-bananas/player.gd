@@ -1,5 +1,8 @@
 extends "res://game/player/player.gd"
 
+signal started_working
+signal stopped_working
+
 var utils = preload("res://game/utils.gd")
 
 onready var sofa_myrjam = get_parent().get_node("sofa-myrjam-location")
@@ -46,6 +49,7 @@ func draw():
 	animations.play("draw start")
 	set_global_pos(sofa_myrjam.get_global_pos())
 	drawing = true
+	emit_signal("started_working")
 	utils.do_once_after_animation(animations, self, "keep_drawing")
 
 
@@ -55,6 +59,7 @@ func keep_drawing():
 
 func stop_drawing():
 	animations.play("draw end")
+	emit_signal("stopped_working")
 	utils.do_once_after_animation(animations, self, "unbusy")
 
 
@@ -67,6 +72,7 @@ func study():
 	animations.play("study start")
 	set_global_pos(sofa_stijn.get_global_pos())
 	studying = true
+	emit_signal("started_working")
 	utils.do_once_after_animation(animations, self, "keep_studying")
 
 
@@ -76,6 +82,7 @@ func keep_studying():
 
 func stop_studying():
 	animations.play("study end")
+	emit_signal("stopped_working")
 	utils.do_once_after_animation(animations, self, "unbusy")
 
 

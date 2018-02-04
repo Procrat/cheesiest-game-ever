@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=1]
+[gd_scene load_steps=39 format=1]
 
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=1]
 [ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/fridge door.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=7]
+[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/scenes/mango-goes-bananas/progress.gd" type="Script" id=9]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -282,7 +285,9 @@ player_name = 0
 walk_speed = 400.0
 clothing = "normal"
 
-[node name="Mango" parent="." instance=ExtResource( 6 )]
+[node name="Mango" parent="." groups=[
+"moving",
+] instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 1163.63, 903.359 )
 
@@ -326,5 +331,77 @@ transform/pos = Vector2( 1428.46, 581.313 )
 [node name="sofa-stijn-location" type="Node2D" parent="."]
 
 transform/pos = Vector2( 1351.67, 538.112 )
+
+[node name="ui" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 0
+size_flags/vertical = 0
+margin/left = 268.0
+margin/top = 663.0
+margin/right = 838.0
+margin/bottom = 1067.0
+alignment = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Control" type="Control" parent="ui/VBoxContainer"]
+
+rect/min_size = Vector2( 570, 200 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 570.0
+margin/bottom = 200.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 8 )]
+
+offset = Vector2( 285, 100 )
+script/script = ExtResource( 9 )
+listening_to = 0
+
+[node name="Control 2" type="Control" parent="ui/VBoxContainer"]
+
+rect/min_size = Vector2( 570, 200 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 204.0
+margin/right = 570.0
+margin/bottom = 404.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="study-progress" parent="ui/VBoxContainer/Control 2" instance=ExtResource( 8 )]
+
+offset = Vector2( 285, 100 )
+script/script = ExtResource( 9 )
+listening_to = 1
+
+[node name="sprite-orderer" type="Node" parent="."]
+
+script/script = ExtResource( 10 )
 
 
