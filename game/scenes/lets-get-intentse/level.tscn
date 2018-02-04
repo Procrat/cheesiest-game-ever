@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=1]
+[gd_scene load_steps=152 format=1]
 
 [ext_resource path="res://Level 4/background.png" type="Texture" id=1]
 [ext_resource path="res://game/scenes/lets-get-intentse/estuary.gd" type="Script" id=2]
@@ -422,22 +422,22 @@ points = Vector2Array( 1583, 998, 672, 789, 791, 805, 1389, 932 )
 [sub_resource type="ConvexPolygonShape2D" id=74]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 427, 721, 391, 722, 399, 679, 425, 632 )
+points = Vector2Array( 427, 721, 392, 721, 405, 679, 425, 632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=75]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 405, 632, 425, 632, 399, 679 )
+points = Vector2Array( 408, 632, 425, 632, 405, 679 )
 
 [sub_resource type="ConvexPolygonShape2D" id=76]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 427, 721, 391, 722, 399, 679, 425, 632 )
+points = Vector2Array( 427, 721, 392, 721, 405, 679, 425, 632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=77]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 405, 632, 425, 632, 399, 679 )
+points = Vector2Array( 408, 632, 425, 632, 405, 679 )
 
 [sub_resource type="ConvexPolygonShape2D" id=78]
 
@@ -484,18 +484,38 @@ points = Vector2Array( 467, 632, 480, 631, 507, 678 )
 custom_solver_bias = 0.0
 extents = Vector2( 10.6198, 10 )
 
-[sub_resource type="RectangleShape2D" id=87]
+[sub_resource type="ConvexPolygonShape2D" id=87]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+points = Vector2Array( 47, -15, 47, -10, -32, -31, -28, -36, 8, -26 )
 
-[sub_resource type="CapsuleShape2D" id=88]
+[sub_resource type="ConvexPolygonShape2D" id=88]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 8, -26, -28, -36, -17, -54, 9, -37 )
+
+[sub_resource type="ConvexPolygonShape2D" id=89]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -42, -15, 46, 5, 46, 18, -52, -1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=90]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1757, 531, 1757, 541, 1671, 522, 1679, 510 )
+
+[sub_resource type="RectangleShape2D" id=91]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 12.5301 )
+
+[sub_resource type="CapsuleShape2D" id=92]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="SpriteFrames" id=89]
+[sub_resource type="SpriteFrames" id=93]
 
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
@@ -509,13 +529,13 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=90]
+[sub_resource type="CapsuleShape2D" id=94]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="SpriteFrames" id=91]
+[sub_resource type="SpriteFrames" id=95]
 
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
@@ -529,23 +549,23 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=92]
+[sub_resource type="RectangleShape2D" id=96]
 
 custom_solver_bias = 0.0
 extents = Vector2( 5.64319, 5.7877 )
 
-[sub_resource type="RectangleShape2D" id=93]
+[sub_resource type="RectangleShape2D" id=97]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="CapsuleShape2D" id=94]
+[sub_resource type="CapsuleShape2D" id=98]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="CapsuleShape2D" id=95]
+[sub_resource type="CapsuleShape2D" id=99]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -754,7 +774,6 @@ enabled = true
 
 [node name="water" type="Node2D" parent="."]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -910,7 +929,7 @@ collision/margin = 0.05
 [node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="water/estuary/part0/collider"]
 
 build_mode = 0
-polygon = Vector2Array( 405, 632, 399, 679, 391, 722, 427, 721, 425, 632 )
+polygon = Vector2Array( 408, 632, 405, 679, 392, 721, 427, 721, 425, 632 )
 shape_range = Vector2( 0, 1 )
 trigger = false
 
@@ -918,12 +937,13 @@ trigger = false
 
 transform/pos = Vector2( 1, 0 )
 build_mode = 0
-polygon = Vector2Array( 405, 632, 399, 679, 391, 722, 427, 721, 425, 632 )
+polygon = Vector2Array( 408, 632, 405, 679, 392, 721, 427, 721, 425, 632 )
 shape_range = Vector2( 0, 1 )
 trigger = false
 
 [node name="part1" type="Area2D" parent="water/estuary"]
 
+transform/pos = Vector2( -2, 0 )
 input/pickable = true
 shapes/0/shape = SubResource( 78 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -961,6 +981,7 @@ trigger = false
 
 [node name="part2" type="Area2D" parent="water/estuary"]
 
+transform/pos = Vector2( -5, 0 )
 input/pickable = true
 shapes/0/shape = SubResource( 80 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -1000,10 +1021,10 @@ trigger = false
 
 input/pickable = true
 shapes/0/shape = SubResource( 82 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -8, 0 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 83 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -8, 0 )
 shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1016,10 +1037,10 @@ angular_damp = 1.0
 
 input/pickable = false
 shapes/0/shape = SubResource( 84 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -8, 0 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 85 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -8, 0 )
 shapes/1/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -1027,6 +1048,7 @@ collision/margin = 0.05
 
 [node name="CollisionPolygon2D1" type="CollisionPolygon2D" parent="water/estuary/part3/collider"]
 
+transform/pos = Vector2( -8, 0 )
 build_mode = 0
 polygon = Vector2Array( 467, 632, 505, 721, 540, 722, 507, 678, 480, 631 )
 shape_range = Vector2( 0, 1 )
@@ -1034,6 +1056,7 @@ trigger = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water/estuary/part3"]
 
+transform/pos = Vector2( -8, 0 )
 build_mode = 0
 polygon = Vector2Array( 467, 632, 505, 721, 540, 722, 507, 678, 480, 631 )
 shape_range = Vector2( 0, 1 )
@@ -1067,12 +1090,104 @@ shape = SubResource( 86 )
 trigger = false
 _update_shape_index = 0
 
+[node name="fallen-tree" type="KinematicBody2D" parent="." groups=[
+"climbable",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 1712, 539 )
+input/pickable = false
+shapes/0/shape = SubResource( 87 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -2, 5 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 88 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -2, 5 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 89 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, -2, 5 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="before" type="Node2D" parent="fallen-tree"]
+
+editor/display_folded = true
+
+[node name="myrjam" type="Node2D" parent="fallen-tree/before"]
+
+transform/pos = Vector2( 20, -14 )
+
+[node name="on-top" type="Node2D" parent="fallen-tree"]
+
+editor/display_folded = true
+
+[node name="stijn" type="Node2D" parent="fallen-tree/on-top"]
+
+transform/pos = Vector2( -17, -3 )
+
+[node name="myrjam" type="Node2D" parent="fallen-tree/on-top"]
+
+transform/pos = Vector2( 24, 4 )
+
+[node name="after" type="Node2D" parent="fallen-tree"]
+
+editor/display_folded = true
+
+[node name="stijn" type="Node2D" parent="fallen-tree/after"]
+
+transform/pos = Vector2( -5, 34 )
+
+[node name="myrjam" type="Node2D" parent="fallen-tree/after"]
+
+transform/pos = Vector2( 28, 41 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fallen-tree"]
+
+transform/pos = Vector2( -2, 5 )
+build_mode = 0
+polygon = Vector2Array( -28, -36, -17, -54, 9, -37, 8, -26, 47, -15, 47, -10, -32, -31 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="fallen-tree"]
+
+transform/pos = Vector2( -2, 5 )
+build_mode = 0
+polygon = Vector2Array( -52, -1, 46, 18, 46, 5, -42, -15 )
+shape_range = Vector2( 2, 2 )
+trigger = false
+
+[node name="on-tree" type="Area2D" parent="fallen-tree"]
+
+editor/display_folded = true
+transform/pos = Vector2( -1713, -534 )
+input/pickable = true
+shapes/0/shape = SubResource( 90 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fallen-tree/on-tree"]
+
+build_mode = 0
+polygon = Vector2Array( 1679, 510, 1671, 522, 1757, 541, 1757, 531 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
 [node name="tent" type="Area2D" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 1814, 719 )
 input/pickable = true
-shapes/0/shape = SubResource( 87 )
+shapes/0/shape = SubResource( 91 )
 shapes/0/transform = Matrix32( 5.1923, 0, 0, 6.38462, 44.5001, -2.99997 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1090,19 +1205,17 @@ next_scene = "res://game/scenes/lets-get-intentse/cutscene.tscn"
 
 transform/pos = Vector2( 44.5001, -2.99997 )
 transform/scale = Vector2( 5.1923, 6.38462 )
-shape = SubResource( 87 )
+shape = SubResource( 91 )
 trigger = false
 _update_shape_index = 0
 
 [node name="objects" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="rock0" type="Area2D" parent="objects"]
 
 transform/pos = Vector2( 136, 190 )
 input/pickable = true
-shapes/0/shape = SubResource( 88 )
+shapes/0/shape = SubResource( 92 )
 shapes/0/transform = Matrix32( 0.000602888, 0.885609, -0.825746, 0.000562136, 0.99999, 1.49999 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1113,19 +1226,24 @@ script/script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
+pos_on_player_before_picking_up = Vector2( 0, 0 )
+pos_on_player_after_picking_up = Vector2( 0, -30 )
+bend_down_duration = 0.5
+lift_duration = 0.5
 drop_displacement = Vector2( 0, 0 )
 
 [node name="animations" type="AnimatedSprite" parent="objects/rock0"]
 
-frames = SubResource( 89 )
+frames = SubResource( 93 )
 animation = "rock"
 
-[node name="Particles2D" type="Particles2D" parent="objects/rock0/animations"]
+[node name="particles" type="Particles2D" parent="objects/rock0"]
 
 transform/pos = Vector2( 2.04617, 12.8006 )
 config/amount = 6
 config/lifetime = 2.0
 config/time_scale = 0.874158
+config/emitting = false
 config/process_mode = 1
 config/texture = ExtResource( 23 )
 params/direction = 180.0
@@ -1150,7 +1268,7 @@ params/anim_initial_pos = 0.0
 transform/pos = Vector2( 0.99999, 1.49999 )
 transform/rot = -89.961
 transform/scale = Vector2( 0.88561, 0.825746 )
-shape = SubResource( 88 )
+shape = SubResource( 92 )
 trigger = false
 _update_shape_index = 0
 
@@ -1158,7 +1276,7 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 146, 242 )
 input/pickable = true
-shapes/0/shape = SubResource( 90 )
+shapes/0/shape = SubResource( 94 )
 shapes/0/transform = Matrix32( -0.000640028, 0.883723, -0.696014, -0.000504081, -6.79493e-06, 0.499995 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1169,19 +1287,24 @@ script/script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
+pos_on_player_before_picking_up = Vector2( 0, 0 )
+pos_on_player_after_picking_up = Vector2( 0, -30 )
+bend_down_duration = 0.5
+lift_duration = 0.5
 drop_displacement = Vector2( 0, 0 )
 
 [node name="animations" type="AnimatedSprite" parent="objects/rock1"]
 
-frames = SubResource( 91 )
+frames = SubResource( 95 )
 animation = "rock"
 
-[node name="Particles2D1" type="Particles2D" parent="objects/rock1"]
+[node name="particles" type="Particles2D" parent="objects/rock1"]
 
 transform/pos = Vector2( -1.10229, 11.6601 )
 config/amount = 6
 config/lifetime = 2.0
 config/time_scale = 0.874158
+config/emitting = false
 config/process_mode = 1
 config/texture = ExtResource( 23 )
 params/direction = 180.0
@@ -1206,7 +1329,7 @@ params/anim_initial_pos = 0.0
 transform/pos = Vector2( -6.79493e-06, 0.499995 )
 transform/rot = -90.0415
 transform/scale = Vector2( 0.883723, 0.696014 )
-shape = SubResource( 90 )
+shape = SubResource( 94 )
 trigger = false
 _update_shape_index = 0
 
@@ -1215,9 +1338,9 @@ _update_shape_index = 0
 ]]
 
 editor/display_folded = true
-transform/pos = Vector2( 1113, 524 )
+transform/pos = Vector2( 624, 309 )
 input/pickable = true
-shapes/0/shape = SubResource( 92 )
+shapes/0/shape = SubResource( 96 )
 shapes/0/transform = Matrix32( 3.58664, 0, 0, 5.63287, 9.89437e-06, 1.5 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1228,6 +1351,10 @@ script/script = ExtResource( 43 )
 __meta__ = {
 "_edit_group_": true
 }
+pos_on_player_before_picking_up = Vector2( 0, 0 )
+pos_on_player_after_picking_up = Vector2( 0, -30 )
+bend_down_duration = 0.5
+lift_duration = 0.5
 drop_displacement = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="objects/stick0"]
@@ -1238,7 +1365,7 @@ texture = ExtResource( 44 )
 
 transform/pos = Vector2( 9.89437e-06, 1.5 )
 transform/scale = Vector2( 3.58664, 5.63287 )
-shape = SubResource( 92 )
+shape = SubResource( 96 )
 trigger = false
 _update_shape_index = 0
 
@@ -1249,7 +1376,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 1793, 253 )
 input/pickable = true
-shapes/0/shape = SubResource( 93 )
+shapes/0/shape = SubResource( 97 )
 shapes/0/transform = Matrix32( 1.96155, 0, 0, 3.11538, 1.4999, 1.5 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1260,6 +1387,10 @@ script/script = ExtResource( 43 )
 __meta__ = {
 "_edit_group_": true
 }
+pos_on_player_before_picking_up = Vector2( 0, 0 )
+pos_on_player_after_picking_up = Vector2( 0, -30 )
+bend_down_duration = 0.5
+lift_duration = 0.5
 drop_displacement = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="objects/stick1"]
@@ -1270,7 +1401,7 @@ texture = ExtResource( 45 )
 
 transform/pos = Vector2( 1.4999, 1.5 )
 transform/scale = Vector2( 1.96155, 3.11538 )
-shape = SubResource( 93 )
+shape = SubResource( 97 )
 trigger = false
 _update_shape_index = 0
 
@@ -1284,20 +1415,22 @@ speed = 200.0
 [node name="Myrjam" parent="." instance=ExtResource( 48 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 224, 539 )
+transform/pos = Vector2( 63, 80 )
 transform/rot = 1.11342
 script/script = ExtResource( 49 )
 player_name = 0
 walk_speed = 200.0
 clothing = "hiking"
 min_distance_to_significant_other_in_dangerous_areas = 100.0
+max_distance_to_climables = 50
+upward_jumping_time = 0.5
 
 [node name="grabbing-area" type="Area2D" parent="Myrjam"]
 
 transform/pos = Vector2( 9.94344, 31.1802 )
 transform/scale = Vector2( 3.10165, 3.8363 )
 input/pickable = true
-shapes/0/shape = SubResource( 94 )
+shapes/0/shape = SubResource( 98 )
 shapes/0/transform = Matrix32( 1.85312, 0, 0, 1.16922, -2.42343, -26.7264 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1309,25 +1442,26 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -2.42343, -26.7264 )
 transform/scale = Vector2( 1.85312, 1.16922 )
-shape = SubResource( 94 )
+shape = SubResource( 98 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Stijn" parent="." instance=ExtResource( 50 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 200, 421 )
+transform/pos = Vector2( 117, 128 )
 script/script = ExtResource( 49 )
 player_name = 1
 walk_speed = 200.0
 clothing = "hiking"
 min_distance_to_significant_other_in_dangerous_areas = 100.0
+max_distance_to_climables = 50
+upward_jumping_time = 0.5
 
 [node name="grabbing-area" type="Area2D" parent="Stijn"]
 
 transform/pos = Vector2( 0, -96 )
 input/pickable = true
-shapes/0/shape = SubResource( 95 )
+shapes/0/shape = SubResource( 99 )
 shapes/0/transform = Matrix32( 5.78013, 0, 0, 4.56864, -1.7743, 21.5876 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1339,7 +1473,7 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -1.7743, 21.5876 )
 transform/scale = Vector2( 5.78013, 4.56864 )
-shape = SubResource( 95 )
+shape = SubResource( 99 )
 trigger = false
 _update_shape_index = 0
 

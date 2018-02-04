@@ -28,7 +28,7 @@ func reenable_parts_from_rock(rock):
 			collider.set_collision_mask(1)
 			for body in part.get_overlapping_bodies():
 				if body.is_in_group("players"):
-					body.respawn()
+					body.drown()
 
 
 func part_in_map(part):
