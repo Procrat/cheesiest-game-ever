@@ -17,7 +17,7 @@ var mischief_ignored = {}
 func _ready():
 	retry_button.connect("pressed", self, "restart")
 	next_button.connect("pressed", self, "go_to_next_level")
-	utils.do_once_after(2, self, self, "show_end_screen")
+	utils.do_once_after(120, self, self, "show_end_screen")
 
 
 func mischief_missed(mischief):

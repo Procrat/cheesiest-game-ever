@@ -305,8 +305,7 @@ clothing = "normal"
 ] instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1163.63, 903.359 )
-walk_speed = 400.0
-lick_duration = 0.2
+lick_duration = 6.0
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -452,6 +451,7 @@ scale = Vector2( 1, 1 )
 
 [node name="end-screen" parent="end-screen" instance=ExtResource( 16 )]
 
+visibility/visible = false
 script/script = ExtResource( 17 )
 
 
