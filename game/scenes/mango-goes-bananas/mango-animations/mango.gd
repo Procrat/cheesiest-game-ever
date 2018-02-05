@@ -46,19 +46,22 @@ class Action extends Node:
 
 
 class MischiefAction extends Action:
-	var Mischief = preload("res://game/scenes/mango-goes-bananas/mischief/mischief.tscn")
+	const MischiefKind = preload("res://game/scenes/mango-goes-bananas/mischief/mischief.gd").Mischief
+	const Mischief = preload("res://game/scenes/mango-goes-bananas/mischief/mischief.tscn")
 	
 	var location
+	var kind
 	var mischief
 	var interrupted = false
 	
-	func _init(mango, first_animation_name, location).(mango, first_animation_name):
+	func _init(mango, first_animation_name, location, kind).(mango, first_animation_name):
 		self.location = location
+		self.kind = kind
 	
 	func start():
 		.start()
 		mischief = Mischief.instance()
-		mischief.start(location)
+		mischief.start(kind, location)
 	
 	func interrupt():
 		interrupted = true
@@ -171,7 +174,7 @@ class JumpDownAction extends Action:
 
 
 class LickAction extends MischiefAction:
-	func _init(mango).(mango, "lick start", mango.lick_location):
+	func _init(mango).(mango, "lick start", mango.lick_location, MischiefKind.MEAT):
 		pass
 	
 	func start():
@@ -199,7 +202,7 @@ class VomitAction extends MischiefAction:
 	var Vomit = preload("res://game/scenes/mango-goes-bananas/mango-animations/vomit.tscn")
 	var vomit
 	
-	func _init(mango).(mango, "vomit", mango.vomit_location):
+	func _init(mango).(mango, "vomit", mango.vomit_location, MischiefKind.VOMIT):
 		pass
 	
 	func start():
@@ -223,7 +226,7 @@ class VomitAction extends MischiefAction:
 class FridgeAction extends MischiefAction:
 	var fridge
 	
-	func _init(mango, fridge).(mango, "opens fridge", mango.fridge_location):
+	func _init(mango, fridge).(mango, "opens fridge", mango.fridge_location, MischiefKind.FRIDGE):
 		self.fridge = fridge
 	
 	func start():

@@ -1,19 +1,22 @@
-[gd_scene load_steps=43 format=1]
+[gd_scene load_steps=46 format=1]
 
-[ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=1]
-[ext_resource path="res://Level 2/Stijn pc.png" type="Texture" id=2]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/fridge door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/scenes/mango-goes-bananas/player.gd" type="Script" id=5]
-[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=8]
-[ext_resource path="res://Level 2/Myr pc.png" type="Texture" id=9]
-[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/scenes/mango-goes-bananas/study-progress.gd" type="Script" id=11]
-[ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=12]
-[ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=13]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=14]
+[ext_resource path="res://game/scenes/mango-goes-bananas/level.gd" type="Script" id=1]
+[ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=2]
+[ext_resource path="res://Level 2/Stijn pc.png" type="Texture" id=3]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/fridge door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/scenes/mango-goes-bananas/player.gd" type="Script" id=6]
+[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=9]
+[ext_resource path="res://Level 2/Myr pc.png" type="Texture" id=10]
+[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/scenes/mango-goes-bananas/study-progress.gd" type="Script" id=12]
+[ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=13]
+[ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=14]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=15]
+[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=16]
+[ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -158,9 +161,12 @@ outlines = [ Vector2Array( 1035.33, 533.668, 1066.64, 594.864, 1168.74, 661.849,
 
 [node name="level" type="Node2D"]
 
+script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+controls_scene = "res://game/scenes/mango-goes-bananas/level.tscn"
+next_scene = "res://game/scenes/level-select/level-select.tscn"
 
 [node name="apartment" type="StaticBody2D" parent="."]
 
@@ -258,7 +264,7 @@ __meta__ = {
 
 [node name="background" type="Sprite" parent="apartment"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 offset = Vector2( 960, 540 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="apartment"]
@@ -272,38 +278,40 @@ trigger = false
 [node name="Stijn pc" type="Sprite" parent="apartment"]
 
 transform/pos = Vector2( 1292.64, 437.236 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="fridge door" parent="apartment" instance=ExtResource( 3 )]
+[node name="fridge door" parent="apartment" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1132.41, 827.619 )
 
-[node name="Stijn" parent="." instance=ExtResource( 4 )]
+[node name="Stijn" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1144.44, 587.55 )
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 player_name = 1
 walk_speed = 200.0
 clothing = "normal"
 
-[node name="Myrjam" parent="." instance=ExtResource( 6 )]
+[node name="Myrjam" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 1209.23, 552.907 )
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 player_name = 0
 walk_speed = 200.0
 clothing = "normal"
 
 [node name="Mango" parent="." groups=[
 "moving",
-] instance=ExtResource( 7 )]
+] instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1163.63, 903.359 )
+walk_speed = 400.0
+lick_duration = 0.2
 
 [node name="foreground" type="Sprite" parent="."]
 
 z/z = 2000
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 960, 540 )
 __meta__ = {
 "_edit_lock_": true
@@ -312,7 +320,7 @@ __meta__ = {
 [node name="Myr pc" type="Sprite" parent="foreground"]
 
 transform/pos = Vector2( 1519.33, 551.511 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="navigation" type="Navigation2D" parent="."]
 
@@ -394,16 +402,16 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 10 )]
+[node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 11 )]
 
 offset = Vector2( 285, 100 )
-script/script = ExtResource( 11 )
+script/script = ExtResource( 12 )
 listening_to = 0
 
 [node name="Myrjam head" type="Sprite" parent="ui/VBoxContainer/Control"]
 
 transform/pos = Vector2( -71.8009, 95.1591 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="Control 2" type="Control" parent="ui/VBoxContainer"]
 
@@ -420,19 +428,30 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="study-progress" parent="ui/VBoxContainer/Control 2" instance=ExtResource( 10 )]
+[node name="study-progress" parent="ui/VBoxContainer/Control 2" instance=ExtResource( 11 )]
 
 offset = Vector2( 285, 100 )
-script/script = ExtResource( 11 )
+script/script = ExtResource( 12 )
 listening_to = 1
 
 [node name="Stijn head" type="Sprite" parent="ui/VBoxContainer/Control 2"]
 
 transform/pos = Vector2( -68.8009, 97.1599 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 14 )
+script/script = ExtResource( 15 )
+
+[node name="end-screen" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="end-screen" parent="end-screen" instance=ExtResource( 16 )]
+
+script/script = ExtResource( 17 )
 
 
