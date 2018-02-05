@@ -25,6 +25,12 @@ func age_items():
 			items[item_type] = TAKEN_EARLIER
 	return old_items
 
+func has_got_everything(needed):
+	for item_type in needed:
+		if items[item_type] == NOT_TAKEN:
+			return false
+	return true
+
 func random_missing_item(needed):
 	var missing = []
 	for item_type in needed:

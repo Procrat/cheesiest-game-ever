@@ -12,13 +12,18 @@ onready var title = get_node("title")
 onready var subtitle = get_node("subtitle")
 onready var text = get_node("text")
 onready var inventory = get_node("inventory")
+onready var retry_button = get_node("retry-button")
 onready var animation_player = get_node("animation-player")
 
 func show(in_time):
 	if in_time:
 		title.set_text("Sweet!")
 		subtitle.set_text("You made it in time!")
-		text.set_text(missing_item_message())
+		if INVENTORY.has_got_everything(NEEDED_ITEMS):
+			text.set_text("Wow, you also managed to make this date absolutely perfect.")
+			retry_button.hide()
+		else:
+			text.set_text(missing_item_message())
 	else:
 		title.set_text("Oh, noes!")
 		subtitle.set_text("You didn't make it in time...\nLuckily, love conquers all!")
