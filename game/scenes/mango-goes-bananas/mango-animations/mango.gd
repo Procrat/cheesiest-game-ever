@@ -142,6 +142,34 @@ class JumpAction extends Action:
 		utils.do_once_after_animation(animations, self, "stop")
 
 
+class JumpDownAction extends Action:
+	enum State {STATIC, AIRBORN, TOUCHDOWN}
+	var state = STATIC
+#	
+	var airborn_delay = 11.0 / 24.0
+	var touchdown_delay = 7.0 / 24.0
+	
+	func _init(mango).(mango, "jump down"):
+		pass
+	
+	func start():
+		.start()
+		mango.look_left()
+		utils.do_once_after(airborn_delay, mango, self, "fly_my_pretty")
+	
+	func fixed_process(delta):
+		if state == AIRBORN:
+			mango.translate(Vector2(-350 * delta, 0))
+	
+	func fly_my_pretty():
+		state = AIRBORN
+		utils.do_once_after(touchdown_delay, mango, self, "touchdown")
+	
+	func touchdown():
+		state = TOUCHDOWN
+		utils.do_once_after_animation(animations, self, "stop")
+
+
 class LickAction extends MischiefAction:
 	func _init(mango).(mango, "lick start", mango.lick_location):
 		pass
@@ -284,7 +312,11 @@ func jump_and_lick():
 
 
 func lick():
-	do_and(LickAction.new(self), "go_crazy")
+	do_and(LickAction.new(self), "jump_down")
+
+
+func jump_down():
+	do_and(JumpDownAction.new(self), "go_crazy")
 
 
 func go_and_open_fridge():
