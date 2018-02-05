@@ -8,9 +8,10 @@ export(float) var vomit_delay
 var utils = preload("res://game/utils.gd")
 
 onready var navigation = get_parent().get_node("navigation")
-onready var vomit_location = get_parent().get_node("vomit-location").get_pos()
-onready var lick_location = get_parent().get_node("lick-location").get_pos()
-onready var fridge_location = get_parent().get_node("fridge-location").get_pos()
+onready var vomit_location = get_parent().get_node("mischief/vomit-location")
+onready var jump_to_lick_location = get_parent().get_node("mischief/jump-to-lick-location")
+onready var lick_location = get_parent().get_node("mischief/lick-location")
+onready var fridge_location = get_parent().get_node("mischief/fridge-location")
 onready var fridge = get_parent().get_node("apartment/fridge door")
 
 
@@ -18,7 +19,6 @@ class Action extends Node:
 	signal done
 	
 	var utils = preload("res://game/utils.gd")
-	var MischiefProgress = preload("res://game/scenes/mango-goes-bananas/mango-animations/mischief-progress.tscn")
 	
 	var animations
 	
@@ -46,23 +46,24 @@ class Action extends Node:
 
 
 class MischiefAction extends Action:
-	var mischief_progress
+	var Mischief = preload("res://game/scenes/mango-goes-bananas/mischief/mischief.tscn")
 	
-	func _init(mango, first_animation_name).(mango, first_animation_name):
-		pass
+	var location
+	var mischief
+	var interrupted = false
+	
+	func _init(mango, first_animation_name, location).(mango, first_animation_name):
+		self.location = location
 	
 	func start():
 		.start()
-		mischief_progress = MischiefProgress.instance()
-		mango.add_child(mischief_progress)
-		utils.do_once_after_animation(mischief_progress, mischief_progress, "play", ["flicker"])
+		mischief = Mischief.instance()
+		mischief.start(location)
 	
 	func interrupt():
+		interrupted = true
+		mischief.interrupt()
 		stop()
-	
-	func stop():
-		mischief_progress.queue_free()
-		.stop()
 
 
 class IdleAction extends Action:
@@ -142,7 +143,7 @@ class JumpAction extends Action:
 
 
 class LickAction extends MischiefAction:
-	func _init(mango).(mango, "lick start"):
+	func _init(mango).(mango, "lick start", mango.lick_location):
 		pass
 	
 	func start():
@@ -151,6 +152,8 @@ class LickAction extends MischiefAction:
 		utils.do_once_after_animation(animations, self, "lick")
 	
 	func lick():
+		if interrupted:
+			return
 		animations.play("lick middle")
 		utils.do_once_after(mango.lick_duration, mango, self, "stop_licking")
 	
@@ -159,6 +162,8 @@ class LickAction extends MischiefAction:
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
+		interrupted = true
+		mischief.interrupt()
 		stop_licking()
 
 
@@ -166,7 +171,7 @@ class VomitAction extends MischiefAction:
 	var Vomit = preload("res://game/scenes/mango-goes-bananas/mango-animations/vomit.tscn")
 	var vomit
 	
-	func _init(mango).(mango, "vomit"):
+	func _init(mango).(mango, "vomit", mango.vomit_location):
 		pass
 	
 	func start():
@@ -175,27 +180,22 @@ class VomitAction extends MischiefAction:
 		utils.do_once_after(mango.vomit_delay, mango, self, "spawn_vomit")
 	
 	func spawn_vomit():
+		if interrupted:
+			return
 		vomit = Vomit.instance()
-		
-		# This weirdness is here for no reason
-		vomit.translate(Vector2(36, -26))
-		mango.add_child(vomit)
-		var pos = vomit.get_global_pos()
-		mango.remove_child(vomit)
-		mango.get_parent().add_child(vomit)
-		vomit.set_global_pos(pos)
-		
+		mischief.add_child(vomit)
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
-		vomit.queue_free()
+		interrupted = true
+		mischief.interrupt()
 		stop()
 
 
 class FridgeAction extends MischiefAction:
 	var fridge
 	
-	func _init(mango, fridge).(mango, "opens fridge"):
+	func _init(mango, fridge).(mango, "opens fridge", mango.fridge_location):
 		self.fridge = fridge
 	
 	func start():
@@ -204,10 +204,14 @@ class FridgeAction extends MischiefAction:
 		utils.do_once_after(34.0 / 24.0, mango, self, "open_fridge")
 	
 	func open_fridge():
+		if interrupted:
+			return
 		fridge.play("open")
 		utils.do_once_after_animation(animations, self, "start_licking")
 	
 	func start_licking():
+		if interrupted:
+			return
 		animations.play("lick start")
 		utils.do_once_after_animation(animations, animations, "play", ["lick middle"])
 		utils.do_once_after(4, mango, self, "stopping")
@@ -215,6 +219,11 @@ class FridgeAction extends MischiefAction:
 	func stopping():
 		animations.play("lick end")
 		utils.do_once_after_animation(animations, self, "stop")
+	
+	func interrupt():
+		interrupted = true
+		mischief.interrupt()
+		stopping()
 
 
 onready var animations = get_node("animations")
@@ -259,7 +268,7 @@ func idle():
 
 
 func go_and_vomit():
-	go_and_do(vomit_location, "vomit")
+	go_and_do(vomit_location.get_pos(), "vomit")
 
 
 func vomit():
@@ -267,7 +276,7 @@ func vomit():
 
 
 func go_and_lick():
-	go_and_do(lick_location, "jump_and_lick")
+	go_and_do(jump_to_lick_location.get_pos(), "jump_and_lick")
 
 
 func jump_and_lick():
@@ -279,7 +288,7 @@ func lick():
 
 
 func go_and_open_fridge():
-	go_and_do(fridge_location, "open_fridge")
+	go_and_do(fridge_location.get_pos(), "open_fridge")
 
 
 func open_fridge():

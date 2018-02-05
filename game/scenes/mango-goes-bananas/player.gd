@@ -5,12 +5,15 @@ signal stopped_working
 
 var utils = preload("res://game/utils.gd")
 
+onready var mango = get_parent().get_node("Mango")
 onready var sofa_myrjam = get_parent().get_node("sofa-myrjam-location")
 onready var sofa_stijn = get_parent().get_node("sofa-stijn-location")
 
 var do_action
+var cleaning = false
 var drawing = false
 var studying = false
+var reachable_mischief
 
 
 func _ready():
@@ -21,23 +24,54 @@ func _ready():
 
 func _input(event):
 	if event.is_action_released(do_action):
-		if player_name == MYRJAM:
-			if is_sofa_myrjam_nearby():
-				if not drawing:
-					draw()
-				else:
-					stop_drawing()
-		elif player_name == STIJN:
-			if is_sofa_stijn_nearby():
-				if not studying:
-					study()
-				else:
-					stop_studying()
+		if drawing:
+			stop_drawing()
+		elif studying:
+			stop_studying()
+		elif cleaning:
+			stop_cleaning()
+		elif is_mischief_nearby():
+			clean()
+		elif player_name == MYRJAM and is_sofa_myrjam_nearby():
+			draw()
+		elif player_name == STIJN and is_sofa_stijn_nearby():
+			study()
 
 
 func fixed_process(delta):
 	if not is_busy():
 		.fixed_process(delta)
+
+
+func is_mischief_nearby():
+	for mischief in get_tree().get_nodes_in_group("mischief"):
+		if get_global_pos().distance_to(mischief.get_global_pos()) < 85:
+			reachable_mischief = mischief
+			return true
+	reachable_mischief = null
+	return false
+
+
+func clean():
+	assert reachable_mischief != null
+	
+	mango.interrupt()
+	animations.play("cleaning profile start")
+	cleaning = true
+	reachable_mischief.clean()
+	reachable_mischief.connect("cleaned", self, "cleaned")
+	utils.do_once_after_animation(animations, animations, "play", ["cleaning profile middle"])
+
+
+func stop_cleaning():
+	reachable_mischief.stop_cleaning()
+	animations.play("cleaning profile end")
+	utils.do_once_after_animation(animations, self, "unbusy")
+
+
+func cleaned():
+	stop_cleaning()
+	reachable_mischief.queue_free()
 
 
 func is_sofa_myrjam_nearby():
@@ -87,9 +121,10 @@ func stop_studying():
 
 
 func is_busy():
-	return drawing or studying
+	return drawing or studying or cleaning
 
 
 func unbusy():
 	drawing = false
 	studying = false
+	cleaning = false

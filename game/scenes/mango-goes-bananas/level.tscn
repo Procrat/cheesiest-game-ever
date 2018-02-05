@@ -10,7 +10,7 @@
 [ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=8]
 [ext_resource path="res://Level 2/Myr pc.png" type="Texture" id=9]
 [ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/scenes/mango-goes-bananas/progress.gd" type="Script" id=11]
+[ext_resource path="res://game/scenes/mango-goes-bananas/study-progress.gd" type="Script" id=11]
 [ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=12]
 [ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=13]
 [ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=14]
@@ -327,15 +327,21 @@ __meta__ = {
 navpoly = SubResource( 28 )
 enabled = true
 
-[node name="vomit-location" type="Node2D" parent="."]
+[node name="mischief" type="Node2D" parent="."]
+
+[node name="vomit-location" type="Node2D" parent="mischief"]
 
 transform/pos = Vector2( 1208, 551 )
 
-[node name="lick-location" type="Node2D" parent="."]
+[node name="jump-to-lick-location" type="Node2D" parent="mischief"]
 
 transform/pos = Vector2( 1191.29, 851.603 )
 
-[node name="fridge-location" type="Node2D" parent="."]
+[node name="lick-location" type="Node2D" parent="mischief"]
+
+transform/pos = Vector2( 1311.14, 825.106 )
+
+[node name="fridge-location" type="Node2D" parent="mischief"]
 
 transform/pos = Vector2( 1163.38, 902.311 )
 
