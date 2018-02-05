@@ -7,6 +7,7 @@ var utils = preload("res://game/utils.gd")
 
 onready var draw_progress = get_node("ui/VBoxContainer/Control/draw-progress")
 onready var study_progress = get_node("ui/VBoxContainer/Control 2/study-progress")
+onready var countdown = get_node("ui/countdown")
 onready var end_screen = get_node("end-screen/end-screen")
 onready var retry_button = get_node("end-screen/end-screen/retry-button")
 onready var next_button = get_node("end-screen/end-screen/next-button")
@@ -15,9 +16,9 @@ var mischief_ignored = {}
 
 
 func _ready():
+	countdown.connect("timeout", self, "show_end_screen")
 	retry_button.connect("pressed", self, "restart")
 	next_button.connect("pressed", self, "go_to_next_level")
-	utils.do_once_after(120, self, self, "show_end_screen")
 
 
 func mischief_missed(mischief):

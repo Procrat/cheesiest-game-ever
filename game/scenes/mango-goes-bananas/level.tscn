@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=1]
+[gd_scene load_steps=47 format=1]
 
 [ext_resource path="res://game/scenes/mango-goes-bananas/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=2]
@@ -14,9 +14,10 @@
 [ext_resource path="res://game/scenes/mango-goes-bananas/study-progress.gd" type="Script" id=12]
 [ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=13]
 [ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=14]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=15]
-[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=16]
-[ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=17]
+[ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=15]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=16]
+[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=17]
+[ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -438,9 +439,16 @@ listening_to = 1
 transform/pos = Vector2( -68.8009, 97.1599 )
 texture = ExtResource( 14 )
 
+[node name="countdown" parent="ui" instance=ExtResource( 15 )]
+
+margin/left = 1619.0
+margin/top = 921.0
+margin/right = 1647.0
+margin/bottom = 935.0
+
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 15 )
+script/script = ExtResource( 16 )
 
 [node name="end-screen" type="CanvasLayer" parent="."]
 
@@ -449,9 +457,9 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="end-screen" parent="end-screen" instance=ExtResource( 16 )]
+[node name="end-screen" parent="end-screen" instance=ExtResource( 17 )]
 
 visibility/visible = false
-script/script = ExtResource( 17 )
+script/script = ExtResource( 18 )
 
 

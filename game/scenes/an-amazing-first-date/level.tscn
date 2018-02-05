@@ -1,22 +1,20 @@
-[gd_scene load_steps=175 format=1]
+[gd_scene load_steps=172 format=1]
 
 [ext_resource path="res://game/scenes/an-amazing-first-date/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 1/maze.png" type="Texture" id=2]
 [ext_resource path="res://game/player/Myrjam.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/player/Stijn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=7]
-[ext_resource path="res://game/scenes/an-amazing-first-date/cinema.gd" type="Script" id=8]
-[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=9]
-[ext_resource path="res://game/scenes/an-amazing-first-date/end-screen.gd" type="Script" id=10]
-[ext_resource path="res://game/scenes/an-amazing-first-date/sjokomel.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Level 4/bling.png" type="Texture" id=12]
-[ext_resource path="res://game/scenes/an-amazing-first-date/tickets.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/scenes/an-amazing-first-date/Scheermes.tscn" type="PackedScene" id=14]
-[ext_resource path="res://game/scenes/an-amazing-first-date/Natsos.tscn" type="PackedScene" id=15]
-[ext_resource path="res://game/scenes/an-amazing-first-date/bloon.tscn" type="PackedScene" id=16]
-[ext_resource path="res://game/scenes/an-amazing-first-date/dress.tscn" type="PackedScene" id=17]
+[ext_resource path="res://game/scenes/an-amazing-first-date/cinema.gd" type="Script" id=6]
+[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/scenes/an-amazing-first-date/end-screen.gd" type="Script" id=8]
+[ext_resource path="res://game/scenes/an-amazing-first-date/sjokomel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level 4/bling.png" type="Texture" id=10]
+[ext_resource path="res://game/scenes/an-amazing-first-date/tickets.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/scenes/an-amazing-first-date/Scheermes.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/scenes/an-amazing-first-date/Natsos.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/scenes/an-amazing-first-date/bloon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/scenes/an-amazing-first-date/dress.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -793,13 +791,6 @@ points = Vector2Array( 528, 453, 666, 453, 729, 459, 961, 540, 465, 458 )
 custom_solver_bias = 0.0
 points = Vector2Array( 137, 522, 961, 540, -960, 541, -128, 524 )
 
-[sub_resource type="DynamicFont" id=156]
-
-font/size = 30
-font/use_mipmaps = false
-font/use_filter = true
-font/font = ExtResource( 6 )
-
 [sub_resource type="RectangleShape2D" id=157]
 
 custom_solver_bias = 0.0
@@ -1308,30 +1299,17 @@ trigger = false
 
 editor/display_folded = true
 transform/pos = Vector2( 18.2032, 22.7638 )
-clothing = "normal"
 
 [node name="Stijn" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1821.51, 4.69586 )
-clothing = "normal"
 
 [node name="countdown" parent="." instance=ExtResource( 5 )]
 
-margin/left = 846.0
-margin/top = 13.0
-margin/right = 988.0
-margin/bottom = 96.0
-custom_fonts/font = SubResource( 156 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-align = 1
-
-[node name="countdown bg" type="Sprite" parent="countdown"]
-
-visibility/self_opacity = 0.8
-visibility/behind_parent = true
-transform/pos = Vector2( 70.2788, 19.2417 )
-transform/scale = Vector2( 0.632554, 0.632554 )
-texture = ExtResource( 7 )
+margin/left = 889.0
+margin/top = 28.0
+margin/right = 946.0
+margin/bottom = 67.0
 
 [node name="cinema" type="Area2D" parent="."]
 
@@ -1345,7 +1323,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 8 )
+script/script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cinema"]
 
@@ -1355,12 +1333,12 @@ shape = SubResource( 157 )
 trigger = false
 _update_shape_index = 0
 
-[node name="end-screen" parent="." instance=ExtResource( 9 )]
+[node name="end-screen" parent="." instance=ExtResource( 7 )]
 
 visibility/visible = false
-script/script = ExtResource( 10 )
+script/script = ExtResource( 8 )
 
-[node name="sjokomel" parent="." instance=ExtResource( 11 )]
+[node name="sjokomel" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 72.4095, 155.333 )
 
@@ -1372,7 +1350,7 @@ config/lifetime = 1.74835
 config/time_scale = 1.23294
 config/process_mode = 1
 config/half_extents = Vector2( 10, 20 )
-config/texture = ExtResource( 12 )
+config/texture = ExtResource( 10 )
 params/direction = 180.0
 params/spread = 180.0
 params/linear_velocity = 5.0
@@ -1391,7 +1369,7 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 randomness/direction = 1.0
 
-[node name="tickets" parent="." instance=ExtResource( 13 )]
+[node name="tickets" parent="." instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 663.338, 969.024 )
 
@@ -1403,7 +1381,7 @@ config/lifetime = 1.74835
 config/time_scale = 1.23294
 config/process_mode = 1
 config/half_extents = Vector2( 10, 20 )
-config/texture = ExtResource( 12 )
+config/texture = ExtResource( 10 )
 params/direction = 180.0
 params/spread = 180.0
 params/linear_velocity = 5.0
@@ -1422,7 +1400,7 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 randomness/direction = 1.0
 
-[node name="scheermes" parent="." instance=ExtResource( 14 )]
+[node name="scheermes" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 1267.9, 661.905 )
 
@@ -1434,7 +1412,7 @@ config/lifetime = 1.74835
 config/time_scale = 1.23294
 config/process_mode = 1
 config/half_extents = Vector2( 10, 20 )
-config/texture = ExtResource( 12 )
+config/texture = ExtResource( 10 )
 params/direction = 180.0
 params/spread = 180.0
 params/linear_velocity = 5.0
@@ -1453,7 +1431,7 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 randomness/direction = 1.0
 
-[node name="natsos" parent="." instance=ExtResource( 15 )]
+[node name="natsos" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1770.16, 755.024 )
 
@@ -1465,7 +1443,7 @@ config/lifetime = 1.74835
 config/time_scale = 1.23294
 config/process_mode = 1
 config/half_extents = Vector2( 10, 20 )
-config/texture = ExtResource( 12 )
+config/texture = ExtResource( 10 )
 params/direction = 180.0
 params/spread = 180.0
 params/linear_velocity = 5.0
@@ -1484,7 +1462,7 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 randomness/direction = 1.0
 
-[node name="bloon" parent="." instance=ExtResource( 16 )]
+[node name="bloon" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 973.736, 847.253 )
 
@@ -1496,7 +1474,7 @@ config/lifetime = 1.74835
 config/time_scale = 1.23294
 config/process_mode = 1
 config/half_extents = Vector2( 10, 20 )
-config/texture = ExtResource( 12 )
+config/texture = ExtResource( 10 )
 params/direction = 180.0
 params/spread = 180.0
 params/linear_velocity = 5.0
@@ -1515,7 +1493,7 @@ params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 randomness/direction = 1.0
 
-[node name="dress" parent="." instance=ExtResource( 17 )]
+[node name="dress" parent="." instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 572.592, 446.939 )
 item_type = 5
@@ -1528,7 +1506,7 @@ config/lifetime = 1.74835
 config/time_scale = 1.23294
 config/process_mode = 1
 config/half_extents = Vector2( 10, 20 )
-config/texture = ExtResource( 12 )
+config/texture = ExtResource( 10 )
 params/direction = 180.0
 params/spread = 180.0
 params/linear_velocity = 5.0
