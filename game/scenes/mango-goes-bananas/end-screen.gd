@@ -12,6 +12,7 @@ onready var title = get_node("title")
 onready var subtitle = get_node("subtitle")
 onready var text = get_node("text")
 onready var inventory = get_node("inventory")
+onready var retry_button = get_node("retry-button")
 onready var animation_player = get_node("animation-player")
 
 func show(ignored_mischief, drawn_enough, studied_enough):
@@ -25,8 +26,9 @@ func show(ignored_mischief, drawn_enough, studied_enough):
 		text.set_text("")
 	elif ignored_mischief.size() <= 0:
 		title.set_text("Hooray!")
-		subtitle.set_text("You managed to draw and study enough while keeping the monster at bay!")
-		text.set_text("")
+		subtitle.set_text("")
+		text.set_text("You managed to draw and study enough while keeping the monster at bay!")
+		retry_button.hide()
 	else:
 		# Say something about random mischief that was ignored
 		title.set_text("Argh!")
