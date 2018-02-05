@@ -271,7 +271,7 @@ trigger = false
 
 [node name="Stijn pc" type="Sprite" parent="apartment"]
 
-transform/pos = Vector2( 1278.12, 465.844 )
+transform/pos = Vector2( 1292.64, 437.236 )
 texture = ExtResource( 2 )
 
 [node name="fridge door" parent="apartment" instance=ExtResource( 3 )]
@@ -280,7 +280,7 @@ transform/pos = Vector2( 1132.41, 827.619 )
 
 [node name="Stijn" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1267.68, 510.087 )
+transform/pos = Vector2( 1144.44, 587.55 )
 script/script = ExtResource( 5 )
 player_name = 1
 walk_speed = 400.0
@@ -311,7 +311,7 @@ __meta__ = {
 
 [node name="Myr pc" type="Sprite" parent="foreground"]
 
-transform/pos = Vector2( 1503.05, 537.867 )
+transform/pos = Vector2( 1515.81, 555.472 )
 texture = ExtResource( 9 )
 
 [node name="navigation" type="Navigation2D" parent="."]
