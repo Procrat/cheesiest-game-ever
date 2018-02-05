@@ -64,6 +64,7 @@ func clean():
 
 
 func stop_cleaning():
+	cleaning = false
 	reachable_mischief.stop_cleaning()
 	animations.play("cleaning profile end")
 	utils.do_once_after_animation(animations, self, "unbusy")
