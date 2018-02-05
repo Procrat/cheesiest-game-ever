@@ -63,7 +63,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/passport"]
+[node name="collider" type="CollisionPolygon2D" parent="objects/passport"]
 
 build_mode = 0
 polygon = Vector2Array( 1574.06, 434.632, 1573.68, 460.516, 1592.95, 461.744, 1597.39, 458.154, 1596.36, 431.892, 1575.57, 431.609 )
@@ -72,8 +72,8 @@ trigger = false
 
 [node name="sprite" type="Sprite" parent="objects/passport"]
 
-transform/pos = Vector2( 960, 540 )
 texture = ExtResource( 3 )
+offset = Vector2( 960, 540 )
 
 [node name="haringen" type="Area2D" parent="objects"]
 
@@ -86,7 +86,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/haringen"]
+[node name="collider" type="CollisionPolygon2D" parent="objects/haringen"]
 
 build_mode = 0
 polygon = Vector2Array( 376.382, 353.933, 369.914, 365.122, 374.634, 378.408, 388.795, 392.919, 399.983, 388.024, 397.186, 369.842, 390.718, 354.632 )
@@ -95,8 +95,8 @@ trigger = false
 
 [node name="sprite" type="Sprite" parent="objects/haringen"]
 
-transform/pos = Vector2( 960, 540 )
 texture = ExtResource( 4 )
+offset = Vector2( 960, 540 )
 
 [node name="adapter" type="Area2D" parent="objects"]
 
@@ -109,7 +109,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/adapter"]
+[node name="collider" type="CollisionPolygon2D" parent="objects/adapter"]
 
 build_mode = 0
 polygon = Vector2Array( 1106.75, 444.305, 1123.29, 443.991, 1127.26, 448.492, 1128.62, 456.447, 1117.53, 460.425, 1107.38, 460.425, 1100.57, 454.458 )
@@ -118,8 +118,8 @@ trigger = false
 
 [node name="sprite" type="Sprite" parent="objects/adapter"]
 
-transform/pos = Vector2( 960, 540 )
 texture = ExtResource( 5 )
+offset = Vector2( 960, 540 )
 
 [node name="shoe" type="Area2D" parent="objects"]
 
@@ -135,7 +135,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/shoe"]
+[node name="collider" type="CollisionPolygon2D" parent="objects/shoe"]
 
 build_mode = 0
 polygon = Vector2Array( 11.1227, 43.1845, 17.1538, 57.5663, 30.4917, 67.5408, 32.3474, 79.487, 28.2881, 82.7345, 8.57108, 85.634, -1.05545, 85.634, -1.40339, 42.9526 )
@@ -144,8 +144,8 @@ trigger = false
 
 [node name="sprite" type="Sprite" parent="objects/shoe"]
 
-transform/pos = Vector2( 960, 540 )
 texture = ExtResource( 6 )
+offset = Vector2( 960, 540 )
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -190,9 +190,10 @@ margin/bottom = 51.0
 
 [node name="sprite" type="Sprite" parent="inventory/VBoxContainer/passport"]
 
-visibility/visible = false
-transform/pos = Vector2( -340.819, 115.04 )
+visibility/self_opacity = 0.0
+transform/pos = Vector2( -1300.82, -425.04 )
 texture = ExtResource( 3 )
+offset = Vector2( 960, 540 )
 
 [node name="text" type="Label" parent="inventory/VBoxContainer/passport"]
 
@@ -225,9 +226,10 @@ margin/bottom = 106.0
 
 [node name="sprite" type="Sprite" parent="inventory/VBoxContainer/haringen"]
 
-visibility/visible = false
-transform/pos = Vector2( 861.908, 185.972 )
+visibility/self_opacity = 0.0
+transform/pos = Vector2( -101.092, -346.028 )
 texture = ExtResource( 4 )
+offset = Vector2( 960, 540 )
 
 [node name="text" type="Label" parent="inventory/VBoxContainer/haringen"]
 
@@ -260,9 +262,10 @@ margin/bottom = 161.0
 
 [node name="sprite" type="Sprite" parent="inventory/VBoxContainer/adapter"]
 
-visibility/visible = false
-transform/pos = Vector2( 131.986, 113.984 )
+visibility/self_opacity = 0.0
+transform/pos = Vector2( -831.014, -422.016 )
 texture = ExtResource( 5 )
+offset = Vector2( 960, 540 )
 
 [node name="text" type="Label" parent="inventory/VBoxContainer/adapter"]
 
@@ -295,9 +298,10 @@ margin/bottom = 216.0
 
 [node name="sprite" type="Sprite" parent="inventory/VBoxContainer/shoe"]
 
-visibility/visible = false
-transform/pos = Vector2( 1237.85, 504.527 )
+visibility/self_opacity = 0.0
+transform/pos = Vector2( 272.85, -36.4729 )
 texture = ExtResource( 6 )
+offset = Vector2( 960, 540 )
 
 [node name="text" type="Label" parent="inventory/VBoxContainer/shoe"]
 

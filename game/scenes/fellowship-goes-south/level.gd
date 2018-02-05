@@ -1,5 +1,6 @@
 extends Node2D
 
+const Fade = preload("res://game/player/fade.tscn")
 
 onready var objects = get_node("objects").get_children()
 onready var inventory = get_node("inventory/VBoxContainer").get_children()
@@ -15,12 +16,23 @@ func _ready():
 
 
 func mouse_on_object_event(_viewport, event, _shape_idx, object_idx):
-	if event.is_pressed():
-		if not found[object_idx]:
-			found[object_idx] = true
-			objects[object_idx].hide()
-			inventory[object_idx].get_node("sprite").show()
-			inventory[object_idx].get_node("text").add_color_override("font_color", Color("f92b66"))
+	if event.is_pressed() and not found[object_idx]:
+		found[object_idx] = true
+		
+		var pos = event.pos + Vector2(-15, -35)
+		
+		var fade_out = Fade.instance()
+		objects[object_idx].get_node("sprite").add_child(fade_out)
+		fade_out.set_pos(pos)
+		fade_out.get_node("player").play("fade out")
+		
+		var fade_in = Fade.instance()
+		inventory[object_idx].get_node("sprite").add_child(fade_in)
+		fade_in.set_pos(pos)
+		fade_in.get_node("player").play("fade in")
+		
+		inventory[object_idx].get_node("text").add_color_override("font_color", Color("f92b66"))
+		
 		if are_all_objects_found():
 			win()
 
