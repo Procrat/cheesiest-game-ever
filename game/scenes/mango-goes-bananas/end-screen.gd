@@ -5,7 +5,8 @@ var Mischief = preload("res://game/scenes/mango-goes-bananas/mischief/mischief.g
 var MISCHIEF_MESSAGES = {
 	Mischief.MEAT: "But I guess you'll have to go to bed without dinner...",
 	Mischief.FRIDGE: "However, the next day you realise that your breakfast is missing from the fridge.",
-	Mischief.VOMIT: "But you'll be carrying that rug to the dry cleaner on your bike."
+	Mischief.VOMIT: "But you'll be carrying that rug to the dry cleaner on your bike.",
+	Mischief.PEE: "But you'll have to sleep on the floor tonight..."
 }
 
 onready var title = get_node("title")

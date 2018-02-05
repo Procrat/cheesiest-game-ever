@@ -2,7 +2,7 @@ extends AnimatedSprite
 
 signal cleaned
 
-enum Mischief {MEAT, VOMIT, FRIDGE}
+enum Mischief {MEAT, VOMIT, FRIDGE, PEE}
 
 var utils = preload("res://game/utils.gd")
 

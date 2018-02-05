@@ -13,6 +13,8 @@ onready var jump_to_lick_location = get_parent().get_node("mischief/jump-to-lick
 onready var lick_location = get_parent().get_node("mischief/lick-location")
 onready var fridge_location = get_parent().get_node("mischief/fridge-location")
 onready var fridge = get_parent().get_node("apartment/fridge door")
+onready var jump_to_pee_location = get_parent().get_node("mischief/jump-to-pee-location")
+onready var pee_location = get_parent().get_node("mischief/pee-location")
 
 
 class Action extends Node:
@@ -257,6 +259,36 @@ class FridgeAction extends MischiefAction:
 		stopping()
 
 
+class PeeAction extends MischiefAction:
+	var Pee = preload("res://game/scenes/mango-goes-bananas/mango-animations/pipi.tscn")
+	var pee
+	
+	func _init(mango).(mango, "pipi start", mango.pee_location, MischiefKind.PEE):
+		pass
+	
+	func start():
+		.start()
+		mango.look_right()
+		utils.do_once_after_animation(animations, self, "pee")
+	
+	func pee():
+		if interrupted:
+			return
+		animations.play("pipi middle")
+		pee = Pee.instance()
+		mischief.add_child(pee)
+		utils.do_once_after_animation(animations, self, "stop_peeing")
+	
+	func stop_peeing():
+		animations.play("pipi end")
+		utils.do_once_after_animation(animations, self, "stop")
+	
+	func interrupt():
+		interrupted = true
+		mischief.interrupt()
+		stop_peeing()
+
+
 onready var animations = get_node("animations")
 onready var action = IdleAction.new(self, 1)
 
@@ -270,7 +302,7 @@ func _ready():
 
 func go_crazy():
 	# Choose something random to do
-	var possible_actions = ["go_and_idle", "go_and_vomit", "go_and_lick", "go_and_open_fridge"]
+	var possible_actions = ["go_and_idle", "go_and_vomit", "go_and_lick", "go_and_open_fridge", "go_and_pee"]
 	var corresponding_action_classes = [null, VomitAction, LickAction, FridgeAction]
 	for class_idx in range(corresponding_action_classes.size()):
 		var clazz = corresponding_action_classes[class_idx]
@@ -328,6 +360,18 @@ func go_and_open_fridge():
 
 func open_fridge():
 	do_and(FridgeAction.new(self, fridge), "go_crazy")
+
+
+func go_and_pee():
+	go_and_do(jump_to_pee_location.get_pos(), "jump_and_pee")
+
+
+func jump_and_pee():
+	do_and(JumpAction.new(self), "pee")
+
+
+func pee():
+	do_and(PeeAction.new(self), "go_crazy")
 
 
 func go_and_do(location, action_name):

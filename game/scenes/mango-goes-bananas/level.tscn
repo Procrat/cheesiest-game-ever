@@ -353,6 +353,14 @@ transform/pos = Vector2( 1311.14, 825.106 )
 
 transform/pos = Vector2( 1163.38, 902.311 )
 
+[node name="jump-to-pee-location" type="Node2D" parent="mischief"]
+
+transform/pos = Vector2( 806.265, 297.441 )
+
+[node name="pee-location" type="Node2D" parent="mischief"]
+
+transform/pos = Vector2( 879.676, 309.706 )
+
 [node name="sofa-myrjam-location" type="Node2D" parent="."]
 
 transform/pos = Vector2( 1425.82, 582.633 )
