@@ -107,6 +107,8 @@ func study():
 	animations.play("study start")
 	set_global_pos(sofa_stijn.get_global_pos())
 	studying = true
+	set_layer_mask(0)
+	set_collision_mask(0)
 	emit_signal("started_working")
 	utils.do_once_after_animation(animations, self, "keep_studying")
 
@@ -117,6 +119,8 @@ func keep_studying():
 
 func stop_studying():
 	animations.play("study end")
+	set_layer_mask(1)
+	set_collision_mask(1)
 	emit_signal("stopped_working")
 	utils.do_once_after_animation(animations, self, "unbusy")
 

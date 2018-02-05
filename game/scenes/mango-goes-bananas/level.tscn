@@ -283,7 +283,7 @@ transform/pos = Vector2( 1132.41, 827.619 )
 transform/pos = Vector2( 1144.44, 587.55 )
 script/script = ExtResource( 5 )
 player_name = 1
-walk_speed = 400.0
+walk_speed = 200.0
 clothing = "normal"
 
 [node name="Myrjam" parent="." instance=ExtResource( 6 )]
@@ -291,7 +291,7 @@ clothing = "normal"
 transform/pos = Vector2( 1209.23, 552.907 )
 script/script = ExtResource( 5 )
 player_name = 0
-walk_speed = 400.0
+walk_speed = 200.0
 clothing = "normal"
 
 [node name="Mango" parent="." groups=[
@@ -311,7 +311,7 @@ __meta__ = {
 
 [node name="Myr pc" type="Sprite" parent="foreground"]
 
-transform/pos = Vector2( 1515.81, 555.472 )
+transform/pos = Vector2( 1519.33, 551.511 )
 texture = ExtResource( 9 )
 
 [node name="navigation" type="Navigation2D" parent="."]
@@ -347,11 +347,11 @@ transform/pos = Vector2( 1163.38, 902.311 )
 
 [node name="sofa-myrjam-location" type="Node2D" parent="."]
 
-transform/pos = Vector2( 1428.46, 581.313 )
+transform/pos = Vector2( 1425.82, 582.633 )
 
 [node name="sofa-stijn-location" type="Node2D" parent="."]
 
-transform/pos = Vector2( 1351.67, 538.112 )
+transform/pos = Vector2( 1352.11, 539.432 )
 
 [node name="ui" type="Control" parent="."]
 
@@ -370,10 +370,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 0
 size_flags/vertical = 0
-margin/left = 268.0
-margin/top = 663.0
-margin/right = 838.0
-margin/bottom = 1067.0
+margin/left = 270.0
+margin/top = 621.0
+margin/right = 840.0
+margin/bottom = 1025.0
 alignment = 2
 __meta__ = {
 "_edit_group_": true
@@ -381,13 +381,13 @@ __meta__ = {
 
 [node name="Control" type="Control" parent="ui/VBoxContainer"]
 
-rect/min_size = Vector2( 570, 200 )
+rect/min_size = Vector2( 570, 150 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
+size_flags/horizontal = 3
+size_flags/vertical = 1
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 50.0
 margin/right = 570.0
 margin/bottom = 200.0
 __meta__ = {
@@ -407,13 +407,13 @@ texture = ExtResource( 12 )
 
 [node name="Control 2" type="Control" parent="ui/VBoxContainer"]
 
-rect/min_size = Vector2( 570, 200 )
+rect/min_size = Vector2( 570, 150 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 204.0
+margin/top = 254.0
 margin/right = 570.0
 margin/bottom = 404.0
 __meta__ = {

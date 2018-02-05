@@ -52,6 +52,6 @@ animations = [ {
 frames = SubResource( 1 )
 animation = "default"
 playing = true
-offset = Vector2( 36, -26 )
+offset = Vector2( 47, -9 )
 
 
