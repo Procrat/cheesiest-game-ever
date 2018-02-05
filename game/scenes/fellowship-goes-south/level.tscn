@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://game/scenes/fellowship-goes-south/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 3/background.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Level 3/haringen.png" type="Texture" id=4]
 [ext_resource path="res://Level 3/adapter.png" type="Texture" id=5]
 [ext_resource path="res://Level 3/shoe.png" type="Texture" id=6]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Level 3/foreground.png" type="Texture" id=7]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -38,7 +39,7 @@ points = Vector2Array( 28.2881, 82.7345, 8.57108, 85.634, 17.1538, 57.5663, 30.4
 font/size = 23
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 7 )
+font/font = ExtResource( 8 )
 
 [node name="level" type="Node2D"]
 
@@ -145,6 +146,11 @@ trigger = false
 
 transform/pos = Vector2( 960, 540 )
 texture = ExtResource( 6 )
+
+[node name="foreground" type="Sprite" parent="."]
+
+transform/pos = Vector2( 960, 540 )
+texture = ExtResource( 7 )
 
 [node name="inventory" type="Panel" parent="."]
 
