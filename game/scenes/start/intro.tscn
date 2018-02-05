@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
-[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=1]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Level 4/Cutscene heart.png" type="Texture" id=5]
-[ext_resource path="res://ui sprites/level instructions/cinema.png" type="Texture" id=6]
+[ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
+[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=2]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level 4/Cutscene heart.png" type="Texture" id=6]
+[ext_resource path="res://ui sprites/level instructions/cinema.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 100
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 2 )
+font/font = ExtResource( 3 )
 
 [sub_resource type="Animation" id=2]
 
@@ -203,10 +204,14 @@ tracks/17/keys = {
 
 [node name="Node2D" type="Node2D"]
 
+script/script = ExtResource( 1 )
+next_scene = "res://game/scenes/level-select/level-select.tscn"
+automatically_after_seconds = 18
+
 [node name="start bg" type="Sprite" parent="."]
 
 transform/pos = Vector2( 960, 540 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -308,7 +313,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Myrjam" parent="." instance=ExtResource( 3 )]
+[node name="Myrjam" parent="." instance=ExtResource( 4 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 1150, -200 )
@@ -317,29 +322,29 @@ transform/scale = Vector2( 3, 3 )
 [node name="animations" parent="Myrjam"]
 
 animation = "idle front normal"
-frame = 30
+frame = 64
 flip_h = true
 
-[node name="Stijn" parent="." instance=ExtResource( 4 )]
+[node name="Stijn" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 830, -200 )
 transform/scale = Vector2( 3, 3 )
 
 [node name="animations" parent="Stijn"]
 
-frame = 30
+frame = 64
 
 [node name="Cutscene heart" type="Sprite" parent="."]
 
 transform/pos = Vector2( 999.545, 400 )
 transform/scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="cinema" type="Sprite" parent="."]
 
 transform/pos = Vector2( -500, 400 )
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
