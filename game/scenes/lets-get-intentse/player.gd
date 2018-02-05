@@ -18,7 +18,6 @@ onready var grabbing_area = get_node("grabbing-area")
 var held_item = null
 var picking_up = false
 var drowning = false
-var beckoning = false
 var jumping = false
 var on_tree = false
 var over_tree = false
@@ -62,9 +61,6 @@ func fixed_process(delta):
 		panic()
 	elif jumping:
 		continue_jumping(delta)
-	elif beckoning and handle_input().translation.length() <= 0:
-		if animations.get_animation() != "beckoning":
-			animations.play("beckoning")
 	elif not picking_up and not (player_name == STIJN and on_tree):
 		.fixed_process(delta)
 
@@ -205,16 +201,6 @@ func stop_jumping():
 	if player_name == STIJN and on_tree:
 		animations.play("holding out hand")
 		animations.flip_h = false
-
-
-func beckon():
-	beckoning = true
-	animations.play("beckoning")
-	animations.flip_h = true
-
-
-func stop_beckoning():
-	beckoning = false
 
 
 func teleport(pos):

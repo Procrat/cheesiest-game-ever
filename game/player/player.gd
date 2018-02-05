@@ -29,6 +29,7 @@ onready var animations = get_node("animations")
 var last_action = "idle"
 var last_direction = "front"
 var last_flipped = false
+var beckoning = false
 
 
 func _ready():
@@ -46,6 +47,10 @@ func _fixed_process(delta):
 
 func fixed_process(delta):
 	var direction = handle_input()
+	
+	if beckoning and direction.translation.length() <= 0:
+		if animations.get_animation() != "beckoning":
+			animations.play("beckoning")
 	
 	if direction.name == null:
 		# No input: idle
@@ -94,3 +99,13 @@ func set_animation(action, direction, flipped):
 	last_action = action
 	last_direction = direction
 	last_flipped = flipped
+
+
+func beckon():
+	beckoning = true
+	animations.play("beckoning")
+	animations.flip_h = true
+
+
+func stop_beckoning():
+	beckoning = false
