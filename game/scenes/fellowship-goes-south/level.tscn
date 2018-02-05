@@ -1,0 +1,313 @@
+[gd_scene load_steps=14 format=1]
+
+[ext_resource path="res://game/scenes/fellowship-goes-south/level.gd" type="Script" id=1]
+[ext_resource path="res://Level 3/background.png" type="Texture" id=2]
+[ext_resource path="res://Level 3/passport.png" type="Texture" id=3]
+[ext_resource path="res://Level 3/haringen.png" type="Texture" id=4]
+[ext_resource path="res://Level 3/adapter.png" type="Texture" id=5]
+[ext_resource path="res://Level 3/shoe.png" type="Texture" id=6]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1575.57, 431.609, 1596.36, 431.892, 1597.39, 458.154, 1592.95, 461.744, 1573.68, 460.516, 1574.06, 434.632 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 390.718, 354.632, 397.186, 369.842, 399.983, 388.024, 388.795, 392.919, 374.634, 378.408, 369.914, 365.122, 376.382, 353.933 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1106.75, 444.305, 1123.29, 443.991, 1127.26, 448.492, 1128.62, 456.447, 1117.53, 460.425, 1107.38, 460.425, 1100.57, 454.458 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -1.05545, 85.634, -1.40339, 42.9526, 11.1227, 43.1845, 17.1538, 57.5663, 8.57108, 85.634 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 28.2881, 82.7345, 8.57108, 85.634, 17.1538, 57.5663, 30.4917, 67.5408, 32.3474, 79.487 )
+
+[sub_resource type="DynamicFont" id=6]
+
+font/size = 23
+font/use_mipmaps = false
+font/use_filter = true
+font/font = ExtResource( 7 )
+
+[node name="level" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+
+transform/pos = Vector2( 960, 540 )
+texture = ExtResource( 2 )
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="passport" type="Area2D" parent="objects"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/passport"]
+
+build_mode = 0
+polygon = Vector2Array( 1574.06, 434.632, 1573.68, 460.516, 1592.95, 461.744, 1597.39, 458.154, 1596.36, 431.892, 1575.57, 431.609 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="sprite" type="Sprite" parent="objects/passport"]
+
+transform/pos = Vector2( 960, 540 )
+texture = ExtResource( 3 )
+
+[node name="haringen" type="Area2D" parent="objects"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/haringen"]
+
+build_mode = 0
+polygon = Vector2Array( 376.382, 353.933, 369.914, 365.122, 374.634, 378.408, 388.795, 392.919, 399.983, 388.024, 397.186, 369.842, 390.718, 354.632 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="sprite" type="Sprite" parent="objects/haringen"]
+
+transform/pos = Vector2( 960, 540 )
+texture = ExtResource( 4 )
+
+[node name="adapter" type="Area2D" parent="objects"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/adapter"]
+
+build_mode = 0
+polygon = Vector2Array( 1106.75, 444.305, 1123.29, 443.991, 1127.26, 448.492, 1128.62, 456.447, 1117.53, 460.425, 1107.38, 460.425, 1100.57, 454.458 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="sprite" type="Sprite" parent="objects/adapter"]
+
+transform/pos = Vector2( 960, 540 )
+texture = ExtResource( 5 )
+
+[node name="shoe" type="Area2D" parent="objects"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 5 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/shoe"]
+
+build_mode = 0
+polygon = Vector2Array( 11.1227, 43.1845, 17.1538, 57.5663, 30.4917, 67.5408, 32.3474, 79.487, 28.2881, 82.7345, 8.57108, 85.634, -1.05545, 85.634, -1.40339, 42.9526 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="sprite" type="Sprite" parent="objects/shoe"]
+
+transform/pos = Vector2( 960, 540 )
+texture = ExtResource( 6 )
+
+[node name="inventory" type="Panel" parent="."]
+
+rect/min_size = Vector2( 200, 200 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 25.0
+margin/top = 787.0
+margin/right = 390.0
+margin/bottom = 1054.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="inventory"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 27.0
+margin/top = 17.0
+margin/right = 337.0
+margin/bottom = 249.0
+alignment = 0
+
+[node name="passport" type="Control" parent="inventory/VBoxContainer"]
+
+rect/min_size = Vector2( 250, 51 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 310.0
+margin/bottom = 51.0
+
+[node name="sprite" type="Sprite" parent="inventory/VBoxContainer/passport"]
+
+visibility/visible = false
+transform/pos = Vector2( -340.819, 115.04 )
+texture = ExtResource( 3 )
+
+[node name="text" type="Label" parent="inventory/VBoxContainer/passport"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 50.0
+custom_fonts/font = SubResource( 6 )
+text = "Passport"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="haringen" type="Control" parent="inventory/VBoxContainer"]
+
+rect/min_size = Vector2( 250, 51 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 55.0
+margin/right = 310.0
+margin/bottom = 106.0
+
+[node name="sprite" type="Sprite" parent="inventory/VBoxContainer/haringen"]
+
+visibility/visible = false
+transform/pos = Vector2( 861.908, 185.972 )
+texture = ExtResource( 4 )
+
+[node name="text" type="Label" parent="inventory/VBoxContainer/haringen"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 50.0
+custom_fonts/font = SubResource( 6 )
+text = "Tent pegs"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="adapter" type="Control" parent="inventory/VBoxContainer"]
+
+rect/min_size = Vector2( 250, 51 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 110.0
+margin/right = 310.0
+margin/bottom = 161.0
+
+[node name="sprite" type="Sprite" parent="inventory/VBoxContainer/adapter"]
+
+visibility/visible = false
+transform/pos = Vector2( 131.986, 113.984 )
+texture = ExtResource( 5 )
+
+[node name="text" type="Label" parent="inventory/VBoxContainer/adapter"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 50.0
+custom_fonts/font = SubResource( 6 )
+text = "Power adapter"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="shoe" type="Control" parent="inventory/VBoxContainer"]
+
+rect/min_size = Vector2( 250, 51 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 165.0
+margin/right = 310.0
+margin/bottom = 216.0
+
+[node name="sprite" type="Sprite" parent="inventory/VBoxContainer/shoe"]
+
+visibility/visible = false
+transform/pos = Vector2( 1237.85, 504.527 )
+texture = ExtResource( 6 )
+
+[node name="text" type="Label" parent="inventory/VBoxContainer/shoe"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 50.0
+custom_fonts/font = SubResource( 6 )
+text = "Hiking shoe"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
