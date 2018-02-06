@@ -22,6 +22,7 @@ func be_picked_up_by(player):
 func put_dress_on(myrjam):
 	var animation_player = myrjam.get_node("animations/fade/player")
 	animation_player.play("fade out")
+	SFX.play("tingeling")
 	utils.do_once_after_animation(animation_player, self, "fade_in_with_dress", [myrjam])
 
 func fade_in_with_dress(myrjam):

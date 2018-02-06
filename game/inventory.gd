@@ -13,6 +13,8 @@ func _ready():
 
 func add(item_type):
 	items[item_type] = JUST_TAKEN
+	if item_type in [NACHOS, CHOCOLATE_MILK]:
+		SFX.play("nom")
 
 func clear():
 	for i in range(ItemType.size()):

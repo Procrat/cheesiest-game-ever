@@ -45,6 +45,8 @@ func body_enter(body):
 	if not picked_up and body.is_in_group("estuary"):
 		if not stuck:
 			animations.play("sinking")
+			SFX.play("sploosh")
+			SFX.play("blub")
 			particles.set_emitting(true)
 		stuck = true
 		body.get_parent().get_parent().disable_part_because_of(body, self)

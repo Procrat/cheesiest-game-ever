@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://sounds/myrjam/aaah.wav" type="Sample" id=1]
 [ext_resource path="res://sounds/myrjam/awww-endearing.wav" type="Sample" id=2]
@@ -14,8 +14,9 @@
 [ext_resource path="res://sounds/myrjam/prrrr.wav" type="Sample" id=12]
 [ext_resource path="res://sounds/myrjam/quack.wav" type="Sample" id=13]
 [ext_resource path="res://sounds/myrjam/sploosh.wav" type="Sample" id=14]
-[ext_resource path="res://sounds/myrjam/wheee.wav" type="Sample" id=15]
-[ext_resource path="res://sounds/myrjam/woohoo.wav" type="Sample" id=16]
+[ext_resource path="res://sounds/both/tingeling.wav" type="Sample" id=15]
+[ext_resource path="res://sounds/myrjam/wheee.wav" type="Sample" id=16]
+[ext_resource path="res://sounds/myrjam/woohoo.wav" type="Sample" id=17]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -103,17 +104,23 @@ samples/sploosh = {
 "priority": 0,
 "sample": ExtResource( 14 )
 }
-samples/wheee = {
+samples/tingeling = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 15 )
 }
-samples/woohoo = {
+samples/wheee = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 16 )
+}
+samples/woohoo = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 17 )
 }
 
 [node name="SamplePlayer" type="SamplePlayer"]

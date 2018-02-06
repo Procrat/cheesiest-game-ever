@@ -36,6 +36,8 @@ func mouse_on_object_event(_viewport, event, _shape_idx, object_idx):
 		fade_in.set_pos(pos)
 		fade_in.get_node("player").play("fade in")
 		
+		SFX.play("tingeling")
+		
 		inventory[object_idx].get_node("text").add_color_override("font_color", Color("f92b66"))
 		
 		if are_all_objects_found():

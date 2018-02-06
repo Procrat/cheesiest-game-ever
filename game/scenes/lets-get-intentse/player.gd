@@ -80,7 +80,9 @@ func close_to(player):
 
 
 func panic():
-	animations.play("panic")
+	if animations.get_animation() != "panic":
+		animations.play("panic")
+		SFX.play("aaah")
 
 
 func carrying_something():
@@ -161,6 +163,7 @@ func climb_over_tree():
 	
 	var animation = "jump with help" if jump_size == BIG and not on_tree else "jump"
 	animations.play(animation)
+	SFX.play("hng")
 	var sprites = animations.get_sprite_frames()
 	animation_duration = sprites.get_frame_count(animation) / sprites.get_animation_speed(animation)
 	animations.connect("finished", self, "stop_jumping")
@@ -205,6 +208,7 @@ func stop_jumping():
 
 func teleport(pos):
 	animations.get_node("fade/player").play("fade out")
+	SFX.play("tingeling")
 	utils.do_once_after_animation(animations, self, "fade_in", [pos + Vector2((randi() % 20), -20 + (randi() % 40))])
 
 

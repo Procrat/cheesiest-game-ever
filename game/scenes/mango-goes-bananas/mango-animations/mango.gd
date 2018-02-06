@@ -176,6 +176,8 @@ class JumpDownAction extends Action:
 
 
 class LickAction extends MischiefAction:
+	var sound
+	
 	func _init(mango).(mango, "lick start", mango.lick_location, MischiefKind.MEAT):
 		pass
 	
@@ -188,10 +190,13 @@ class LickAction extends MischiefAction:
 		if interrupted:
 			return
 		animations.play("lick middle")
+		sound = SFX.play("lick")
 		utils.do_once_after(mango.lick_duration, mango, self, "stop_licking")
 	
 	func stop_licking():
 		animations.play("lick end")
+		if sound != null:
+			SFX.stop(sound)
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
@@ -210,6 +215,7 @@ class VomitAction extends MischiefAction:
 	func start():
 		.start()
 		mango.look_right()
+		SFX.play("barf")
 		utils.do_once_after(mango.vomit_delay, mango, self, "spawn_vomit")
 	
 	func spawn_vomit():
@@ -227,6 +233,7 @@ class VomitAction extends MischiefAction:
 
 class FridgeAction extends MischiefAction:
 	var fridge
+	var sound
 	
 	func _init(mango, fridge).(mango, "opens fridge", mango.fridge_location, MischiefKind.FRIDGE):
 		self.fridge = fridge
@@ -240,17 +247,21 @@ class FridgeAction extends MischiefAction:
 		if interrupted:
 			return
 		fridge.play("open")
+		sound = SFX.play("miauw-happy")
 		utils.do_once_after_animation(animations, self, "start_licking")
 	
 	func start_licking():
 		if interrupted:
 			return
 		animations.play("lick start")
+		sound = SFX.play("lick")
 		utils.do_once_after_animation(animations, animations, "play", ["lick middle"])
 		utils.do_once_after(4, mango, self, "stopping")
 	
 	func stopping():
 		animations.play("lick end")
+		if sound != null:
+			SFX.stop(sound)
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():

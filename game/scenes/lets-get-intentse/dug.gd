@@ -23,6 +23,7 @@ func _ready():
 func stick_encountered_something(something, stick):
 	if something == self:
 		followee = stick
+		SFX.play("bark")
 
 
 func _fixed_process(delta):

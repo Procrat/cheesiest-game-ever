@@ -9,11 +9,9 @@ func _ready():
 
 func body_enter(body):
 	if body.is_in_group("players"):
-#		body.beckon()
 		emit_signal("reached", body)
 
 
 func body_exit(body):
 	if body.is_in_group("players"):
-#		body.stop_beckoning()
 		emit_signal("left", body)
