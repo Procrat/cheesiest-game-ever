@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://game/scenes/fellowship-goes-south/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 3/background.png" type="Texture" id=2]
@@ -6,11 +6,12 @@
 [ext_resource path="res://Level 3/haringen.png" type="Texture" id=4]
 [ext_resource path="res://Level 3/adapter.png" type="Texture" id=5]
 [ext_resource path="res://Level 3/shoe.png" type="Texture" id=6]
-[ext_resource path="res://Level 3/foreground.png" type="Texture" id=7]
-[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/scenes/fellowship-goes-south/end-screen.gd" type="Script" id=11]
+[ext_resource path="res://game/scenes/fellowship-goes-south/on-click-text-fx.gd" type="Script" id=7]
+[ext_resource path="res://Level 3/foreground.png" type="Texture" id=8]
+[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/scenes/fellowship-goes-south/end-screen.gd" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -37,12 +38,22 @@ points = Vector2Array( -1.05545, 85.634, -1.40339, 42.9526, 11.1227, 43.1845, 17
 custom_solver_bias = 0.0
 points = Vector2Array( 28.2881, 82.7345, 8.57108, 85.634, 17.1538, 57.5663, 30.4917, 67.5408, 32.3474, 79.487 )
 
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 15.0994, 58.498, -8.12024, 98.9666, -26.0325, 80.3909, -14.7545, 57.8347 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -42.618, -21.1122, 34.3386, -42.3416, 84.095, -26.4196, 102.007, 43.9028, 15.0994, 58.498, -14.7545, 57.8347, -47.2619, 38.5955, -53.2327, 2.10748 )
+
 [sub_resource type="DynamicFont" id=6]
 
 font/size = 23
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 9 )
+font/font = ExtResource( 10 )
 
 [node name="level" type="Node2D"]
 
@@ -150,12 +161,39 @@ trigger = false
 texture = ExtResource( 6 )
 offset = Vector2( 960, 540 )
 
+[node name="clickables" type="Node2D" parent="."]
+
+[node name="mango" type="Area2D" parent="clickables"]
+
+editor/display_folded = true
+transform/pos = Vector2( 775.398, 662.11 )
+input/pickable = true
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 8 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 7 )
+text = "MIAUW!"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/mango"]
+
+build_mode = 0
+polygon = Vector2Array( -42.618, -21.1122, -53.2327, 2.10748, -47.2619, 38.5955, -14.7545, 57.8347, -26.0325, 80.3909, -8.12024, 98.9666, 15.0994, 58.498, 102.007, 43.9028, 84.095, -26.4196, 34.3386, -42.3416 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
 [node name="foreground" type="Sprite" parent="."]
 
 transform/pos = Vector2( 960, 540 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
-[node name="i-give-up" parent="." instance=ExtResource( 8 )]
+[node name="i-give-up" parent="." instance=ExtResource( 9 )]
 
 margin/left = 1214.0
 margin/top = 990.0
@@ -331,9 +369,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="end-screen" parent="." instance=ExtResource( 10 )]
+[node name="end-screen" parent="." instance=ExtResource( 11 )]
 
 visibility/visible = false
-script/script = ExtResource( 11 )
+script/script = ExtResource( 12 )
 
 
