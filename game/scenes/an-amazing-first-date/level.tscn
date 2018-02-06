@@ -791,7 +791,7 @@ points = Vector2Array( 528, 453, 666, 453, 729, 459, 961, 540, 465, 458 )
 custom_solver_bias = 0.0
 points = Vector2Array( 137, 522, 961, 540, -960, 541, -128, 524 )
 
-[sub_resource type="RectangleShape2D" id=157]
+[sub_resource type="RectangleShape2D" id=156]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -800,8 +800,6 @@ extents = Vector2( 10, 10 )
 
 transform/pos = Vector2( 35, 15 )
 script/script = ExtResource( 1 )
-controls_scene = "res://game/scenes/an-amazing-first-date/controls.tscn"
-next_scene = "res://game/scenes/an-amazing-first-date/cutscene.tscn"
 
 [node name="maze" type="Sprite" parent="."]
 
@@ -1299,6 +1297,7 @@ trigger = false
 
 editor/display_folded = true
 transform/pos = Vector2( 18.2032, 22.7638 )
+clothing = "hiking"
 
 [node name="Stijn" parent="." instance=ExtResource( 4 )]
 
@@ -1316,7 +1315,7 @@ margin/bottom = 67.0
 editor/display_folded = true
 transform/pos = Vector2( 925, 1022.5 )
 input/pickable = true
-shapes/0/shape = SubResource( 157 )
+shapes/0/shape = SubResource( 156 )
 shapes/0/transform = Matrix32( 7.53846, 0, 0, 2.42307, 1.00001, 2.00005 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1329,7 +1328,7 @@ script/script = ExtResource( 6 )
 
 transform/pos = Vector2( 1.00001, 2.00005 )
 transform/scale = Vector2( 7.53846, 2.42307 )
-shape = SubResource( 157 )
+shape = SubResource( 156 )
 trigger = false
 _update_shape_index = 0
 

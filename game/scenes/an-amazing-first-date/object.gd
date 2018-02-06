@@ -17,7 +17,13 @@ func be_picked_up_by(player):
 	INVENTORY.add(item_type)
 	set_hidden(true)
 	if item_type == INVENTORY.DRESS and player.player_name == Player.MYRJAM:
-		var animation_player = player.get_node("animations/fade/player")
-		animation_player.play("fade out")
-		player.clothing = "normal"
-		utils.do_once_after_animation(animation_player, animation_player, "play", ["fade in"])
+		put_dress_on(player)
+
+func put_dress_on(myrjam):
+	var animation_player = myrjam.get_node("animations/fade/player")
+	animation_player.play("fade out")
+	utils.do_once_after_animation(animation_player, self, "fade_in_with_dress", [myrjam])
+
+func fade_in_with_dress(myrjam):
+	myrjam.clothing = "normal"
+	myrjam.get_node("animations/fade/player").play("fade in")
