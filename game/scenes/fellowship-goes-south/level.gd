@@ -1,9 +1,12 @@
 extends Node2D
 
 const Fade = preload("res://game/player/fade.tscn")
+const utils = preload("res://game/utils.gd")
 
 onready var objects = get_node("objects").get_children()
 onready var inventory = get_node("inventory/VBoxContainer").get_children()
+onready var i_give_up_button = get_node("i-give-up")
+onready var end_screen = get_node("end-screen")
 
 var found = []
 
@@ -13,6 +16,8 @@ func _ready():
 		found.append(false)
 		var object = objects[object_idx]
 		object.connect("input_event", self, "mouse_on_object_event", [object_idx])
+	
+	i_give_up_button.connect("pressed", self, "give_up")
 
 
 func mouse_on_object_event(_viewport, event, _shape_idx, object_idx):
@@ -34,7 +39,7 @@ func mouse_on_object_event(_viewport, event, _shape_idx, object_idx):
 		inventory[object_idx].get_node("text").add_color_override("font_color", Color("f92b66"))
 		
 		if are_all_objects_found():
-			win()
+			utils.do_once_after_animation(fade_in.get_node("player"), self, "win")
 
 
 func are_all_objects_found():
@@ -45,5 +50,8 @@ func are_all_objects_found():
 
 
 func win():
-	get_tree().change_scene("res://game/scenes/level-select/level-select.tscn")
-	GLOBAL_STATE.ensure_level_unlocked(3)
+	end_screen.show(true, found)
+
+
+func give_up():
+	end_screen.show(false, found)

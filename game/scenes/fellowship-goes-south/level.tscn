@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://game/scenes/fellowship-goes-south/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 3/background.png" type="Texture" id=2]
@@ -7,7 +7,10 @@
 [ext_resource path="res://Level 3/adapter.png" type="Texture" id=5]
 [ext_resource path="res://Level 3/shoe.png" type="Texture" id=6]
 [ext_resource path="res://Level 3/foreground.png" type="Texture" id=7]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/scenes/fellowship-goes-south/end-screen.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -39,7 +42,7 @@ points = Vector2Array( 28.2881, 82.7345, 8.57108, 85.634, 17.1538, 57.5663, 30.4
 font/size = 23
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 8 )
+font/font = ExtResource( 9 )
 
 [node name="level" type="Node2D"]
 
@@ -151,6 +154,14 @@ offset = Vector2( 960, 540 )
 
 transform/pos = Vector2( 960, 540 )
 texture = ExtResource( 7 )
+
+[node name="i-give-up" parent="." instance=ExtResource( 8 )]
+
+margin/left = 1214.0
+margin/top = 990.0
+margin/right = 1617.0
+margin/bottom = 1062.0
+text = "I give up!"
 
 [node name="inventory" type="Panel" parent="."]
 
@@ -319,5 +330,10 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="end-screen" parent="." instance=ExtResource( 10 )]
+
+visibility/visible = false
+script/script = ExtResource( 11 )
 
 

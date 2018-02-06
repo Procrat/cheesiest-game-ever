@@ -1,20 +1,18 @@
-extends PopupDialog
+extends "res://game/ui/level-end-screen/end-screen.gd"
 
-var Mischief = preload("res://game/scenes/mango-goes-bananas/mischief/mischief.gd")
+const Mischief = preload("res://game/scenes/mango-goes-bananas/mischief/mischief.gd")
 
-var MISCHIEF_MESSAGES = {
+const MISCHIEF_MESSAGES = {
 	Mischief.MEAT: "But I guess you'll have to go to bed without dinner...",
 	Mischief.FRIDGE: "However, the next day you realise that your breakfast is missing from the fridge.",
 	Mischief.VOMIT: "But you'll be carrying that rug to the dry cleaner on your bike.",
 	Mischief.PEE: "But you'll have to sleep on the floor tonight..."
 }
 
-onready var title = get_node("title")
-onready var subtitle = get_node("subtitle")
-onready var text = get_node("text")
-onready var inventory = get_node("inventory")
-onready var retry_button = get_node("retry-button")
-onready var animation_player = get_node("animation-player")
+
+func _init().(1):
+	pass
+
 
 func show(ignored_mischief, drawn_enough, studied_enough):
 	if not drawn_enough:
@@ -38,10 +36,9 @@ func show(ignored_mischief, drawn_enough, studied_enough):
 	
 	inventory.hide()
 	
-	popup()
-	# HACK: This needs to happen because popup() puts it immediately on the screen
-	set_pos(Vector2(425, -800))
-	animation_player.play("drop-down")
+	var has_won = drawn_enough && studied_enough && ignored_mischief.size() <= 0
+	popup(has_won)
+
 
 func ignored_mischief_message(ignored_mischief):
 	var random_mischief = ignored_mischief[randi() % ignored_mischief.size()]

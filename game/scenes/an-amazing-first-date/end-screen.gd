@@ -1,4 +1,4 @@
-extends PopupDialog
+extends "res://game/ui/level-end-screen/end-screen.gd"
 
 var MISSING_MESSAGES = {
 	INVENTORY.NACHOS: "You'll be thinking about those missing nachos during the whole movie!",
@@ -8,18 +8,18 @@ var MISSING_MESSAGES = {
 }
 var NEEDED_ITEMS = MISSING_MESSAGES.keys()
 
-onready var title = get_node("title")
-onready var subtitle = get_node("subtitle")
-onready var text = get_node("text")
-onready var inventory = get_node("inventory")
-onready var retry_button = get_node("retry-button")
-onready var animation_player = get_node("animation-player")
+
+func _init().(0):
+	pass
+
 
 func show(in_time):
+	var has_won = false
 	if in_time:
 		title.set_text("Sweet!")
 		subtitle.set_text("You made it in time!")
 		if INVENTORY.has_got_everything(NEEDED_ITEMS):
+			has_won = true
 			text.set_text("Wow, you also managed to make this date absolutely perfect.")
 			retry_button.hide()
 		else:
@@ -27,11 +27,11 @@ func show(in_time):
 	else:
 		title.set_text("Oh, noes!")
 		subtitle.set_text("You didn't make it in time...\nLuckily, love conquers all!")
+	
 	inventory.refresh()
-	popup()
-	# HACK: This needs to happen because popup() puts it immediately on the screen
-	set_pos(Vector2(425, -800))
-	animation_player.play("drop-down")
+	
+	popup(has_won)
+
 
 func missing_item_message():
 	var item = INVENTORY.random_missing_item(NEEDED_ITEMS)
