@@ -166,8 +166,6 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-controls_scene = "res://game/scenes/mango-goes-bananas/level.tscn"
-next_scene = "res://game/scenes/level-select/level-select.tscn"
 
 [node name="apartment" type="StaticBody2D" parent="."]
 

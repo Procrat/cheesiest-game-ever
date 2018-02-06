@@ -1,18 +1,17 @@
 extends Node2D
 
 export(String, FILE, "*.tscn") var lvl1
-export(String, FILE, "*.tscn") var instructions_lvl1
+export(PackedScene) var instructions_lvl1
 export(String, FILE, "*.tscn") var lvl2
-export(String, FILE, "*.tscn") var instructions_lvl2
+export(PackedScene) var instructions_lvl2
 export(String, FILE, "*.tscn") var lvl3
-export(String, FILE, "*.tscn") var instructions_lvl3
+export(PackedScene) var instructions_lvl3
 export(String, FILE, "*.tscn") var lvl4
-export(String, FILE, "*.tscn") var instructions_lvl4
+export(PackedScene) var instructions_lvl4
 
 
 onready var buttons = get_node("buttons").get_children()
-onready var instructions_names = [instructions_lvl1, instructions_lvl2, instructions_lvl3, instructions_lvl4]
-onready var instructions_scenes = []
+onready var instructions_scenes = [instructions_lvl1, instructions_lvl2, instructions_lvl3, instructions_lvl4]
 onready var level_names = [lvl1, lvl2, lvl3, lvl4]
 
 var instructions_scene
@@ -20,9 +19,6 @@ var instructions_idx
 
 
 func _ready():
-	for instructions_name in instructions_names:
-		instructions_scenes.append(load(instructions_name))
-	
 	for level_idx in range(buttons.size()):
 		buttons[level_idx].connect("pressed", self, "show_instructions", [level_idx])
 	

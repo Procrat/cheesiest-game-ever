@@ -1,14 +1,15 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
-[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=2]
-[ext_resource path="res://ui sprites/start/Start heart.png" type="Texture" id=3]
-[ext_resource path="res://ui sprites/start/start title.png" type="Texture" id=4]
-[ext_resource path="res://ui sprites/start/play-alone-button-hover.png" type="Texture" id=5]
-[ext_resource path="res://ui sprites/start/play-alone-button-pressed.png" type="Texture" id=6]
-[ext_resource path="res://ui sprites/start/play-alone-button.png" type="Texture" id=7]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://ui sprites/start/start best exp.png" type="Texture" id=9]
+[ext_resource path="res://game/scenes/start/intro.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=3]
+[ext_resource path="res://ui sprites/start/Start heart.png" type="Texture" id=4]
+[ext_resource path="res://ui sprites/start/start title.png" type="Texture" id=5]
+[ext_resource path="res://ui sprites/start/play-alone-button-hover.png" type="Texture" id=6]
+[ext_resource path="res://ui sprites/start/play-alone-button-pressed.png" type="Texture" id=7]
+[ext_resource path="res://ui sprites/start/play-alone-button.png" type="Texture" id=8]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://ui sprites/start/start best exp.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -103,7 +104,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 495, 135 )
 margin/left = 0.0
 margin/right = 0.0
@@ -121,7 +122,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 495, 135 )
 margin/left = 0.0
 margin/right = 0.0
@@ -139,7 +140,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 495, 135 )
 margin/left = 0.0
 margin/right = 0.0
@@ -156,7 +157,7 @@ draw_center = true
 font/size = 72
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 8 )
+font/font = ExtResource( 9 )
 
 [node name="Start screen" type="Label"]
 
@@ -173,23 +174,23 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 1 )
-next_scene = "res://game/scenes/start/intro.tscn"
+next_scene = ExtResource( 2 )
 automatically_after_seconds = -1
 
 [node name="start bg" type="Sprite" parent="."]
 
 transform/pos = Vector2( 958.503, 537.261 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Start heart" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1008.47, 230 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="start title" type="Sprite" parent="."]
 
 transform/pos = Vector2( 938.492, 503.601 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -245,6 +246,6 @@ flat = false
 [node name="best experience" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1440.08, 874.08 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 

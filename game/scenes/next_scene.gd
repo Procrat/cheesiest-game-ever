@@ -1,6 +1,6 @@
 extends Node
 
-export(String, FILE, "*.tscn") var next_scene
+export(PackedScene) var next_scene
 export(int) var automatically_after_seconds = -1
 
 var utils = preload("res://game/utils.gd")
@@ -19,4 +19,4 @@ func _input(event):
 
 
 func go_to_next_scene():
-	get_tree().change_scene(next_scene)
+	get_tree().change_scene_to(next_scene)

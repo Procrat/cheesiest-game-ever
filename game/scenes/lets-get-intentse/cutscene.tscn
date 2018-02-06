@@ -1,16 +1,17 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
-[ext_resource path="res://Level 4/all them cutscenes/tent day.png" type="Texture" id=2]
-[ext_resource path="res://Level 4/all them cutscenes/tent night lamp.png" type="Texture" id=3]
-[ext_resource path="res://Level 4/white bling.png" type="Texture" id=4]
-[ext_resource path="res://Level 4/all them cutscenes/tent night.png" type="Texture" id=5]
-[ext_resource path="res://Level 4/all them cutscenes/tent sunrise.png" type="Texture" id=6]
-[ext_resource path="res://Level 4/all them cutscenes/tent sunrise out of tent.png" type="Texture" id=7]
-[ext_resource path="res://Level 4/all them cutscenes/proposal.png" type="Texture" id=8]
-[ext_resource path="res://Level 4/bling.png" type="Texture" id=9]
-[ext_resource path="res://Level 4/Cutscene heart.png" type="Texture" id=10]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://game/scenes/start/start.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level 4/all them cutscenes/tent day.png" type="Texture" id=3]
+[ext_resource path="res://Level 4/all them cutscenes/tent night lamp.png" type="Texture" id=4]
+[ext_resource path="res://Level 4/white bling.png" type="Texture" id=5]
+[ext_resource path="res://Level 4/all them cutscenes/tent night.png" type="Texture" id=6]
+[ext_resource path="res://Level 4/all them cutscenes/tent sunrise.png" type="Texture" id=7]
+[ext_resource path="res://Level 4/all them cutscenes/tent sunrise out of tent.png" type="Texture" id=8]
+[ext_resource path="res://Level 4/all them cutscenes/proposal.png" type="Texture" id=9]
+[ext_resource path="res://Level 4/bling.png" type="Texture" id=10]
+[ext_resource path="res://Level 4/Cutscene heart.png" type="Texture" id=11]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="Animation" id=1]
 
@@ -144,21 +145,22 @@ tracks/11/keys = {
 font/size = 100
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 11 )
-fallback/0 = ExtResource( 11 )
+font/font = ExtResource( 12 )
+fallback/0 = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=3]
 
 font/size = 80
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 11 )
+font/font = ExtResource( 12 )
 
 [node name="Node2D" type="Node2D"]
 
 transform/pos = Vector2( 960, 540 )
 script/script = ExtResource( 1 )
-next_scene = "res://game/scenes/start/start.tscn"
+next_scene = ExtResource( 2 )
+automatically_after_seconds = -1
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -166,11 +168,11 @@ transform/scale = Vector2( 1.05, 1.05 )
 
 [node name="Sprite" type="Sprite" parent="Node2D"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Sprite 2" type="Sprite" parent="Node2D"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Particles2D" type="Particles2D" parent="Node2D/Sprite 2"]
 
@@ -178,7 +180,7 @@ transform/pos = Vector2( -133.578, -302.823 )
 config/amount = 1
 config/lifetime = 2.0
 config/process_mode = 1
-config/texture = ExtResource( 4 )
+config/texture = ExtResource( 5 )
 params/direction = 0.0
 params/spread = 10.0
 params/linear_velocity = 0.0
@@ -203,7 +205,7 @@ transform/pos = Vector2( 384.528, -456.291 )
 config/amount = 1
 config/lifetime = 2.0
 config/process_mode = 1
-config/texture = ExtResource( 4 )
+config/texture = ExtResource( 5 )
 params/direction = 0.0
 params/spread = 10.0
 params/linear_velocity = 0.0
@@ -224,7 +226,7 @@ color/color = Color( 0.746094, 0.916687, 1, 1 )
 
 [node name="Sprite 3" type="Sprite" parent="Node2D"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Particles2D2" type="Particles2D" parent="Node2D/Sprite 3"]
 
@@ -232,7 +234,7 @@ transform/pos = Vector2( 300.482, -367.288 )
 config/amount = 1
 config/lifetime = 2.0
 config/process_mode = 1
-config/texture = ExtResource( 4 )
+config/texture = ExtResource( 5 )
 params/direction = 0.0
 params/spread = 10.0
 params/linear_velocity = 0.0
@@ -257,7 +259,7 @@ transform/pos = Vector2( -406.906, -487.621 )
 config/amount = 1
 config/lifetime = 2.0
 config/process_mode = 1
-config/texture = ExtResource( 4 )
+config/texture = ExtResource( 5 )
 params/direction = 0.0
 params/spread = 10.0
 params/linear_velocity = 0.0
@@ -279,18 +281,18 @@ color/color = Color( 0.746094, 0.916687, 1, 1 )
 [node name="Sprite 4" type="Sprite" parent="Node2D"]
 
 visibility/visible = false
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Sprite 5" type="Sprite" parent="Node2D"]
 
 visibility/visible = false
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Sprite 6" type="Sprite" parent="."]
 
 visibility/visible = false
 transform/pos = Vector2( 0.880249, -0.440125 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Particles2D" type="Particles2D" parent="Sprite 6"]
 
@@ -298,7 +300,7 @@ transform/pos = Vector2( -22.8913, 84.0643 )
 config/amount = 1
 config/lifetime = 2.0
 config/process_mode = 1
-config/texture = ExtResource( 9 )
+config/texture = ExtResource( 10 )
 params/direction = 0.0
 params/spread = 10.0
 params/linear_velocity = 20.0
@@ -325,7 +327,7 @@ config/lifetime = 10.0
 config/process_mode = 1
 config/half_extents = Vector2( 960, 200 )
 config/local_space = false
-config/texture = ExtResource( 10 )
+config/texture = ExtResource( 11 )
 params/direction = 180.0
 params/spread = 10.0
 params/linear_velocity = 50.0

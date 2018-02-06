@@ -1,6 +1,6 @@
 extends Area2D
 
-export(String, FILE, "*.tscn") var next_scene
+export(PackedScene) var cut_scene
 
 var utils = preload("res://game/utils.gd")
 
@@ -28,4 +28,4 @@ func body_exit(body):
 
 
 func win_at_life():
-	get_tree().change_scene(next_scene)
+	get_tree().change_scene_to(cut_scene)
