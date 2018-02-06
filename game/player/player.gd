@@ -48,13 +48,13 @@ func _fixed_process(delta):
 func fixed_process(delta):
 	var direction = handle_input()
 	
-	if beckoning and direction.translation.length() <= 0:
-		if animations.get_animation() != "beckoning":
-			animations.play("beckoning")
-	
 	if direction.name == null:
 		# No input: idle
-		set_animation("idle", last_direction, last_flipped)
+		if beckoning:
+			if not animations.get_animation().begins_with("beckoning"):
+				animations.play("beckoning " + clothing)
+		else:
+			set_animation("idle", last_direction, last_flipped)
 	else:
 		# Input: Move & animate
 		set_animation("walk", direction.name, direction.animation_flipped)
@@ -103,7 +103,7 @@ func set_animation(action, direction, flipped):
 
 func beckon():
 	beckoning = true
-	animations.play("beckoning")
+	animations.play("beckoning " + clothing)
 	animations.flip_h = true
 
 

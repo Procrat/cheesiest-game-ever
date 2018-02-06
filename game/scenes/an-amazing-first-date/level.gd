@@ -19,12 +19,14 @@ func time_is_up():
 
 func cinema_reached(player):
 	players_at_cinema += 1
+	player.beckon()
 	if players_at_cinema >= 2:
 		show_end_screen(true)
 
 
 func cinema_left(player):
 	players_at_cinema -= 1
+	player.stop_beckoning()
 
 
 func show_end_screen(in_time):
