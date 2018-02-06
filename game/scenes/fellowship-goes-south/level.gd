@@ -1,6 +1,6 @@
 extends Node2D
 
-const Fade = preload("res://game/player/fade.tscn")
+const Fade = preload("res://game/scenes/fellowship-goes-south/fade.tscn")
 const utils = preload("res://game/utils.gd")
 
 onready var objects = get_node("objects").get_children()
@@ -24,7 +24,7 @@ func mouse_on_object_event(_viewport, event, _shape_idx, object_idx):
 	if event.is_pressed() and not found[object_idx]:
 		found[object_idx] = true
 		
-		var pos = event.pos + Vector2(-15, -35)
+		var pos = event.pos + Vector2(0, -35)
 		
 		var fade_out = Fade.instance()
 		objects[object_idx].get_node("sprite").add_child(fade_out)
