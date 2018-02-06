@@ -13,7 +13,7 @@
 [ext_resource path="res://ui sprites/level instructions/space-button.png" type="Texture" id=11]
 [ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=12]
 [ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mischief progress bar flicker.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mischief/mischief.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -25,6 +25,7 @@ font/font = ExtResource( 4 )
 [sub_resource type="DynamicFont" id=2]
 
 font/size = 26
+extra_spacing/top = -11
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 4 )
@@ -140,9 +141,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = -400.0
-margin/top = -140.0
+margin/top = -100.0
 margin/right = 400.0
-margin/bottom = 60.0
+margin/bottom = 100.0
 custom_fonts/font = SubResource( 1 )
 text = "Can you get your work done while stopping
 Mango from destroying your apartment?"
@@ -159,12 +160,32 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = -121.0
-margin/top = -277.0
+margin/top = -191.0
 margin/right = 571.0
-margin/bottom = -241.0
+margin/bottom = -148.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
 text = "before it's too late."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="too late1" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -401.0
+margin/top = -465.0
+margin/right = 415.0
+margin/bottom = -330.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
+text = "Numerous dates followed the first one
+ and you moved in together.
+You even got a cat, Mango - things are getting serious!"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -192,21 +213,22 @@ flat = false
 
 [node name="study progress bar" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -134.243, -353.789 )
+transform/pos = Vector2( -134.243, -310.231 )
 transform/scale = Vector2( 0.5, 0.5 )
-frame = 730
+frame = 79
 
 [node name="Stijn head" type="Sprite" parent="."]
 
-transform/pos = Vector2( -298.625, -362.833 )
+transform/pos = Vector2( -298.625, -319.275 )
 transform/scale = Vector2( 0.592129, 0.592129 )
 texture = ExtResource( 9 )
 
 [node name="draw progress bar" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -134.243, -248.789 )
+transform/pos = Vector2( -134.243, -205.231 )
 transform/scale = Vector2( 0.5, 0.5 )
-frame = 730
+frame = 731
+playing = true
 
 [node name="Study!" type="Label" parent="."]
 
@@ -215,9 +237,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = -355.0
-margin/top = -342.0
+margin/top = -299.0
 margin/right = -246.0
-margin/bottom = -303.0
+margin/bottom = -260.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
 text = "Study!"
@@ -233,13 +255,13 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 94.0
-margin/top = -345.0
+margin/top = -270.0
 margin/right = 342.0
-margin/bottom = -264.0
+margin/bottom = -189.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
 custom_constants/line_spacing = -7
-text = ".. and stop Mango 
+text = " Stop Mango 
 from doing mischief"
 align = 1
 percent_visible = 1.0
@@ -253,9 +275,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = -359.0
-margin/top = -250.0
+margin/top = -207.0
 margin/right = -250.0
-margin/bottom = -211.0
+margin/bottom = -168.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
 text = "Draw!"
@@ -348,7 +370,7 @@ texture = ExtResource( 11 )
 
 [node name="Myrjam head" type="Sprite" parent="."]
 
-transform/pos = Vector2( -302.648, -266.007 )
+transform/pos = Vector2( -302.648, -222.449 )
 transform/scale = Vector2( 0.45, 0.45 )
 texture = ExtResource( 12 )
 
@@ -365,13 +387,16 @@ autoplay = "instructions level 1"
 
 [node name="Mango" parent="." instance=ExtResource( 13 )]
 
-transform/pos = Vector2( 217.001, -403.002 )
+transform/pos = Vector2( 217.001, -270.22 )
 transform/scale = Vector2( -1, 1 )
 idle_duration = null
 vomit_delay = null
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 14 )]
 
-transform/pos = Vector2( 224.594, -209.028 )
+transform/pos = Vector2( 224.131, -0.419662 )
+animation = "mischief-flicker"
+frame = 6
+playing = true
 
 

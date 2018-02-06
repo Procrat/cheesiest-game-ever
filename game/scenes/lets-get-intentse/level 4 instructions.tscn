@@ -105,6 +105,7 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=8]
 
 font/size = 30
+extra_spacing/top = -9
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 4 )
@@ -230,20 +231,21 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -77.0
-margin/top = -222.0
-margin/right = 112.0
-margin/bottom = -183.0
+margin/left = -176.0
+margin/top = -268.0
+margin/right = 325.0
+margin/bottom = -187.0
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
-text = "Hiking is tough!"
+text = "Your new home is a real hiking paradise!
+But hiking is tough..."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( -141.857, -295.667 )
+transform/pos = Vector2( -237.083, -308.829 )
 transform/scale = Vector2( 2.70054, 2.70054 )
 texture = ExtResource( 10 )
 
