@@ -13,11 +13,11 @@ func _init().(2):
 
 func show(all_objects_found, objects_found):
 	if all_objects_found:
-		title.set_text("Sweet!")
+		title.set_text("Sweet as!")
 		subtitle.set_text("")
-		text.set_text("Now we're ready to go on a new adventure!")
+		text.set_text("Now you're ready to go on a new adventure!")
 	else:
-		title.set_text("Oh...")
+		title.set_text("Buggers!")
 		subtitle.set_text("")
 		text.set_text(first_missing_object_message(objects_found))
 	

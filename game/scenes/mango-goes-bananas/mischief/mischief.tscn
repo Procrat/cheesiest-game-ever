@@ -7,6 +7,10 @@
 "mischief",
 ] instance=ExtResource( 1 )]
 
+transform/pos = Vector2( 0, -0.59874 )
+transform/scale = Vector2( 0.7, 0.7 )
+z/z = 1
+offset = Vector2( 0, -300 )
 script/script = ExtResource( 2 )
 
 

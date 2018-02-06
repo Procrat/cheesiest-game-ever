@@ -3,7 +3,7 @@ extends "res://game/ui/level-end-screen/end-screen.gd"
 var MISSING_MESSAGES = {
 	INVENTORY.NACHOS: "You'll be thinking about those missing nachos during the whole movie!",
 	INVENTORY.TICKETS: "You forgot the tickets!\nBut, never mind, they were for the wrong day anyway.\n(True story.)",
-	INVENTORY.SHAVER: "Stijn, you unshaved hobo!\nYou're lucky that Myrjam loves you just the way you are!",
+	INVENTORY.SHAVER: "Stijn, you unshaved hobo!\nYou're lucky Myrjam loves you just the way you are!",
 	INVENTORY.DRESS: "Myrjam, are you going an a first date in your hiking clothes?!"
 }
 var NEEDED_ITEMS = MISSING_MESSAGES.keys()

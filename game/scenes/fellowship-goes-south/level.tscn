@@ -176,6 +176,7 @@ __meta__ = {
 
 [node name="passport" type="Area2D" parent="objects"]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -199,6 +200,7 @@ offset = Vector2( 960, 540 )
 
 [node name="haringen" type="Area2D" parent="objects"]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -222,6 +224,7 @@ offset = Vector2( 960, 540 )
 
 [node name="adapter" type="Area2D" parent="objects"]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -245,6 +248,7 @@ offset = Vector2( 960, 540 )
 
 [node name="shoe" type="Area2D" parent="objects"]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -596,27 +600,27 @@ trigger = false
 
 [node name="i-give-up" parent="." instance=ExtResource( 9 )]
 
-margin/left = 1208.0
-margin/top = 994.0
-margin/right = 1611.0
-margin/bottom = 1066.0
+margin/left = 13.0
+margin/top = 989.0
+margin/right = 416.0
+margin/bottom = 1061.0
 text = "I give up!"
 
 [node name="inventory" type="Panel" parent="."]
 
+editor/display_folded = true
 visibility/self_opacity = 0.0
 rect/min_size = Vector2( 200, 200 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 25.0
-margin/top = 787.0
-margin/right = 390.0
-margin/bottom = 1054.0
+margin/left = 33.0
+margin/top = 713.0
+margin/right = 398.0
+margin/bottom = 980.0
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="inventory"]
@@ -675,6 +679,7 @@ max_lines_visible = -1
 
 [node name="haringen" type="Control" parent="inventory/VBoxContainer"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 250, 51 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -711,6 +716,7 @@ max_lines_visible = -1
 
 [node name="adapter" type="Control" parent="inventory/VBoxContainer"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 250, 51 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -747,6 +753,7 @@ max_lines_visible = -1
 
 [node name="shoe" type="Control" parent="inventory/VBoxContainer"]
 
+editor/display_folded = true
 rect/min_size = Vector2( 250, 51 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
