@@ -62,6 +62,8 @@ func fixed_process(delta):
 	elif jumping:
 		continue_jumping(delta)
 	elif not picking_up and not (player_name == STIJN and on_tree):
+		if in_dangerous_area:
+			wheee()
 		.fixed_process(delta)
 
 
@@ -82,7 +84,14 @@ func close_to(player):
 func panic():
 	if animations.get_animation() != "panic":
 		animations.play("panic")
-		SFX.play("aaah")
+		SFX.play("aaah-" + player_name_str)
+
+
+func wheee():
+	if significant_other.in_dangerous_area:
+		SFX.play("wheee-together")
+	else:
+		SFX.play("wheee-" + player_name_str)
 
 
 func carrying_something():
@@ -163,7 +172,7 @@ func climb_over_tree():
 	
 	var animation = "jump with help" if jump_size == BIG and not on_tree else "jump"
 	animations.play(animation)
-	SFX.play("hng")
+	SFX.play("hng-" + player_name_str)
 	var sprites = animations.get_sprite_frames()
 	animation_duration = sprites.get_frame_count(animation) / sprites.get_animation_speed(animation)
 	animations.connect("finished", self, "stop_jumping")

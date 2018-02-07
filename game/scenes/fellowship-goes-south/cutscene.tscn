@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://Level 3/cutscene.png" type="Texture" id=1]
+[ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
+[ext_resource path="res://game/scenes/level-select/level-select.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level 3/cutscene.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -31,11 +33,16 @@ tracks/1/keys = {
 
 [node name="Node2D" type="Node2D"]
 
+script/script = ExtResource( 1 )
+next_scene = ExtResource( 2 )
+automatically_after_seconds = 5
+sound = "wheee-together"
+
 [node name="cutscene" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1150, 600 )
 transform/scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

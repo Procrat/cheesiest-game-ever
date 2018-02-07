@@ -46,7 +46,7 @@ func body_enter(body):
 		if not stuck:
 			animations.play("sinking")
 			SFX.play("sploosh")
-			SFX.play("blub")
+			utils.do_once_after(1, animations, SFX, "play", ["blub"])
 			particles.set_emitting(true)
 		stuck = true
 		body.get_parent().get_parent().disable_part_because_of(body, self)

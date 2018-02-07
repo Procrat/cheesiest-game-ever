@@ -1,131 +1,180 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=26 format=1]
 
 [ext_resource path="res://sounds/myrjam/aaah.wav" type="Sample" id=1]
-[ext_resource path="res://sounds/myrjam/awww-endearing.wav" type="Sample" id=2]
-[ext_resource path="res://sounds/myrjam/awww-sad.wav" type="Sample" id=3]
-[ext_resource path="res://sounds/myrjam/barf.wav" type="Sample" id=4]
-[ext_resource path="res://sounds/myrjam/bark.wav" type="Sample" id=5]
-[ext_resource path="res://sounds/myrjam/blub.wav" type="Sample" id=6]
-[ext_resource path="res://sounds/myrjam/hng.wav" type="Sample" id=7]
-[ext_resource path="res://sounds/myrjam/lick.wav" type="Sample" id=8]
-[ext_resource path="res://sounds/myrjam/miauw-angry.wav" type="Sample" id=9]
-[ext_resource path="res://sounds/myrjam/miauw-happy.wav" type="Sample" id=10]
-[ext_resource path="res://sounds/myrjam/nom.wav" type="Sample" id=11]
-[ext_resource path="res://sounds/myrjam/prrrr.wav" type="Sample" id=12]
-[ext_resource path="res://sounds/myrjam/quack.wav" type="Sample" id=13]
-[ext_resource path="res://sounds/myrjam/sploosh.wav" type="Sample" id=14]
-[ext_resource path="res://sounds/both/tingeling.wav" type="Sample" id=15]
-[ext_resource path="res://sounds/myrjam/wheee.wav" type="Sample" id=16]
-[ext_resource path="res://sounds/myrjam/woohoo.wav" type="Sample" id=17]
+[ext_resource path="res://sounds/stijn/aaargh.wav" type="Sample" id=2]
+[ext_resource path="res://sounds/both/awww-asc-desc.wav" type="Sample" id=3]
+[ext_resource path="res://sounds/myrjam/awww-endearing.wav" type="Sample" id=4]
+[ext_resource path="res://sounds/both/awww-asc.wav" type="Sample" id=5]
+[ext_resource path="res://sounds/myrjam/awww-sad.wav" type="Sample" id=6]
+[ext_resource path="res://sounds/both/awww-desc.wav" type="Sample" id=7]
+[ext_resource path="res://sounds/myrjam/barf.wav" type="Sample" id=8]
+[ext_resource path="res://sounds/myrjam/bark.wav" type="Sample" id=9]
+[ext_resource path="res://sounds/myrjam/blub.wav" type="Sample" id=10]
+[ext_resource path="res://sounds/myrjam/hng.wav" type="Sample" id=11]
+[ext_resource path="res://sounds/stijn/hng.wav" type="Sample" id=12]
+[ext_resource path="res://sounds/myrjam/lick.wav" type="Sample" id=13]
+[ext_resource path="res://sounds/myrjam/miauw-angry.wav" type="Sample" id=14]
+[ext_resource path="res://sounds/myrjam/miauw-happy.wav" type="Sample" id=15]
+[ext_resource path="res://sounds/myrjam/nom.wav" type="Sample" id=16]
+[ext_resource path="res://sounds/myrjam/prrrr.wav" type="Sample" id=17]
+[ext_resource path="res://sounds/myrjam/quack.wav" type="Sample" id=18]
+[ext_resource path="res://sounds/myrjam/sploosh.wav" type="Sample" id=19]
+[ext_resource path="res://sounds/both/tingeling.wav" type="Sample" id=20]
+[ext_resource path="res://sounds/myrjam/wheee.wav" type="Sample" id=21]
+[ext_resource path="res://sounds/stijn/wheee.wav" type="Sample" id=22]
+[ext_resource path="res://sounds/both/wheee.wav" type="Sample" id=23]
+[ext_resource path="res://sounds/myrjam/woohoo.wav" type="Sample" id=24]
 
 [sub_resource type="SampleLibrary" id=1]
 
-samples/aaah = {
+samples/aaah-myrjam = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 1 )
 }
-samples/awww-endearing = {
+samples/aaah-stijn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 2 )
 }
-samples/awww-sad = {
+samples/awww-endeared-long-together = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 3 )
 }
-samples/barf = {
+samples/awww-endeared-myrjam = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 4 )
 }
-samples/bark = {
+samples/awww-endeared-short-together = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 5 )
 }
-samples/blub = {
+samples/awww-sad-myrjam = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 6 )
 }
-samples/hng = {
+samples/awww-sad-together = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 7 )
 }
-samples/lick = {
+samples/barf = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 8 )
 }
-samples/miauw-angry = {
+samples/bark = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 9 )
 }
-samples/miauw-happy = {
+samples/blub = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 10 )
 }
-samples/nom = {
+samples/hng-myrjam = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 11 )
 }
-samples/prrrr = {
+samples/hng-stijn = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 12 )
 }
-samples/quack = {
+samples/lick = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 13 )
 }
-samples/sploosh = {
+samples/miauw-angry = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 14 )
 }
-samples/tingeling = {
+samples/miauw-happy = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 15 )
 }
-samples/wheee = {
+samples/nom = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 16 )
 }
-samples/woohoo = {
+samples/prrrr = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 17 )
 }
+samples/quack = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 18 )
+}
+samples/sploosh = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 19 )
+}
+samples/tingeling = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 20 )
+}
+samples/wheee-myrjam = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 21 )
+}
+samples/wheee-stijn = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 22 )
+}
+samples/wheee-together = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 23 )
+}
+samples/woohoo = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 24 )
+}
 
 [node name="SamplePlayer" type="SamplePlayer"]
 
-config/polyphony = 1
+config/polyphony = 2
 config/samples = SubResource( 1 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0

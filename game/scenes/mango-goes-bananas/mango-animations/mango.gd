@@ -411,6 +411,7 @@ func look_in(direction):
 
 func interrupt():
 	if action extends MischiefAction:
+		SFX.play("miauw-angry")
 		action.interrupt()
 
 

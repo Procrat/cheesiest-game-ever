@@ -22,7 +22,8 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 1 )
 next_scene = ExtResource( 2 )
-automatically_after_seconds = -1
+automatically_after_seconds = 5
+sound = "awww-endeared-long-together"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

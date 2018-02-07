@@ -304,6 +304,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "Miaaauw!"
+sound = "prrrr"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/mango"]
 
@@ -336,6 +337,7 @@ angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "These are not the shoes
 you're looking for."
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/boots"]
 
@@ -363,6 +365,7 @@ angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "These are not the shoes
 you're looking for."
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/running shoes"]
 
@@ -386,6 +389,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "An ID card won't be enough to move abroad..."
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/id card"]
 
@@ -409,6 +413,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "Commander Mango strikes again..."
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/hair ties"]
 
@@ -436,6 +441,7 @@ angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "These are not the shoes
 you're looking for."
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/heels"]
 
@@ -465,6 +471,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "Nom nom nom!"
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/cupcakes"]
 
@@ -488,6 +495,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "It's like Zealand, but New!"
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/New Zealand"]
 
@@ -514,6 +522,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "Marianne, what are you doing?"
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/Het drop"]
 
@@ -540,6 +549,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "Isengard, gard, gard..."
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/The Hobbit"]
 
@@ -562,6 +572,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
 text = "Quack!"
+sound = "quack"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/duck"]
 
@@ -584,9 +595,10 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
-text = "Shhh! 
-It's still 
+text = "Shhh!
+It's still
 a secret!"
+sound = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/ring"]
 
