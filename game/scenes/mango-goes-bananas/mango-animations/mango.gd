@@ -241,13 +241,13 @@ class FridgeAction extends MischiefAction:
 	func start():
 		.start()
 		mango.look_left()
+		sound = SFX.play("miauw-happy")
 		utils.do_once_after(34.0 / 24.0, mango, self, "open_fridge")
 	
 	func open_fridge():
 		if interrupted:
 			return
 		fridge.play("open")
-		sound = SFX.play("miauw-happy")
 		utils.do_once_after_animation(animations, self, "start_licking")
 	
 	func start_licking():
