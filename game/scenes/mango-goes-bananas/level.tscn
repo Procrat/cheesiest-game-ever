@@ -321,7 +321,7 @@ lick_duration = 6.0
 
 [node name="animations" parent="Mango"]
 
-frame = 1
+frame = 26
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -424,10 +424,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 1
-margin/left = -2.0
-margin/top = 20.0
-margin/right = 568.0
-margin/bottom = 170.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 570.0
+margin/bottom = 150.0
 
 [node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 12 )]
 
@@ -506,6 +506,10 @@ margin/top = 704.0
 margin/right = 123.0
 margin/bottom = 743.0
 
+[node name="when-to-stop" parent="ui/countdown"]
+
+wait_time = 5.0
+
 [node name="Node2D" type="Node2D" parent="ui"]
 
 transform/pos = Vector2( 281.941, 761.685 )
@@ -574,3 +578,4 @@ script/script = ExtResource( 22 )
 
 
 [editable path="Mango"]
+[editable path="ui/countdown"]

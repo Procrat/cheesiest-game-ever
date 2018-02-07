@@ -283,7 +283,6 @@ __meta__ = {
 
 [node name="clickables" type="Node2D" parent="."]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -552,7 +551,6 @@ trigger = false
 
 [node name="duck" type="Area2D" parent="clickables"]
 
-editor/display_folded = true
 transform/pos = Vector2( 1842.77, 801.582 )
 input/pickable = true
 shapes/0/shape = SubResource( 26 )
@@ -563,7 +561,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 8 )
-text = "Kwak!"
+text = "Quack!"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clickables/duck"]
 
