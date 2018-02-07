@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=1]
+[gd_scene load_steps=53 format=1]
 
 [ext_resource path="res://game/scenes/mango-goes-bananas/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=20]
 [ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=21]
 [ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=22]
+[ext_resource path="res://game/scenes/mango-goes-bananas/cutscene.tscn" type="PackedScene" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -575,6 +576,7 @@ scale = Vector2( 1, 1 )
 
 visibility/visible = false
 script/script = ExtResource( 22 )
+cut_scene = ExtResource( 23 )
 
 
 [editable path="Mango"]

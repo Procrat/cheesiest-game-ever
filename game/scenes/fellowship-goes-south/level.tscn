@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=1]
+[gd_scene load_steps=43 format=1]
 
 [ext_resource path="res://game/scenes/fellowship-goes-south/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 3/background.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/scenes/fellowship-goes-south/end-screen.gd" type="Script" id=13]
+[ext_resource path="res://game/scenes/fellowship-goes-south/cutscene.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -802,5 +803,6 @@ max_lines_visible = -1
 
 visibility/visible = false
 script/script = ExtResource( 13 )
+cut_scene = ExtResource( 14 )
 
 

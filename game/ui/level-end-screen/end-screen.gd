@@ -1,6 +1,6 @@
 extends PopupDialog
 
-const LevelSelectScene = preload("res://game/scenes/level-select/level-select.tscn")
+export(PackedScene) var cut_scene
 
 onready var title = get_node("title")
 onready var subtitle = get_node("subtitle")
@@ -19,7 +19,7 @@ func _init(level):
 
 func _ready():
 	retry_button.connect("pressed", self, "restart")
-	next_button.connect("pressed", self, "go_to_next_level")
+	next_button.connect("pressed", self, "go_to_cut_scene")
 
 
 func popup(has_won):
@@ -40,7 +40,7 @@ func restart():
 	get_tree().set_pause(false)
 
 
-func go_to_next_level():
+func go_to_cut_scene():
 	GLOBAL_STATE.ensure_level_unlocked(level + 1)
-	get_tree().change_scene_to(LevelSelectScene)
+	get_tree().change_scene_to(cut_scene)
 	get_tree().set_pause(false)
