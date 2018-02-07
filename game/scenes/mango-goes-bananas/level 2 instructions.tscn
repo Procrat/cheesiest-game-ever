@@ -160,9 +160,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = -126.0
-margin/top = -218.0
+margin/top = -206.0
 margin/right = 566.0
-margin/bottom = -182.0
+margin/bottom = -170.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
 text = "before it's too late."
@@ -215,6 +215,7 @@ flat = false
 
 transform/pos = Vector2( -134.243, -310.231 )
 transform/scale = Vector2( 0.5, 0.5 )
+frame = 268
 playing = true
 
 [node name="Stijn head" type="Sprite" parent="."]
@@ -227,6 +228,7 @@ texture = ExtResource( 9 )
 
 transform/pos = Vector2( -134.243, -205.231 )
 transform/scale = Vector2( 0.5, 0.5 )
+frame = 268
 playing = true
 
 [node name="Study!" type="Label" parent="."]
@@ -392,9 +394,9 @@ script/script = null
 
 [node name="mischief" parent="." instance=ExtResource( 14 )]
 
-transform/pos = Vector2( 218, -30.7603 )
+transform/pos = Vector2( 218, -18.7603 )
 animation = "mischief-flicker"
-frame = 3
+frame = 14
 playing = true
 
 

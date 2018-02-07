@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=1]
+[gd_scene load_steps=52 format=1]
 
 [ext_resource path="res://game/scenes/mango-goes-bananas/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=2]
@@ -10,16 +10,18 @@
 [ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Level 2/Level2 bg in front of characters.png" type="Texture" id=9]
 [ext_resource path="res://Level 2/Myr pc.png" type="Texture" id=10]
-[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=11]
-[ext_resource path="res://game/scenes/mango-goes-bananas/study-progress.gd" type="Script" id=12]
-[ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=13]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=15]
-[ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Level 2/Mango vomit/Mango vomit_018.png" type="Texture" id=17]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=18]
-[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=19]
-[ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=20]
+[ext_resource path="res://ui sprites/end screen/end screen bg.png" type="Texture" id=11]
+[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/scenes/mango-goes-bananas/study-progress.gd" type="Script" id=13]
+[ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=14]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=16]
+[ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=17]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=18]
+[ext_resource path="res://Level 2/Mango vomit/Mango vomit_018.png" type="Texture" id=19]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=20]
+[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=21]
+[ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -167,7 +169,7 @@ outlines = [ Vector2Array( 1035.33, 533.668, 1066.64, 594.864, 1168.74, 661.849,
 font/size = 30
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 14 )
+font/font = ExtResource( 15 )
 
 [node name="level" type="Node2D"]
 
@@ -319,7 +321,7 @@ lick_duration = 6.0
 
 [node name="animations" parent="Mango"]
 
-frame = 23
+frame = 1
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -394,6 +396,14 @@ margin/top = 19.0
 margin/right = 45.0
 margin/bottom = 59.0
 
+[node name="level-instructions-bg" type="Sprite" parent="ui"]
+
+visibility/self_opacity = 0.8
+transform/pos = Vector2( 193.79, 896.075 )
+transform/rot = 90.0
+transform/scale = Vector2( 0.504108, 0.649686 )
+texture = ExtResource( 11 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="ui"]
 
 rect/scale = Vector2( 0.8, 0.8 )
@@ -401,10 +411,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 0
 size_flags/vertical = 0
-margin/left = 119.0
-margin/top = 767.0
-margin/right = 689.0
-margin/bottom = 1071.0
+margin/left = 120.0
+margin/top = 795.0
+margin/right = 690.0
+margin/bottom = 1099.0
 alignment = 2
 
 [node name="Control" type="Control" parent="ui/VBoxContainer"]
@@ -414,22 +424,22 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 1
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 570.0
-margin/bottom = 150.0
+margin/left = -2.0
+margin/top = 20.0
+margin/right = 568.0
+margin/bottom = 170.0
 
-[node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 11 )]
+[node name="draw-progress" parent="ui/VBoxContainer/Control" instance=ExtResource( 12 )]
 
 transform/scale = Vector2( 0.7, 0.7 )
 offset = Vector2( 285, 100 )
-script/script = ExtResource( 12 )
+script/script = ExtResource( 13 )
 listening_to = 0
 
 [node name="Myrjam head" type="Sprite" parent="ui/VBoxContainer/Control"]
 
 transform/pos = Vector2( -71.8009, 83.1591 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="Draw!" type="Label" parent="ui/VBoxContainer/Control/Myrjam head"]
 
@@ -442,7 +452,6 @@ margin/top = -102.0
 margin/right = 40.0
 margin/bottom = -63.0
 custom_fonts/font = SubResource( 29 )
-custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
 text = "Draw!"
 percent_visible = 1.0
 lines_skipped = 0
@@ -460,18 +469,18 @@ margin/top = 154.0
 margin/right = 570.0
 margin/bottom = 304.0
 
-[node name="study-progress" parent="ui/VBoxContainer/Control 2" instance=ExtResource( 11 )]
+[node name="study-progress" parent="ui/VBoxContainer/Control 2" instance=ExtResource( 12 )]
 
 transform/pos = Vector2( -5.18921, 17.6849 )
 transform/scale = Vector2( 0.7, 0.7 )
 offset = Vector2( 285, 100 )
-script/script = ExtResource( 12 )
+script/script = ExtResource( 13 )
 listening_to = 1
 
 [node name="Stijn head" type="Sprite" parent="ui/VBoxContainer/Control 2"]
 
 transform/pos = Vector2( -68.8009, 97.1599 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="Study!" type="Label" parent="ui/VBoxContainer/Control 2/Stijn head"]
 
@@ -484,56 +493,64 @@ margin/top = -80.0
 margin/right = 41.0
 margin/bottom = -41.0
 custom_fonts/font = SubResource( 29 )
-custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
 text = "Study!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="countdown" parent="ui" instance=ExtResource( 16 )]
+[node name="countdown" parent="ui" instance=ExtResource( 17 )]
 
 rect/scale = Vector2( 1.2, 1.2 )
-margin/left = 62.0
-margin/top = 666.0
-margin/right = 119.0
-margin/bottom = 705.0
+margin/left = 66.0
+margin/top = 704.0
+margin/right = 123.0
+margin/bottom = 743.0
 
-[node name="failed" type="Sprite" parent="ui"]
+[node name="Node2D" type="Node2D" parent="ui"]
 
-transform/pos = Vector2( 590.07, 942.079 )
-texture = ExtResource( 17 )
+transform/pos = Vector2( 281.941, 761.685 )
 
-[node name="Failed" type="Label" parent="ui/failed"]
+[node name="level-instructions-bg" type="Sprite" parent="ui/Node2D"]
+
+transform/pos = Vector2( 29.8859, -35.9294 )
+transform/scale = Vector2( 0.129943, 0.129943 )
+texture = ExtResource( 18 )
+
+[node name="failed" type="Sprite" parent="ui/Node2D"]
+
+transform/pos = Vector2( 31.7351, -60.3245 )
+transform/scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+
+[node name="Total" type="Label" parent="ui/Node2D"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -66.0
-margin/top = 64.0
-margin/right = 14.0
-margin/bottom = 103.0
+margin/left = 3.0
+margin/top = -21.0
+margin/right = 83.0
+margin/bottom = 18.0
 custom_fonts/font = SubResource( 29 )
-custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
-text = "2"
+text = "/10"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Total" type="Label" parent="ui/failed"]
+[node name="Failed" type="Label" parent="ui/Node2D"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -31.0
-margin/top = 64.0
-margin/right = 49.0
-margin/bottom = 103.0
+margin/left = -32.0
+margin/top = -21.0
+margin/right = 48.0
+margin/bottom = 18.0
 custom_fonts/font = SubResource( 29 )
-custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
-text = "/10"
+text = "2"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -541,7 +558,7 @@ max_lines_visible = -1
 
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 18 )
+script/script = ExtResource( 20 )
 
 [node name="end-screen" type="CanvasLayer" parent="."]
 
@@ -550,10 +567,10 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="end-screen" parent="end-screen" instance=ExtResource( 19 )]
+[node name="end-screen" parent="end-screen" instance=ExtResource( 21 )]
 
 visibility/visible = false
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 
 [editable path="Mango"]
