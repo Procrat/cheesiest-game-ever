@@ -18,6 +18,7 @@ func start(mischief_kind, parent):
 	parent.add_child(self)
 	get_sprite_frames().set_animation_speed("cleaning-progress", 80)
 	play("mischief-progress")
+	level.mischief_started(mischief_kind)
 	utils.do_once_after_animation(self, self, "it_s_almost_too_laaaate")
 
 

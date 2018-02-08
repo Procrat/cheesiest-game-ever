@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=1]
+[gd_scene load_steps=54 format=1]
 
 [ext_resource path="res://game/scenes/mango-goes-bananas/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=2]
@@ -17,12 +17,13 @@
 [ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=16]
 [ext_resource path="res://game/ui/countdown/countdown.tscn" type="PackedScene" id=17]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=18]
-[ext_resource path="res://Level 2/Mango vomit/Mango vomit_018.png" type="Texture" id=19]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=20]
-[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=21]
-[ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=22]
-[ext_resource path="res://game/scenes/mango-goes-bananas/cutscene.tscn" type="PackedScene" id=23]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mischief-counter.gd" type="Script" id=18]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=19]
+[ext_resource path="res://Level 2/Mango vomit/Mango vomit_018.png" type="Texture" id=20]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=21]
+[ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=22]
+[ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=23]
+[ext_resource path="res://game/scenes/mango-goes-bananas/cutscene.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -322,7 +323,7 @@ lick_duration = 6.0
 
 [node name="animations" parent="Mango"]
 
-frame = 26
+frame = 24
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -507,55 +508,69 @@ margin/top = 704.0
 margin/right = 123.0
 margin/bottom = 743.0
 
-[node name="when-to-stop" parent="ui/countdown"]
-
-wait_time = 5.0
-
-[node name="Node2D" type="Node2D" parent="ui"]
+[node name="mischief-counter" type="Node2D" parent="ui"]
 
 transform/pos = Vector2( 281.941, 761.685 )
+script/script = ExtResource( 18 )
 
-[node name="level-instructions-bg" type="Sprite" parent="ui/Node2D"]
+[node name="bg" type="Sprite" parent="ui/mischief-counter"]
 
 transform/pos = Vector2( 29.8859, -35.9294 )
 transform/scale = Vector2( 0.129943, 0.129943 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
-[node name="failed" type="Sprite" parent="ui/Node2D"]
+[node name="vomit" type="Sprite" parent="ui/mischief-counter"]
 
 transform/pos = Vector2( 31.7351, -60.3245 )
 transform/scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
-[node name="Total" type="Label" parent="ui/Node2D"]
+[node name="failed" type="Label" parent="ui/mischief-counter"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 3.0
+margin/left = -23.0
 margin/top = -21.0
-margin/right = 83.0
+margin/right = 32.0
 margin/bottom = 18.0
 custom_fonts/font = SubResource( 29 )
-text = "/10"
+text = "0"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Failed" type="Label" parent="ui/Node2D"]
+[node name="slash" type="Label" parent="ui/mischief-counter"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -32.0
+margin/left = 12.0
 margin/top = -21.0
 margin/right = 48.0
 margin/bottom = 18.0
 custom_fonts/font = SubResource( 29 )
-text = "2"
+text = "/"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="total" type="Label" parent="ui/mischief-counter"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 26.0
+margin/top = -21.0
+margin/right = 83.0
+margin/bottom = 18.0
+custom_fonts/font = SubResource( 29 )
+text = "0"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -563,7 +578,7 @@ max_lines_visible = -1
 
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 20 )
+script/script = ExtResource( 21 )
 
 [node name="end-screen" type="CanvasLayer" parent="."]
 
@@ -572,11 +587,11 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="end-screen" parent="end-screen" instance=ExtResource( 21 )]
+[node name="end-screen" parent="end-screen" instance=ExtResource( 22 )]
 
 visibility/visible = false
-script/script = ExtResource( 22 )
-cut_scene = ExtResource( 23 )
+script/script = ExtResource( 23 )
+cut_scene = ExtResource( 24 )
 
 
 [editable path="Mango"]
