@@ -110,7 +110,7 @@ class WalkAction extends Action:
 		var new_pos = current_pos + advancement
 		if new_pos != current_pos:
 			mango.set_pos(new_pos)
-			mango.look_in(direction)
+			mango.walk_in(direction)
 		else:
 			path.remove(0)
 			if path.size() <= 0:
@@ -402,11 +402,19 @@ func look_right():
 	animations.set_flip_h(false)
 
 
-func look_in(direction):
-	if direction.x < 0:
-		look_left()
+func walk_in(direction):
+	if abs(direction.x) >= abs(direction.y):
+		if direction.x < 0:
+			look_left()
+		else:
+			look_right()
+		animations.play("walk")
 	else:
 		look_right()
+		if direction.y < 0:
+			animations.play("walk back")
+		else:
+			animations.play("walk front")
 
 
 func interrupt():
