@@ -85,7 +85,7 @@ tracks/6/path = NodePath("Save the date:visibility/visible")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0, 3.6 ),
+"times": FloatArray( 0, 3.35 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -162,6 +162,7 @@ transform/pos = Vector2( 960, 540 )
 script/script = ExtResource( 1 )
 next_scene = ExtResource( 2 )
 automatically_after_seconds = -1
+sound = null
 
 [node name="Node2D" type="Node2D" parent="."]
 
