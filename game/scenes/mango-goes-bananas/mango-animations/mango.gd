@@ -222,7 +222,7 @@ class VomitAction extends MischiefAction:
 		if interrupted:
 			return
 		vomit = Vomit.instance()
-		mischief.add_child(vomit)
+		mischief.spawn(vomit)
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
@@ -287,7 +287,7 @@ class PeeAction extends MischiefAction:
 			return
 		animations.play("pipi middle")
 		pee = Pee.instance()
-		mischief.add_child(pee)
+		mischief.spawn(pee)
 		utils.do_once_after_animation(animations, self, "stop_peeing")
 	
 	func stop_peeing():
