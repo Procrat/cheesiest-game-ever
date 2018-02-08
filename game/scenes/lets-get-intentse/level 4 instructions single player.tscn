@@ -1,22 +1,24 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=1]
-[ext_resource path="res://ui sprites/level instructions/level select instructies Stijn.png" type="Texture" id=2]
-[ext_resource path="res://ui sprites/level instructions/level select instructies Myr.png" type="Texture" id=3]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=5]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=6]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=7]
-[ext_resource path="res://ui sprites/level instructions/shift-button.png" type="Texture" id=8]
-[ext_resource path="res://ui sprites/level instructions/space-button.png" type="Texture" id=9]
-[ext_resource path="res://ui sprites/level instructions/camping.png" type="Texture" id=10]
+[ext_resource path="res://ui sprites/level instructions/level select instructies.png" type="Texture" id=2]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=4]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=5]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=6]
+[ext_resource path="res://ui sprites/level instructions/switch.png" type="Texture" id=7]
+[ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=8]
+[ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=9]
+[ext_resource path="res://ui sprites/level instructions/shift-button.png" type="Texture" id=10]
+[ext_resource path="res://ui sprites/level instructions/space-button.png" type="Texture" id=11]
+[ext_resource path="res://ui sprites/level instructions/camping.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 40
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 4 )
+font/font = ExtResource( 3 )
 
 [sub_resource type="StyleBoxTexture" id=2]
 
@@ -24,7 +26,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 236, 128 )
 margin/left = 0.0
 margin/right = 0.0
@@ -42,7 +44,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 236, 128 )
 margin/left = 0.0
 margin/right = 0.0
@@ -60,7 +62,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 236, 128 )
 margin/left = 0.0
 margin/right = 0.0
@@ -77,14 +79,14 @@ draw_center = true
 font/size = 72
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 4 )
+font/font = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
 
 font/size = 30
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 4 )
+font/font = ExtResource( 3 )
 
 [sub_resource type="Animation" id=7]
 
@@ -108,7 +110,7 @@ font/size = 30
 extra_spacing/top = -9
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 4 )
+font/font = ExtResource( 3 )
 
 [node name="instructions" type="Sprite"]
 
@@ -120,15 +122,8 @@ __meta__ = {
 
 [node name="level select instructies Stijn" type="Sprite" parent="."]
 
-transform/pos = Vector2( 223.503, 59.5255 )
-transform/scale = Vector2( 0.5, 0.5 )
+transform/pos = Vector2( -0.103027, 154.294 )
 texture = ExtResource( 2 )
-
-[node name="level select instructies Myr" type="Sprite" parent="."]
-
-transform/pos = Vector2( -213.591, 63.3678 )
-transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
 
 [node name="get work done" type="Label" parent="."]
 
@@ -171,39 +166,56 @@ shortcut = null
 text = "Play"
 flat = false
 
-[node name="to stop Mango" type="Label" parent="."]
+[node name="to switch" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -335.0
-margin/top = 158.0
-margin/right = 11.0
-margin/bottom = 197.0
+margin/left = 39.0
+margin/top = 104.0
+margin/right = 385.0
+margin/bottom = 143.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
-text = "to do stuff"
+text = "to switch"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="shift-button" type="Sprite" parent="to stop Mango"]
+[node name="switch" type="Sprite" parent="to switch"]
 
-transform/pos = Vector2( 42.1086, 19.8546 )
+transform/pos = Vector2( 262.946, -25.5485 )
+texture = ExtResource( 7 )
+
+[node name="Stijn head" type="Sprite" parent="to switch"]
+
+transform/pos = Vector2( 179.37, 80.9843 )
+transform/scale = Vector2( 0.840134, 0.840134 )
 texture = ExtResource( 8 )
 
-[node name="to stop Mango myrjam" type="Label" parent="."]
+[node name="Myrjam head" type="Sprite" parent="to switch"]
+
+transform/pos = Vector2( 178.997, -114.57 )
+transform/scale = Vector2( 0.840134, 0.840134 )
+texture = ExtResource( 9 )
+
+[node name="shift-button" type="Sprite" parent="to switch"]
+
+transform/pos = Vector2( 175.135, -22.8081 )
+texture = ExtResource( 10 )
+
+[node name="to do stuff" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 101.0
-margin/top = 150.0
-margin/right = 447.0
-margin/bottom = 189.0
+margin/left = -378.0
+margin/top = 105.0
+margin/right = -32.0
+margin/bottom = 144.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
 text = "to do stuff"
@@ -212,10 +224,10 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="space-button" type="Sprite" parent="to stop Mango myrjam"]
+[node name="space-button" type="Sprite" parent="to do stuff"]
 
-transform/pos = Vector2( 42.1086, 19.8546 )
-texture = ExtResource( 9 )
+transform/pos = Vector2( 170.812, -23.9214 )
+texture = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -250,6 +262,6 @@ max_lines_visible = -1
 
 transform/pos = Vector2( -237.083, -308.829 )
 transform/scale = Vector2( 2.70054, 2.70054 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 

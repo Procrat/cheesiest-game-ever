@@ -1,15 +1,12 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=1]
 [ext_resource path="res://ui sprites/level instructions/level select instructies Stijn.png" type="Texture" id=2]
-[ext_resource path="res://ui sprites/level instructions/level select instructies Myr.png" type="Texture" id=3]
+[ext_resource path="res://ui sprites/level instructions/cinema.png" type="Texture" id=3]
 [ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=5]
 [ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=6]
 [ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=7]
-[ext_resource path="res://ui sprites/level instructions/shift-button.png" type="Texture" id=8]
-[ext_resource path="res://ui sprites/level instructions/space-button.png" type="Texture" id=9]
-[ext_resource path="res://ui sprites/level instructions/camping.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -18,7 +15,14 @@ font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="DynamicFont" id=2]
+
+font/size = 26
+font/use_mipmaps = false
+font/use_filter = true
+font/font = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=3]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -36,7 +40,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -54,7 +58,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=5]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -72,22 +76,16 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 
 font/size = 72
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
-
-font/size = 30
-font/use_mipmaps = false
-font/use_filter = true
-font/font = ExtResource( 4 )
-
 [sub_resource type="Animation" id=7]
 
+resource/name = "instructions level 1"
 length = 5.0
 loop = false
 step = 0.1
@@ -102,54 +100,77 @@ tracks/0/keys = {
 "values": [ Vector2( 1400, -540 ), Vector2( 1400, 540 ), Vector2( 1400, 450 ), Vector2( 1400, 540 ), Vector2( 1400, 500 ), Vector2( 1400, 540 ) ]
 }
 
-[sub_resource type="DynamicFont" id=8]
-
-font/size = 30
-extra_spacing/top = -9
-font/use_mipmaps = false
-font/use_filter = true
-font/font = ExtResource( 4 )
-
 [node name="instructions" type="Sprite"]
 
 transform/pos = Vector2( 1400, 540 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="level select instructies Stijn" type="Sprite" parent="."]
 
-transform/pos = Vector2( 223.503, 59.5255 )
-transform/scale = Vector2( 0.5, 0.5 )
+transform/pos = Vector2( 1.37305, 107.281 )
 texture = ExtResource( 2 )
 
-[node name="level select instructies Myr" type="Sprite" parent="."]
+[node name="cinema" type="Sprite" parent="."]
 
-transform/pos = Vector2( -213.591, 63.3678 )
-transform/scale = Vector2( 0.5, 0.5 )
+transform/pos = Vector2( -5.02063, -288.294 )
 texture = ExtResource( 3 )
+offset = Vector2( -7.05273, -9.62167 )
 
-[node name="get work done" type="Label" parent="."]
+[node name="make it in time" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -400.0
+margin/left = -271.0
 margin/top = -189.0
-margin/right = 400.0
+margin/right = 279.0
 margin/bottom = 11.0
 custom_fonts/font = SubResource( 1 )
-text = "Can you help each other reach the camp site?"
+text = "Can you make it in time to the cinema for your first date?"
 align = 1
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="make it in time1" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -399.0
+margin/top = -456.0
+margin/right = 407.0
+margin/bottom = -256.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.976471, 0.164706, 0.4, 1 )
+text = "Oh noes! 
+Looks like you're running late!"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="kickass impression" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -349.0
+margin/top = -81.0
+margin/right = 343.0
+margin/bottom = -45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
+text = "Some items might help you make a kickass first impression"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="play-button" type="Button" parent="."]
 
@@ -161,61 +182,15 @@ margin/left = -121.0
 margin/top = 273.0
 margin/right = 115.0
 margin/bottom = 401.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 text = "Play"
 flat = false
-
-[node name="to stop Mango" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -335.0
-margin/top = 158.0
-margin/right = 11.0
-margin/bottom = 197.0
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
-text = "to do stuff"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="shift-button" type="Sprite" parent="to stop Mango"]
-
-transform/pos = Vector2( 42.1086, 19.8546 )
-texture = ExtResource( 8 )
-
-[node name="to stop Mango myrjam" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 101.0
-margin/top = 150.0
-margin/right = 447.0
-margin/bottom = 189.0
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 1, 1, 1, 0.788235 )
-text = "to do stuff"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="space-button" type="Sprite" parent="to stop Mango myrjam"]
-
-transform/pos = Vector2( 42.1086, 19.8546 )
-texture = ExtResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -227,29 +202,5 @@ playback/active = true
 playback/speed = 6.0
 blend_times = [  ]
 autoplay = "instructions level 1"
-
-[node name="hiking is tough" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -176.0
-margin/top = -268.0
-margin/right = 325.0
-margin/bottom = -187.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0.976471, 0.168627, 0.4, 1 )
-text = "Your new home is a real hiking paradise!
-But hiking is tough..."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Sprite" type="Sprite" parent="."]
-
-transform/pos = Vector2( -237.083, -308.829 )
-transform/scale = Vector2( 2.70054, 2.70054 )
-texture = ExtResource( 10 )
 
 
