@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=1]
+[gd_scene load_steps=44 format=1]
 
 [ext_resource path="res://game/scenes/fellowship-goes-south/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 3/background.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/scenes/fellowship-goes-south/end-screen.gd" type="Script" id=13]
 [ext_resource path="res://game/scenes/fellowship-goes-south/cutscene.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sounds/Young-Heroes.ogg" type="AudioStream" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -171,6 +172,7 @@ __meta__ = {
 
 [node name="objects" type="Node2D" parent="."]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -284,6 +286,7 @@ __meta__ = {
 
 [node name="clickables" type="Node2D" parent="."]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -804,5 +807,16 @@ max_lines_visible = -1
 visibility/visible = false
 script/script = ExtResource( 13 )
 cut_scene = ExtResource( 14 )
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 15 )
+stream/play = false
+stream/loop = true
+stream/volume_db = -0.5
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

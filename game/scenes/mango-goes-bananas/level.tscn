@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=1]
+[gd_scene load_steps=68 format=1]
 
 [ext_resource path="res://game/scenes/mango-goes-bananas/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://game/ui/level-end-screen/end-screen.tscn" type="PackedScene" id=22]
 [ext_resource path="res://game/scenes/mango-goes-bananas/end-screen.gd" type="Script" id=23]
 [ext_resource path="res://game/scenes/mango-goes-bananas/cutscene.tscn" type="PackedScene" id=24]
+[ext_resource path="res://sounds/Young-Heroes.ogg" type="AudioStream" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -166,72 +167,72 @@ vertices = Vector2Array( 1003.17, 441.088, 1028.2, 419.242, 1103.27, 414.078, 10
 polygons = [ IntArray( 0, 1, 2, 3, 4 ), IntArray( 5, 6, 7, 8 ), IntArray( 8, 7, 9, 10 ), IntArray( 8, 10, 11, 12 ), IntArray( 13, 14, 15, 16, 12 ), IntArray( 17, 18, 19, 20 ), IntArray( 20, 19, 21, 22, 23 ), IntArray( 24, 25, 26, 27, 28, 29 ), IntArray( 29, 28, 30, 31 ), IntArray( 32, 31, 30, 33 ), IntArray( 22, 32, 33 ), IntArray( 22, 33, 23 ), IntArray( 34, 20, 23, 35 ), IntArray( 3, 34, 35, 4 ), IntArray( 36, 0, 4 ), IntArray( 36, 4, 37 ), IntArray( 11, 36, 37, 13 ), IntArray( 11, 13, 12 ) ]
 outlines = [ Vector2Array( 1035.33, 533.668, 1066.64, 594.864, 1168.74, 661.849, 1199.33, 714.075, 1187.68, 777.165, 1059.22, 924.117, 1083.42, 943.923, 1184.38, 865.639, 1203.74, 841.62, 1248.39, 749.646, 1254.23, 739.96, 1181.81, 670.518, 1194.19, 607.255, 1221.2, 577.464, 1231.36, 528.601, 1305.77, 456.776, 1259.18, 423.452, 1139.15, 532.16, 1097.74, 530.542, 1048.88, 501.1, 1103.27, 414.078, 1028.2, 419.242, 1003.17, 441.088, 964.642, 441.088, 754.273, 307.788, 798.964, 263.738, 821.549, 251.191, 837.323, 222.153, 870.303, 200.285, 848.888, 191.847, 702.327, 307.996, 698.121, 340.349, 662.532, 340.997, 569.605, 417.337, 571.194, 487.644, 786.881, 373.643, 940.136, 436.073, 989.831, 514.508 ) ]
 
-[sub_resource type="ConvexPolygonShape2D" id=30]
+[sub_resource type="ConvexPolygonShape2D" id=29]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -0.937866, -42.5972, 47.4579, -37.5782, 60.4696, -13.8083, 56.2637, 21.4569, 47.8518, 31.81, 19.1375, 44.8737, -33.679, 29.5453, -38.2205, -14.6351 )
 
-[sub_resource type="ConvexPolygonShape2D" id=31]
+[sub_resource type="ConvexPolygonShape2D" id=30]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 48.673, -15.2127, 79.5028, -2.30719, 56.2637, 21.4569 )
 
-[sub_resource type="ConvexPolygonShape2D" id=32]
+[sub_resource type="ConvexPolygonShape2D" id=31]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 47.8518, 31.81, 17.8431, 65.8054, 2.06958, 38.2018, 7.08838, -0.87323, 48.673, -15.2127, 56.2637, 21.4569 )
 
-[sub_resource type="ConvexPolygonShape2D" id=33]
+[sub_resource type="ConvexPolygonShape2D" id=32]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 48.9683, -37.7376, 79.5028, -2.30719, 56.2637, 21.4569, -5.91223, -12.2603 )
 
-[sub_resource type="ConvexPolygonShape2D" id=34]
+[sub_resource type="ConvexPolygonShape2D" id=33]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -38.8433, 26.5193, -5.91223, -12.2603, 56.2637, 21.4569, 47.8518, 31.81, 27.0187, 56.437, -19.3156, 89.279 )
 
-[sub_resource type="ConvexPolygonShape2D" id=35]
+[sub_resource type="ConvexPolygonShape2D" id=34]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -19.3156, 89.279, 27.0187, 56.437, 18.7086, 90.5696 )
 
-[sub_resource type="ConvexPolygonShape2D" id=36]
+[sub_resource type="ConvexPolygonShape2D" id=35]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -21.4495, 82.0869, -22.5303, 120.453, -56.5731, 51.8266 )
 
-[sub_resource type="ConvexPolygonShape2D" id=37]
+[sub_resource type="ConvexPolygonShape2D" id=36]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -4.16602, 8.27982, 33.5695, -18.7309, 71.7021, 9.07425, 56.2637, 21.4569, 20.8586, 49.5902, -21.4495, 82.0869, -56.5731, 51.8266 )
 
-[sub_resource type="ConvexPolygonShape2D" id=38]
+[sub_resource type="ConvexPolygonShape2D" id=37]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 20.8586, 49.5902, 56.2637, 21.4569, 47.8518, 31.81 )
 
-[sub_resource type="ConvexPolygonShape2D" id=39]
+[sub_resource type="ConvexPolygonShape2D" id=38]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -82.1089, 92.356, 8.11127, 150.877, -41.144, 156.242, -94.3008, 117.227 )
 
-[sub_resource type="ConvexPolygonShape2D" id=40]
+[sub_resource type="ConvexPolygonShape2D" id=39]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 5.95911, 24.9648, -63.5537, -16.7429, -39.7207, -38.1925, 26.217, 0.73468 )
 
-[sub_resource type="ConvexPolygonShape2D" id=41]
+[sub_resource type="ConvexPolygonShape2D" id=40]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -46.6244, -17.975, -67.9777, 9.849, -87.0995, -35.1546, -68.011, -60.7139 )
 
-[sub_resource type="ConvexPolygonShape2D" id=42]
+[sub_resource type="ConvexPolygonShape2D" id=41]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -46.6244, -17.975, -68.011, -60.7139, 50.7595, 12.7608, 32.1492, 35.5198 )
 
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=42]
 
 font/size = 30
 font/use_mipmaps = false
@@ -397,7 +398,7 @@ fridge_lick_duration = 3.0
 
 [node name="animations" parent="Mango"]
 
-frame = 24
+frame = 28
 
 [node name="foreground" type="Sprite" parent="."]
 
@@ -429,11 +430,13 @@ enabled = true
 
 [node name="mischief" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="vomit-location" type="Area2D" parent="mischief"]
 
 transform/pos = Vector2( 1208, 551 )
 input/pickable = true
-shapes/0/shape = SubResource( 30 )
+shapes/0/shape = SubResource( 29 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 16.623, -10.1785 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -457,10 +460,10 @@ transform/pos = Vector2( 1191.29, 851.603 )
 
 transform/pos = Vector2( 1311.14, 825.106 )
 input/pickable = true
-shapes/0/shape = SubResource( 31 )
+shapes/0/shape = SubResource( 30 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -109.534, -25.033 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 32 )
+shapes/1/shape = SubResource( 31 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, -109.534, -25.033 )
 shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -480,13 +483,13 @@ trigger = false
 
 transform/pos = Vector2( 1163.38, 902.311 )
 input/pickable = true
-shapes/0/shape = SubResource( 33 )
+shapes/0/shape = SubResource( 32 )
 shapes/0/transform = Matrix32( -1, 0.000573548, -0.000573548, -1, 17.5198, -11.0012 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 34 )
+shapes/1/shape = SubResource( 33 )
 shapes/1/transform = Matrix32( -1, 0.000573548, -0.000573548, -1, 17.5198, -11.0012 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 35 )
+shapes/2/shape = SubResource( 34 )
 shapes/2/transform = Matrix32( -1, 0.000573548, -0.000573548, -1, 17.5198, -11.0012 )
 shapes/2/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -511,16 +514,16 @@ transform/pos = Vector2( 821.321, 326.837 )
 
 transform/pos = Vector2( 890.399, 286.609 )
 input/pickable = true
-shapes/0/shape = SubResource( 36 )
+shapes/0/shape = SubResource( 35 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -77.1101, -42.1637 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 37 )
+shapes/1/shape = SubResource( 36 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, -77.1101, -42.1637 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 38 )
+shapes/2/shape = SubResource( 37 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, -77.1101, -42.1637 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 39 )
+shapes/3/shape = SubResource( 38 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, -0.487671 )
 shapes/3/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -549,7 +552,7 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 1425.82, 582.633 )
 input/pickable = true
-shapes/0/shape = SubResource( 40 )
+shapes/0/shape = SubResource( 39 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -566,12 +569,13 @@ trigger = false
 
 [node name="sofa-stijn-location" type="Area2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 1352.11, 539.432 )
 input/pickable = true
-shapes/0/shape = SubResource( 41 )
+shapes/0/shape = SubResource( 40 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 42 )
+shapes/1/shape = SubResource( 41 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -653,7 +657,7 @@ margin/left = -33.0
 margin/top = -102.0
 margin/right = 40.0
 margin/bottom = -63.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 42 )
 text = "Draw!"
 percent_visible = 1.0
 lines_skipped = 0
@@ -694,7 +698,7 @@ margin/left = -40.0
 margin/top = -80.0
 margin/right = 41.0
 margin/bottom = -41.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 42 )
 text = "Study!"
 percent_visible = 1.0
 lines_skipped = 0
@@ -735,7 +739,7 @@ margin/left = -23.0
 margin/top = -21.0
 margin/right = 32.0
 margin/bottom = 18.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 42 )
 text = "0"
 align = 1
 percent_visible = 1.0
@@ -752,7 +756,7 @@ margin/left = 12.0
 margin/top = -21.0
 margin/right = 48.0
 margin/bottom = 18.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 42 )
 text = "/"
 align = 1
 percent_visible = 1.0
@@ -769,7 +773,7 @@ margin/left = 26.0
 margin/top = -21.0
 margin/right = 83.0
 margin/bottom = 18.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 42 )
 text = "0"
 align = 1
 percent_visible = 1.0
@@ -782,6 +786,7 @@ script/script = ExtResource( 21 )
 
 [node name="end-screen" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -792,6 +797,17 @@ scale = Vector2( 1, 1 )
 visibility/visible = false
 script/script = ExtResource( 23 )
 cut_scene = ExtResource( 24 )
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 25 )
+stream/play = false
+stream/loop = false
+stream/volume_db = -0.5
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 
 [editable path="Mango"]
