@@ -45,7 +45,8 @@ func fixed_process(delta):
 
 func is_mischief_nearby():
 	for mischief in get_tree().get_nodes_in_group("mischief"):
-		if get_global_pos().distance_to(mischief.get_global_pos()) < 85:
+		var mischief_area = mischief.get_parent()
+		if mischief_area.overlaps_body(self):
 			reachable_mischief = mischief
 			return true
 	reachable_mischief = null
@@ -76,7 +77,7 @@ func cleaned():
 
 
 func is_sofa_myrjam_nearby():
-	return get_global_pos().distance_to(sofa_myrjam.get_global_pos()) < 30
+	return sofa_myrjam.overlaps_body(self)
 
 
 func draw():
@@ -99,7 +100,7 @@ func stop_drawing():
 
 
 func is_sofa_stijn_nearby():
-	return get_global_pos().distance_to(sofa_stijn.get_global_pos()) < 30
+	return sofa_stijn.overlaps_body(self)
 
 
 func study():
