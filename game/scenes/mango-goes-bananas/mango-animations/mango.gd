@@ -345,7 +345,7 @@ func go_and_idle():
 
 
 func random_accessible_location():
-	var random_close_point = get_pos() + Vector2((randi() % 1000) + 50, (randi() % 1000) + 50)
+	var random_close_point = get_pos() + Vector2((randi() % 1000) - 500, (randi() % 1000) - 500)
 	return navigation.get_closest_point(random_close_point)
 
 
