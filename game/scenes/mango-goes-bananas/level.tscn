@@ -317,7 +317,6 @@ clothing = "normal"
 "moving",
 ] instance=ExtResource( 8 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 1163.63, 903.359 )
 meat_lick_duration = 3.0
 vomit_duration = 3.0
@@ -346,14 +345,13 @@ texture = ExtResource( 10 )
 
 [node name="navigation" type="Navigation2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( -5, 61 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="navigation"]
 
+transform/pos = Vector2( -16.2902, 61.0881 )
 navpoly = SubResource( 28 )
 enabled = true
 
