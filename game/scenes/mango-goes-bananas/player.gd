@@ -16,6 +16,7 @@ var drawing = false
 var studying = false
 var reachable_mischief
 var hint
+var hint_action
 
 
 func _ready():
@@ -51,26 +52,36 @@ func spawn_relevant_hints():
 		spawn_hint("stop studying")
 	elif drawing:
 		spawn_hint("stop drawing")
-	elif is_mischief_nearby() and not cleaning:
+	elif is_mischief_nearby() and not cleaning and not reachable_mischief.being_cleaned:
 		spawn_hint("clean up this mess")
 	elif player_name == STIJN and is_sofa_stijn_nearby() and not studying:
 		spawn_hint("study")
 	elif player_name == MYRJAM and is_sofa_myrjam_nearby() and not drawing:
 		spawn_hint("draw")
+	else:
+		drop_hint()
 
 
 func spawn_hint(hint_action):
-	if hint != null:
+	if hint_action == self.hint_action:
 		return
-
+	
+	if hint != null:
+		drop_hint()
+	
+	self.hint_action = hint_action
 	hint = Hint.instance()
 	hint.get_node("label").set_text("Press " + do_key() + " to " + hint_action)
 	add_child(hint)
-	utils.do_once_after_animation(hint.get_node("player"), self, "drop_hint")
 
 
 func drop_hint():
-	hint.queue_free()
+	if hint == null:
+		return
+	
+	hint.get_node("player").play("popdown")
+	utils.do_once_after_animation(hint.get_node("player"), hint, "queue_free")
+	hint_action = null
 	hint = null
 
 
@@ -78,6 +89,7 @@ func do_key():
 	for event in InputMap.get_action_list(do_action):
 		if event.type == InputEvent.KEY:
 			return OS.get_scancode_string(event.scancode)
+	# This should never happen, but at least it won't be _super_ weird
 	return "the right key"
 
 
@@ -93,6 +105,9 @@ func is_mischief_nearby():
 
 func clean():
 	assert reachable_mischief != null
+	
+	if cleaning:
+		return
 	
 	mango.interrupt()
 	animations.play("cleaning profile start")
