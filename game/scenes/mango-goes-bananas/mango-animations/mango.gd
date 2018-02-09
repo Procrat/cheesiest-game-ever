@@ -394,7 +394,7 @@ func jump_and_pee():
 
 
 func pee():
-	do_and(PeeAction.new(self), "go_crazy")
+	do_and(PeeAction.new(self), "jump_down")
 
 
 func go_and_do(location, action_name):
