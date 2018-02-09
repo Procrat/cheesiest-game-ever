@@ -52,15 +52,4 @@ playback/speed = 0.3
 blend_times = [  ]
 autoplay = "cutscene"
 
-[node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/cutscene = SubResource( 1 )
-playback/active = true
-playback/speed = 0.3
-blend_times = [  ]
-autoplay = "cutscene"
-
 
