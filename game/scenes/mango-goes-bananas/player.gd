@@ -80,6 +80,7 @@ func do_key():
 			return OS.get_scancode_string(event.scancode)
 	return "the right key"
 
+
 func is_mischief_nearby():
 	for mischief in get_tree().get_nodes_in_group("mischief"):
 		var mischief_area = mischief.get_parent()
@@ -102,6 +103,9 @@ func clean():
 
 
 func stop_cleaning():
+	if not cleaning:
+		return
+	
 	cleaning = false
 	reachable_mischief.stop_cleaning()
 	animations.play("cleaning profile end")

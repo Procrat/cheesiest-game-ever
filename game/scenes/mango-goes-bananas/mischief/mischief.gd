@@ -12,6 +12,7 @@ onready var fridge_door = level.get_node("apartment/fridge door")
 
 var mischief_kind
 var residue
+var being_cleaned = false
 
 
 func start(mischief_kind, parent, duration):
@@ -32,11 +33,17 @@ func spawn(residue):
 
 
 func it_s_almost_too_laaaate():
+	if being_cleaned:
+		return
+	
 	play("mischief-flicker")
 	utils.do_once_after(2, self, self, "it_s_too_late_now_muahahaha")
 
 
 func it_s_too_late_now_muahahaha():
+	if being_cleaned:
+		return
+	
 	level.mischief_missed(mischief_kind)
 	attach_residue_to_level()
 	queue_free()
@@ -61,6 +68,7 @@ func interrupt():
 
 
 func clean():
+	being_cleaned = true
 	play("cleaning-progress")
 	if get_parent() == fridge_location:
 		fridge_door.play("close")
