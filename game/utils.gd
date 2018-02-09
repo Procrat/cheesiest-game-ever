@@ -47,3 +47,20 @@ static func do_once_after(wait_time, attachee, target, method, binds=[]):
 
 static func do_once_after_animation(animated_sprite, target, method, binds=[]):
 	return SignalAction.new(animated_sprite, "finished", target, method, binds)
+
+
+static func set_animation_duration(animated_sprite, animation_name, duration):
+	var sprites = animated_sprite.get_sprite_frames()
+	var speed = sprites.get_frame_count(animation_name) / duration
+	sprites.set_animation_speed(animation_name, speed)
+
+static func get_animation_duration(animated_sprite, animation_name):
+	var sprites = animated_sprite.get_sprite_frames()
+	return sprites.get_frame_count(animation_name) / sprites.get_animation_speed(animation_name)
+
+
+static func get_total_animation_duration(animated_sprite, animation_names):
+	var sum = 0
+	for animation_name in animation_names:
+		sum += get_animation_duration(animated_sprite, animation_name)
+	return sum

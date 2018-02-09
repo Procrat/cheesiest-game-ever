@@ -14,9 +14,10 @@ var mischief_kind
 var residue
 
 
-func start(mischief_kind, parent):
+func start(mischief_kind, parent, duration):
 	self.mischief_kind = mischief_kind
 	parent.add_child(self)
+	utils.set_animation_duration(self, "mischief-progress", max(duration - 2, 0.01))
 	get_sprite_frames().set_animation_speed("cleaning-progress", 80)
 	play("mischief-progress")
 	level.mischief_started(mischief_kind)

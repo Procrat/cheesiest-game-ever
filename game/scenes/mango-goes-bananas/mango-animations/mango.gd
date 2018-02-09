@@ -2,8 +2,12 @@ extends KinematicBody2D
 
 export(float) var walk_speed
 export(float) var idle_duration
-export(float) var lick_duration
-export(float) var vomit_delay
+export(float) var meat_lick_duration
+export(float) var vomit_duration
+export(float) var vomit_spawn_delay
+export(float) var pee_duration
+export(float) var fridge_lick_duration
+
 
 var utils = preload("res://game/utils.gd")
 
@@ -22,18 +26,18 @@ class Action extends Node:
 	
 	var utils = preload("res://game/utils.gd")
 	
-	var animations
-	
 	var mango
 	var first_animation_name
+	var animations
+	
 	var flipped = false
 	
 	func _init(mango, first_animation_name):
 		self.mango = mango
 		self.first_animation_name = first_animation_name
+		self.animations = mango.get_node("animations")
 	
 	func start():
-		animations = mango.get_node("animations")
 		animations.play(first_animation_name)
 	
 	func fixed_process(delta):
@@ -41,10 +45,6 @@ class Action extends Node:
 	
 	func stop():
 		emit_signal("done")
-	
-	func animation_duration(animation_name):
-		var sprite_frames = animations.get_sprite_frames()
-		return sprite_frames.get_frame_count(animation_name) / sprite_frames.get_animation_speed(animation_name)
 
 
 class MischiefAction extends Action:
@@ -53,6 +53,7 @@ class MischiefAction extends Action:
 	
 	var location
 	var kind
+	
 	var mischief
 	var interrupted = false
 	
@@ -60,10 +61,10 @@ class MischiefAction extends Action:
 		self.location = location
 		self.kind = kind
 	
-	func start():
+	func start(duration):
 		.start()
 		mischief = Mischief.instance()
-		mischief.start(kind, location)
+		mischief.start(kind, location, duration)
 	
 	func interrupt():
 		interrupted = true
@@ -182,7 +183,8 @@ class LickAction extends MischiefAction:
 		pass
 	
 	func start():
-		.start()
+		var duration = utils.get_total_animation_duration(animations, ["lick start", "lick end"]) + mango.meat_lick_duration
+		.start(duration)
 		mango.look_right()
 		utils.do_once_after_animation(animations, self, "lick")
 	
@@ -191,7 +193,7 @@ class LickAction extends MischiefAction:
 			return
 		animations.play("lick middle")
 		sound = SFX.play("lick")
-		utils.do_once_after(mango.lick_duration, mango, self, "stop_licking")
+		utils.do_once_after(mango.meat_lick_duration, mango, self, "stop_licking")
 	
 	func stop_licking():
 		animations.play("lick end")
@@ -213,15 +215,17 @@ class VomitAction extends MischiefAction:
 		pass
 	
 	func start():
-		.start()
+		.start(mango.vomit_duration)
+		utils.set_animation_duration(animations, "vomit", mango.vomit_duration)
 		mango.look_right()
 		SFX.play("barf")
-		utils.do_once_after(mango.vomit_delay, mango, self, "spawn_vomit")
+		utils.do_once_after(mango.vomit_spawn_delay, mango, self, "spawn_vomit")
 	
 	func spawn_vomit():
 		if interrupted:
 			return
 		vomit = Vomit.instance()
+		utils.set_animation_duration(vomit, "default", mango.vomit_duration)
 		mischief.spawn(vomit)
 		utils.do_once_after_animation(animations, self, "stop")
 	
@@ -239,7 +243,8 @@ class FridgeAction extends MischiefAction:
 		self.fridge = fridge
 	
 	func start():
-		.start()
+		var duration = utils.get_total_animation_duration(animations, ["opens fridge", "lick start", "lick end"]) + mango.fridge_lick_duration
+		.start(duration)
 		mango.look_left()
 		sound = SFX.play("miauw-happy")
 		utils.do_once_after(34.0 / 24.0, mango, self, "open_fridge")
@@ -256,7 +261,7 @@ class FridgeAction extends MischiefAction:
 		animations.play("lick start")
 		sound = SFX.play("lick")
 		utils.do_once_after_animation(animations, animations, "play", ["lick middle"])
-		utils.do_once_after(4, mango, self, "stopping")
+		utils.do_once_after(mango.fridge_lick_duration, mango, self, "stopping")
 	
 	func stopping():
 		animations.play("lick end")
@@ -278,15 +283,18 @@ class PeeAction extends MischiefAction:
 		pass
 	
 	func start():
-		.start()
+		var duration = utils.get_total_animation_duration(animations, ["pipi start", "pipi end"]) + mango.pee_duration
+		.start(duration)
 		mango.look_right()
 		utils.do_once_after_animation(animations, self, "pee")
 	
 	func pee():
 		if interrupted:
 			return
+		utils.set_animation_duration(animations, "pipi middle", mango.pee_duration)
 		animations.play("pipi middle")
 		pee = Pee.instance()
+		utils.set_animation_duration(pee, "default", mango.pee_duration)
 		mischief.spawn(pee)
 		utils.do_once_after_animation(animations, self, "stop_peeing")
 	
@@ -301,28 +309,24 @@ class PeeAction extends MischiefAction:
 
 
 onready var animations = get_node("animations")
-onready var action = IdleAction.new(self, 1)
+
+var action_name
+var action
 
 
 func _ready():
 	set_fixed_process(true)
-	action.start()
-	action.connect("done", self, "go_crazy")
 	randomize()
+	go_crazy()
 
 
 func go_crazy():
 	# Choose something random to do
 	var possible_actions = ["go_and_idle", "go_and_vomit", "go_and_lick", "go_and_open_fridge", "go_and_pee"]
-	var corresponding_action_classes = [null, VomitAction, LickAction, FridgeAction]
-	for class_idx in range(corresponding_action_classes.size()):
-		var clazz = corresponding_action_classes[class_idx]
-		if clazz != null and action extends clazz:
-			possible_actions.remove(class_idx)
-			break
-	var new_action = possible_actions[randi() % possible_actions.size()]
-	print("Mango decides to ", new_action)
-	call(new_action)
+	possible_actions.erase(action_name)
+	action_name = possible_actions[randi() % possible_actions.size()]
+	print("Mango decides to ", action_name.replace("_", " "))
+	call(action_name)
 
 
 func go_and_idle():

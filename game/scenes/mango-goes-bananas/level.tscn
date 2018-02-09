@@ -319,7 +319,11 @@ clothing = "normal"
 
 editor/display_folded = true
 transform/pos = Vector2( 1163.63, 903.359 )
-lick_duration = 6.0
+meat_lick_duration = 3.0
+vomit_duration = 3.0
+vomit_spawn_delay = 1.0
+pee_duration = 3.0
+fridge_lick_duration = 3.0
 
 [node name="animations" parent="Mango"]
 
