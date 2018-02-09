@@ -202,6 +202,8 @@ class LickAction extends MischiefAction:
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
+		if interrupted:
+			return
 		interrupted = true
 		mischief.interrupt()
 		stop_licking()
@@ -230,6 +232,8 @@ class VomitAction extends MischiefAction:
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
+		if interrupted:
+			return
 		interrupted = true
 		mischief.interrupt()
 		stop()
@@ -270,6 +274,8 @@ class FridgeAction extends MischiefAction:
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
+		if interrupted:
+			return
 		interrupted = true
 		mischief.interrupt()
 		stopping()
@@ -303,6 +309,8 @@ class PeeAction extends MischiefAction:
 		utils.do_once_after_animation(animations, self, "stop")
 	
 	func interrupt():
+		if interrupted:
+			return
 		interrupted = true
 		mischief.interrupt()
 		stop_peeing()
