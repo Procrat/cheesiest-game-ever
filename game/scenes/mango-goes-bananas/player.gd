@@ -4,6 +4,7 @@ signal started_working
 signal stopped_working
 
 var utils = preload("res://game/utils.gd")
+var Hint = preload("res://game/ui/text-fx player.tscn")
 
 onready var mango = get_parent().get_node("Mango")
 onready var sofa_myrjam = get_parent().get_node("sofa-myrjam-location")
@@ -14,6 +15,7 @@ var cleaning = false
 var drawing = false
 var studying = false
 var reachable_mischief
+var hint
 
 
 func _ready():
@@ -39,9 +41,44 @@ func _input(event):
 
 
 func fixed_process(delta):
+	spawn_relevant_hints()
 	if not is_busy():
 		.fixed_process(delta)
 
+
+func spawn_relevant_hints():
+	if studying:
+		spawn_hint("stop studying")
+	elif drawing:
+		spawn_hint("stop drawing")
+	elif is_mischief_nearby() and not cleaning:
+		spawn_hint("clean up this mess")
+	elif player_name == STIJN and is_sofa_stijn_nearby() and not studying:
+		spawn_hint("study")
+	elif player_name == MYRJAM and is_sofa_myrjam_nearby() and not drawing:
+		spawn_hint("draw")
+
+
+func spawn_hint(hint_action):
+	if hint != null:
+		return
+
+	hint = Hint.instance()
+	hint.get_node("label").set_text("Press " + do_key() + " to " + hint_action)
+	add_child(hint)
+	utils.do_once_after_animation(hint.get_node("player"), self, "drop_hint")
+
+
+func drop_hint():
+	hint.queue_free()
+	hint = null
+
+
+func do_key():
+	for event in InputMap.get_action_list(do_action):
+		if event.type == InputEvent.KEY:
+			return OS.get_scancode_string(event.scancode)
+	return "the right key"
 
 func is_mischief_nearby():
 	for mischief in get_tree().get_nodes_in_group("mischief"):

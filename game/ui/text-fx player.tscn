@@ -49,6 +49,8 @@ tracks/2/keys = {
 [node name="text-fx" type="Node2D"]
 
 transform/pos = Vector2( 0, -25 )
+z/z = 3000
+z/relative = false
 
 [node name="label" type="Label" parent="."]
 
@@ -78,6 +80,6 @@ anims/popup = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "popup"
 
 
