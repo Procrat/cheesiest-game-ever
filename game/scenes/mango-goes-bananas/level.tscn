@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=1]
+[gd_scene load_steps=69 format=1]
 
 [ext_resource path="res://game/scenes/mango-goes-bananas/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 2/Level2 bg behind characters.png" type="Texture" id=2]
@@ -222,15 +222,20 @@ points = Vector2Array( -82.1089, 92.356, 8.11127, 150.877, -41.144, 156.242, -94
 custom_solver_bias = 0.0
 points = Vector2Array( 5.95911, 24.9648, -63.5537, -16.7429, -39.7207, -38.1925, 26.217, 0.73468 )
 
-[sub_resource type="ConvexPolygonShape2D" id=40]
+[sub_resource type="ConvexPolygonShape2D" id=43]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -46.6244, -17.975, -67.9777, 9.849, -87.0995, -35.1546, -68.011, -60.7139 )
+points = Vector2Array( -46.6244, -17.975, -67.9777, 9.849, -63.7324, -13.7786 )
 
-[sub_resource type="ConvexPolygonShape2D" id=41]
+[sub_resource type="ConvexPolygonShape2D" id=44]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -46.6244, -17.975, -68.011, -60.7139, 50.7595, 12.7608, 32.1492, 35.5198 )
+points = Vector2Array( -68.011, -60.7139, 50.7595, 12.7608, 32.1492, 35.5198, -46.6244, -17.975 )
+
+[sub_resource type="ConvexPolygonShape2D" id=45]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -77.972, -38.698, -68.011, -60.7139, -46.6244, -17.975, -63.7324, -13.7786 )
 
 [sub_resource type="DynamicFont" id=42]
 
@@ -389,7 +394,6 @@ clothing = "normal"
 
 editor/display_folded = true
 transform/pos = Vector2( 1163.63, 903.359 )
-walk_speed = 400.0
 meat_lick_duration = 3.0
 vomit_duration = 3.0
 vomit_spawn_delay = 1.0
@@ -569,15 +573,17 @@ trigger = false
 
 [node name="sofa-stijn-location" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 1352.11, 539.432 )
 input/pickable = true
-shapes/0/shape = SubResource( 40 )
+shapes/0/shape = SubResource( 43 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 41 )
+shapes/1/shape = SubResource( 44 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
+shapes/2/shape = SubResource( 45 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -586,8 +592,8 @@ angular_damp = 1.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="sofa-stijn-location"]
 
 build_mode = 0
-polygon = Vector2Array( 50.7595, 12.7608, -68.011, -60.7139, -87.0995, -35.1546, -67.9777, 9.849, -46.6244, -17.975, 32.1492, 35.5198 )
-shape_range = Vector2( 0, 1 )
+polygon = Vector2Array( 50.7595, 12.7608, -68.011, -60.7139, -77.972, -38.698, -63.7324, -13.7786, -67.9777, 9.849, -46.6244, -17.975, 32.1492, 35.5198 )
+shape_range = Vector2( 0, 2 )
 trigger = false
 
 [node name="ui" type="Control" parent="."]
@@ -640,7 +646,7 @@ transform/scale = Vector2( 0.7, 0.7 )
 offset = Vector2( 285, 100 )
 script/script = ExtResource( 13 )
 listening_to = 0
-single_player_duration = 119
+single_player_duration = 100
 multi_player_duration = 60
 
 [node name="Myrjam head" type="Sprite" parent="ui/VBoxContainer/Control"]
@@ -683,7 +689,7 @@ transform/scale = Vector2( 0.7, 0.7 )
 offset = Vector2( 285, 100 )
 script/script = ExtResource( 13 )
 listening_to = 1
-single_player_duration = 30
+single_player_duration = 40
 multi_player_duration = 60
 
 [node name="Stijn head" type="Sprite" parent="ui/VBoxContainer/Control 2"]
