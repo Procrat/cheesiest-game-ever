@@ -35,7 +35,7 @@ func _ready():
 	if not intialised:
 		original_location = get_pos()
 		
-		pick_up_action = player_name_str + "_do"
+		pick_up_action = ("stijn" if GLOBAL_STATE.is_single_player else player_name_str) + "_do"
 		
 		significant_other = get_parent().find_node("Stijn" if player_name == MYRJAM else "Myrjam")
 		
@@ -46,6 +46,9 @@ func _ready():
 
 
 func _input(event):
+	if is_npc:
+		return
+	
 	if event.is_action_released(pick_up_action):
 		if not picking_up and not jumping and not beckoning:
 			if carrying_something():

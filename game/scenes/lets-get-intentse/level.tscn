@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=1]
+[gd_scene load_steps=182 format=1]
 
 [ext_resource path="res://game/scenes/lets-get-intentse/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 4/background.png" type="Texture" id=2]
@@ -53,11 +53,12 @@
 [ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=51]
 [ext_resource path="res://game/scenes/lets-get-intentse/player.gd" type="Script" id=52]
 [ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=53]
-[ext_resource path="res://Level 4/swingbridge front.png" type="Texture" id=54]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=55]
-[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=56]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=57]
-[ext_resource path="res://sounds/Young-Heroes.ogg" type="AudioStream" id=58]
+[ext_resource path="res://Level 4/opaque bling.png" type="Texture" id=54]
+[ext_resource path="res://Level 4/swingbridge front.png" type="Texture" id=55]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=56]
+[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=57]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=58]
+[ext_resource path="res://sounds/Young-Heroes.ogg" type="AudioStream" id=59]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -692,7 +693,7 @@ height = 20.0
 font/size = 30
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 55 )
+font/font = ExtResource( 56 )
 
 [node name="level" type="Node2D"]
 
@@ -1795,7 +1796,6 @@ _update_shape_index = 0
 
 [node name="Stijn" parent="." instance=ExtResource( 53 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 105.395, 149.385 )
 script/script = ExtResource( 52 )
 player_name = 1
@@ -1807,6 +1807,7 @@ upward_jumping_time = 0.5
 
 [node name="grabbing-area" type="Area2D" parent="Stijn"]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -96 )
 input/pickable = true
 shapes/0/shape = SubResource( 121 )
@@ -1825,12 +1826,18 @@ shape = SubResource( 121 )
 trigger = false
 _update_shape_index = 0
 
+[node name="twinkle" type="Sprite" parent="Stijn"]
+
+transform/pos = Vector2( 1.605, -172.385 )
+transform/scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 54 )
+
 [node name="foreground" type="Sprite" parent="." groups=[
 "moving",
 ]]
 
 transform/pos = Vector2( 722, 180 )
-texture = ExtResource( 54 )
+texture = ExtResource( 55 )
 offset = Vector2( 238, 360 )
 __meta__ = {
 "_edit_lock_": true
@@ -1853,7 +1860,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="i-give-up" parent="." instance=ExtResource( 56 )]
+[node name="i-give-up" parent="." instance=ExtResource( 57 )]
 
 rect/scale = Vector2( 0.8, 0.8 )
 margin/left = 1588.0
@@ -1864,11 +1871,11 @@ text = "I give up!"
 
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 57 )
+script/script = ExtResource( 58 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 58 )
+stream/stream = ExtResource( 59 )
 stream/play = false
 stream/loop = true
 stream/volume_db = -0.5

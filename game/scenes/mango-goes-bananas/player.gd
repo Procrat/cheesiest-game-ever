@@ -9,7 +9,6 @@ var Hint = preload("res://game/ui/text-fx player.tscn")
 onready var mango = get_parent().get_node("Mango")
 onready var sofa_myrjam = get_parent().get_node("sofa-myrjam-location")
 onready var sofa_stijn = get_parent().get_node("sofa-stijn-location")
-onready var is_npc = GLOBAL_STATE.is_single_player and player_name == MYRJAM
 
 var do_action
 var cleaning = false

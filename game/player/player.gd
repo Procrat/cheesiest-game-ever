@@ -7,6 +7,9 @@ export(float) var walk_speed
 export(String, "normal", "hiking") var clothing = "normal"
 
 
+onready var is_npc = GLOBAL_STATE.is_single_player and player_name == MYRJAM
+
+
 class Direction extends Node:
 	var translation
 	var name
@@ -35,10 +38,11 @@ var beckoning = false
 func _ready():
 	set_fixed_process(true)
 	player_name_str = "myrjam" if player_name == MYRJAM else "stijn"
-	left_action = player_name_str + "_left"
-	right_action = player_name_str + "_right"
-	up_action = player_name_str + "_up"
-	down_action = player_name_str + "_down"
+	var player_name_for_action = "stijn" if GLOBAL_STATE.is_single_player else player_name_str
+	left_action = player_name_for_action + "_left"
+	right_action = player_name_for_action + "_right"
+	up_action = player_name_for_action + "_up"
+	down_action = player_name_for_action + "_down"
 
 
 func _fixed_process(delta):
@@ -48,7 +52,7 @@ func _fixed_process(delta):
 func fixed_process(delta):
 	var direction = handle_input()
 	
-	if direction.name == null:
+	if is_npc or direction.name == null:
 		# No input: idle
 		if beckoning:
 			if not animations.get_animation().begins_with("beckoning"):
