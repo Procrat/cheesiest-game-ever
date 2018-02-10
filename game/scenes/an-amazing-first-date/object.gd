@@ -7,11 +7,12 @@ const utils = preload("res://game/utils.gd")
 
 
 func _ready():
-	connect("body_enter", self, "collide")
+	connect("area_enter", self, "area_enter")
 
-func collide(body):
-	if body.is_in_group("players"):
-		be_picked_up_by(body)
+func area_enter(area):
+	var parent = area.get_parent()
+	if parent != null and parent.is_in_group("players"):
+		be_picked_up_by(parent)
 
 func be_picked_up_by(player):
 	INVENTORY.add(item_type)
