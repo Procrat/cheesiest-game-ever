@@ -29,6 +29,7 @@ var HINTS = [
 
 onready var areas = get_children()
 var players_in_area = []
+var current_area = 0
 
 
 func _ready():
@@ -46,7 +47,8 @@ func body_enter(body, area_idx):
 	
 	players_in_area[area_idx] += 1
 	if players_in_area[area_idx] >= 2:
-		set_hints(area_idx)
+		if current_area != area_idx:
+			set_hints(area_idx)
 
 
 func body_exit(body, area_idx):
@@ -54,11 +56,13 @@ func body_exit(body, area_idx):
 		return
 	
 	players_in_area[area_idx] -= 1
-	if players_in_area[area_idx] < 2:
+	if players_in_area[area_idx] <= 0:
 		drop_hints(area_idx)
 
 
 func set_hints(area_idx):
+	emit_signal("show_hint", "")
+	current_area = area_idx
 	for hint in HINTS[area_idx]:
 		utils.do_once_after(hint.timeout, areas[area_idx], self, "show_hint", [hint.message])
 
