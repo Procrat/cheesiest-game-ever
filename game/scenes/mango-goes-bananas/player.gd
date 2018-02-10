@@ -9,6 +9,7 @@ var Hint = preload("res://game/ui/text-fx player.tscn")
 onready var mango = get_parent().get_node("Mango")
 onready var sofa_myrjam = get_parent().get_node("sofa-myrjam-location")
 onready var sofa_stijn = get_parent().get_node("sofa-stijn-location")
+onready var is_npc = GLOBAL_STATE.is_single_player and player_name == MYRJAM
 
 var do_action
 var cleaning = false
@@ -23,9 +24,14 @@ func _ready():
 	._ready()
 	set_process_input(true)
 	do_action = player_name_str + "_do"
+	if is_npc:
+		draw()
 
 
 func _input(event):
+	if is_npc:
+		return
+	
 	if event.is_action_released(do_action):
 		if drawing:
 			stop_drawing()
@@ -42,7 +48,8 @@ func _input(event):
 
 
 func fixed_process(delta):
-	spawn_relevant_hints()
+	if not is_npc:
+		spawn_relevant_hints()
 	if not is_busy():
 		.fixed_process(delta)
 
@@ -141,11 +148,11 @@ func draw():
 	animations.play("draw start")
 	set_global_pos(sofa_myrjam.get_global_pos())
 	drawing = true
-	emit_signal("started_working")
 	utils.do_once_after_animation(animations, self, "keep_drawing")
 
 
 func keep_drawing():
+	emit_signal("started_working")
 	animations.play("draw middle")
 
 
@@ -166,11 +173,11 @@ func study():
 	studying = true
 	set_layer_mask(0)
 	set_collision_mask(0)
-	emit_signal("started_working")
 	utils.do_once_after_animation(animations, self, "keep_studying")
 
 
 func keep_studying():
+	emit_signal("started_working")
 	animations.play("study middle")
 
 

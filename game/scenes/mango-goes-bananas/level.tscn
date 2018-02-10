@@ -592,7 +592,6 @@ trigger = false
 
 [node name="ui" type="Control" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -641,6 +640,8 @@ transform/scale = Vector2( 0.7, 0.7 )
 offset = Vector2( 285, 100 )
 script/script = ExtResource( 13 )
 listening_to = 0
+single_player_duration = 119
+multi_player_duration = 60
 
 [node name="Myrjam head" type="Sprite" parent="ui/VBoxContainer/Control"]
 
@@ -682,6 +683,8 @@ transform/scale = Vector2( 0.7, 0.7 )
 offset = Vector2( 285, 100 )
 script/script = ExtResource( 13 )
 listening_to = 1
+single_player_duration = 30
+multi_player_duration = 60
 
 [node name="Stijn head" type="Sprite" parent="ui/VBoxContainer/Control 2"]
 

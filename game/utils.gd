@@ -50,8 +50,10 @@ static func do_once_after_animation(animated_sprite, target, method, binds=[]):
 
 
 static func set_animation_duration(animated_sprite, animation_name, duration):
-	var sprites = animated_sprite.get_sprite_frames()
+	var sprites = animated_sprite.get_sprite_frames().duplicate(true)
+	animated_sprite.set_sprite_frames(sprites)
 	var speed = sprites.get_frame_count(animation_name) / duration
+	
 	sprites.set_animation_speed(animation_name, speed)
 
 static func get_animation_duration(animated_sprite, animation_name):
