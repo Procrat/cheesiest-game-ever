@@ -130,7 +130,6 @@ func stop_cleaning():
 	cleaning = false
 	reachable_mischief.stop_cleaning()
 	animations.play("cleaning profile end")
-	utils.do_once_after_animation(animations, self, "unbusy")
 
 
 func cleaned():
@@ -158,7 +157,11 @@ func keep_drawing():
 func stop_drawing():
 	animations.play("draw end")
 	emit_signal("stopped_working")
-	utils.do_once_after_animation(animations, self, "unbusy")
+	utils.do_once_after_animation(animations, self, "stopped_drawing")
+
+
+func stopped_drawing():
+	drawing = false
 
 
 func is_sofa_stijn_nearby():
@@ -185,14 +188,12 @@ func stop_studying():
 	set_layer_mask(1)
 	set_collision_mask(1)
 	emit_signal("stopped_working")
-	utils.do_once_after_animation(animations, self, "unbusy")
+	utils.do_once_after_animation(animations, self, "stopped_studying")
+
+
+func stopped_studying():
+	studying = false
 
 
 func is_busy():
 	return drawing or studying or cleaning
-
-
-func unbusy():
-	drawing = false
-	studying = false
-	cleaning = false
