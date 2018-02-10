@@ -10,7 +10,10 @@ onready var current_player = get_node("Stijn")
 func _ready():
 	hints.connect("show_hint", hints_label, "set_text")
 	i_give_up_button.connect("pressed", self, "give_up")
-	set_process_input(true)
+	if GLOBAL_STATE.is_single_player:
+		set_process_input(true)
+	else:
+		current_player.get_node("twinkle").hide()
 
 
 func _input(event):
