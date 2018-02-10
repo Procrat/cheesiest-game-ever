@@ -29,7 +29,7 @@ var HINTS = [
 
 onready var areas = get_children()
 var players_in_area = []
-var current_area = 0
+var current_area = -1
 
 
 func _ready():
