@@ -6,6 +6,7 @@ export(float) var speed
 var initialised = false
 var home_base  # Global pos
 var followee  # Global pos
+var looking_back = false
 
 onready var level = get_node("/root/level")
 onready var navigation = level.get_node("navigation")
@@ -73,7 +74,8 @@ func move_and_slide(relative_translation):
 		move(motion)
 	
 	if (get_pos() - old_pos).length() < 1:
-		animations.play("idle")
+		animations.play("idle" if not looking_back else "idle back")
 	else:
+		looking_back = relative_translation.y < 0
 		animations.flip_h = relative_translation.x < 0
-		animations.play("running middle")
+		animations.play("running" if not looking_back else "running back")
