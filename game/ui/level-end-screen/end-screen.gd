@@ -28,7 +28,7 @@ func popup(has_won):
 		retry_button.set_text("Play again")
 		SFX.play("woohoo")
 	else:
-		SFX.play("awww-sad")
+		SFX.play("awww-sad-together")
 	.popup()
 	# HACK: This needs to happen because popup() puts it immediately on the screen
 	set_pos(Vector2(425, -800))
