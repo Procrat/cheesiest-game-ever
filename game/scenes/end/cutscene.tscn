@@ -161,7 +161,8 @@ font/font = ExtResource( 12 )
 transform/pos = Vector2( 960, 540 )
 script/script = ExtResource( 1 )
 next_scene = ExtResource( 2 )
-automatically_after_seconds = -1
+next_on_click = false
+automatically_after_seconds = 45
 sound = null
 
 [node name="Node2D" type="Node2D" parent="."]

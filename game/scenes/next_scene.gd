@@ -1,6 +1,7 @@
 extends Node
 
 export(PackedScene) var next_scene
+export(bool) var next_on_click = true
 export(int) var automatically_after_seconds = -1
 export(String) var sound
 
@@ -8,7 +9,8 @@ var utils = preload("res://game/utils.gd")
 
 
 func _ready():
-	set_process_input(true)
+	if next_on_click:
+		set_process_input(true)
 	if sound != null and sound.length() > 0:
 		SFX.play(sound)
 	if automatically_after_seconds > 0:
