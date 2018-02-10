@@ -23,7 +23,7 @@ var HINTS = [
     [Hint.new("Uh-oh. There's a danger sign at the swing bridge. That looks scary!", 15), Hint.new("That is one long swingbridge. Luckily love conquers all!", 30), 
 	Hint.new("If you keep your loved ones close, you might feel less scared.", 60), Hint.new("Try crossing together!", 75), Hint.new("There is no shame in clicking the \"I give up!\"-button, you know.", 120)],
     # Dug
-    [Hint.new("That dog doesn't look like he will move without an incentive to do so.", 15), Hint.new("This dog hates squirrels and cones of shame, but he does enjoy sticks and tennis balls", 30), 
+    [Hint.new("That dog doesn't look like he will move without an incentive to do so.", 15), Hint.new("This dog hates squirrels and cones of shame, but he does enjoy sticks and tennis balls.", 30), 
 	Hint.new("Remember, you can pick stuff up by using space or shift.", 45), Hint.new("The dog will follow you if you are holding something he loves.", 75), 
 	Hint.new("There are two sticks lying on the path. Can you spot them?", 105), Hint.new("Try passing him one at a time.", 135), Hint.new("There is no shame in clicking the \"I give up!\"-button, you know.", 210)],
     # fallen-tree
