@@ -27,7 +27,6 @@ func show(ignored_mischief, drawn_enough, studied_enough):
 		title.set_text("Hooray!")
 		subtitle.set_text("")
 		text.set_text("You managed to draw and study enough while keeping the monster at bay!")
-		retry_button.hide()
 	else:
 		# Say something about random mischief that was ignored
 		title.set_text("Argh!")
