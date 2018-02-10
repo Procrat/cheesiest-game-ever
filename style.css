@@ -1,0 +1,72 @@
+h1{
+    margin-bottom:50px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+body{
+    background-image: url("https://www.dropbox.com/s/irbnmrbk1g4zgf8/start%20bg.png?dl=1");
+    background-color: black;
+}
+
+table{
+    width:1000px;
+    margin: 0px auto;
+}
+
+tr{
+    width:1000px;   
+     text-align: center;
+}
+a{
+   
+    font-size: 30px;
+    font-family: Dosis, Helvetica, Arial Sans-Serif;
+    color: white;
+    font-weight: bold;
+    text-decoration:none;
+}
+
+p {
+    font-size: 16px;
+    font-family: Dosis, Helvetica, Arial Sans-Serif;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: none;
+}
+
+a:hover{
+    color: #ff91b1;
+}
+
+a:active{
+    color: #f92b66;
+}
+
+#play{
+    font-size:70px;
+}
+
+#loading {
+    font-size: 16px;
+    font-family: Dosis, Helvetica, Arial Sans-Serif;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: none;
+}
+
+#footer{
+    position: fixed; 
+    bottom:0%;
+    width:100%;
+    z-index:-100;
+}
+
+#footer div{
+    margin: 0px auto;    
+}
