@@ -16,8 +16,8 @@ class Hint:
 var HINTS = [
     # estuary
     [Hint.new("The river is too wide to cross!", 30), 
-	(Hint.new("Remember, you can pick stuff up by using space or shift.", 45) if not GLOBAL_STATE.is_single_player
-		else Hint.new("Remember, you can pick stuff up by using space and switch between players using shift.", 45)), 
+	(Hint.new("Remember, you can pick stuff up by pressing Space or Shift.", 45) if not GLOBAL_STATE.is_single_player
+		else Hint.new("Remember, you can pick stuff up by pressing Space and switch between players by pressing Shift.", 45)), 
 	Hint.new("You'll need a stepstone...", 60),
 	Hint.new("Those rocks at the top look like they might be useful!", 80), 
 	Hint.new("I think you'll need two of them. Try working together!", 100), 
@@ -32,20 +32,20 @@ var HINTS = [
     # Dug
     [Hint.new("That dog doesn't look like he will move without an incentive to do so.", 15), 
 	Hint.new("This dog hates squirrels and cones of shame, but he does enjoy sticks and tennis balls.", 30), 
-	(Hint.new("Remember, you can pick stuff up by using space or shift.", 45) if not GLOBAL_STATE.is_single_player
-		else Hint.new("Remember, you can pick stuff up by using space and switch between players using shift.", 45)), 
+	(Hint.new("Remember, you can pick stuff up by pressing Space or Shift.", 45) if not GLOBAL_STATE.is_single_player
+		else Hint.new("Remember, you can pick stuff up by using Space and switch between players by pressing Shift.", 45)), 
 	Hint.new("The dog will follow you if you are holding something he loves.", 75), 
 	Hint.new("There are two sticks lying on the path. Can you spot them?", 105), 
 	Hint.new("Try passing him one at a time.", 135), 
 	Hint.new("There is no shame in clicking the \"I give up!\"-button, you know.", 210)],
     # fallen-tree
     [Hint.new("Uh-oh. Looks like yesterday's storm put some unmovable obstacle in your way.", 15), 
-Hint.new("Using space and shit might be useful.", 30), 
+	Hint.new("Pressing Space and Shift might be useful.", 30), 
 	Hint.new("Not everyone's legs are long enough to get over this tree, and that's alright.", 45), 
-	Hint.new("Sometimes you just need to ask your stronger partner to help you in time of need.", 60), 
+	Hint.new("Sometimes you just need to ask your stronger partner to help you in times of need.", 60), 
 	Hint.new("There is also no shame in clicking the \"I give up!\"-button, you know.", 120)],
     # camping
-    [Hint.new("Almost there! Just walk into the camp site together, and you can get some well deserved rest!", 15)]
+    [Hint.new("Almost there! Just walk into the campsite together, and you can get some well deserved rest!", 15)]
 ]
 
 
