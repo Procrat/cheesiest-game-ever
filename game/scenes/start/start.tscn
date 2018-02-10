@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=1]
 
-[ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
+[ext_resource path="res://game/scenes/start/start.gd" type="Script" id=1]
 [ext_resource path="res://game/scenes/start/intro.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=3]
 [ext_resource path="res://ui sprites/start/Start heart.png" type="Texture" id=4]
@@ -174,8 +174,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 1 )
-next_scene = ExtResource( 2 )
-automatically_after_seconds = -1
+intro_scene = ExtResource( 2 )
 
 [node name="start bg" type="Sprite" parent="."]
 
