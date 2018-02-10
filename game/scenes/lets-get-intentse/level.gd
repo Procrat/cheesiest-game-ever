@@ -1,11 +1,14 @@
 extends Node2D
 
 
+onready var hints = get_node("hints")
 onready var tent = get_node("tent")
 onready var i_give_up_button = get_node("i-give-up")
+onready var hints_label = get_node("hints-label")
 
 
 func _ready():
+	hints.connect("show_hint", hints_label, "set_text")
 	i_give_up_button.connect("pressed", self, "give_up")
 
 

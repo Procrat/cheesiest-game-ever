@@ -1,61 +1,63 @@
-[gd_scene load_steps=178 format=1]
+[gd_scene load_steps=181 format=1]
 
 [ext_resource path="res://game/scenes/lets-get-intentse/level.gd" type="Script" id=1]
 [ext_resource path="res://Level 4/background.png" type="Texture" id=2]
-[ext_resource path="res://game/scenes/lets-get-intentse/estuary.gd" type="Script" id=3]
-[ext_resource path="res://game/scenes/lets-get-intentse/tent.gd" type="Script" id=4]
-[ext_resource path="res://game/scenes/lets-get-intentse/cutscene.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/scenes/lets-get-intentse/rock.gd" type="Script" id=6]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_000.png" type="Texture" id=7]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_001.png" type="Texture" id=8]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_002.png" type="Texture" id=9]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_003.png" type="Texture" id=10]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_004.png" type="Texture" id=11]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_005.png" type="Texture" id=12]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_006.png" type="Texture" id=13]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_007.png" type="Texture" id=14]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_008.png" type="Texture" id=15]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_009.png" type="Texture" id=16]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_010.png" type="Texture" id=17]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_011.png" type="Texture" id=18]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_012.png" type="Texture" id=19]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_013.png" type="Texture" id=20]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_014.png" type="Texture" id=21]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_015.png" type="Texture" id=22]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_016.png" type="Texture" id=23]
-[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_017.png" type="Texture" id=24]
-[ext_resource path="res://Level 4/rock0.png" type="Texture" id=25]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_000.png" type="Texture" id=26]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_001.png" type="Texture" id=27]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_002.png" type="Texture" id=28]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_003.png" type="Texture" id=29]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_004.png" type="Texture" id=30]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_005.png" type="Texture" id=31]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_006.png" type="Texture" id=32]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_007.png" type="Texture" id=33]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_008.png" type="Texture" id=34]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_009.png" type="Texture" id=35]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_010.png" type="Texture" id=36]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_011.png" type="Texture" id=37]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_012.png" type="Texture" id=38]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_013.png" type="Texture" id=39]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_014.png" type="Texture" id=40]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_015.png" type="Texture" id=41]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_016.png" type="Texture" id=42]
-[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_017.png" type="Texture" id=43]
-[ext_resource path="res://Level 4/rock1.png" type="Texture" id=44]
-[ext_resource path="res://game/scenes/lets-get-intentse/pickable.gd" type="Script" id=45]
-[ext_resource path="res://Level 4/stick0.png" type="Texture" id=46]
-[ext_resource path="res://Level 4/stick1.png" type="Texture" id=47]
-[ext_resource path="res://game/scenes/lets-get-intentse/Dug.tscn" type="PackedScene" id=48]
-[ext_resource path="res://game/scenes/lets-get-intentse/dug.gd" type="Script" id=49]
-[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=50]
-[ext_resource path="res://game/scenes/lets-get-intentse/player.gd" type="Script" id=51]
-[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=52]
-[ext_resource path="res://Level 4/swingbridge front.png" type="Texture" id=53]
-[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=54]
-[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=55]
-[ext_resource path="res://sounds/Young-Heroes.ogg" type="AudioStream" id=56]
+[ext_resource path="res://game/scenes/lets-get-intentse/hints.gd" type="Script" id=3]
+[ext_resource path="res://game/scenes/lets-get-intentse/estuary.gd" type="Script" id=4]
+[ext_resource path="res://game/scenes/lets-get-intentse/tent.gd" type="Script" id=5]
+[ext_resource path="res://game/scenes/lets-get-intentse/cutscene.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/lets-get-intentse/rock.gd" type="Script" id=7]
+[ext_resource path="res://Level 4/rock0.png" type="Texture" id=8]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_000.png" type="Texture" id=9]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_001.png" type="Texture" id=10]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_002.png" type="Texture" id=11]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_003.png" type="Texture" id=12]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_004.png" type="Texture" id=13]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_005.png" type="Texture" id=14]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_006.png" type="Texture" id=15]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_007.png" type="Texture" id=16]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_008.png" type="Texture" id=17]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_009.png" type="Texture" id=18]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_010.png" type="Texture" id=19]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_011.png" type="Texture" id=20]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_012.png" type="Texture" id=21]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_013.png" type="Texture" id=22]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_014.png" type="Texture" id=23]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_015.png" type="Texture" id=24]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_016.png" type="Texture" id=25]
+[ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_017.png" type="Texture" id=26]
+[ext_resource path="res://Level 4/rock1.png" type="Texture" id=27]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_000.png" type="Texture" id=28]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_001.png" type="Texture" id=29]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_002.png" type="Texture" id=30]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_003.png" type="Texture" id=31]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_004.png" type="Texture" id=32]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_005.png" type="Texture" id=33]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_006.png" type="Texture" id=34]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_007.png" type="Texture" id=35]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_008.png" type="Texture" id=36]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_009.png" type="Texture" id=37]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_010.png" type="Texture" id=38]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_011.png" type="Texture" id=39]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_012.png" type="Texture" id=40]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_013.png" type="Texture" id=41]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_014.png" type="Texture" id=42]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_015.png" type="Texture" id=43]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_016.png" type="Texture" id=44]
+[ext_resource path="res://Level 4/rock1 sinking/rock 1 sinking_017.png" type="Texture" id=45]
+[ext_resource path="res://game/scenes/lets-get-intentse/pickable.gd" type="Script" id=46]
+[ext_resource path="res://Level 4/stick0.png" type="Texture" id=47]
+[ext_resource path="res://Level 4/stick1.png" type="Texture" id=48]
+[ext_resource path="res://game/scenes/lets-get-intentse/Dug.tscn" type="PackedScene" id=49]
+[ext_resource path="res://game/scenes/lets-get-intentse/dug.gd" type="Script" id=50]
+[ext_resource path="res://game/player/Myrjam big.tscn" type="PackedScene" id=51]
+[ext_resource path="res://game/scenes/lets-get-intentse/player.gd" type="Script" id=52]
+[ext_resource path="res://game/player/Stijn big.tscn" type="PackedScene" id=53]
+[ext_resource path="res://Level 4/swingbridge front.png" type="Texture" id=54]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=55]
+[ext_resource path="res://game/ui/buttons/flat-button.tscn" type="PackedScene" id=56]
+[ext_resource path="res://game/scenes/sprite_orderer.gd" type="Script" id=57]
+[ext_resource path="res://sounds/Young-Heroes.ogg" type="AudioStream" id=58]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -632,15 +634,15 @@ height = 20.0
 [sub_resource type="SpriteFrames" id=115]
 
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "sinking",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 25 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "rock",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "sinking",
+"speed": 24.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=116]
@@ -652,15 +654,15 @@ height = 20.0
 [sub_resource type="SpriteFrames" id=117]
 
 animations = [ {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
-"loop": false,
-"name": "sinking",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 44 ) ],
+"frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "rock",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "sinking",
+"speed": 24.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=118]
@@ -684,6 +686,13 @@ height = 20.0
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
+
+[sub_resource type="DynamicFont" id=122]
+
+font/size = 30
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 55 )
 
 [node name="level" type="Node2D"]
 
@@ -880,6 +889,7 @@ trigger = false
 [node name="hints" type="Node2D" parent="."]
 
 editor/display_folded = true
+script/script = ExtResource( 3 )
 
 [node name="estuary" type="Area2D" parent="hints"]
 
@@ -1168,7 +1178,7 @@ trigger = false
 
 editor/display_folded = true
 visibility/visible = false
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
 
 [node name="part0" type="Area2D" parent="water/estuary"]
 
@@ -1468,12 +1478,12 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 4 )
+script/script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-cut_scene = ExtResource( 5 )
+cut_scene = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tent"]
 
@@ -1499,7 +1509,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1522,7 +1532,7 @@ config/lifetime = 2.0
 config/time_scale = 0.874158
 config/emitting = false
 config/process_mode = 1
-config/texture = ExtResource( 24 )
+config/texture = ExtResource( 26 )
 params/direction = 180.0
 params/spread = 30.0
 params/linear_velocity = 20.0
@@ -1561,7 +1571,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1584,7 +1594,7 @@ config/lifetime = 2.0
 config/time_scale = 0.874158
 config/emitting = false
 config/process_mode = 1
-config/texture = ExtResource( 24 )
+config/texture = ExtResource( 26 )
 params/direction = 180.0
 params/spread = 30.0
 params/linear_velocity = 20.0
@@ -1625,7 +1635,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 45 )
+script/script = ExtResource( 46 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1637,7 +1647,7 @@ drop_displacement = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="objects/stick0"]
 
-texture = ExtResource( 46 )
+texture = ExtResource( 47 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/stick0"]
 
@@ -1661,7 +1671,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 45 )
+script/script = ExtResource( 46 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1673,7 +1683,7 @@ drop_displacement = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="objects/stick1"]
 
-texture = ExtResource( 47 )
+texture = ExtResource( 48 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/stick1"]
 
@@ -1683,19 +1693,19 @@ shape = SubResource( 119 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Dug" parent="." instance=ExtResource( 48 )]
+[node name="Dug" parent="." instance=ExtResource( 49 )]
 
 transform/pos = Vector2( 1347, 599 )
-script/script = ExtResource( 49 )
+script/script = ExtResource( 50 )
 min_distance_to_stick = 150.0
 speed = 200.0
 
-[node name="Myrjam" parent="." instance=ExtResource( 50 )]
+[node name="Myrjam" parent="." instance=ExtResource( 51 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 170.327, 169.335 )
 transform/rot = 1.11342
-script/script = ExtResource( 51 )
+script/script = ExtResource( 52 )
 player_name = 0
 walk_speed = 200.0
 clothing = "hiking"
@@ -1724,11 +1734,11 @@ shape = SubResource( 120 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Stijn" parent="." instance=ExtResource( 52 )]
+[node name="Stijn" parent="." instance=ExtResource( 53 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 105.395, 149.385 )
-script/script = ExtResource( 51 )
+script/script = ExtResource( 52 )
 player_name = 1
 walk_speed = 200.0
 clothing = "hiking"
@@ -1761,13 +1771,30 @@ _update_shape_index = 0
 ]]
 
 transform/pos = Vector2( 722, 180 )
-texture = ExtResource( 53 )
+texture = ExtResource( 54 )
 offset = Vector2( 238, 360 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="i-give-up" parent="." instance=ExtResource( 54 )]
+[node name="hints-label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 376.0
+margin/top = 922.0
+margin/right = 1156.0
+margin/bottom = 1031.0
+custom_fonts/font = SubResource( 122 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="i-give-up" parent="." instance=ExtResource( 56 )]
 
 rect/scale = Vector2( 0.8, 0.8 )
 margin/left = 1588.0
@@ -1778,11 +1805,11 @@ text = "I give up!"
 
 [node name="sprite-orderer" type="Node" parent="."]
 
-script/script = ExtResource( 55 )
+script/script = ExtResource( 57 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 56 )
+stream/stream = ExtResource( 58 )
 stream/play = false
 stream/loop = true
 stream/volume_db = -0.5
