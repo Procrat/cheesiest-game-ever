@@ -5,7 +5,7 @@
 [ext_resource path="res://game/scenes/lets-get-intentse/hints.gd" type="Script" id=3]
 [ext_resource path="res://game/scenes/lets-get-intentse/estuary.gd" type="Script" id=4]
 [ext_resource path="res://game/scenes/lets-get-intentse/tent.gd" type="Script" id=5]
-[ext_resource path="res://game/scenes/end/cutscene no date.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/end/cutscene-for-Tom.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/scenes/lets-get-intentse/rock.gd" type="Script" id=7]
 [ext_resource path="res://Level 4/rock0.png" type="Texture" id=8]
 [ext_resource path="res://Level 4/rock0 sinking/rock0 sinking_000.png" type="Texture" id=9]
