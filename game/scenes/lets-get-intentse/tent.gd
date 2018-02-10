@@ -16,6 +16,7 @@ func body_enter(body):
 	if body.is_in_group("players"):
 		players_arrived += 1
 		if players_arrived >= 2:
+			SFX.play("wheee-together")
 			utils.do_once_after(2, self, self, "win_at_life")
 		else:
 			body.beckon()
