@@ -188,6 +188,7 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 262.946, -25.5485 )
 texture = ExtResource( 7 )
+flip_h = true
 
 [node name="Stijn head" type="Sprite" parent="to switch"]
 
@@ -261,7 +262,6 @@ max_lines_visible = -1
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/pos = Vector2( -237.083, -308.829 )
-transform/scale = Vector2( 2.70054, 2.70054 )
 texture = ExtResource( 12 )
 
 

@@ -249,7 +249,6 @@ max_lines_visible = -1
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/pos = Vector2( -237.083, -308.829 )
-transform/scale = Vector2( 2.70054, 2.70054 )
 texture = ExtResource( 10 )
 
 
