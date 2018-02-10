@@ -815,7 +815,6 @@ trigger = false
 transform/pos = Vector2( -1, -101 )
 frames = SubResource( 2 )
 animation = "draw end"
-frame = 28
 playing = true
 
 [node name="fade" parent="animations" instance=ExtResource( 649 )]

@@ -33,7 +33,6 @@ animations = [ {
 
 frames = SubResource( 1 )
 animation = "close"
-frame = 11
 playing = true
 
 

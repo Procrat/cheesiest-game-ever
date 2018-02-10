@@ -406,7 +406,6 @@ fridge_lick_duration = 3.0
 
 [node name="animations" parent="Mango"]
 
-frame = 28
 
 [node name="foreground" type="Sprite" parent="."]
 

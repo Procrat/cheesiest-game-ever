@@ -215,7 +215,6 @@ flat = false
 
 transform/pos = Vector2( -134.243, -310.231 )
 transform/scale = Vector2( 0.5, 0.5 )
-frame = 268
 playing = true
 
 [node name="Stijn head" type="Sprite" parent="."]
@@ -228,7 +227,6 @@ texture = ExtResource( 9 )
 
 transform/pos = Vector2( -134.243, -205.231 )
 transform/scale = Vector2( 0.5, 0.5 )
-frame = 268
 playing = true
 
 [node name="Study!" type="Label" parent="."]
@@ -396,7 +394,6 @@ script/script = null
 
 transform/pos = Vector2( 218, -18.7603 )
 animation = "mischief-flicker"
-frame = 14
 playing = true
 
 

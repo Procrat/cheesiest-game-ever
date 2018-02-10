@@ -860,7 +860,6 @@ trigger = false
 transform/pos = Vector2( -2.88574, -124.992 )
 frames = SubResource( 2 )
 animation = "study end"
-frame = 35
 playing = true
 offset = Vector2( -0.114262, -27.0085 )
 
