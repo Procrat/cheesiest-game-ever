@@ -647,7 +647,7 @@ offset = Vector2( 285, 100 )
 script/script = ExtResource( 13 )
 listening_to = 0
 single_player_duration = 100
-multi_player_duration = 60
+multi_player_duration = 50
 
 [node name="Myrjam head" type="Sprite" parent="ui/VBoxContainer/Control"]
 
@@ -690,7 +690,7 @@ offset = Vector2( 285, 100 )
 script/script = ExtResource( 13 )
 listening_to = 1
 single_player_duration = 40
-multi_player_duration = 60
+multi_player_duration = 50
 
 [node name="Stijn head" type="Sprite" parent="ui/VBoxContainer/Control 2"]
 
