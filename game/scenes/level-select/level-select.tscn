@@ -1,11 +1,15 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://game/scenes/level-select/level-select.gd" type="Script" id=1]
 [ext_resource path="res://game/scenes/an-amazing-first-date/level 1 instructions.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/scenes/mango-goes-bananas/level 2 instructions.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/scenes/lets-get-intentse/level 4 instructions.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=5]
-[ext_resource path="res://game/ui/level-select/level-select-button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/an-amazing-first-date/level 1 instructions single player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/scenes/mango-goes-bananas/level 2 instructions.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/scenes/mango-goes-bananas/level 2 instructions single player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/scenes/fellowship-goes-south/level 3 instructions.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/scenes/lets-get-intentse/level 4 instructions.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/scenes/lets-get-intentse/level 4 instructions single player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=9]
+[ext_resource path="res://game/ui/level-select/level-select-button.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -49,39 +53,43 @@ tracks/2/keys = {
 script/script = ExtResource( 1 )
 lvl1 = "res://game/scenes/an-amazing-first-date/level.tscn"
 instructions_lvl1 = ExtResource( 2 )
+instructions_lvl1_single = ExtResource( 3 )
 lvl2 = "res://game/scenes/mango-goes-bananas/level.tscn"
-instructions_lvl2 = ExtResource( 3 )
+instructions_lvl2 = ExtResource( 4 )
+instructions_lvl2_single = ExtResource( 5 )
 lvl3 = "res://game/scenes/fellowship-goes-south/level.tscn"
-instructions_lvl3 = ExtResource( 4 )
+instructions_lvl3 = ExtResource( 6 )
+instructions_lvl3_single = ExtResource( 6 )
 lvl4 = "res://game/scenes/lets-get-intentse/level.tscn"
-instructions_lvl4 = ExtResource( 4 )
+instructions_lvl4 = ExtResource( 7 )
+instructions_lvl4_single = ExtResource( 8 )
 
 [node name="start bg" type="Sprite" parent="."]
 
 transform/pos = Vector2( 964.448, 535.932 )
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 
 [node name="buttons" type="Node2D" parent="."]
 
 transform/pos = Vector2( 100, 250 )
 
-[node name="level-1" parent="buttons" instance=ExtResource( 6 )]
+[node name="level-1" parent="buttons" instance=ExtResource( 10 )]
 
 text = "An aMAZEing first date"
 
-[node name="level-2" parent="buttons" instance=ExtResource( 6 )]
+[node name="level-2" parent="buttons" instance=ExtResource( 10 )]
 
 margin/top = 150.0
 margin/bottom = 269.0
 text = "Mango goes bananas"
 
-[node name="level-3" parent="buttons" instance=ExtResource( 6 )]
+[node name="level-3" parent="buttons" instance=ExtResource( 10 )]
 
 margin/top = 300.0
 margin/bottom = 419.0
 text = "The fellowship goes south"
 
-[node name="level-4" parent="buttons" instance=ExtResource( 6 )]
+[node name="level-4" parent="buttons" instance=ExtResource( 10 )]
 
 margin/top = 450.0
 margin/bottom = 569.0
