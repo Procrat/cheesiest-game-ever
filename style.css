@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'dosisextrabold';
+    src: url('fonts/dosis-extrabold-webfont.woff2') format('woff2'),
+         url('fonts/dosis-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1{
     margin-bottom:50px;
 }
@@ -18,11 +26,11 @@ table{
 }
 
 tr{
-    width:1000px;   
+    width:1000px;
      text-align: center;
 }
 a{
-   
+
     font-size: 30px;
     font-family: Dosis, Helvetica, Arial Sans-Serif;
     color: white;
@@ -61,12 +69,12 @@ a:active{
 }
 
 #footer{
-    position: fixed; 
+    position: fixed;
     bottom:0%;
     width:100%;
     z-index:-100;
 }
 
 #footer div{
-    margin: 0px auto;    
+    margin: 0px auto;
 }
