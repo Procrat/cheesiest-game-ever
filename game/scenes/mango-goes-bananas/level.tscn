@@ -379,6 +379,8 @@ script/script = ExtResource( 6 )
 player_name = 1
 walk_speed = 200.0
 clothing = "normal"
+stop_studying_hint_displacement = Vector2( -20, -100 )
+stop_drawing_hint_displacement = null
 
 [node name="Myrjam" parent="." instance=ExtResource( 7 )]
 
@@ -387,6 +389,8 @@ script/script = ExtResource( 6 )
 player_name = 0
 walk_speed = 200.0
 clothing = "normal"
+stop_studying_hint_displacement = null
+stop_drawing_hint_displacement = Vector2( 130, -20 )
 
 [node name="Mango" parent="." groups=[
 "moving",

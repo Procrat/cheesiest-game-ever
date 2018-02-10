@@ -3,6 +3,9 @@ extends "res://game/player/player.gd"
 signal started_working
 signal stopped_working
 
+export(Vector2) var stop_studying_hint_displacement
+export(Vector2) var stop_drawing_hint_displacement
+
 var utils = preload("res://game/utils.gd")
 var Hint = preload("res://game/ui/text-fx player.tscn")
 
@@ -55,9 +58,9 @@ func fixed_process(delta):
 
 func spawn_relevant_hints():
 	if studying:
-		spawn_hint("stop studying")
+		spawn_hint("stop studying", stop_studying_hint_displacement)
 	elif drawing:
-		spawn_hint("stop drawing")
+		spawn_hint("stop drawing", stop_drawing_hint_displacement)
 	elif is_mischief_nearby() and not cleaning and not reachable_mischief.being_cleaned:
 		spawn_hint("clean up this mess")
 	elif player_name == STIJN and is_sofa_stijn_nearby() and not studying:
@@ -68,7 +71,7 @@ func spawn_relevant_hints():
 		drop_hint()
 
 
-func spawn_hint(hint_action):
+func spawn_hint(hint_action, displacement=Vector2(0, 0)):
 	if hint_action == self.hint_action:
 		return
 	
@@ -79,6 +82,7 @@ func spawn_hint(hint_action):
 	hint = Hint.instance()
 	hint.get_node("label").set_text("Press " + do_key() + " to " + hint_action)
 	add_child(hint)
+	hint.translate(displacement)
 
 
 func drop_hint():
