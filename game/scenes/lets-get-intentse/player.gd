@@ -1,7 +1,9 @@
 extends "res://game/player/player.gd"
 
-var utils = preload("res://game/utils.gd")
-var Pickable = preload("res://game/scenes/lets-get-intentse/pickable.gd")
+const utils = preload("res://game/utils.gd")
+const Heart = preload("res://game/ui/heart animation.tscn")
+const Pickable = preload("res://game/scenes/lets-get-intentse/pickable.gd")
+
 enum JumpDirection {UP, DOWN}
 enum JumpSize {BIG, SMALL}
 
@@ -42,7 +44,21 @@ func _ready():
 		get_tree().call_group(0, "dangerous-area", "connect", "body_enter", self, "someone_entered_dangerous_area")
 		get_tree().call_group(0, "dangerous-area", "connect", "body_exit", self, "someone_exited_dangerous_area")
 		
+		grabbing_area.connect("body_enter", self, "body_enter")
+		
 		intialised = true
+
+
+func body_enter(body):
+	if body == significant_other and (
+	        (GLOBAL_STATE.is_single_player and not is_npc) or
+	        (not GLOBAL_STATE.is_single_player and player_name == STIJN)):
+		
+		var middle = (get_global_pos() + significant_other.get_global_pos()) / 2
+		var heart = Heart.instance()
+		significant_other.add_child(heart)
+		heart.set_global_pos(middle)
+		utils.do_once_after(2, heart, heart, "queue_free")
 
 
 func _input(event):

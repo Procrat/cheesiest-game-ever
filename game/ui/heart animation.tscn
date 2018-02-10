@@ -6,9 +6,9 @@
 
 [node name="Particles2D" type="Particles2D" parent="."]
 
-transform/pos = Vector2( 0, -100 )
+transform/pos = Vector2( 0, -180 )
 config/amount = 1
-config/lifetime = 6.0
+config/lifetime = 1.0
 config/process_mode = 1
 config/half_extents = Vector2( 1, 1 )
 config/texture = ExtResource( 1 )
