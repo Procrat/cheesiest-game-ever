@@ -1,21 +1,23 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=16 format=1]
 
-[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=1]
-[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://ui sprites/credits/team camembert.png" type="Texture" id=3]
-[ext_resource path="res://ui sprites/credits/2016-01-01 16.40.12.jpg" type="Texture" id=4]
-[ext_resource path="res://ui sprites/credits/IMG_2669.jpg" type="Texture" id=5]
-[ext_resource path="res://ui sprites/credits/IMG_3105.jpg" type="Texture" id=6]
-[ext_resource path="res://ui sprites/credits/IMG_5290.jpg" type="Texture" id=7]
-[ext_resource path="res://ui sprites/credits/IMG_5308b.jpg" type="Texture" id=8]
-[ext_resource path="res://ui sprites/credits/IMG_5314.jpg" type="Texture" id=9]
+[ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
+[ext_resource path="res://game/scenes/start/start.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui sprites/start/start bg.png" type="Texture" id=3]
+[ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ui sprites/credits/team camembert.png" type="Texture" id=5]
+[ext_resource path="res://ui sprites/credits/2016-01-01 16.40.12.jpg" type="Texture" id=6]
+[ext_resource path="res://ui sprites/credits/IMG_2669.jpg" type="Texture" id=7]
+[ext_resource path="res://ui sprites/credits/IMG_3105.jpg" type="Texture" id=8]
+[ext_resource path="res://ui sprites/credits/IMG_5290.jpg" type="Texture" id=9]
+[ext_resource path="res://ui sprites/credits/IMG_5308b.jpg" type="Texture" id=10]
+[ext_resource path="res://ui sprites/credits/IMG_5314.jpg" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 50
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 2 )
+font/font = ExtResource( 4 )
 
 [sub_resource type="Animation" id=2]
 
@@ -229,24 +231,28 @@ tracks/19/keys = {
 font/size = 40
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 2 )
+font/font = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 
 font/size = 72
 font/use_mipmaps = false
 font/use_filter = true
-font/font = ExtResource( 2 )
+font/font = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
 
 visibility/self_opacity = 0.0
 transform/rot = -0.0539197
+script/script = ExtResource( 1 )
+next_scene = ExtResource( 2 )
+automatically_after_seconds = 35
+sound = null
 
 [node name="start bg" type="Sprite" parent="."]
 
 transform/pos = Vector2( 960, 540 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -359,7 +365,7 @@ autoplay = "credits"
 editor/display_folded = true
 visibility/self_opacity = 0.0
 transform/pos = Vector2( 960, 540 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 
 [node name="a production by" type="Label" parent="team camembert"]
 
@@ -401,7 +407,7 @@ visibility/self_opacity = 0.0
 transform/pos = Vector2( 559.491, 665.171 )
 transform/rot = 14.9631
 transform/scale = Vector2( 0.829142, 0.829142 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 
 [node name="at airport" type="Sprite" parent="."]
 
@@ -409,7 +415,7 @@ visibility/self_opacity = 0.0
 transform/pos = Vector2( 1501.86, 634.924 )
 transform/rot = -8.36307
 transform/scale = Vector2( 0.918192, 0.918192 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="airplane" type="Sprite" parent="."]
 
@@ -417,7 +423,7 @@ visibility/self_opacity = 0.0
 transform/pos = Vector2( 1104.88, 694.84 )
 transform/rot = 3.23728
 transform/scale = Vector2( 0.976973, 0.976973 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="tent" type="Sprite" parent="."]
 
@@ -425,7 +431,7 @@ visibility/self_opacity = 0.0
 transform/pos = Vector2( 393.037, 802.602 )
 transform/rot = 6.25031
 transform/scale = Vector2( 1.05207, 1.05207 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="at beach" type="Sprite" parent="."]
 
@@ -433,13 +439,13 @@ visibility/self_opacity = 0.0
 transform/pos = Vector2( 1488.3, 754.177 )
 transform/rot = -5.81808
 transform/scale = Vector2( 1.00743, 1.00743 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="ring hand" type="Sprite" parent="."]
 
 visibility/self_opacity = 0.0
 transform/pos = Vector2( 1004.93, 624.697 )
 transform/scale = Vector2( 1.50978, 1.50959 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 
