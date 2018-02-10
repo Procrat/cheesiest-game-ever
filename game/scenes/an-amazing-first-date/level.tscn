@@ -1443,6 +1443,8 @@ randomness/direction = 1.0
 
 [node name="singleplayer" type="Node2D" parent="objects"]
 
+visibility/visible = false
+
 [node name="sjokomel" parent="objects/singleplayer" instance=ExtResource( 10 )]
 
 editor/display_folded = true

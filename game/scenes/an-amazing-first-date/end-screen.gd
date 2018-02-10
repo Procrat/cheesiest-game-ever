@@ -6,7 +6,9 @@ var MISSING_MESSAGES = {
 	INVENTORY.SHAVER: "Stijn, you unshaved hobo!\nYou're lucky Myrjam loves you just the way you are!",
 	INVENTORY.DRESS: "Myrjam, are you going an a first date in your hiking clothes?!"
 }
-var NEEDED_ITEMS = MISSING_MESSAGES.keys()
+var NEEDED_ITEMS = ([INVENTORY.NACHOS, INVENTORY.TICKETS, INVENTORY.SHAVER]
+                    if GLOBAL_STATE.is_single_player
+                    else [INVENTORY.NACHOS, INVENTORY.TICKETS, INVENTORY.SHAVER, INVENTORY.DRESS])
 
 
 func _init().(0):
@@ -21,7 +23,6 @@ func show(in_time):
 		if INVENTORY.has_got_everything(NEEDED_ITEMS):
 			has_won = true
 			text.set_text("Wow, you also managed to make this date absolutely perfect.")
-			retry_button.hide()
 		else:
 			text.set_text(missing_item_message())
 	else:

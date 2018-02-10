@@ -29,7 +29,6 @@ var down_action
 
 onready var animations = get_node("animations")
 
-var last_action = "idle"
 var last_direction = "front"
 var last_flipped = false
 var beckoning = false
@@ -53,10 +52,9 @@ func fixed_process(delta):
 	var direction = handle_input()
 	
 	if is_npc or direction.name == null:
-		# No input: idle
+		# No input: idle or beckon
 		if beckoning:
-			if not animations.get_animation().begins_with("beckoning"):
-				animations.play("beckoning " + clothing)
+			set_directionless_animation("beckoning")
 		else:
 			set_animation("idle", last_direction, last_flipped)
 	else:
@@ -96,19 +94,21 @@ func move_in_direction(direction, delta):
 		move(motion)
 
 
+func set_directionless_animation(action):
+	animations.play(action + " " + clothing)
+	animations.set_flip_h(last_flipped)
+
+
 func set_animation(action, direction, flipped):
 	animations.play(action + " " + direction + " " + clothing)
 	animations.set_flip_h(flipped)
 	
-	last_action = action
 	last_direction = direction
 	last_flipped = flipped
 
 
 func beckon():
 	beckoning = true
-	animations.play("beckoning " + clothing)
-	animations.flip_h = true
 
 
 func stop_beckoning():
