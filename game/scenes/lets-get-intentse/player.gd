@@ -228,6 +228,7 @@ func stop_jumping():
 	on_tree = tree.get_node("on-tree").overlaps_body(self)
 	if was_on_tree and not on_tree:
 		over_tree = true
+		move(Vector2(0, 0))
 	
 	if player_name == STIJN and on_tree:
 		animations.play("holding out hand")

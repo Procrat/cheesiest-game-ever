@@ -704,6 +704,7 @@ __meta__ = {
 
 [node name="background" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -885,8 +886,6 @@ trigger = false
 
 [node name="hints" type="Node2D" parent="."]
 
-editor/display_folded = true
-visibility/visible = false
 script/script = ExtResource( 3 )
 
 [node name="estuary" type="Area2D" parent="hints"]
@@ -994,7 +993,6 @@ trigger = false
 
 [node name="fallen-tree" type="Area2D" parent="hints"]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 66 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -1016,7 +1014,6 @@ trigger = false
 
 [node name="camping" type="Area2D" parent="hints"]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 68 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -1039,7 +1036,6 @@ trigger = false
 [node name="navigation" type="Navigation2D" parent="."]
 
 editor/display_folded = true
-visibility/visible = false
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1053,7 +1049,6 @@ enabled = true
 [node name="water" type="Node2D" parent="."]
 
 editor/display_folded = true
-visibility/visible = false
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1350,7 +1345,6 @@ trigger = false
 ]]
 
 editor/display_folded = true
-visibility/visible = false
 transform/pos = Vector2( 798.83, 121.008 )
 transform/scale = Vector2( 5.76347, 2.85064 )
 input/pickable = true
@@ -1379,7 +1373,6 @@ _update_shape_index = 0
 ]]
 
 editor/display_folded = true
-visibility/visible = false
 transform/pos = Vector2( 1712, 539 )
 input/pickable = false
 shapes/0/shape = SubResource( 109 )
@@ -1470,7 +1463,6 @@ trigger = false
 [node name="tent" type="Area2D" parent="."]
 
 editor/display_folded = true
-visibility/visible = false
 transform/pos = Vector2( 1814, 719 )
 input/pickable = true
 shapes/0/shape = SubResource( 113 )
@@ -1498,7 +1490,6 @@ _update_shape_index = 0
 [node name="objects" type="Node2D" parent="."]
 
 editor/display_folded = true
-visibility/visible = false
 
 [node name="rock0" type="Area2D" parent="objects"]
 
@@ -1760,7 +1751,6 @@ _update_shape_index = 0
 
 [node name="Dug" parent="." instance=ExtResource( 49 )]
 
-visibility/visible = false
 transform/pos = Vector2( 1347, 599 )
 script/script = ExtResource( 50 )
 min_distance_to_stick = 150.0
@@ -1842,7 +1832,6 @@ texture = ExtResource( 54 )
 "moving",
 ]]
 
-visibility/visible = false
 transform/pos = Vector2( 722, 180 )
 texture = ExtResource( 55 )
 offset = Vector2( 238, 360 )
@@ -1852,7 +1841,6 @@ __meta__ = {
 
 [node name="hints-label" type="Label" parent="."]
 
-visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
