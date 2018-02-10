@@ -63,6 +63,9 @@ func be_dropped():
 	var player = get_parent()
 	player.remove_child(self)
 	original_owner.add_child(self)
+	var drop_displacement = self.drop_displacement
+	if player.last_flipped:
+		drop_displacement.x *= -1
 	translate(player.get_pos() + drop_displacement)
 	picked_up = false
 	return true

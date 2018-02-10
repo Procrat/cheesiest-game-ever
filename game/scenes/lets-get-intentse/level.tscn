@@ -1041,7 +1041,6 @@ trigger = false
 [node name="navigation" type="Navigation2D" parent="."]
 
 editor/display_folded = true
-visibility/visible = false
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1495,8 +1494,6 @@ _update_shape_index = 0
 
 [node name="objects" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="rock0" type="Area2D" parent="objects"]
 
 editor/display_folded = true
@@ -1618,6 +1615,68 @@ transform/pos = Vector2( -6.79493e-06, 0.499995 )
 transform/rot = -90.0415
 transform/scale = Vector2( 0.883723, 0.696014 )
 shape = SubResource( 116 )
+trigger = false
+_update_shape_index = 0
+
+[node name="rock2" type="Area2D" parent="objects"]
+
+editor/display_folded = true
+transform/pos = Vector2( 723, 783 )
+input/pickable = true
+shapes/0/shape = SubResource( 114 )
+shapes/0/transform = Matrix32( 0.000602888, 0.885609, -0.825746, 0.000562136, 0.99999, 1.49999 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+pos_on_player_before_picking_up = Vector2( 0, 0 )
+pos_on_player_after_picking_up = Vector2( 0, -30 )
+bend_down_duration = 0.5
+lift_duration = 0.5
+drop_displacement = Vector2( 0, 0 )
+
+[node name="animations" type="AnimatedSprite" parent="objects/rock2"]
+
+frames = SubResource( 115 )
+animation = "rock"
+
+[node name="particles" type="Particles2D" parent="objects/rock2"]
+
+transform/pos = Vector2( 2.04617, 12.8006 )
+config/amount = 6
+config/lifetime = 2.0
+config/time_scale = 0.874158
+config/emitting = false
+config/process_mode = 1
+config/texture = ExtResource( 26 )
+params/direction = 180.0
+params/spread = 30.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.25
+params/initial_size = 0.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 0.0
+params/anim_initial_pos = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/rock2"]
+
+transform/pos = Vector2( 0.99999, 1.49999 )
+transform/rot = -89.961
+transform/scale = Vector2( 0.88561, 0.825746 )
+shape = SubResource( 114 )
 trigger = false
 _update_shape_index = 0
 
