@@ -1,19 +1,21 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=25 format=1]
 
 [ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=1]
 [ext_resource path="res://ui sprites/level instructions/level select instructies Stijn.png" type="Texture" id=2]
 [ext_resource path="res://ui sprites/level instructions/level select instructies Myr.png" type="Texture" id=3]
 [ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=5]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=6]
-[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=7]
-[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level 2/Stijn pc.png" type="Texture" id=5]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-hover.png" type="Texture" id=6]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button-pressed.png" type="Texture" id=7]
+[ext_resource path="res://ui sprites/level instructions/level-instructions-play-button.png" type="Texture" id=8]
 [ext_resource path="res://Level 2/Stijn head.png" type="Texture" id=9]
-[ext_resource path="res://ui sprites/level instructions/shift-button.png" type="Texture" id=10]
-[ext_resource path="res://ui sprites/level instructions/space-button.png" type="Texture" id=11]
-[ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=12]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/scenes/mango-goes-bananas/mischief/progress-bars.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/scenes/mango-goes-bananas/Study progress bar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ui sprites/level instructions/shift-button.png" type="Texture" id=11]
+[ext_resource path="res://ui sprites/level instructions/space-button.png" type="Texture" id=12]
+[ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=13]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/scenes/mango-goes-bananas/mischief/progress-bars.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Level 2/Myr pc.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -36,7 +38,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 236, 128 )
 margin/left = 0.0
 margin/right = 0.0
@@ -54,7 +56,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 236, 128 )
 margin/left = 0.0
 margin/right = 0.0
@@ -72,7 +74,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 236, 128 )
 margin/left = 0.0
 margin/right = 0.0
@@ -153,6 +155,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Stijn pc" type="Sprite" parent="."]
+
+transform/pos = Vector2( -239.591, -296.462 )
+texture = ExtResource( 5 )
+
 [node name="too late" type="Label" parent="."]
 
 focus/ignore_mouse = true
@@ -211,22 +218,22 @@ shortcut = null
 text = "Play"
 flat = false
 
-[node name="study progress bar" parent="." instance=ExtResource( 8 )]
-
-transform/pos = Vector2( -134.243, -310.231 )
-transform/scale = Vector2( 0.5, 0.5 )
-playing = true
-
 [node name="Stijn head" type="Sprite" parent="."]
 
 transform/pos = Vector2( -298.625, -319.275 )
 transform/scale = Vector2( 0.592129, 0.592129 )
 texture = ExtResource( 9 )
 
-[node name="draw progress bar" parent="." instance=ExtResource( 8 )]
+[node name="draw progress bar" parent="." instance=ExtResource( 10 )]
 
-transform/pos = Vector2( -134.243, -205.231 )
-transform/scale = Vector2( 0.5, 0.5 )
+transform/pos = Vector2( -106.966, -205.863 )
+transform/scale = Vector2( 0.334458, 0.334458 )
+playing = true
+
+[node name="draw progress bar1" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( -106.966, -309.357 )
+transform/scale = Vector2( 0.334458, 0.334458 )
 playing = true
 
 [node name="Study!" type="Label" parent="."]
@@ -324,7 +331,7 @@ max_lines_visible = -1
 [node name="shift-button" type="Sprite" parent="to stop Mango"]
 
 transform/pos = Vector2( 25.1086, 38.8546 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="to stop Mango myrjam" type="Label" parent="."]
 
@@ -365,13 +372,13 @@ max_lines_visible = -1
 [node name="shift-button" type="Sprite" parent="to stop Mango myrjam"]
 
 transform/pos = Vector2( 25.1086, 38.8546 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Myrjam head" type="Sprite" parent="."]
 
 transform/pos = Vector2( -302.648, -222.449 )
 transform/scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -384,16 +391,21 @@ playback/speed = 6.0
 blend_times = [  ]
 autoplay = "instructions level 1"
 
-[node name="Mango" parent="." instance=ExtResource( 13 )]
+[node name="Mango" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 224, -280 )
 transform/scale = Vector2( -0.8, 0.8 )
 script/script = null
 
-[node name="mischief" parent="." instance=ExtResource( 14 )]
+[node name="mischief" parent="." instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 218, -18.7603 )
 animation = "mischief-flicker"
 playing = true
+
+[node name="Myr pc" type="Sprite" parent="."]
+
+transform/pos = Vector2( -226.606, -199.955 )
+texture = ExtResource( 16 )
 
 

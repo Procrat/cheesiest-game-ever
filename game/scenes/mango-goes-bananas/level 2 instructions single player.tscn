@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://ui sprites/level instructions/level-instructions-bg.png" type="Texture" id=1]
 [ext_resource path="res://game/ui/fonts/dosis-extrabold.ttf" type="DynamicFontData" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Level 2/Myrjam head.png" type="Texture" id=10]
 [ext_resource path="res://game/scenes/mango-goes-bananas/mango-animations/Mango.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/scenes/mango-goes-bananas/mischief/progress-bars.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level 2/Myr pc.png" type="Texture" id=13]
+[ext_resource path="res://Level 2/Stijn pc.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -223,7 +225,7 @@ playing = true
 
 [node name="Stijn head" type="Sprite" parent="."]
 
-transform/pos = Vector2( -298.625, -319.275 )
+transform/pos = Vector2( -302.526, -331.467 )
 transform/scale = Vector2( 0.592129, 0.592129 )
 texture = ExtResource( 7 )
 
@@ -365,5 +367,16 @@ script/script = null
 transform/pos = Vector2( 218, -18.7603 )
 animation = "mischief-flicker"
 playing = true
+
+[node name="Myr pc" type="Sprite" parent="."]
+
+transform/pos = Vector2( -305.18, -167.517 )
+transform/scale = Vector2( 0.773014, 0.773014 )
+texture = ExtResource( 13 )
+
+[node name="Stijn pc" type="Sprite" parent="."]
+
+transform/pos = Vector2( -322.859, -272.49 )
+texture = ExtResource( 14 )
 
 
