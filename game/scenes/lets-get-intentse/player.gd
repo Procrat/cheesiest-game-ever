@@ -107,6 +107,9 @@ func panic():
 
 
 func wheee():
+	if SFX.is_active():
+		return
+	
 	if significant_other.in_dangerous_area:
 		SFX.play("wheee-together")
 	else:
