@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://game/scenes/next_scene.gd" type="Script" id=1]
-[ext_resource path="res://game/scenes/start/start.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/scenes/end/end titles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level 4/all them cutscenes/tent day.png" type="Texture" id=3]
 [ext_resource path="res://Level 4/all them cutscenes/tent night lamp.png" type="Texture" id=4]
 [ext_resource path="res://Level 4/white bling.png" type="Texture" id=5]
@@ -144,7 +144,8 @@ fallback/0 = ExtResource( 12 )
 transform/pos = Vector2( 960, 540 )
 script/script = ExtResource( 1 )
 next_scene = ExtResource( 2 )
-automatically_after_seconds = -1
+next_on_click = false
+automatically_after_seconds = 61
 sound = null
 
 [node name="Node2D" type="Node2D" parent="."]
