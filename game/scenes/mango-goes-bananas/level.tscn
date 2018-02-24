@@ -222,22 +222,22 @@ points = Vector2Array( -82.1089, 92.356, 8.11127, 150.877, -41.144, 156.242, -94
 custom_solver_bias = 0.0
 points = Vector2Array( 5.95911, 24.9648, -63.5537, -16.7429, -39.7207, -38.1925, 26.217, 0.73468 )
 
-[sub_resource type="ConvexPolygonShape2D" id=43]
+[sub_resource type="ConvexPolygonShape2D" id=40]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -46.6244, -17.975, -67.9777, 9.849, -63.7324, -13.7786 )
 
-[sub_resource type="ConvexPolygonShape2D" id=44]
+[sub_resource type="ConvexPolygonShape2D" id=41]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -68.011, -60.7139, 50.7595, 12.7608, 32.1492, 35.5198, -46.6244, -17.975 )
 
-[sub_resource type="ConvexPolygonShape2D" id=45]
+[sub_resource type="ConvexPolygonShape2D" id=42]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -77.972, -38.698, -68.011, -60.7139, -46.6244, -17.975, -63.7324, -13.7786 )
 
-[sub_resource type="DynamicFont" id=42]
+[sub_resource type="DynamicFont" id=43]
 
 font/size = 30
 font/use_mipmaps = false
@@ -578,13 +578,13 @@ trigger = false
 
 transform/pos = Vector2( 1352.11, 539.432 )
 input/pickable = true
-shapes/0/shape = SubResource( 43 )
+shapes/0/shape = SubResource( 40 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 44 )
+shapes/1/shape = SubResource( 41 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 45 )
+shapes/2/shape = SubResource( 42 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/2/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -667,7 +667,7 @@ margin/left = -33.0
 margin/top = -102.0
 margin/right = 40.0
 margin/bottom = -63.0
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 43 )
 text = "Draw!"
 percent_visible = 1.0
 lines_skipped = 0
@@ -710,7 +710,7 @@ margin/left = -40.0
 margin/top = -80.0
 margin/right = 41.0
 margin/bottom = -41.0
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 43 )
 text = "Study!"
 percent_visible = 1.0
 lines_skipped = 0
@@ -751,7 +751,7 @@ margin/left = -23.0
 margin/top = -21.0
 margin/right = 32.0
 margin/bottom = 18.0
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 43 )
 text = "0"
 align = 1
 percent_visible = 1.0
@@ -768,7 +768,7 @@ margin/left = 12.0
 margin/top = -21.0
 margin/right = 48.0
 margin/bottom = 18.0
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 43 )
 text = "/"
 align = 1
 percent_visible = 1.0
@@ -785,7 +785,7 @@ margin/left = 26.0
 margin/top = -21.0
 margin/right = 83.0
 margin/bottom = 18.0
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 43 )
 text = "0"
 align = 1
 percent_visible = 1.0

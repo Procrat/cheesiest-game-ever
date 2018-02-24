@@ -16,6 +16,7 @@ class TimerAction extends Node:
 		if timer != null:
 			timer.stop()
 			timer.queue_free()
+			timer = null
 
 
 class SignalAction extends Node:

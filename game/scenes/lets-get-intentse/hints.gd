@@ -15,14 +15,14 @@ class Hint:
 
 var HINTS = [
     # estuary
-    [Hint.new("The river is too wide to cross!", 30), 
-	(Hint.new("Remember, you can pick stuff up by pressing Space or Shift.", 45) if not GLOBAL_STATE.is_single_player
-		else Hint.new("Remember, you can pick stuff up by pressing Space and switch between players by pressing Shift.", 45)), 
-	Hint.new("You'll need a stepstone...", 60),
-	Hint.new("Those rocks at the top look like they might be useful!", 80), 
-	Hint.new("I think you'll need two of them. Try working together!", 100), 
-	Hint.new("Crossing at the narrowest part of the river sounds like a good plan. (Although not in real life.)", 120), 
-	Hint.new("There is no shame in clicking the \"I give up!\"-button, you know.", 150)],
+    [Hint.new("The river is too wide to cross!", 15), 
+	(Hint.new("Remember, you can pick stuff up by pressing Space or Shift.", 30) if not GLOBAL_STATE.is_single_player
+		else Hint.new("Remember, you can pick stuff up by pressing Space and switch between players by pressing Shift.", 30)), 
+	Hint.new("You'll need a stepstone...", 45),
+	Hint.new("Those rocks at the top look like they might be useful!", 65), 
+	Hint.new("I think you'll need two of them. Try working together!", 85), 
+	Hint.new("Crossing at the narrowest part of the river sounds like a good plan. (Although not in real life.)", 105), 
+	Hint.new("There is no shame in clicking the \"I give up!\"-button, you know.", 135)],
     # swing bridge
     [Hint.new("Uh-oh. There's a danger sign at the swing bridge. That looks scary!", 15), 
 	Hint.new("That is one long swingbridge. Luckily love conquers all!", 30), 

@@ -17,7 +17,7 @@ func _init().(1):
 func show(ignored_mischief, drawn_enough, studied_enough):
 	if not drawn_enough:
 		title.set_text("Argh!")
-		subtitle.set_text("You'll never make a living as an storyteller with that kind of output!")
+		subtitle.set_text("You'll never make a living as a storyteller with that kind of output!")
 		text.set_text("")
 	elif not studied_enough:
 		title.set_text("Argh!")
