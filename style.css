@@ -15,9 +15,8 @@ img {
     margin: 0 auto;
 }
 
-body{
-    background-image: url("bg.png");
-    background-color: black;
+body {
+    background: linear-gradient(105deg, #dab111, #e91756);
 }
 
 table{
